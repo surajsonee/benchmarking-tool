@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid" id="grad1">
+  <div class="row justify-content-center mt-0">
+    <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <h2>Create your account!</h2>
+        <div class="row">
+          <div class="col-md-12 mx-0">
+            {% for field, errors in form.errors.items() %}
+              <div class="alert alert-error">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+              </div>
+            {% endfor %}
+            <form id="msform" method="POST" form="form1" enctype="multipart/form-data">
+              {{ form.csrf_token }}
+                <!-- progressbar -->
+                  <!-- fieldsets -->
+              <fieldset data-name="Personal">
+                <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title">Your Information</h2>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" autofocus placeholder="example@example.com" id='email' required />
+                  </div>
+                    <div class="form-group">
+                    <label for= "phone_number">Phone Number</label>
+                  <input class="form-control" id="phone_number"   class="form-control" type="tel" name="phone_number" placeholder="123-555-4321" required />
+                </div>
+                  <div class="form-group">
+                  <label for="password">Password</label>
+                  <input class="form-control" type="password" name="password" placeholder="" id='password'required />
+                  </div>
+                  <div class="form-group">
+                  <label for="confirm_password">Confirm Password</label>
+                  <input class="form-control" type="password" name="confirm_password" placeholder="" id="confirm_password" required/>
+                </div>
+                </div>
+                <input type="button" name="next" class="next action-button" value="Next Step"/>
+              </fieldset>
+              </fieldset>
+              <fieldset data-name="Success">
+                <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title text-center">Success !</h2>
+                  <br /><br />
+                  <div class="row justify-content-center">
+                  </div>
+                  <br/><br/>
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5>You Have Successfully Signed Up</h5>
+                    </div>
+                    <input type="submit" value="submit" />
+                  </div>
+                </div>
+              </fieldset>
+              <div>
+              <small>Already have an account?</small>
+              <a href="{{url_for('accounts.login')}}">Login</a>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdPeuhbIlhW9WwNYZCJFj0TAxQ4W9F298&libraries=places&callback=activatePlacesSearch"></script>
+  <script>
+    function activatePlacesSearch(){
+      var input = document.getElementById('search_city');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+
+    }
+ </script>
+  {% endblock scripts %}

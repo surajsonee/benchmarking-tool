@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="manifest" href="{{url_for('static',filename='scripts/manifest.json')}}" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/download.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+	<body>
+		<button id = 'installButton'>Download</button>
+	</body>
+</html>
+
+
+
+<script>
+	let installButton = document.getElementById('installButton');
+
+let prompt;
+window.addEventListener('beforeinstallprompt', function(e){
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  prompt = e;
+});
+
+installButton.addEventListener('click', function(){
+   prompt.prompt();
+})
+</script>
+
+         <script>
+if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register("/sw.js", { scope: '/' })
+        .then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    } 
+
+
+    // Detects if device is on iOS 
+    var prompt = document.getElementById('prompt');
+const isIos = () => {
+  const userAgent = window.navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod/.test( userAgent );
+}
+// Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// Checks if should display install popup notification:
+if (isIos() && !isInStandaloneMode()) {
+  prompt.style.display ='block'
+}
+</script>

@@ -1,0 +1,1355 @@
+n/* screen - operating-hours */
+
+.operating-hours {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  height: 768px;
+  min-width: 1360px;
+}
+
+.operating-hours .overlap-group31 {
+  height: 772px;
+  margin-top: -4.0px;
+  position: relative;
+  width: 270px;
+}
+
+.operating-hours .rectangle-2893 {
+  background-color: var(--zircon);
+  height: 768px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 270px;
+}
+
+.operating-hours .header {
+  background-image: url(../img/pollen-2@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 26px;
+  left: 33px;
+  position: absolute;
+  top: 29px;
+  width: 59px;
+}
+
+.operating-hours .welcome-john {
+  left: 31px;
+  letter-spacing: 0.40px;
+  position: absolute;
+  top: 113px;
+}
+
+.operating-hours .kpis {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 565px;
+}
+
+.operating-hours .historical {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 536px;
+}
+
+.operating-hours .inventory {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 594px;
+}
+
+.operating-hours .utilities {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 623px;
+}
+
+.operating-hours .operating-hours-1 {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 652px;
+}
+
+.operating-hours .group-7235 {
+  align-items: flex-start;
+  background-image: url(../img/x3c-path-x3e@2x.svg);
+  background-size: 100% 100%;
+  display: flex;
+  height: 14px;
+  left: 30px;
+  min-width: 14px;
+  padding: 1px;
+  position: absolute;
+  top: 504px;
+}
+
+.operating-hours .ellipse-437 {
+  background-color: var(--sapphire);
+  border-radius: 4.75px;
+  height: 10px;
+  width: 10px;
+}
+
+.operating-hours .rectangle-2938 {
+  height: 259px;
+  left: 22px;
+  position: absolute;
+  top: 223px;
+  width: 248px;
+}
+
+.operating-hours .kaltire-256-2 {
+  height: 170px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  top: 237px;
+  width: 210px;
+}
+
+.operating-hours .store-087 {
+  left: 45px;
+  letter-spacing: 0.32px;
+  position: absolute;
+  top: 416px;
+}
+
+.operating-hours .address {
+  left: 45px;
+  letter-spacing: 0.20px;
+  line-height: 15px;
+  position: absolute;
+  top: 439px;
+}
+
+.operating-hours .group-7195 {
+  align-items: flex-start;
+  background-color: var(--sapphire);
+  border-radius: 28px;
+  display: flex;
+  height: 20px;
+  left: 207px;
+  min-width: 20px;
+  position: absolute;
+  top: 0;
+  transform: rotate(90.00deg);
+}
+
+.operating-hours .chevron-down {
+  height: 14px;
+  margin-left: -9px;
+  margin-top: -437.57px;
+  transform: rotate(-90.00deg);
+  width: 13px;
+}
+
+.operating-hours .your-viewing {
+  left: 33px;
+  letter-spacing: 0.32px;
+  position: absolute;
+  top: 193px;
+}
+
+.operating-hours .live-usage {
+  left: 56px;
+  letter-spacing: 0.26px;
+  position: absolute;
+  top: 507px;
+}
+
+.operating-hours .overlap-group32 {
+  align-items: center;
+  background-color: var(--zircon);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 59px;
+  margin-top: 36px;
+  min-height: 696px;
+  padding: 18px 32px;
+  width: 974px;
+}
+
+.operating-hours .flex-row {
+  align-items: flex-start;
+  align-self: flex-end;
+  display: flex;
+  height: 62px;
+  margin-top: 6px;
+  min-width: 879px;
+}
+
+.operating-hours .title {
+  letter-spacing: 0.76px;
+  min-height: 47px;
+  min-width: 306px;
+}
+
+.operating-hours .group-7393 {
+  align-items: flex-start;
+  align-self: flex-end;
+  display: flex;
+  height: 30px;
+  margin-left: 342px;
+  min-width: 231px;
+}
+
+.operating-hours .group-7244 {
+  align-items: flex-start;
+  background-color: var(--sapphire);
+  border-radius: 28px;
+  display: flex;
+  height: 17px;
+  margin-left: -17px;
+  margin-top: -2054.0px;
+  min-width: 17px;
+  transform: rotate(90.00deg);
+}
+
+.operating-hours .chevron-down-1 {
+  height: 11px;
+  margin-left: -8px;
+  margin-top: -2065.59px;
+  transform: rotate(-90.00deg);
+  width: 12px;
+}
+
+.operating-hours .name {
+  color: var(--sapphire);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  margin-left: 57px;
+  min-height: 30px;
+  min-width: 115px;
+}
+
+.operating-hours .group-7392 {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  height: 17px;
+  justify-content: flex-end;
+  margin-left: 40px;
+  margin-top: 5.0px;
+  min-width: 17px;
+  transform: rotate(-90.00deg);
+}
+
+.operating-hours .overlap-group-5 {
+  height: 20px;
+  margin-top: -17.0px;
+  position: relative;
+  width: 20px;
+}
+
+.operating-hours .rectangle-2316 {
+  background-color: var(--sapphire);
+  border-radius: 28px;
+  height: 17px;
+  left: 3px;
+  position: absolute;
+  top: 0;
+  width: 17px;
+}
+
+.operating-hours .chevron-down-2 {
+  height: 11px;
+  left: -1px;
+  position: absolute;
+  top: 9px;
+  transform: rotate(90.00deg);
+  width: 12px;
+}
+
+.operating-hours .group-7425 {
+  align-items: flex-start;
+  background-color: var(--sapphire);
+  border-radius: 20px;
+  display: flex;
+  height: 29px;
+  justify-content: flex-end;
+  margin-left: 2.0px;
+  margin-top: 18px;
+  min-width: 904px;
+  padding: 4px 11px;
+}
+
+.operating-hours .overlap-group1-2 {
+  height: 19px;
+  position: relative;
+  width: 864px;
+}
+
+.operating-hours .group-7423 {
+  align-items: flex-start;
+  display: flex;
+  height: 19px;
+  left: 0;
+  min-width: 864px;
+  position: absolute;
+  top: 0;
+}
+
+.operating-hours .sunday {
+  letter-spacing: 0.30px;
+  min-height: 19px;
+  min-width: 52px;
+}
+
+.operating-hours .monday {
+  letter-spacing: 0.30px;
+  margin-left: 71px;
+  min-height: 19px;
+  min-width: 59px;
+}
+
+.operating-hours .tuesday {
+  letter-spacing: 0.30px;
+  margin-left: 76px;
+  min-height: 19px;
+  min-width: 58px;
+}
+
+.operating-hours .wednesday {
+  letter-spacing: 0.30px;
+  margin-left: 62px;
+  min-height: 19px;
+  min-width: 82px;
+}
+
+.operating-hours .thursday {
+  letter-spacing: 0.30px;
+  margin-left: 63px;
+  min-height: 19px;
+  min-width: 64px;
+}
+
+.operating-hours .friday {
+  letter-spacing: 0.30px;
+  margin-left: 85px;
+  min-height: 19px;
+  min-width: 43px;
+}
+
+.operating-hours .saturday {
+  letter-spacing: 0.30px;
+  margin-left: 71px;
+  min-height: 19px;
+}
+
+.operating-hours .group-7424 {
+  align-items: flex-start;
+  display: flex;
+  height: 15px;
+  left: 83px;
+  min-width: 672px;
+  position: absolute;
+  top: 4px;
+}
+
+.operating-hours .rectangle-3557 {
+  background-color: var(--white);
+  height: 15px;
+  width: 1px;
+}
+
+.operating-hours .rectangle-3558 {
+  background-color: var(--white);
+  height: 15px;
+  margin-left: 135px;
+  width: 1px;
+}
+
+.operating-hours .rectangle-3559 {
+  background-color: var(--white);
+  height: 15px;
+  margin-left: 126px;
+  width: 1px;
+}
+
+.operating-hours .rectangle-3560 {
+  background-color: var(--white);
+  height: 15px;
+  margin-left: 144px;
+  width: 1px;
+}
+
+.operating-hours .rectangle-3561 {
+  background-color: var(--white);
+  height: 15px;
+  margin-left: 137px;
+  width: 1px;
+}
+
+.operating-hours .rectangle-3562 {
+  background-color: var(--white);
+  height: 15px;
+  margin-left: 124px;
+  width: 1px;
+}
+
+.operating-hours .overlap-group33 {
+  height: 528px;
+  margin-left: 2.0px;
+  margin-top: 17px;
+  position: relative;
+  width: 904px;
+}
+
+.operating-hours .overlap-group2 {
+  border-radius: 10px;
+  height: 88px;
+  left: 536px;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+.operating-hours .group-735 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  height: 88px;
+  left: 0;
+  min-width: 96px;
+  padding: 11.5px 15.5px;
+  position: absolute;
+  top: 0;
+}
+
+.operating-hours .number {
+  letter-spacing: 0.18px;
+  min-height: 11px;
+}
+
+.operating-hours .group-737 {
+  align-items: center;
+  display: flex;
+  height: 26px;
+  left: 9px;
+  min-width: 82px;
+  position: absolute;
+  top: 42px;
+}
+
+.operating-hours .group-7373 {
+  align-items: center;
+  display: flex;
+  height: 26px;
+  min-width: 35px;
+}
+
+.operating-hours .number-1 {
+  letter-spacing: 0.42px;
+  min-height: 26px;
+  min-width: 12px;
+  text-align: center;
+}
+
+.operating-hours .group-737-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.0px;
+  margin-left: 1px;
+  min-height: 6px;
+  width: 2px;
+}
+
+.operating-hours .ellipse-1778 {
+  background-color: var(--apple);
+  border-radius: 1px;
+  height: 2px;
+  width: 2px;
+}
+
+.operating-hours .ellipse-1779 {
+  background-color: var(--apple);
+  border-radius: 1px;
+  height: 2px;
+  margin-top: 2px;
+  width: 2px;
+}
+
+.operating-hours .overlap-group {
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 13px;
+}
+
+.operating-hours .number-2 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.operating-hours .am {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .rectangle-3533 {
+  background-color: var(--apple);
+  height: 21px;
+  margin-top: 1.0px;
+  width: 1px;
+}
+
+.operating-hours .group-7372 {
+  align-items: center;
+  display: flex;
+  height: 26px;
+  margin-left: 6px;
+  min-width: 46px;
+}
+
+.operating-hours .number-3 {
+  letter-spacing: 0.42px;
+  min-height: 26px;
+  min-width: 23px;
+  text-align: center;
+}
+
+.operating-hours .price {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .group-7428 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 528px;
+  position: absolute;
+  top: 0;
+  width: 904px;
+}
+
+.operating-hours .flex-col-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 198px;
+  width: 904px;
+}
+
+.operating-hours .flex-row-1 {
+  align-items: flex-start;
+  display: flex;
+  min-width: 904px;
+}
+
+.operating-hours .group-7367 {
+  align-items: flex-start;
+  display: flex;
+  min-width: 364px;
+}
+
+.operating-hours .rectangle-3500 {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 88px;
+  width: 96px;
+}
+
+.operating-hours .rectangle-353 {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 88px;
+  margin-left: 38px;
+  width: 96px;
+}
+
+.operating-hours .overlap-group2-1 {
+  border-radius: 10px;
+  height: 88px;
+  margin-left: 308px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .am-1 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-1 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .group-7359 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  min-height: 88px;
+  padding: 9px 5px;
+  width: 96px;
+}
+
+.operating-hours .number-9 {
+  letter-spacing: 0.18px;
+  margin-left: 10px;
+  margin-top: 2px;
+  min-height: 11px;
+}
+
+.operating-hours .group-7401 {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  margin-top: 30px;
+  min-width: 82px;
+}
+
+.operating-hours .am-2 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-2 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .flex-row-2 {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 22px;
+  min-width: 904px;
+}
+
+.operating-hours .overlap-group-1 {
+  border-radius: 10px;
+  height: 88px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .overlap-group-2 {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 88px;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+.operating-hours .overlap-group1 {
+  align-items: center;
+  background-color: var(--flamingo);
+  border-radius: 10.5px;
+  display: flex;
+  height: 21px;
+  margin-right: 1.0px;
+  margin-top: 19px;
+  min-width: 21px;
+  padding: 0 3px;
+}
+
+.operating-hours .rectangle-3554 {
+  background-color: var(--white);
+  height: 3px;
+  width: 15px;
+}
+
+.operating-hours .rectangle-3555 {
+  background-color: var(--flamingo);
+  height: 2px;
+  margin-top: 8px;
+  width: 54px;
+}
+
+.operating-hours .closed {
+  letter-spacing: 0.24px;
+  margin-top: 3px;
+  min-height: 15px;
+  min-width: 40px;
+}
+
+.operating-hours .number-4 {
+  left: 15px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  top: 12px;
+}
+
+.operating-hours .overlap-group1-1 {
+  border-radius: 10px;
+  height: 88px;
+  margin-left: 38px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .group-739 {
+  align-items: flex-end;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  height: 88px;
+  justify-content: flex-end;
+  left: 0;
+  min-width: 96px;
+  padding: 20px 1px;
+  position: absolute;
+  top: 0;
+}
+
+.operating-hours .am-3 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .rectangle-3533-1 {
+  background-color: var(--apple);
+  height: 21px;
+  margin-bottom: 2px;
+  width: 1px;
+}
+
+.operating-hours .price-3 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-4 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-4 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .overlap-group3 {
+  border-radius: 10px;
+  height: 88px;
+  margin-left: 36px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .group-738 {
+  align-items: flex-end;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  height: 88px;
+  justify-content: flex-end;
+  left: 0;
+  min-width: 96px;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+}
+
+.operating-hours .am-5 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-5 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .number-5 {
+  left: 14px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+}
+
+.operating-hours .overlap-group-3 {
+  border-radius: 10px;
+  height: 88px;
+  margin-left: 40px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .am-6 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-6 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-7 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-7 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .number-6 {
+  left: 12px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+}
+
+.operating-hours .am-8 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-8 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .flex-row-3 {
+  align-items: flex-start;
+  display: flex;
+  height: 308px;
+  margin-top: 22px;
+  min-width: 904px;
+}
+
+.operating-hours .flex-col-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 308px;
+  width: 96px;
+}
+
+.operating-hours .number-10 {
+  left: 14px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  top: 12px;
+}
+
+.operating-hours .overlap-group-4 {
+  border-radius: 10px;
+  height: 88px;
+  margin-top: 22px;
+  position: relative;
+  width: 96px;
+}
+
+.operating-hours .number-7 {
+  left: 13px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  top: 12px;
+}
+
+.operating-hours .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 38px;
+  min-height: 308px;
+  width: 96px;
+}
+
+.operating-hours .am-9 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-9 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-10 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-10 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .number-11 {
+  left: 12px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  top: 12px;
+}
+
+.operating-hours .am-11 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-11 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-12 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-12 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-13 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-13 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-14 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-14 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .flex-col-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 36px;
+  min-height: 308px;
+  width: 96px;
+}
+
+.operating-hours .am-15 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-15 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .number-8 {
+  left: 13px;
+  letter-spacing: 0.18px;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+}
+
+.operating-hours .am-16 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-16 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-17 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-17 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  min-height: 308px;
+  width: 96px;
+}
+
+.operating-hours .am-18 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-18 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-19 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-19 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-20 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-20 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-21 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-21 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-22 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-22 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-23 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-23 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-24 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-24 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .am-25 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .price-25 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .group-7421 {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 88px;
+  margin-top: 22px;
+  width: 96px;
+}
+
+.operating-hours .overlap-group30 {
+  border-radius: 10px;
+  height: 88px;
+  left: 400px;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+.operating-hours .overlap-group2-2 {
+  border-radius: 10px;
+  height: 88px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+.operating-hours .group-7356 {
+  align-items: flex-start;
+  background-color: var(--sapphire);
+  border-radius: 10px;
+  display: flex;
+  height: 88px;
+  left: 0;
+  min-width: 96px;
+  padding: 11.5px 15.5px;
+  position: absolute;
+  top: 0;
+}
+
+.operating-hours .number-12 {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18px;
+  min-height: 11px;
+}
+
+.operating-hours .number-13 {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  min-height: 26px;
+  min-width: 12px;
+  text-align: center;
+}
+
+.operating-hours .ellipse-1778-1 {
+  background-color: var(--white);
+  border-radius: 1px;
+  height: 2px;
+  width: 2px;
+}
+
+.operating-hours .ellipse-1779-1 {
+  background-color: var(--white);
+  border-radius: 1px;
+  height: 2px;
+  margin-top: 2px;
+  width: 2px;
+}
+
+.operating-hours .am-26 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .rectangle-3533-2 {
+  background-color: var(--white);
+  height: 21px;
+  margin-top: 1.0px;
+  width: 1px;
+}
+
+.operating-hours .number-14 {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  min-height: 26px;
+  min-width: 23px;
+  text-align: center;
+}
+
+.operating-hours .price-26 {
+  left: 0;
+  letter-spacing: 0.16px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.operating-hours .rectangle {
+  height: 21px;
+  left: 67px;
+  position: absolute;
+  top: 7px;
+  width: 21px;
+}

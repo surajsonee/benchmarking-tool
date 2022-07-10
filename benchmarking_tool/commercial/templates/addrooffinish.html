@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-roof-finish.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-roof-finish" />
+    <div class="container-center-horizontal">
+      <div class="add-roof-finish screen">
+        <div class="add-roof-finish-EFoFMy coresansc-65-bold-chathams-blue-19px">Add Roof Finish</div>
+        <form action=" " method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+        <div class="group-6900-EFoFMy">
+          <img class="vector-88-0BPat9" src="img/vector-88@2x.svg" /><img
+            class="vector-90-0BPat9"
+            src="img/vector-88@2x.svg"
+          /><img class="vector-89-0BPat9" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="group-6899-EFoFMy">
+          <div>{{ form.material( class="rectangle-2345-wixspx border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6905-EFoFMy">
+          <div>{{ form.rvalue (class="rectangle-2345-6VxKNy border-1px-mystic")}}</div>
+        </div>
+        <img class="vector-EFoFMy" src="img/vector@2x.svg" /><img class="vector-8VRWaH" src="img/vector@2x.svg" />
+        <div class="none-EFoFMy coresansc-65-bold-cerulean-frost-11px"></div>
+        <div class="x000-EFoFMy coresansc-65-bold-cerulean-frost-11px"></div>
+        <div class="rectangle-2806-EFoFMy border-1px-mystic"><img id ='output1' width='314' height='130'></div>
+        <div class="group-7219-EFoFMy">
+        <label for='chiller_photo' class="rectangle-2755-OevBYq"><input type="file" style='display: none;' accept="image/*" capture="user"  id='chiller_photo' onchange="loadFile1(event);" required class="btn btn-default btn-lg button" style="border:none"
+            name="chiller_photo"></label>
+          <label for='chiller_photo' class="add-file-OevBYq coresansc-55-medium-white-10px">Add File</label>
+        </div>
+        <div class="group-7220-EFoFMy">
+          <div class="rectangle-2807-DsJgte border-1-5px-cerulean-frost"></div>
+          <div class="view-files-DsJgte coresansc-55-medium-cerulean-frost-10px">View Files</div>
+        </div>
+        <div class="layer-1-EFoFMy">
+          <img class="vector-UdmPbq" src="img/vector-4@2x.svg" /><img class="vector-JRrQuv" src="img/vector-5@2x.svg" />
+        </div>
+        <div class="group-7192-EFoFMy">
+          <button type = 'submit'class="rectangle-2755-prR2jd">
+          <div class="add-prR2jd coresansc-65-bold-white-16px">Add</div></button>
+        </div>
+        <a href = "{{url_for('commercial.construction', id = building.id)}}"><div class="group-7194-EFoFMy">
+          <div class="rectangle-2755-GS92vk"></div>
+          <div class="cancel-GS92vk coresansc-65-bold-white-16px">Cancel</div>
+        </div></a>
+    </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var loadFile1 = function(event){
+    var image = document.getElementById('output1');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>

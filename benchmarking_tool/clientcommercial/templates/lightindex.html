@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1="my-4">lights for {{ area }}</h1=>
+        {% if lights|length < 1 %}
+        <p>There are no lights added in the system</p>
+        <a class="btn btn-danger btn-sm" href='/commercial/addlight/{{ area.id }}'>Add light</a>
+
+        {% else %}
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Number of Fixtures<</th>
+                    <th>Hours</th>
+                    <th>Fixture Type</th>
+                    <th>Lamp Type</th>
+                    <th>Lamp Wattage</th>
+                    <th>Lamps per Fixture</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for light in lights %}
+                <tr>
+                    <td><a href ='url_for("edit_light")'>{{ light.fixture_count }}</a></td>
+                    <td>{{ light.hours }}</td>
+                    <td>{{ light.fixture }}</td>
+                    <td>{{ light.lamp }}</td>
+                    <td>{{ light.wattage }}</td>
+                    <td>{{ light.lamp_count }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletelight', id=light.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updatelight', id=light.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatelight', id=light.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatelight', id=light.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addlight/{{ area.id }}'>Add light</a>
+
+        {% endif %}
+
+</div>
+{% endblock %}

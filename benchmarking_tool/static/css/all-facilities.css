@@ -1,0 +1,1421 @@
+/* screen - all-facilities */
+
+.all-facilities {
+  background-color: var(--white);
+  height: 768px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.all-facilities .rectangle-2893-QcASUY {
+  background-color: #eeeeee;
+  height: 768px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 270px;
+}
+
+.all-facilities .header-QcASUY {
+  background-color: transparent;
+  height: 26px;
+  left: 33px;
+  position: absolute;
+  top: 25px;
+  width: 59px;
+}
+
+.all-facilities .kaltire-256-2-QcASUY {
+  background-color: transparent;
+  height: 170px;
+  left: 30px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 127px;
+  width: 210px;
+}
+
+.all-facilities .facility-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 81px;
+  width: auto;
+}
+
+.all-facilities .address-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 320px;
+  width: auto;
+}
+
+.all-facilities .x4720-yellowhead-on-ab-t5-l-3-cs-QcASUY {
+  background-color: transparent;
+  color: var(--cerulean-frost);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.20px;
+  line-height: 15px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 354px;
+  width: auto;
+}
+
+.all-facilities .group-7195-QcASUY {
+  background-color: transparent;
+  height: 14px;
+  left: 226px;
+  position: absolute;
+  top: 88px;
+  width: 14px;
+}
+
+.all-facilities .rectangle-2316-fnVQgl {
+  background-color: var(--chathams-blue);
+  border-radius: 28px;
+  height: 14px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: -0px;
+  width: 14px;
+}
+
+.all-facilities .chevron-down-fnVQgl {
+  background-color: transparent;
+  height: 10px;
+  left: 2px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 2px;
+  width: 10px;
+}
+
+.all-facilities .group-7234-QcASUY {
+  background-color: transparent;
+  height: 16px;
+  left: 30px;
+  position: absolute;
+  top: 85px;
+  width: 15px;
+}
+
+.all-facilities .vector-QcASUY {
+  background-color: transparent;
+  height: 16px;
+  left: 30px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 323px;
+  width: 11px;
+}
+
+.all-facilities .overview-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 407px;
+  width: auto;
+}
+
+.all-facilities .kpis-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.22px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 445px;
+  width: auto;
+}
+
+.all-facilities .inventory-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.22px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 465px;
+  width: auto;
+}
+
+.all-facilities .utilities-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 56px;
+  letter-spacing: 0.22px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 485px;
+  width: auto;
+}
+
+.all-facilities .group-7196-QcASUY {
+  background-color: transparent;
+  height: 14px;
+  left: 226px;
+  position: absolute;
+  top: 413px;
+  transform: rotate(-180.00deg);
+  width: 14px;
+}
+
+.all-facilities .rectangle-2316-PtyRHQ {
+  background-color: transparent;
+  border: 1.5px solid var(--chathams-blue);
+  border-radius: 28px;
+  height: 14px;
+  left: 452px;
+  position: absolute;
+  top: 0px;
+  width: 14px;
+}
+
+.all-facilities .chevron-down-PtyRHQ {
+  background-color: transparent;
+  height: 10px;
+  left: 454px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 2px;
+  transform: rotate(180.00deg);
+  width: 10px;
+}
+
+.all-facilities .group-7235-QcASUY {
+  background-color: transparent;
+  height: 14px;
+  left: 30px;
+  position: absolute;
+  top: 412px;
+  width: 14px;
+}
+
+.all-facilities .rectangle-2958-QcASUY {
+  background-color: var(--chathams-blue);
+  border-radius: 5px;
+  height: 39px;
+  left: 304px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 43px;
+  width: 122px;
+}
+
+.all-facilities .rectangle-2959-QcASUY {
+  background-color: var(--chathams-blue);
+  border-radius: 5px;
+  height: 39px;
+  left: 435px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 43px;
+  width: 187px;
+}
+
+.all-facilities .rectangle-2966-QcASUY {
+  background-color: #f8f8f8;
+  border: 1.5px solid #dcddde;
+  border-radius: 8px;
+  height: 34px;
+  left: 1049px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 46px;
+  width: 277px;
+}
+
+.all-facilities .metrics-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 317px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 54px;
+  width: auto;
+}
+
+.all-facilities .sort-by-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 449px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 54px;
+  width: auto;
+}
+
+.all-facilities .location-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 510px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 54px;
+  width: auto;
+}
+
+.all-facilities .search-QcASUY {
+  background-color: transparent;
+  color: #bdbdbd;
+  font-family: var(--font-family-averta_cy-regular);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 1086px;
+  letter-spacing: 0.24px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 55px;
+  width: auto;
+}
+
+.all-facilities .vector-ycrrjB {
+  background-color: transparent;
+  height: 6px;
+  left: 401px;
+  position: absolute;
+  top: 61px;
+  width: 10px;
+}
+
+.all-facilities .vector-NJ0xT7 {
+  background-color: transparent;
+  height: 6px;
+  left: 597px;
+  position: absolute;
+  top: 61px;
+  width: 10px;
+}
+
+.all-facilities .x3-c-path-x3-e-QcASUY {
+  background-color: transparent;
+  height: 14px;
+  left: 1060px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 57px;
+  width: 14px;
+}
+
+
+.all-facilities .building-list {
+  background-color: transparent;
+  height: 14px;
+  position: relative;
+  display: flex-wrap;
+  width: 14px;
+  padding-bottom: 221px;
+
+}
+
+.all-facilities .building-container {
+  background-color: transparent;
+  position: absolute;
+  display: flex-wrap;
+  height: 750px;
+  top: 100px;
+    column-fill: auto;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-width: 250px;
+    -webkit-column-width: 250px;
+    -moz-column-width: 250px;
+
+}
+
+.all-facilities .kaltire6-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 295px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 230px;
+}
+
+.all-facilities .address {
+  background-color: transparent;
+  left: 340px;
+  bottom: 33px;
+  position: relative;
+}
+.all-facilities .name {
+  background-color: transparent;
+  left: 340px;
+  bottom: 72px;
+  position: relative;
+}
+.all-facilities .rectangle-2369-QcASUY {
+  background-color: transparent;
+  height: 140px;
+  left: 304px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 178px;
+  width: 218px;
+}
+
+.all-facilities .kaltire1-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 537px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 143px;
+  width: 230px;
+}
+
+.all-facilities .rectangle-2960-QcASUY {
+  background-color: transparent;
+  height: 140px;
+  left: 546px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 178px;
+  width: 218px;
+}
+
+.all-facilities .kaltire2-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 779px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 143px;
+  width: 230px;
+}
+
+.all-facilities .kaltire4-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 295px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 349px;
+  width: 230px;
+}
+
+.all-facilities .kaltire5-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 537px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 349px;
+  width: 230px;
+}
+
+.all-facilities .kaltire3-1-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 779px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 349px;
+  width: 230px;
+}
+
+.all-facilities .store-233-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 346px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 259px;
+  width: auto;
+}
+
+.all-facilities .store-241-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 588px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 259px;
+  width: auto;
+}
+
+
+.all-facilities .x1783-sunny-day-drive-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 588px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 288px;
+  width: auto;
+}
+
+.all-facilities .rectangle-2961-QcASUY {
+  background-color: transparent;
+  height: 140px;
+  left: 788px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 178px;
+  width: 218px;
+}
+
+.all-facilities .rectangle-2962-QcASUY {
+  background-color: transparent;
+  height: 145px;
+  left: 788px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 379px;
+  width: 218px;
+}
+
+.all-facilities .rectangle-2963-QcASUY {
+  background-color: transparent;
+  height: 145px;
+  left: 546px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 379px;
+  width: 218px;
+}
+
+.all-facilities .rectangle-2964-QcASUY {
+  background-color: transparent;
+  height: 145px;
+  left: 304px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 379px;
+  width: 218px;
+}
+
+.all-facilities .group-7252-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 830px;
+  position: absolute;
+  top: 259px;
+  width: 113px;
+}
+
+.all-facilities .store-253-G4ATBJ {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x1949-essex-court-G4ATBJ {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .group-7253-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 830px;
+  position: absolute;
+  top: 465px;
+  width: 106px;
+}
+
+.all-facilities .store-271-KZ03CD {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2583-ella-street-KZ03CD {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .group-7254-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 588px;
+  position: absolute;
+  top: 465px;
+  width: 123px;
+}
+
+.all-facilities .store-256-xWqyeE {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2822-traders-alley-xWqyeE {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .group-7255-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 346px;
+  position: absolute;
+  top: 465px;
+  width: 149px;
+}
+
+.all-facilities .store-234-EhbMfV {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2646-mc-kinley-avenue-EhbMfV {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .kaltire4-2-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 779px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 555px;
+  width: 230px;
+}
+
+.all-facilities .kaltire5-2-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 295px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 555px;
+  width: 230px;
+}
+
+.all-facilities .kaltire3-2-QcASUY {
+  background-color: transparent;
+  height: 187px;
+  left: 537px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 555px;
+  width: 230px;
+}
+
+.all-facilities .rectangle-2967-QcASUY {
+  background-color: transparent;
+  height: 162px;
+  left: 788px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 568px;
+  width: 218px;
+}
+
+.all-facilities .rectangle-2968-QcASUY {
+  background-color: transparent;
+  height: 162px;
+  left: 546px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 568px;
+  width: 218px;
+}
+
+.all-facilities .rectangle-2969-QcASUY {
+  background-color: transparent;
+  height: 162px;
+  left: 304px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 568px;
+  width: 218px;
+}
+
+.all-facilities .group-7256-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 830px;
+  position: absolute;
+  top: 671px;
+  width: 106px;
+}
+
+.all-facilities .store-277-j04aI9 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2583-ella-street-j04aI9 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .group-7257-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 588px;
+  position: absolute;
+  top: 671px;
+  width: 123px;
+}
+
+.all-facilities .store-276-ARJwtw {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2822-traders-alley-ARJwtw {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .group-7258-QcASUY {
+  background-color: transparent;
+  height: 45px;
+  left: 346px;
+  position: absolute;
+  top: 671px;
+  width: 149px;
+}
+
+.all-facilities .store-239-5zdwL2 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.all-facilities .x2646-mc-kinley-avenue-5zdwL2 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.all-facilities .vector-xNk7k1 {
+  background-color: transparent;
+  height: 16px;
+  left: 561px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 288px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-QcASUY {
+  background-color: transparent;
+  height: 16px;
+  left: 801px;
+  position: absolute;
+  top: 259px;
+  width: 15px;
+}
+
+.all-facilities .vector-eLYPNm {
+  background-color: transparent;
+  height: 16px;
+  left: 803px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 288px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-ycrrjB {
+  background-color: transparent;
+  height: 16px;
+  left: 801px;
+  position: absolute;
+  top: 465px;
+  width: 15px;
+}
+
+.all-facilities .vector-S963nj {
+  background-color: transparent;
+  height: 16px;
+  left: 803px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 494px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-NJ0xT7 {
+  background-color: transparent;
+  height: 16px;
+  left: 559px;
+  position: absolute;
+  top: 465px;
+  width: 15px;
+}
+
+.all-facilities .vector-WahB5j {
+  background-color: transparent;
+  height: 16px;
+  left: 561px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 494px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-xNk7k1 {
+  background-color: transparent;
+  height: 16px;
+  left: 317px;
+  position: absolute;
+  top: 465px;
+  width: 15px;
+}
+
+.all-facilities .vector-kWeWMx {
+  background-color: transparent;
+  height: 16px;
+  left: 319px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 494px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-eLYPNm {
+  background-color: transparent;
+  height: 16px;
+  left: 801px;
+  position: absolute;
+  top: 671px;
+  width: 15px;
+}
+
+.all-facilities .vector-yuq4jz {
+  background-color: transparent;
+  height: 16px;
+  left: 803px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 700px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-S963nj {
+  background-color: transparent;
+  height: 16px;
+  left: 559px;
+  position: absolute;
+  top: 671px;
+  width: 15px;
+}
+
+.all-facilities .vector-N8Dyg9 {
+  background-color: transparent;
+  height: 16px;
+  left: 561px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 700px;
+  width: 11px;
+}
+
+.all-facilities .group-7238-WahB5j {
+  background-color: transparent;
+  height: 16px;
+  left: 317px;
+  position: absolute;
+  top: 671px;
+  width: 15px;
+}
+
+.all-facilities .vector-n7UIr1 {
+  background-color: transparent;
+  height: 16px;
+  left: 42px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 910px;
+  width: 11px;
+  z-index: 100
+}
+
+.all-facilities .group-7236-QcASUY {
+  background-color: transparent;
+  height: 16px;
+  left: 40px;
+  top: 886px;
+  position: absolute;
+  width: 15px;
+}
+
+.all-facilities .group-7261-QcASUY {
+  background-color: transparent;
+  height: 16px;
+  left: 559px;
+  position: absolute;
+  top: 259px;
+  width: 15px;
+}
+
+.all-facilities .vector-xh34I2 {
+  background-color: transparent;
+  height: 16px;
+  left: 319px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 288px;
+  width: 11px;
+}
+
+.all-facilities .ellipse-440-QcASUY {
+  background-color: var(--chathams-blue);
+  border-radius: 12px;
+  height: 24px;
+  left: 732px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 150px;
+  width: 24px;
+}
+
+.all-facilities .group-7264-QcASUY {
+  background-color: transparent;
+  height: 14px;
+  left: 797px;
+  position: absolute;
+  top: 155px;
+  width: 14px;
+}
+.all-facilities .sidebar {
+  background-color: white;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+  position: relative;
+  left: 1080px;
+  height: 630px;
+  width: 0;
+  top: 100px;
+  overflow-x: hidden;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.all-facilities .sidebar-QcASUY {
+  background-color: transparent;
+  height: 607px;
+  left: 1038px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 135px;
+  width: 328px;
+}
+
+.all-facilities .group-7263-QcASUY {
+  background-color: transparent;
+  height: 18px;
+  left: 25px;
+  position: relative;
+  transform: rotate(-90.00deg);
+  width: 18px;
+}
+
+.all-facilities .rectangle-2316-uAdgnm {
+  background-color: var(--chathams-blue);
+  border-radius: 28px;
+  height: 18px;
+  left: -18px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 18px;
+}
+
+.all-facilities .chevron-down-uAdgnm {
+  background-color: transparent;
+  height: 12px;
+  right: 15px;
+  bottom: 16.5px;
+  mix-blend-mode: normal;
+  position: relative;
+  transform: rotate(90.00deg);
+  width: 13px;
+}
+
+.all-facilities .group-QcASUY {
+  background-color: transparent;
+  height: 18px;
+  left: 270px;
+  bottom: 5px;
+  position: relative;
+  width: 18px;
+}
+
+.all-facilities .general-info-QcASUY {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  width: auto;
+  left: 50px;
+  top: 25px;
+}
+
+.all-facilities .address-ycrrjB {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  width: auto;
+  top: 40px;
+  left: 25px;
+}
+
+.all-facilities .phone-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 50px;
+  width: auto;
+}
+
+.all-facilities .square-footage-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 60px;
+  width: auto;
+}
+
+.all-facilities .energy-usage-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 70px;
+  width: auto;
+}
+
+.all-facilities .natural-gas-usage-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 80px;
+  width: auto;
+}
+
+.all-facilities .age-of-building-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 90px;
+  width: auto;
+}
+
+.all-facilities .x182-gj-QcASUY {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  top: 40px;
+  width: auto;
+}
+
+.all-facilities .x15-years-QcASUY {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  top: 50px;
+  width: auto;
+}
+
+.all-facilities .x1321-k-wh-QcASUY {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  width: auto;
+  bottom: 20px;
+}
+
+.all-facilities .x72112-ft-QcASUY {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  bottom: 70px;
+  width: auto;
+}
+
+.all-facilities .x693-213-630-11-QcASUY {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  bottom: 120px;
+  width: auto;
+}
+
+.all-facilities .x1783-sunny-day-drive-ycrrjB {
+  background-color: transparent;
+  height: auto;
+  right: 15px;
+  letter-spacing: 0.28px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: right;
+  bottom: 165px;
+  width: auto;
+}
+
+.all-facilities .vector-HiAixB {
+  background-color: transparent;
+  height: 11px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 11px;
+  bottom: 216px;
+  left: 25px;
+}
+
+.all-facilities .pictures-QcASUY {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  width: auto;
+  left: 50px;
+}
+
+.all-facilities .group-ycrrjB {
+  background-color: transparent;
+  height: 10px;
+  position: relative;
+  bottom: 20px;
+  left: 25px;
+  width: 12px;
+}
+
+.all-facilities .rectangle-2992-QcASUY {
+  background-color: transparent;
+  border: 1.5px solid var(--chathams-blue);
+  border-radius: 5px;
+  height: 31px;
+  position: relative;
+  top: 220px;
+  left: 25px;
+  width: 125px;
+}
+
+.all-facilities .rectangle-2993-QcASUY {
+  background-color: var(--chathams-blue);
+  border-radius: 5px;
+  height: 31px;
+  mix-blend-mode: normal;
+  position: relative;
+  top: 188px;
+  left: 165px;
+  width: 125px;
+}
+
+.all-facilities .next-facility-QcASUY {
+  background-color: transparent;
+  height: auto;
+  left: 186px;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 164px;
+  width: auto;
+}
+
+.all-facilities .prev-facility-QcASUY {
+  background-color: transparent;
+  color: var(--chathams-blue);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  letter-spacing: 0.26px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  top: 149px;
+  left: 50px;
+  width: auto;
+}
+
+.all-facilities .rectangle-2994-QcASUY {
+  background-color: #6e9ac04c;
+  height: 1px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 263px;
+  bottom: 160px;
+  left: 25px;
+}
+
+.all-facilities .kaltire4-6-QcASUY {
+  background-color: transparent;
+  height: 44px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 62px;
+  left: 25px;
+  top: 50px;
+}
+
+.all-facilities .kaltire1-2-QcASUY {
+  background-color: transparent;
+  height: 44px;
+  left: 30px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 62px;
+  top: 50px;
+}
+
+.all-facilities .kaltire2-2-QcASUY {
+  background-color: transparent;
+  height: 44px;
+  left: 35px;
+  mix-blend-mode: normal;
+  position: relative;
+  top: 50px;
+  width: 62px;
+}
+
+.all-facilities .kaltire5-3-QcASUY {
+  background-color: transparent;
+  height: 44px;
+  left: 40px;
+  mix-blend-mode: normal;
+  position: relative;
+  top: 50px;
+  width: 62px;
+}
+
+.all-facilities .kaltire1-2-ycrrjB {
+  background-color: transparent;
+  height: 132px;
+  left: 25px;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 263px;
+  bottom: 150px;
+  border-radius: 3px;
+}

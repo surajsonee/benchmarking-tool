@@ -1,0 +1,472 @@
+/* screen - add-infrared-heater */
+
+.add-infrared-heater {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.add-infrared-heater .add-9xz0lo {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 59px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .add-infrared-heater-C61RwL {
+  background-color: transparent;
+  color: #1d5280;
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .add-photo-83XzNc {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-55medium);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .cancel-WjY3xc {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 47px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .group-6899-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 132px;
+  width: 315px;
+}
+.add-infrared-heater .group-6900-C61RwL {
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.add-infrared-heater .group-6901-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 264px;
+  width: 149px;
+}
+.add-infrared-heater .group-6902-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 330px;
+  width: 315px;
+}
+.add-infrared-heater .group-6903-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 396px;
+  width: 315px;
+}
+.add-infrared-heater .group-6908-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 198px;
+  width: 149px;
+}
+.add-infrared-heater .group-6909-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 196px;
+  position: absolute;
+  top: 198px;
+  width: 149px;
+}
+.add-infrared-heater .group-6910-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 196px;
+  position: absolute;
+  top: 264px;
+  width: 149px;
+}
+.add-infrared-heater .group-7192-C61RwL {
+  background-color: transparent;
+  height: 36px;
+  left: 195px;
+  position: absolute;
+  top: 641px;
+  width: 152px;
+}
+.add-infrared-heater .group-7193-C61RwL {
+  background-color: transparent;
+  height: 15px;
+  left: 159px;
+  position: absolute;
+  top: 274px;
+  width: 8px;
+}
+.add-infrared-heater .group-7196-C61RwL {
+  background-color: transparent;
+  height: 36px;
+  left: 30px;
+  position: absolute;
+  top: 641px;
+  width: 152px;
+}
+.add-infrared-heater .group-7219-C61RwL {
+  background-color: transparent;
+  height: 24px;
+  left: 57px;
+  position: absolute;
+  top: 549px;
+  width: 111px;
+}
+.add-infrared-heater .group-7220-C61RwL {
+  background-color: transparent;
+  height: 24px;
+  left: 209px;
+  position: absolute;
+  top: 549px;
+  width: 111px;
+}
+.add-infrared-heater .heating-efficiency-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 376px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .heating-input-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 202px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .layer-1-C61RwL {
+  background-color: transparent;
+  height: 26px;
+  left: 176px;
+  position: absolute;
+  top: 500px;
+  width: 24px;
+}
+.add-infrared-heater .manufacturer-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 112px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .model-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 178px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .output-capacity-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 310px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .rectangle-2345-5fxYOr {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-infrared-heater .rectangle-2345-CvPFFg {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 149px;
+}
+.add-infrared-heater .rectangle-2345-Mz8XNq {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-infrared-heater .rectangle-2345-Z05HMs {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 149px;
+}
+.add-infrared-heater .rectangle-2345-eJPJAb {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 149px;
+}
+.add-infrared-heater .rectangle-2345-fJ0smy {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-infrared-heater .rectangle-2345-ilCFrg {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 149px;
+}
+.add-infrared-heater .rectangle-2755-83XzNc {
+  background-color: var(--cerulean-frost);
+  border-radius: 3px;
+  height: 24px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 109px;
+}
+.add-infrared-heater .rectangle-2755-9xz0lo {
+  background-color: #3ab54a;
+  border-radius: 6px;
+  height: 36px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+.add-infrared-heater .rectangle-2755-WjY3xc {
+  background-color: var(--cerulean-frost);
+  border-radius: 6px;
+  height: 36px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+.add-infrared-heater .rectangle-2806-C61RwL {
+  background-color: transparent;
+  height: 132px;
+  left: 30px;
+  position: absolute;
+  top: 470px;
+  width: 315px;
+}
+.add-infrared-heater .rectangle-2807-KSWG3U {
+  background-color: transparent;
+  border: 1.5px solid var(--cerulean-frost);
+  border-radius: 3px;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 109px;
+}
+.add-infrared-heater .serial-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 205px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 178px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .vector-88-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.add-infrared-heater .vector-89-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.add-infrared-heater .vector-90-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.add-infrared-heater .vector-FIkdjm {
+  background-color: transparent;
+  height: 6px;
+  left: 15px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 17px;
+  width: 6px;
+}
+.add-infrared-heater .vector-LA17xu {
+  background-color: transparent;
+  height: 6px;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 10px;
+}
+.add-infrared-heater .vector-TBtSab {
+  background-color: transparent;
+  height: 6px;
+  left: -1px;
+  position: absolute;
+  top: 10px;
+  width: 10px;
+}
+.add-infrared-heater .vector-YBNzTx {
+  background-color: transparent;
+  height: 27px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: -0px;
+  width: 24px;
+}
+.add-infrared-heater .view-photos-KSWG3U {
+  background-color: transparent;
+  color: var(--cerulean-frost);
+  font-family: var(--font-family-core_sans_c-55medium);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-infrared-heater .year-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}

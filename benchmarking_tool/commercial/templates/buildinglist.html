@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+    <h1 = "my-4">Buildings</h1>
+    {% if buildings|length < 1 %}
+    <p>There are no buildings added in the system</p>
+
+    {% else %}
+    <table class = 'table'>
+        <tbody>
+            {% for client in clients %}
+            <td><a><b>{{ client.company }}</b></a></td>
+            {% for building in buildings %}
+            <tr>
+                {% if building.client_id == client.id %}
+                <td style="text-indent: 3em"><a href = "{{ url_for('commercial.areas', id=building.client_id)  }}">{{ building.name }}</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+
+</div>
+{% endblock %}

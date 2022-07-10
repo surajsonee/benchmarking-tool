@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/building-2.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="building-2" />
+    <div class="container-center-horizontal">
+      <div class="building-2 screen">
+      <a href = "{{url_for('commercial.buildingdetails', id = building.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="rectangle-2769-C61RwL"></div>
+        <div class="on-site-audit-C61RwL coresansc-65-bold-chathams-blue-19px">On - Site Audit</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="address-of-building-C61RwL coresansc-65-bold-chathams-blue-11px">Address of Building:</div>
+        <div class="operating-hours-C61RwL coresansc-65-bold-chathams-blue-11px">Operating Hours</div>
+        <div class="some-address-C61RwL coresansc-55-medium-cerulean-frost-11px">{{ building.address }}</div>
+        <div class="x0800-1600-C61RwL coresansc-55-medium-cerulean-frost-11px">08:00 - 16:00</div>
+        <div class="group-6911-C61RwL">
+          <img class="pexels-pixabay-269077-2-nFnupU" src="{{ url_for('static', filename='appliance_photos/img/' + building.photo_id) }}" />
+          <div class="rectangle-2767-nFnupU"></div>
+        </div>
+        <a href = "{{url_for('commercial.construction', id = building.id)}}"><div class="rectangle-2775-C61RwL"></div></a>
+        <a href="{{url_for('commercial.areas', id = building.id)}}"> <div class="rectangle-2776-C61RwL"></div></a>
+        <a href = "{{url_for('commercial.areas', id = building.id)}}"><div class="rectangle-2777-C61RwL"></div></a>
+        <a href = "{{url_for('commercial.construction', id = building.id)}}"><div class="add-building-envelope-C61RwL coresansc-65-bold-white-11px">Add Building Envelope</div></a>
+        <a href="{{url_for('commercial.areas', id = building.id)}}"><div class="add-areas-equipment-C61RwL coresansc-65-bold-white-11px">Add Areas / Equipment</div></a>
+        <a href = "{{url_for('commercial.areas', id = building.id)}}"><div class="add-panels-C61RwL coresansc-65-bold-cerulean-frost-11px">Add Panels</div></a>
+      </div>
+    </div>
+  </body>
+</html>

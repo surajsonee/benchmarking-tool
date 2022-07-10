@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/lights.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="equipment-area" />
+    <div class="container-center-horizontal">
+      <div class="equipment-area screen">
+        <a href = "{{url_for('commercial.areaequipment', id = area.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="view-hvac-equipment-C61RwL">View Appliances</div>
+    {% for appliance in appliances %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">{{ appliance.appliance_type }}</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Quantity</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{ appliance.quantity }}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Wattage</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{ appliance.wattage }}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <a href = "{{ url_for('commercial.appliance',id=area.id)  }}"><div class="rectangle-2798-K2Koio"></div></a>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href = "{{ url_for('commercial.appliance',id=area.id)  }}"><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="{{ url_for('commercial.updateappliance', id=appliance.id)  }}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href="{{ url_for('commercial.deleteappliance', id=appliance.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static',filename='appliance_photos/img/' + appliance.photo_id) }}" />
+          </div>
+          {% endfor %}
+        <div class="rectangle-2778-C61RwL"></div>
+        <a href = "{{ url_for('commercial.appliance',id=area.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add Appliance</div></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

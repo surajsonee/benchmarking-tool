@@ -1,0 +1,134 @@
+{
+  "morningData": [
+    {
+      "value": 45,
+      "hours": 3,
+      "price": 2.76,
+      "velocity": 13.44,
+      "gas": 5.1
+    },
+    {
+      "value": 55,
+      "hours": 5,
+      "price": 6.76,
+      "velocity": 12,
+      "gas": 7.2
+    },
+    {
+      "value": 65,
+      "hours": 9,
+      "price": 3.76,
+      "velocity": 17,
+      "gas": 6.5
+    },
+    {
+      "value": 75,
+      "hours": 4,
+      "price": 6.76,
+      "velocity": 94,
+      "gas": 34
+    },
+    {
+      "value": 71,
+      "hours": 2,
+      "price": 6.76,
+      "velocity": 10.44,
+      "gas": 4.1
+    },
+    {
+      "value": 63,
+      "hours": 9,
+      "price": 1.76,
+      "velocity": 98,
+      "gas": 2.6
+    }
+  ],
+  "AfterNoonData": [
+    {
+      "value": 45,
+      "hours": 3,
+      "price": 2.76,
+      "velocity": 13.44,
+      "gas": 5.1
+    },
+    {
+      "value": 55,
+      "hours": 5,
+      "price": 6.76,
+      "velocity": 12,
+      "gas": 7.2
+    },
+    {
+      "value": 66,
+      "hours": 9,
+      "price": 3.76,
+      "velocity": 17,
+      "gas": 6.5
+    },
+    {
+      "value": 68,
+      "hours": 4,
+      "price": 6.76,
+      "velocity": 94,
+      "gas": 34
+    },
+    {
+      "value": 70,
+      "hours": 2,
+      "price": 6.76,
+      "velocity": 10.44,
+      "gas": 4.1
+    },
+    {
+      "value": 80,
+      "hours": 9,
+      "price": 1.76,
+      "velocity": 98,
+      "gas": 2.6
+    }
+  ],
+  "NightData": [
+    {
+      "value": 45,
+      "hours": 3,
+      "price": 2.76,
+      "velocity": 13.44,
+      "gas": 5.1
+    },
+    {
+      "value": 55,
+      "hours": 5,
+      "price": 6.76,
+      "velocity": 12,
+      "gas": 7.2
+    },
+    {
+      "value": 66,
+      "hours": 9,
+      "price": 3.76,
+      "velocity": 17,
+      "gas": 6.5
+    },
+    {
+      "value": 68,
+      "hours": 4,
+      "price": 6.76,
+      "velocity": 94,
+      "gas": 34
+    },
+    {
+      "value": 70,
+      "hours": 2,
+      "price": 6.76,
+      "velocity": 10.44,
+      "gas": 4.1
+    },
+    {
+      "value": 75,
+      "hours": 9,
+      "price": 1.76,
+      "velocity": 98,
+      "gas": 2.6
+    }
+  ]
+}

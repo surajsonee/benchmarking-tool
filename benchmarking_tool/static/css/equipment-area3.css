@@ -1,0 +1,386 @@
+/* screen - equipment-area-14 */
+
+.equipment-area-14 {
+  background-color: #ffffff;
+  height: 812px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.equipment-area-14 .chevron-down-lHq3kh {
+  --z-index: 1;
+  background-color: transparent;
+  height: 11px;
+  left: 3px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 2px;
+  width: 11px;
+}
+.equipment-area-14 .group-6900-C61RwL {
+  --z-index: 1;
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  opacity: 1;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.equipment-area-14 .group-7184-C61RwL {
+  --z-index: 4;
+  background-color: transparent;
+  cursor: pointer;
+  height: 17px;
+  left: 328px;
+  opacity: 1;
+  position: absolute;
+  top: 114px;
+  transform: rotate(-180.00deg);
+  width: 17px;
+}
+.equipment-area-14 .lighting-equipment-C61RwL {
+  --z-index: 2;
+  background-color: transparent;
+  color: #6e9ac0;
+  font-family: 'Core Sans C-75ExtraBold', Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 116px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area-14 .rectangle-15-C61RwL {
+  --z-index: 3;
+  background-color: #0d1758;
+  height: 1px;
+  left: 30px;
+  mix-blend-mode: normal;
+  opacity: 0.06;
+  position: absolute;
+  top: 145px;
+  width: 315px;
+}
+.equipment-area-14 .rectangle-2316-lHq3kh {
+  --z-index: 0;
+  background-color: #6e9ac0;
+  border-radius: 28px;
+  height: 17px;
+  left: 0px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 17px;
+}
+.equipment-area-14 .vector-0b6SsM {
+  --z-index: 0;
+  background-color: transparent;
+  background-image: url(../img/vector-12@2x.svg);
+  background-size: 100% 100%;
+  height: 6px;
+  left: 2px;
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  transform: rotate(360.00deg);
+  width: 7px;
+}
+.equipment-area-14 .vector-88-lrkHPC {
+  --z-index: 0;
+  background-color: transparent;
+  background-image: url(../img/vector-88@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: 10px;
+  opacity: 1;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.equipment-area-14 .vector-89-lrkHPC {
+  --z-index: 2;
+  background-color: transparent;
+  background-image: url(../img/vector-89@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: -1px;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.equipment-area-14 .vector-90-lrkHPC {
+  --z-index: 1;
+  background-color: transparent;
+  background-image: url(../img/vector-88@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: -1px;
+  opacity: 1;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.equipment-area-14 .view-lighting-C61RwL {
+  --z-index: 0;
+  background-color: transparent;
+  color: #1d5280;
+  font-family: 'Core Sans C-65Bold', Helvetica;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+/* screen - equipment-area3 */
+
+.equipment-area3 {
+  background-color: #ffffff;
+  height: 812px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.equipment-area3 .add-4SxUMd {
+  --z-index: 1;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Core Sans C-55Medium', Helvetica;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 62px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area3 .chevron-down-lHq3kh {
+  --z-index: 1;
+  background-color: transparent;
+  height: 11px;
+  left: 3px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 2px;
+  width: 11px;
+}
+.equipment-area3 .group-6900-C61RwL {
+  --z-index: 1;
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  opacity: 1;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.equipment-area3 .group-7184-C61RwL {
+  --z-index: 4;
+  background-color: transparent;
+  height: 17px;
+  left: 328px;
+  opacity: 1;
+  position: absolute;
+  top: 114px;
+  transform: rotate(-180.00deg);
+  width: 17px;
+}
+.equipment-area3 .group-7262-C61RwL {
+  --z-index: 7;
+  background-color: transparent;
+  cursor: pointer;
+  height: 25px;
+  left: 115px;
+  opacity: 1;
+  position: absolute;
+  top: 239px;
+  width: 147px;
+}
+.equipment-area3 .lighting-equipment-C61RwL {
+  --z-index: 2;
+  background-color: transparent;
+  color: #6e9ac0;
+  font-family: 'Core Sans C-75ExtraBold', Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 116px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area3 .rectangle-15-C61RwL {
+  --z-index: 3;
+  background-color: #0d1758;
+  height: 1px;
+  left: 30px;
+  mix-blend-mode: normal;
+  opacity: 0.06;
+  position: absolute;
+  top: 145px;
+  width: 315px;
+}
+.equipment-area3 .rectangle-2316-lHq3kh {
+  --z-index: 0;
+  background-color: #6e9ac0;
+  border-radius: 28px;
+  height: 17px;
+  left: 0px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 17px;
+}
+.equipment-area3 .rectangle-2798-4SxUMd {
+  --z-index: 0;
+  background-color: #1d5280;
+  border-radius: 6px;
+  height: 25px;
+  left: 0px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 145px;
+}
+.equipment-area3 .rectangle-2814-C61RwL {
+  --z-index: 6;
+  background-color: transparent;
+  border: 1px solid #e7e9f5;
+  height: 118px;
+  left: 30px;
+  opacity: 1;
+  position: absolute;
+  top: 166px;
+  width: 315px;
+}
+.equipment-area3 .vector-0b6SsM {
+  --z-index: 0;
+  background-color: transparent;
+  background-image: url(../img/vector-12@2x.svg);
+  background-size: 100% 100%;
+  height: 6px;
+  left: 2px;
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  transform: rotate(360.00deg);
+  width: 7px;
+}
+.equipment-area3 .vector-88-lrkHPC {
+  --z-index: 0;
+  background-color: transparent;
+  background-image: url(../img/vector-88@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: 10px;
+  opacity: 1;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.equipment-area3 .vector-89-lrkHPC {
+  --z-index: 2;
+  background-color: transparent;
+  background-image: url(../img/vector-89@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: -1px;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.equipment-area3 .vector-90-lrkHPC {
+  --z-index: 1;
+  background-color: transparent;
+  background-image: url(../img/vector-88@2x.svg);
+  background-size: 100% 100%;
+  height: 2px;
+  left: -1px;
+  opacity: 1;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.equipment-area3 .view-lighting-C61RwL {
+  --z-index: 0;
+  background-color: transparent;
+  color: #1d5280;
+  font-family: 'Core Sans C-65Bold', Helvetica;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area3 .you-dont-have-a-hting-added-yet-C61RwL {
+  --z-index: 5;
+  background-color: transparent;
+  color: #d9d9d9;
+  font-family: 'Core Sans C-55Medium', Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 105px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 186px;
+  width: auto;
+}

@@ -1,0 +1,469 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1="my-4">Equipment for for {{ area }}</h1=>
+
+
+        <h2>HVAC Equipment</h2>
+        {% if steam_boilers|length > 0 %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3">Steam Boiler</td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for steam_boiler in steam_boilers %}
+                <tr>
+                    <td>{{ steam_boiler.model_number }}</td>
+                    <td>{{ steam_boiler.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletesteamboiler', id=steam_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_steam_boiler', id = steam_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% if hydronic_boilers|length > 0 %}
+            <tr><td></td></tr>
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Hydronic Boiler</td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hydronic_boiler in hydronic_boilers %}
+                <tr>
+                    <td>{{ hydronic_boiler.model_number }}</td>
+                    <td>{{ hydronic_boiler.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+        {% endif %}
+        {% if pumps|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Add Pump</td></tr>
+                <tr>
+                    <th>Pump Head</th>
+                    <th>Pump GPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pump in pumps %}
+                <tr>
+                    <td>{{ pump.head }}</td>
+                    <td>{{ pump.gpm }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+        {% endif %}
+        {% if motors|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Add Motor</td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for motor in motors %}
+                <tr>
+                    <td>{{ motor.model_number }}</td>
+                    <td>{{ motor.serial_number }}</td>
+                    <td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif  %}
+        {% if furnaces|length > 0 %}
+        <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3">Furnace</td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for furnace in furnaces %}
+                <tr>
+                    <td>{{ furnace.model_number }}</td>
+                    <td>{{ furnace.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+        {% endif %}
+        {% if unit_heaters|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Unit Heater</td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for unit_heater in unit_heaters %}
+                <tr>
+                    <td>{{ unit_heater.model_number }}</td>
+                    <td>{{ unit_heater.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% endif %}
+        {% if gas_fired_heating_coils|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Gas Fired Heating Coil</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gas_fired_heating_coil in gas_fired_heating_coils %}
+                <tr>
+                    <td>{{ gas_fired_heating_coil.model_number }}</td>
+                    <td>{{ gas_fired_heating_coil.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if heat_pumps|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Heat Pump</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for heat_pump in heat_pumps %}
+                <tr>
+                    <td>{{ heat_pump.model_number }}</td>
+                    <td>{{ heat_pump.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% endif %}
+        {% if electric_rest_heating_coils|length > 0 %}
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Electric Rest Heating Coil</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for electric_rest_heating_coil in electric_rest_heating_coils %}
+                <tr>
+                    <td>{{ electric_rest_heating_coil.model_number }}</td>
+                    <td>{{ electric_rest_heating_coil.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if infrared_heaters|length > 0 %}
+
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Infrared Heater</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for infrared_heater in infrared_heaters %}
+                <tr>
+                    <td>{{ infrared_heater.model_number }}</td>
+                    <td>{{ infrared_heater.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if make_up_air_units|length > 0 %}
+
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Make Up Air Unit</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for make_up_air_unit in make_up_air_units %}
+                <tr>
+                    <td>{{ make_up_air_unit.model_number }}</td>
+                    <td>{{ make_up_air_unit.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if packaged_rtus|length > 0 %}
+
+
+       <table class='table'>
+            <thead>
+                <tr><td colspan="3">Packaged RTU</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for packaged_rtu in packaged_rtus %}
+                <tr>
+                    <td>{{ packaged_rtu.model_number }}</td>
+                    <td>{{ packaged_rtu.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </tbody>
+    </table>
+            {% endif %}
+            {% if chillers|length > 0 %}
+           <table class='table'>
+            <thead>
+                <tr><td colspan="3">Chiller</td></tr>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chiller in chillers %}
+                <tr>
+                    <td>{{ chiller.model_number }}</td>
+                    <td>{{ chiller.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if mini_split_systems|length > 0 %}
+           <table class='table'>
+            <thead>
+                <tr><td colspan="3">Mini Split System</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mini_split_system in mini_split_systems %}
+                <tr>
+                    <td>{{ mini_split_system.model_number }}</td>
+                    <td>{{ mini_split_system.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        </table>
+        {% if packaged_terminal_acs|length > 0 %}
+
+           <table class='table'>
+            <thead>
+                <tr><td colspan="3">Packaged Terminal AC</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for packaged_terminal_ac in packaged_terminal_acs %}
+                <tr>
+                    <td>{{ packaged_terminal_ac.model_number }}</td>
+                    <td>{{ packaged_terminal_ac.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        {% if condensing_unit_systems|length > 0 %}
+
+           <table class='table'>
+            <thead>
+                <tr><td colspan="3">Condensing Unit System</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for condensing_unit_system in condensing_unit_systems %}
+                <tr>
+                    <td>{{ condensing_unit_system.model_number }}</td>
+                    <td>{{ condensing_unit_system.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        {% if window_air_conditioners|length > 0 %}
+
+           <table class='table'>
+            <thead>
+                <tr><td colspan="3">Window Air Conditioner</td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for window_air_conditioner in window_air_conditioners %}
+                <tr>
+                    <td>{{ window_air_conditioner.model_number }}</td>
+                    <td>{{ window_air_conditioner.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </tbody>
+    </table>
+    {% endif %}
+        <a class="btn btn-danger btn-sm" href='/commercial/hvac_index/{{ area.id }}'>Add HVAC</a>
+
+        <h2>DHW Equipment</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Equipment Type</th>
+                    <th>Tag</th>
+                    <th>Manufacturer</th>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                    <th>Input Capacity</th>
+                    <th>Fuel Type</th>
+                    <th>Efficiency</th>
+                    <th>Storage Volume</th>
+                    <th>Set Point</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dhw in dhws %}
+                <tr>
+                    <td><a>{{ dhw.equipment_type }}</a></td>
+                    <td>{{ dhw.tag }}</td>
+                    <td>{{ dhw.manufacturer }}</td>
+                    <td>{{ dhw.model_number }}</td>
+                    <td>{{ dhw.serial_number }}</td>
+                    <td>{{ dhw.input_capacity }}</td>
+                    <td>{{ dhw.fuel_type }}</td>
+                    <td>{{ dhw.efficiency }}</td>
+                    <td>{{ dhw.storage_volume }}</td>
+                    <td>{{ dhw.set_point }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletedhw', id=dhw.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updatedhw', id=dhw.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatedhw', id=dhw.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatedhw', id=dhw.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href='/adddhw/{{ area.id }}'>Add DHW</a>
+
+
+        <h2>Appliances</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Appliance Type</th>
+                    <th>Quantity</th>
+                    <th>Wattage</th>
+
+                    <th>                    
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appliance in appliances %}
+                <tr>
+                    <td><a>{{ appliance.appliance_type }}</a></td>
+                    <td>{{ appliance.quantity }}</td>
+                    <td>{{ appliance.wattage }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteappliance', id=appliance.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updateappliance', id=appliance.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateappliance', id=appliance.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateappliance', id=appliance.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addappliance/{{ area.id }}'>Add Appliance</a>
+
+
+</div>
+{% endblock %}

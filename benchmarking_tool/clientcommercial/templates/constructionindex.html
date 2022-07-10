@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1="my-4">Construction of {{ building.id }}</h1=>
+
+
+        <h2>Exterior Walls</h2>
+        <table class='table'>
+            <thead>
+                <tr>       
+                    <th>Material Type</th>
+                    <th>R Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exteriorwall in exteriorwalls %}
+                <tr>
+                    <td><a>{{ exteriorwall.material }}</a></td>
+                    <td>{{ exteriorwall.rvalue }}</td>
+                    <td></td>
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addexteriorwall/{{ building_id}}'>Add Exterior Wall</a>
+
+
+        <h2>Roofs</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>R Value</th>
+                    <th>                    
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for roof in roofs %}
+                <tr>
+                    <td><a>{{ roof.material }}</a></td>
+                    <td>{{ roof.rvalue }}</td>
+                    <td></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addroof/{{ building_id }}'>Add Roof</a>
+
+
+
+        <h2>Roof Finish</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>R Value</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for rooffinish in rooffinishs %}
+                <tr>
+                    <td><a>{{ rooffinish.material }}</a></td>
+                    <td>{{ rooffinish.rvalue }}</td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addrooffinish/{{ building_id }}'>Add Roof Finish</a>
+
+        <h2>Foundation</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Foundation Type</th>
+                    <th>Material</th> 
+                    <th>Rx</th>
+                    <th>R Value</th>                
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for foundation in foundations %}
+                <tr>
+                    <td><a>{{ foundation.foundationtype }}</a></td>
+                    <td>{{ foundation.material }}</td>
+                    <td>{{ foundation.rx }}</td>
+                    <td>{{ foundation.rvalue }}</td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+        <a class="btn btn-danger btn-sm" href='/commercial/addfoundation/{{ building_id }}'>Add Foundation</a>
+
+
+</div>
+{% endblock %}

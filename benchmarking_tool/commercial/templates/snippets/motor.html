@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-motor.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-motor" />
+    <div class="container-center-horizontal">
+      <div class="add-motor screen">
+        <div class="add-motor-C61RwL">Add Motor</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="group-6899-C61RwL">
+          <div>{{ form.manufacturer( class="rectangle-2345-Mz8XNq border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7202-C61RwL">
+          <div>{{ form.phase( class="rectangle-2345-9bVGbx border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6908-C61RwL">
+          <div >{{ form.model_number(class="rectangle-2345-ilCFrg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6909-C61RwL">
+          <div >{{ form.serial_number(class="rectangle-2345-eJPJAb border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6901-C61RwL">
+          <div>{{ form.year_built( class="rectangle-2345-CvPFFg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7194-C61RwL">
+          <div>{{ form.horsepower( class="rectangle-2345-mfpI2o border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7196-C61RwL">
+          <div>{{ form.effciency( class="rectangle-2345-WjY3xc border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7198-C61RwL">
+          <div > {{ form.bhp(class="rectangle-2345-Ndw5eM border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7200-C61RwL">
+          <div>{{ form.fla( class="rectangle-2345-2SwLXk border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6910-C61RwL">
+          <div >{{ form.condition(class="rectangle-2345-Z05HMs border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7195-C61RwL">
+          <div >{{ form.rpm(class="rectangle-2345-YSymz6 border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7197-C61RwL">
+          <div >{{ form.volts(class="rectangle-2345-701xBj border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7199-C61RwL">
+          <div >{{ form.frame(class="rectangle-2345-5ADxnf border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7201-C61RwL">
+          <div >{{ form.cfm(class="rectangle-2345-HnH0kx border-1px-mystic")}}</div>
+        </div>
+        <div class="manufacturer-C61RwL coresansc-65-bold-cerulean-frost-11px">Manufacturer</div>
+        <div class="phase-C61RwL coresansc-65-bold-cerulean-frost-11px">Phase</div>
+        <div class="model-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Model Number</div>
+        <div class="serial-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Serial Number</div>
+        <div class="year-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Year Number</div>
+        <div class="horsepower-C61RwL coresansc-65-bold-cerulean-frost-11px">Horsepower</div>
+        <div class="efficiency-C61RwL coresansc-65-bold-cerulean-frost-11px">Efficiency</div>
+        <div class="bhp-C61RwL coresansc-65-bold-cerulean-frost-11px">BHP</div>
+        <div class="fla-C61RwL coresansc-65-bold-cerulean-frost-11px">FLA</div>
+        <div class="condition-C61RwL coresansc-65-bold-cerulean-frost-11px">Condition</div>
+        <div class="rpm-C61RwL coresansc-65-bold-cerulean-frost-11px">RPM</div>
+        <div class="volts-C61RwL coresansc-65-bold-cerulean-frost-11px">Volts</div>
+        <div class="frame-C61RwL coresansc-65-bold-cerulean-frost-11px">Frame</div>
+        <div class="cfm-C61RwL coresansc-65-bold-cerulean-frost-11px">CFM</div>
+        <div class="group-7193-C61RwL">
+          <img class="vector-LA17xu" src="img/vector@2x.svg" />
+          <img class="vector-TBtSab" src="img/vector-1@2x.svg" />
+        </div>
+        <div class="group-7192-C61RwL">
+          <div class="rectangle-2755-9xz0lo"></div>
+          <div class="add-9xz0lo">Add</div>
+        </div>
+        <div class="group-7194-VMr6Om">
+          <div class="rectangle-2755-UYCIOc"></div>
+          <div class="cancel-UYCIOc">Cancel</div>
+        </div>
+        <div class="rectangle-2806-C61RwL border-1px-mystic"></div>
+        <div class="group-7219-C61RwL">
+          <label for='motor_photo' class="rectangle-2755-83XzNc"><input type="file" style='display: none;' accept="image/*" capture="user"  id='motor_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+            name="motor_photo"></label>
+          <label for='motor_photo' class="add-photo-83XzNc">Add Photo</label>
+        </div>
+        <div class="group-7220-C61RwL">
+          <div class="rectangle-2807-KSWG3U"></div>
+          <div class="view-photos-KSWG3U">View Photos</div>
+        </div>
+        <div class="layer-1-C61RwL">
+          <img class="vector-YBNzTx" src="img/vector-2@2x.svg" />
+          <img class="vector-FIkdjm" src="img/vector-3@2x.svg" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

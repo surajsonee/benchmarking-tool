@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/operating-hours.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="operating-hours" />
+    <div class="container-center-horizontal">
+      <div class="operating-hours screen">
+        <div class="overlap-group31">
+          <div class="rectangle-2893"></div>
+          <div class="header"></div>
+          <div class="welcome-john avertacy-bold-sapphire-20px">Welcome John,</div>
+          <div class="kpis avertacy-bold-sapphire-13px">KPI’S</div>
+          <div class="historical avertacy-bold-sapphire-13px">Historical</div>
+          <div class="inventory avertacy-bold-sapphire-13px">Inventory</div>
+          <div class="utilities avertacy-bold-sapphire-13px">Utilities</div>
+          <div class="operating-hours-1 avertacy-bold-sapphire-13px">Operating Hours</div>
+          <div class="group-7235">
+            <div class="ellipse-437"></div>
+          </div>
+          <img class="rectangle-2938" src="img/rectangle-2938@2x.svg" />
+          <img class="kaltire-256-2" src="img/kaltire--256-2@2x.png" />
+          <div class="store-087 avertacy-bold-sapphire-16px">Store #087</div>
+          <p class="address avertacy-bold-sapphire-10px">4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS</p>
+          <div class="group-7195"><img class="chevron-down" src="img/chevron-down@2x.svg" /></div>
+          <div class="your-viewing avertacy-bold-sapphire-16px">Your Viewing</div>
+          <div class="live-usage avertacy-bold-sapphire-13px">Live Usage</div>
+        </div>
+        <div class="overlap-group32">
+          <div class="flex-row">
+            <h1 class="title avertacy-bold-sapphire-38px">Operating Hours</h1>
+            <div class="group-7393">
+              <div class="group-7244"><img class="chevron-down-1" src="img/chevron-down-1@2x.svg" /></div>
+              <div class="name">April 2021</div>
+              <div class="group-7392">
+                <div class="overlap-group-5">
+                  <div class="rectangle-2316"></div>
+                  <img class="chevron-down-2" src="img/chevron-down-2@2x.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-7425">
+            <div class="overlap-group1-2">
+              <div class="group-7423 avertacy-bold-white-15px">
+                <div class="sunday">sunday</div>
+                <div class="monday">monday</div>
+                <div class="tuesday">tuesday</div>
+                <div class="wednesday">wednesday</div>
+                <div class="thursday">thursday</div>
+                <div class="friday">friday</div>
+                <div class="saturday">saturday</div>
+              </div>
+              <div class="group-7424">
+                <div class="rectangle-3557"></div>
+                <div class="rectangle-3558"></div>
+                <div class="rectangle-3559"></div>
+                <div class="rectangle-3560"></div>
+                <div class="rectangle-3561"></div>
+                <div class="rectangle-3562"></div>
+              </div>
+            </div>
+          </div>
+          <div class="overlap-group33">
+            <div class="overlap-group2">
+              <div class="group-735"><div class="number avertacy-bold-sapphire-9px">2</div></div>
+              <div class="group-737">
+                <div class="group-7373">
+                  <div class="number-1 avertacy-bold-apple-21px">8</div>
+                  <div class="group-737-1">
+                    <div class="ellipse-1778"></div>
+                    <div class="ellipse-1779"></div>
+                  </div>
+                  <div class="overlap-group avertacy-bold-apple-8px">
+                    <div class="number-2">00</div>
+                    <div class="am">am</div>
+                  </div>
+                </div>
+                <div class="rectangle-3533"></div>
+                <div class="group-7372">
+                  <div class="number-3 avertacy-bold-apple-21px">10</div>
+                  <div class="group-737-1">
+                    <div class="ellipse-1778"></div>
+                    <div class="ellipse-1779"></div>
+                  </div>
+                  <div class="overlap-group avertacy-bold-apple-8px">
+                    <div class="number-2">30</div>
+                    <div class="price">pm</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="group-7428">
+              <div class="flex-col-2">
+                <div class="flex-row-1">
+                  <div class="group-7367">
+                    <div class="rectangle-3500"></div>
+                    <div class="rectangle-353"></div>
+                    <div class="rectangle-353"></div>
+                  </div>
+                  <div class="overlap-group2-1">
+                    <div class="group-735"><div class="number avertacy-bold-sapphire-9px">3</div></div>
+                    <div class="group-737">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-1">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-1">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group-7359">
+                    <div class="number-9 avertacy-bold-sapphire-9px">4</div>
+                    <div class="group-7401">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-2">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-2">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-row-2">
+                  <div class="overlap-group-1">
+                    <div class="overlap-group-2">
+                      <div class="overlap-group1">
+                        <div class="rectangle-3554"></div>
+                      </div>
+                      <div class="rectangle-3555"></div>
+                      <div class="closed avertacy-bold-flamingo-12px">Closed</div>
+                    </div>
+                    <div class="number-4 avertacy-bold-sapphire-9px">5</div>
+                  </div>
+                  <div class="overlap-group1-1">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-3">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-3">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-4 avertacy-bold-sapphire-9px">6</div>
+                  </div>
+                  <div class="overlap-group1-1">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-4">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-4">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-4 avertacy-bold-sapphire-9px">7</div>
+                  </div>
+                  <div class="overlap-group3">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-5">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-5">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-5 avertacy-bold-sapphire-9px">8</div>
+                  </div>
+                  <div class="overlap-group-3">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-6">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-6">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-5 avertacy-bold-sapphire-9px">9</div>
+                  </div>
+                  <div class="overlap-group-3">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-7">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-7">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">10</div>
+                  </div>
+                  <div class="overlap-group-3">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-8">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-8">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-5 avertacy-bold-sapphire-9px">11</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-3">
+                <div class="flex-col-3">
+                  <div class="overlap-group-1">
+                    <div class="overlap-group-2">
+                      <div class="overlap-group1">
+                        <div class="rectangle-3554"></div>
+                      </div>
+                      <div class="rectangle-3555"></div>
+                      <div class="closed avertacy-bold-flamingo-12px">Closed</div>
+                    </div>
+                    <div class="number-10 avertacy-bold-sapphire-9px">12</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="overlap-group-2">
+                      <div class="overlap-group1">
+                        <div class="rectangle-3554"></div>
+                      </div>
+                      <div class="rectangle-3555"></div>
+                      <div class="closed avertacy-bold-flamingo-12px">Closed</div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">19</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="overlap-group-2">
+                      <div class="overlap-group1">
+                        <div class="rectangle-3554"></div>
+                      </div>
+                      <div class="rectangle-3555"></div>
+                      <div class="closed avertacy-bold-flamingo-12px">Closed</div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">26</div>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="overlap-group-1">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-9">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-9">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">13</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-10">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-10">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-11 avertacy-bold-sapphire-9px">20</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-11">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-11">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">27</div>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="overlap-group-1">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-12">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-12">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">14</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-13">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-13">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">21</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-739">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-14">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-14">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-7 avertacy-bold-sapphire-9px">28</div>
+                  </div>
+                </div>
+                <div class="flex-col-4">
+                  <div class="overlap-group-1">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-15">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-15">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-8 avertacy-bold-sapphire-9px">15</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-16">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-16">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">22</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-17">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-17">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">29</div>
+                  </div>
+                </div>
+                <div class="flex-col-1">
+                  <div class="overlap-group-1">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-18">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-18">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">16</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-19">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-19">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">23</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-20">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-20">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">30</div>
+                  </div>
+                </div>
+                <div class="flex-col-1">
+                  <div class="overlap-group-1">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-21">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-21">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-8 avertacy-bold-sapphire-9px">17</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-22">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-22">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">24</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-23">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-23">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-5 avertacy-bold-sapphire-9px">31</div>
+                  </div>
+                </div>
+                <div class="flex-col-1">
+                  <div class="overlap-group-1">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-24">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-24">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-8 avertacy-bold-sapphire-9px">18</div>
+                  </div>
+                  <div class="overlap-group-4">
+                    <div class="group-738">
+                      <div class="group-7373">
+                        <div class="number-1 avertacy-bold-apple-21px">8</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">00</div>
+                          <div class="am-25">am</div>
+                        </div>
+                      </div>
+                      <div class="rectangle-3533-1"></div>
+                      <div class="group-7372">
+                        <div class="number-3 avertacy-bold-apple-21px">10</div>
+                        <div class="group-737-1">
+                          <div class="ellipse-1778"></div>
+                          <div class="ellipse-1779"></div>
+                        </div>
+                        <div class="overlap-group avertacy-bold-apple-8px">
+                          <div class="number-2">30</div>
+                          <div class="price-25">pm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number-6 avertacy-bold-sapphire-9px">25</div>
+                  </div>
+                  <div class="group-7421"></div>
+                </div>
+              </div>
+            </div>
+            <div class="overlap-group30">
+              <div class="overlap-group2-2">
+                <div class="group-7356"><div class="number-12">1</div></div>
+                <div class="group-737">
+                  <div class="group-7373">
+                    <div class="number-13">8</div>
+                    <div class="group-737-1">
+                      <div class="ellipse-1778-1"></div>
+                      <div class="ellipse-1779-1"></div>
+                    </div>
+                    <div class="overlap-group avertacy-bold-white-8px">
+                      <div class="number-2">00</div>
+                      <div class="am-26">am</div>
+                    </div>
+                  </div>
+                  <div class="rectangle-3533-2"></div>
+                  <div class="group-7372">
+                    <div class="number-14">10</div>
+                    <div class="group-737-1">
+                      <div class="ellipse-1778-1"></div>
+                      <div class="ellipse-1779-1"></div>
+                    </div>
+                    <div class="overlap-group avertacy-bold-white-8px">
+                      <div class="number-2">30</div>
+                      <div class="price-26">pm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img class="rectangle" src="img/rectangle@2x.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

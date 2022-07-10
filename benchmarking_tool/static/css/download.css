@@ -1,0 +1,25 @@
+.oneAndOnlyDiv {
+  height: 600px;
+  width: 700px;
+  border: 3px solid gray;
+  background: white;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 5%;
+  color: #0D1758;
+  border-radius: 15px;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.oneAndOnlyDiv:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  width: 0;
+  border-top: 100px solid black;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}

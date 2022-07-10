@@ -1,0 +1,5 @@
+{% for i in range(0,len) %}
+<div>
+	<a href = "{{url_for('commercial.uploadpanels', building_id=building_ids[i])}}">{{descriptions[i]}}</a>
+</div>
+{% endfor %}

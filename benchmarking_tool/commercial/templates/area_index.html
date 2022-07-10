@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/areas.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="areas" />
+    <div class="container-center-horizontal">
+      <div class="areas screen">
+      <div class="equipment-area screen">
+      <a href = "{{url_for('commercial.onsiteaudit', id = building.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="areas-C61RwL">Areas</div>
+        <div class="rectangle-2769-C61RwL">
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="address-of-building-C61RwL">Address of Building:</div>
+        <div class="operating-hours-C61RwL">Operating Hours</div>
+        <div class="some-address-C61RwL">{{building.address}}</div>
+        <div class="x0800-1600-C61RwL">08:00 - 16:00</div>
+        <div class="group-6911-C61RwL">
+          <img class="pexels-pixabay-269077-2-nFnupU" src="{{ url_for('static', filename='appliance_photos/img/' + building.photo_id) }}" />
+          <div class="rectangle-2767-nFnupU"></div>
+        </div>
+        {% for area in areas %}
+        <div class="rectangle-2784-C61RwL">
+        <img class="pexels-pixabay-209251-1-C61RwL" src="{{ url_for('static', filename='appliance_photos/img/' + area.photo_id1) }}" />
+        <img class="pexels-pixabay-221047-1-C61RwL" src="{{ url_for('static', filename='appliance_photos/img/' + area.photo_id2) }}"/>
+        <div class="rectangle-2775-C61RwL"></div>
+        <a href = "{{ url_for('commercial.areaequipment',id=area.id)  }}"><div class="area-1-C61RwL coresansc-65-bold-white-11px">{{area.name}}</div></a>
+        <div class="rectangle-2779-C61RwL"></div>
+        <div class="rectangle-2780-C61RwL"></div>
+        <a href ="{{ url_for('commercial.deletearea', id=area.id)  }}"><div class="delete-C61RwL coresansc-65-bold-white-11px">Delete</div></a>
+        <a href="{{ url_for('commercial.updatearea', id=area.id)  }}"><div class="update-C61RwL coresansc-65-bold-white-11px">Update</div></a>
+        </div>
+        {% endfor %}
+        </div>
+        <div class="rectangle-2778-C61RwL"></div>
+        <a href = "{{ url_for('commercial.addarea',id=building.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add Area</div></a>
+      </div>
+    </div>
+  </body>
+</html>

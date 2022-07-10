@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/dashboard-day.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="dashboard-day" />
+    <div class="container-center-horizontal">
+      <div class="dashboard-day screen">
+        <div class="rectangle-2893-F7L3xZ"></div>
+        <div class="header-F7L3xZ"><img class="pollen-2-E2uPe7" src="{{ url_for('static',filename='img/pollen-2@2x.png')}}" /></div>
+        <img class="kaltire-256-2-F7L3xZ" src="img/kaltire--256-2@2x.png" />
+        <div class="facility-F7L3xZ avertacy-bold-chathams-blue-20px">Facility</div>
+        <div class="address-F7L3xZ avertacy-bold-chathams-blue-20px">Address</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-F7L3xZ avertacy-bold-cerulean-frost-10px">
+          4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS
+        </p>
+        <div class="group-7195-F7L3xZ">
+          <div class="rectangle-2316-o1IRD0"></div>
+          <div class="chevron-down-o1IRD0"><img class="vector-GpxMxX" src="{{ url_for('static',filename='img/vector-6@2x.svg')}}" /></div>
+        </div>
+        <div class="group-7234-F7L3xZ">
+          <div class="group-oND2Hp">
+            <div class="group-2L9tvN"><img class="vector-KbFvMe" src="{{ url_for('static',filename='img/vector-8@2x.svg')}}" /></div>
+          </div>
+          <img class="vector-oND2Hp" src="{{ url_for('static',filename='img/vector-7@2x.svg')}}" />
+        </div>
+        <img class="vector-F7L3xZ" src="{{ url_for('static',filename='img/vector@2x.svg')}}" />
+        <div class="overview-F7L3xZ avertacy-bold-chathams-blue-20px">Overview</div>
+        <div class="kpis-F7L3xZ avertacy-bold-cerulean-frost-11px">KPI’S</div>
+        <div class="inventory-F7L3xZ avertacy-bold-cerulean-frost-11px">Inventory</div>
+        <div class="utilities-F7L3xZ avertacy-bold-cerulean-frost-11px">Utilities</div>
+        <div class="group-7196-F7L3xZ">
+          <div class="rectangle-2316-RzOHL3"></div>
+          <div class="chevron-down-RzOHL3"><img class="vector-EXosiZ" src="{{ url_for('static',filename='img/vector-9@2x.svg')}}" /></div>
+        </div>
+        <div class="group-7235-F7L3xZ">
+          <img class="x3-c-path-x3-e-IyLOPt" src="{{ url_for('static',filename='img/x3c-path-x3e@2x.svg')}}" />
+          <div class="ellipse-437-IyLOPt"></div>
+        </div>
+        <div class="facility-total-F7L3xZ valign-text-middle avertacy-bold-chathams-blue-16px">Facility Total</div>
+        <div class="panel-1-F7L3xZ valign-text-middle">Panel 1</div>
+        <div class="x180-F7L3xZ valign-text-middle avertacy-bold-black-16px">180</div>
+        <div class="x61-F7L3xZ valign-text-middle avertacy-bold-black-16px">61%</div>
+        <div class="x56900-F7L3xZ valign-text-middle avertacy-bold-black-16px">$56.900</div>
+        <div class="x23000-F7L3xZ valign-text-middle avertacy-bold-black-16px">$23.000</div>
+        <div class="x20300-F7L3xZ valign-text-middle avertacy-bold-black-16px">$20.300</div>
+        <div class="x28900-F7L3xZ valign-text-middle avertacy-bold-black-16px">$28.900</div>
+        <div class="x15900-F7L3xZ valign-text-middle avertacy-bold-black-16px">$15.900</div>
+        <div class="x20300-ukLjjV valign-text-middle avertacy-bold-black-16px">$20.300</div>
+        <div class="x16900-F7L3xZ valign-text-middle avertacy-bold-black-16px">$16.900</div>
+        <div class="x48200-F7L3xZ valign-text-middle avertacy-bold-black-16px">$48.200</div>
+        <div class="x36400-F7L3xZ valign-text-middle avertacy-bold-black-16px">$36.400</div>
+        <div class="x27700-F7L3xZ valign-text-middle avertacy-bold-black-16px">$27.700</div>
+        <div class="x31700-F7L3xZ valign-text-middle avertacy-bold-black-16px">$31.700</div>
+        <div class="x19700-F7L3xZ valign-text-middle avertacy-bold-black-16px">$19.700</div>
+        <div class="panel-2-F7L3xZ valign-text-middle">Panel 2</div>
+        <div class="x150-F7L3xZ valign-text-middle avertacy-bold-black-16px">150</div>
+        <div class="x59-F7L3xZ valign-text-middle avertacy-bold-black-16px">59%</div>
+        <div class="panel-3-F7L3xZ valign-text-middle">Panel 3</div>
+        <div class="x100-F7L3xZ valign-text-middle avertacy-bold-black-16px">100</div>
+        <div class="x31-F7L3xZ valign-text-middle avertacy-bold-black-16px">31%</div>
+        <div class="panel-4-F7L3xZ valign-text-middle">Panel 4</div>
+        <div class="x80-F7L3xZ valign-text-middle avertacy-bold-black-16px">80</div>
+        <div class="x32-F7L3xZ valign-text-middle">32%</div>
+        <div class="panel-5-F7L3xZ valign-text-middle">Panel 5</div>
+        <div class="x185-F7L3xZ valign-text-middle avertacy-bold-black-16px">185</div>
+        <div class="x49-F7L3xZ valign-text-middle avertacy-bold-black-16px">49%</div>
+        <div class="panel-6-F7L3xZ valign-text-middle">Panel 6</div>
+        <div class="x100-ukLjjV valign-text-middle avertacy-bold-black-16px">100</div>
+        <div class="x51-F7L3xZ valign-text-middle avertacy-bold-black-16px">51%</div>
+        <img class="line-156-F7L3xZ" src="img/line-156@1x.svg')}}" /><img
+          class="line-157-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-158-F7L3xZ" src="{{ url_for('static',filename='img/line-156@1x.svg')}}" /><img
+          class="line-159-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-160-F7L3xZ" src="img/line-156@1x.svg')}}" /><img
+          class="line-161-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-162-F7L3xZ" src="{{ url_for('static',filename='img/line-156@1x.svg')}}" /><img
+          class="line-163-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-164-F7L3xZ" src="{{ url_for('static',filename='img/line-156@1x.svg')}}" /><img
+          class="line-165-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-166-F7L3xZ" src="{{ url_for('static',filename='img/line-156@1x.svg')}}" /><img
+          class="line-167-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        /><img class="line-168-F7L3xZ" src="{{ url_for('static',filename='img/line-156@1x.svg')}}" /><img
+          class="line-169-F7L3xZ"
+          src="{{ url_for('static',filename='img/line-156@1x.svg')}}"
+        />
+        <input type= 'checkbox' class="page-8-F7L3xZ" id= 'panel1check' onclick= "chart.toggleSeries('Panel 1'), chart.toggleSeries('Panel 2'), chart.toggleSeries('Panel 3'), chart.toggleSeries('Panel 4'), chart.toggleSeries('Panel 5'), chart.toggleSeries('Panel 6'), toggle(this)" checked/><label for = 'panel1check'></label>
+        <input type= 'checkbox' class="page-9-F7L3xZ" id= 'panel1check' onclick= "chart.toggleSeries('Panel 1');" checked/><label for = 'panel1check'></label>
+          <input type= 'checkbox' class="page-10-F7L3xZ" id= 'panel2check' onclick= "chart.toggleSeries('Panel 2');" checked/><label for = 'panel2check'></label>
+       <input type= 'checkbox' class="page-11-F7L3xZ" id= 'panel2check' onclick= "chart.toggleSeries('Panel 2');" checked/><label for = 'panel2check'></label>
+        <input type= 'checkbox' class="page-12-F7L3xZ" id= 'panel2check' onclick= "chart.toggleSeries('Panel 2');" checked/><label for = 'panel2check'></label>
+        <input type= 'checkbox' class="page-13-F7L3xZ" id= 'panel1check' onclick= "chart.toggleSeries('Panel 5');" checked/><label for = 'panel1check'></label>
+        <input type= 'checkbox' class="page-14-F7L3xZ" id= 'panel1check' onclick= "chart.toggleSeries('Panel 6');" checked/><label for = 'panel1check'></label>
+        <img class="vector-ukLjjV" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" />
+        <div class="k-wh-total-F7L3xZ valign-text-middle avertacy-bold-chathams-blue-16px">kWh Total</div>
+        <img class="vector-wxjJ07" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" />
+        <div class="consumption-percentage-F7L3xZ valign-text-middle avertacy-bold-chathams-blue-16px">
+          Consumption Percentage
+        </div>
+        <img class="vector-8WzJvB" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" />
+        <div class="operating-cost-F7L3xZ valign-text-middle avertacy-bold-chathams-blue-16px">Operating Cost</div>
+        <img class="vector-jxBMbR" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" />
+        <div class="potential-savings-F7L3xZ valign-text-middle avertacy-bold-chathams-blue-16px">
+          Potential Savings
+        </div>
+        <img class="vector-xljW3G" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" />
+        <div class="rectangle-2901-F7L3xZ"><div class="card-body d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 " style ="bottom:0px;" >
+                            <div id="chart"></div>
+                        </div>
+                          <script>
+                            var options = {
+                                  colors: ['#4A75FF', '#F2A047', '#9C5CA6', '#FF5744', '#249369','#253EA5'],
+                                  series: [
+                                  {
+                                    name: "Panel 1",
+                                    data: [{{home_upgrades[0]}},{{home_upgrades[1]}},{{home_upgrades[2]}},{{home_upgrades[3]}},{{home_upgrades[4]}},{{home_upgrades[5]}},{{home_upgrades[6]}},{{home_upgrades[7]}},{{home_upgrades[8]}},{{home_upgrades[9]}},{{home_upgrades[10]}},{{home_upgrades[11]}},{{home_upgrades[12]}},{{home_upgrades[13]}},{{home_upgrades[14]}},{{home_upgrades[15]}},{{home_upgrades[16]}},{{home_upgrades[17]}},{{home_upgrades[18]}},{{home_upgrades[19]}},{{home_upgrades[20]}},{{home_upgrades[21]}},{{home_upgrades[22]}},{{home_upgrades[23]}}]
+                                  },
+                                  {
+                                    name: "Panel 2",
+                                    data: [{{home_upgrades1[0]}},{{home_upgrades1[1]}},{{home_upgrades1[2]}},{{home_upgrades1[3]}},{{home_upgrades1[4]}},{{home_upgrades1[5]}},{{home_upgrades1[6]}},{{home_upgrades1[7]}},{{home_upgrades1[8]}},{{home_upgrades1[9]}},{{home_upgrades1[10]}},{{home_upgrades1[11]}},{{home_upgrades1[12]}},{{home_upgrades1[13]}},{{home_upgrades1[14]}},{{home_upgrades1[15]}},{{home_upgrades1[16]}},{{home_upgrades1[17]}},{{home_upgrades1[18]}},{{home_upgrades1[19]}},{{home_upgrades1[20]}},{{home_upgrades1[21]}},{{home_upgrades1[22]}},{{home_upgrades1[23]}}]
+                                  },
+                                  {
+                                    name: "Panel 3",
+                                    data: [{{home_upgrades3[0]}},{{home_upgrades3[1]}},{{home_upgrades3[2]}},{{home_upgrades3[3]}},{{home_upgrades3[4]}},{{home_upgrades3[5]}},{{home_upgrades3[6]}},{{home_upgrades3[7]}},{{home_upgrades3[8]}},{{home_upgrades3[9]}},{{home_upgrades3[10]}},{{home_upgrades3[11]}},{{home_upgrades3[12]}},{{home_upgrades3[13]}},{{home_upgrades3[14]}},{{home_upgrades3[15]}},{{home_upgrades3[16]}},{{home_upgrades3[17]}},{{home_upgrades3[18]}},{{home_upgrades3[19]}},{{home_upgrades3[20]}},{{home_upgrades3[21]}},{{home_upgrades3[22]}},{{home_upgrades3[23]}}]
+                                  },
+                                  {
+                                    name: "Panel 4",
+                                    data: [{{home_upgrades4[0]}},{{home_upgrades4[1]}},{{home_upgrades4[2]}},{{home_upgrades4[3]}},{{home_upgrades4[4]}},{{home_upgrades4[5]}},{{home_upgrades4[6]}},{{home_upgrades4[7]}},{{home_upgrades4[8]}},{{home_upgrades4[9]}},{{home_upgrades4[10]}},{{home_upgrades4[11]}},{{home_upgrades4[12]}},{{home_upgrades4[13]}},{{home_upgrades4[14]}},{{home_upgrades4[15]}},{{home_upgrades4[16]}},{{home_upgrades4[17]}},{{home_upgrades4[18]}},{{home_upgrades4[19]}},{{home_upgrades4[20]}},{{home_upgrades4[21]}},{{home_upgrades4[22]}},{{home_upgrades4[23]}}]
+                                  },
+                                  {
+                                    name: "Panel 5",
+                                    data: [{{home_upgrades5[0]}},{{home_upgrades5[1]}},{{home_upgrades5[2]}},{{home_upgrades5[3]}},{{home_upgrades5[4]}},{{home_upgrades5[5]}},{{home_upgrades5[6]}},{{home_upgrades5[7]}},{{home_upgrades5[8]}},{{home_upgrades5[9]}},{{home_upgrades5[10]}},{{home_upgrades5[11]}},{{home_upgrades5[12]}},{{home_upgrades5[13]}},{{home_upgrades5[14]}},{{home_upgrades5[15]}},{{home_upgrades5[16]}},{{home_upgrades5[17]}},{{home_upgrades5[18]}},{{home_upgrades5[19]}},{{home_upgrades5[20]}},{{home_upgrades5[21]}},{{home_upgrades5[22]}},{{home_upgrades5[23]}}]
+                                  },
+                                  {
+                                    name: "Panel 6",
+                                    data: [{{home_upgrades6[0]}},{{home_upgrades6[1]}},{{home_upgrades6[2]}},{{home_upgrades6[3]}},{{home_upgrades6[4]}},{{home_upgrades6[5]}},{{home_upgrades6[6]}},{{home_upgrades6[7]}},{{home_upgrades6[8]}},{{home_upgrades6[9]}},{{home_upgrades6[10]}},{{home_upgrades6[11]}},{{home_upgrades6[12]}},{{home_upgrades6[13]}},{{home_upgrades6[14]}},{{home_upgrades6[15]}},{{home_upgrades6[16]}},{{home_upgrades6[17]}},{{home_upgrades6[18]}},{{home_upgrades6[19]}},{{home_upgrades6[20]}},{{home_upgrades6[21]}},{{home_upgrades6[22]}},{{home_upgrades6[23]}}]
+                                  }
+                                ],
+                                  chart: {
+                                  height: '332px',
+                                  type: 'line',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                  row: {
+                                    colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                                    opacity: 0.5
+                                  },
+                                },
+                                xaxis: {
+                                  labels:{
+                                    show: false
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                yaxis:{
+                                  labels:{
+                                  style:{
+                                      colors: 'DarkBlue',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  maxHeight: undefined,
+                                   "formatter": function (val) {
+                                    return val.toFixed(2)
+                                },
+                                },
+                                },
+                                };
+
+                                var chart = new ApexCharts(document.querySelector("#chart"), options);
+                                chart.render();
+                        </script>
+                    </div>
+                  </div>
+                </div>
+      
+        <a href = "{{url_for('commercial.usageday')}}"><div class="group-7241-F7L3xZ">
+          <div class="rectangle-2903-nhfG4r"></div>
+          <div class="group-7237-EtKQpN">
+            <div class="group-XGvAba">
+              <img class="vector-zYxvdP" src="{{ url_for('static',filename='img/vector-10@2x.svg')}}" /><img
+                class="vector-IAfFlbb"
+                src="{{ url_for('static',filename='img/758692407d5cc2b3d1bcecb1ba094166.png')}}"
+              />
+            </div>
+          </div>
+        </div></a>
+        <a href = "{{url_for('commercial.usagedayline')}}"><div class="group-7240-F7L3xZ">
+          <div class="rectangle-2902-EtKQpN"></div>
+          <div class="group-nhfG4r">
+            <div class="group-1CHTP6"><img class="group-2e3U8y" src="{{ url_for('static',filename='img/group@2xxx.svg')}}" /></div>
+          </div>
+        </div></a>
+        <div class="view-by-F7L3xZ avertacy-bold-chathams-blue-20px">View by:</div>
+        <a href = "{{url_for('commercial.usagedayline')}}"><div class="day-F7L3xZ avertacy-bold-chathams-blue-16px">Day</div></a>
+        <a href = "{{url_for('commercial.usageweekline')}}"><div class="week-F7L3xZ avertacy-regular-chathams-blue-16px">Week</div>
+        <a href = "{{url_for('commercial.usagemonthline')}}"><div class="month-F7L3xZ avertacy-regular-chathams-blue-16px">Month</div></a>
+        <div class="from-F7L3xZ">From:</div>
+        <div class="to-F7L3xZ">To:</div>
+        <div class="rectangle-2889-F7L3xZ"></div>
+        <div class="rectangle-2890-F7L3xZ"></div>
+        <p class="day-month-year-F7L3xZ avertacy-bold-cerulean-frost-10px">Day / Month / Year</p>
+        <p class="day-month-year-ukLjjV avertacy-bold-cerulean-frost-10px">Day / Month / Year</p>
+        <div class="march-18th-2021-F7L3xZ">March 18th 2021</div>
+      </div>
+    </div>
+  </body>
+    <script>
+      function toggle(source) {
+      checkboxes = document.getElementsByName('panel1check');
+      for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  </script>
+</html>

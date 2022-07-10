@@ -1,0 +1,5 @@
+git hub link of a algorithm 
+	https://github.com/nilmtk/nilmtk
+	
+non ML way 
+	https://github.com/loneharoon/GSP_energy_disaggregator

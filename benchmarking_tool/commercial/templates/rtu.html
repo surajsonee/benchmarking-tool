@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/electricalpage.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/group-8064.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/frame-1.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+</head>
+<body>
+    <div class="inventory-page">
+        <div class="container-inventory">
+         <div class="inventory">
+             <div class="inventory__sidebar">
+                 <div class="arrow-toggle">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_175_397)">
+                        <path d="M7.3335 11L12.8335 16.5L14.126 15.2075L9.92766 11L14.126 6.7925L12.8335 5.5L7.3335 11Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_175_397">
+                        <rect width="22" height="22" fill="white" transform="translate(0 22) rotate(-90)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+                 </div>
+               <div class="inventory__sidebar--logo">
+                   <a href="#">
+                    <svg width="50" height="58" viewBox="0 0 50 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.31689 36.604C2.31689 29.8725 7.36509 25.1192 14.265 25.1192C21.2491 25.1192 26.2552 29.8725 26.2552 36.604C26.2552 43.3354 21.2491 48.1309 14.265 48.1309C7.3666 48.1309 2.31689 43.3339 2.31689 36.604ZM20.9543 36.604C20.9543 32.3124 18.0933 29.5777 14.265 29.5777C10.4789 29.5777 7.61781 32.3124 7.61781 36.604C7.61781 40.8955 10.4789 43.6302 14.265 43.6302C18.0933 43.6287 20.9543 40.894 20.9543 36.604Z" fill="#4DAAE8"/>
+                        <path d="M18.3551 21.7392C22.5696 21.7392 25.986 18.3227 25.986 14.1082C25.986 9.89373 22.5696 6.47723 18.3551 6.47723C14.1406 6.47723 10.7241 9.89373 10.7241 14.1082C10.7241 18.3227 14.1406 21.7392 18.3551 21.7392Z" fill="#98C355"/>
+                        <path d="M3.80871 57.4301C5.91221 57.4301 7.61743 55.7248 7.61743 53.6213C7.61743 51.5178 5.91221 49.8126 3.80871 49.8126C1.70522 49.8126 0 51.5178 0 53.6213C0 55.7248 1.70522 57.4301 3.80871 57.4301Z" fill="#4DAAE8"/>
+                        <path d="M46.0467 9.99562C47.9899 9.99562 49.5651 8.42039 49.5651 6.47723C49.5651 4.53407 47.9899 2.95883 46.0467 2.95883C44.1036 2.95883 42.5283 4.53407 42.5283 6.47723C42.5283 8.42039 44.1036 9.99562 46.0467 9.99562Z" fill="#DB4B46"/>
+                        <path d="M33.9446 8.85992C36.3912 8.85992 38.3746 6.87656 38.3746 4.42996C38.3746 1.98336 36.3912 0 33.9446 0C31.498 0 29.5146 1.98336 29.5146 4.42996C29.5146 6.87656 31.498 8.85992 33.9446 8.85992Z" fill="#F7CA50"/>
+                        </svg>
+                        <svg width="102" height="22" viewBox="0 0 102 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.3163 11.6663C13.3163 15.1636 10.8975 17.3598 7.90859 17.3598C6.62698 17.3598 5.59057 16.9732 4.83845 16.2015V21.1204H0.975586V6.15627H4.65493V7.25436C5.38749 6.3804 6.46452 5.97275 7.90859 5.97275C10.8975 5.97275 13.3163 8.16893 13.3163 11.6663ZM9.41282 11.6663C9.41282 9.99958 8.39596 9.04289 7.0948 9.04289C5.79364 9.04289 4.77678 9.99807 4.77678 11.6663C4.77678 13.3345 5.79364 14.2896 7.0948 14.2896C8.39596 14.2896 9.41282 13.333 9.41282 11.6663Z" fill="black"/>
+                            <path d="M22.709 16.728C22.0381 17.1552 21.0423 17.3583 20.0254 17.3583C17.199 17.3583 15.5518 15.9759 15.5518 13.1494V9.44903H13.9453V6.56241H15.5518V3.69534H19.4147V6.56241H21.9358V9.44903H19.4147V13.1088C19.4147 13.9226 19.8825 14.3694 20.573 14.3694C21.0002 14.3694 21.4274 14.2475 21.7523 14.0234L22.709 16.728Z" fill="black"/>
+                            <path d="M23.7661 2.88305C23.7661 1.72479 24.7017 0.829773 26.1247 0.829773C27.5478 0.829773 28.4834 1.66312 28.4834 2.82288C28.4834 4.04281 27.5478 4.93783 26.1247 4.93783C24.7017 4.93632 23.7661 4.04131 23.7661 2.88305ZM24.1933 6.15626H28.0562V17.1763H24.1933V6.15626Z" fill="black"/>
+                            <path d="M30.2915 9.89728H36.2287V12.8651H30.2915V9.89728V9.89728Z" fill="black"/>
+                            <path d="M57.2512 10.8735V17.1763H53.3883V11.5038C53.3883 9.91835 52.737 9.24746 51.7217 9.24746C50.604 9.24746 49.7902 9.99957 49.7902 11.7069V17.1763H45.9274V11.5038C45.9274 9.91835 45.2971 9.24746 44.2607 9.24746C43.122 9.24746 42.3082 9.99957 42.3082 11.7069V17.1763H38.4453V6.15627H42.1247V7.31452C42.958 6.4195 44.1178 5.97275 45.4189 5.97275C46.9232 5.97275 48.2048 6.52179 48.9764 7.70111C49.8504 6.60302 51.2132 5.97275 52.7987 5.97275C55.3604 5.97275 57.2512 7.45743 57.2512 10.8735Z" fill="black"/>
+                            <path d="M59.2646 2.88305C59.2646 1.72479 60.2003 0.829773 61.6233 0.829773C63.0463 0.829773 63.9819 1.66312 63.9819 2.82288C63.9819 4.04281 63.0463 4.93783 61.6233 4.93783C60.1988 4.93632 59.2646 4.04131 59.2646 2.88305ZM59.6903 6.15626H63.5532V17.1763H59.6903V6.15626Z" fill="black"/>
+                            <path d="M75.65 14.2881V17.1748H65.4844V14.8973L70.5882 9.02182H65.6273V6.15475H75.4469V8.4111L70.343 14.2866H75.65V14.2881Z" fill="black"/>
+                            <path d="M88.4398 12.6425H80.4298C80.7547 13.7601 81.7099 14.4115 83.1344 14.4115C84.2114 14.4115 84.9229 14.1061 85.675 13.4563L87.7088 15.5712C86.6513 16.7506 85.1064 17.3598 83.0126 17.3598C79.088 17.3598 76.5474 14.941 76.5474 11.6467C76.5474 8.33288 79.1301 5.97424 82.6064 5.97424C85.8601 5.97424 88.503 8.04858 88.503 11.6873C88.5015 11.9701 88.4594 12.3371 88.4398 12.6425ZM80.3681 10.6088H84.8823C84.6792 9.45052 83.8248 8.71796 82.626 8.71796C81.4271 8.71796 80.5922 9.45052 80.3681 10.6088Z" fill="black"/>
+                            <path d="M102 2.09033V17.1763H98.3205V16.0782C97.588 16.9521 96.511 17.3598 95.0879 17.3598C92.0795 17.3598 89.6592 15.1636 89.6592 11.6467C89.6592 8.14938 92.078 5.97426 95.0879 5.97426C96.368 5.97426 97.406 6.33979 98.137 7.11296V2.09033H102ZM98.1987 11.6452C98.1987 9.97852 97.2029 9.04289 95.9017 9.04289C94.5795 9.04289 93.5837 9.97852 93.5837 11.6452C93.5837 13.333 94.5795 14.2881 95.9017 14.2881C97.2014 14.2881 98.1987 13.333 98.1987 11.6452Z" fill="black"/>
+                            </svg>
+                                                    
+                        
+                   </a>
+               </div>
+               <div class="inventory__sidebar--links">
+             <ul>
+                 <li>
+                     <a href="#">
+                         <span>
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H9C9.55 12 10 11.55 10 11V3C10 2.45 9.55 2 9 2H3C2.45 2 2 2.45 2 3V11C2 11.55 2.45 12 3 12ZM3 22H9C9.55 22 10 21.55 10 21V17C10 16.45 9.55 16 9 16H3C2.45 16 2 16.45 2 17V21C2 21.55 2.45 22 3 22ZM15 22H21C21.55 22 22 21.55 22 21V13C22 12.45 21.55 12 21 12H15C14.45 12 14 12.45 14 13V21C14 21.55 14.45 22 15 22ZM14 3V7C14 7.55 14.45 8 15 8H21C21.55 8 22 7.55 22 7V3C22 2.45 21.55 2 21 2H15C14.45 2 14 2.45 14 3Z" stroke="#AFB8CC" stroke-width="2"/>
+                            </svg>
+                            </span>
+                         <span>Overview</span>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="{{url_for('commercial.datastream', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.5 7L13.5 15.5L9.5 11L3.5 17" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </span>
+                        <span>Data Stream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('commercial.inventory', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        </span>
+                        <span> Inventory </span>
+                       
+                    
+                </a>
+                </li>
+                <li>
+                    <a href="{{url_for('commercial.utilities', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C16.1175 22 19.5 18.737 19.5 14.549C19.5 13.521 19.4475 12.419 18.8775 10.706C18.3075 8.993 18.193 8.772 17.5905 7.714C17.333 9.8725 15.9555 10.7725 15.6055 11.0415C15.6055 10.7615 14.7725 7.668 13.509 5.8165C12.2685 4 10.5815 2.8085 9.5925 2C9.5925 3.535 9.161 5.817 8.5425 6.98C7.9245 8.1425 7.8085 8.185 7.036 9.05C6.264 9.915 5.9095 10.1825 5.2635 11.2325C4.618 12.2825 4.5 13.681 4.5 14.709C4.5 18.897 7.8825 22 12 22Z" stroke="#AFB8CC" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        </span>
+                      <span>  Utilities &amp;<br/>
+                        Alternatives</span>
+                    </a>
+                </li>
+<li><a href="{{url_for('commercial.energymanagement', building_id=building_id)}}"><span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.1013 7.82619L19.9672 7.326L19.9672 7.32599L19.1013 7.82619ZM19.1671 7.94004L18.3012 8.44023L18.3012 8.44023L19.1671 7.94004ZM19.9266 8.68741L20.4128 7.81354L20.4128 7.81353L19.9266 8.68741ZM21.4778 9.55032L20.9916 10.4242L20.9916 10.4242L21.4778 9.55032ZM21.9916 10.4219L20.9916 10.4242L20.9916 10.4242L21.9916 10.4219ZM21.9988 13.5738L20.9988 13.576L20.9988 13.576L21.9988 13.5738ZM21.4835 14.4507L20.9988 13.576L20.9988 13.576L21.4835 14.4507ZM19.9286 15.3124L20.4133 16.187L20.4133 16.187L19.9286 15.3124ZM19.1662 16.0613L18.3003 15.5611L18.3003 15.5611L19.1662 16.0613ZM19.1013 16.1737L19.9672 16.6738L19.9672 16.6738L19.1013 16.1737ZM18.8334 17.2077L17.8336 17.2245L17.8336 17.2245L18.8334 17.2077ZM18.8634 18.9886L17.8635 19.0054L17.8635 19.0054L18.8634 18.9886ZM18.3655 19.8703L17.8635 19.0054L17.8635 19.0054L18.3655 19.8703ZM15.6375 21.4536L16.1395 22.3185L16.1395 22.3185L15.6375 21.4536ZM14.6208 21.4461L15.1356 20.5887L15.1356 20.5887L14.6208 21.4461ZM13.0948 20.5299L12.5801 21.3873L12.5801 21.3873L13.0948 20.5299ZM10.9062 20.5287L11.4199 21.3867L11.4199 21.3867L10.9062 20.5287ZM9.38713 21.4383L8.87341 20.5803L8.87341 20.5803L9.38713 21.4383ZM8.37412 21.4468L8.87341 20.5803L8.87341 20.5803L8.37412 21.4468ZM5.63749 19.8698L6.13677 19.0033L6.13677 19.0033L5.63749 19.8698ZM5.13692 18.9865L6.13677 19.0034L6.13677 19.0034L5.13692 18.9865ZM5.16685 17.2133L4.16699 17.1965L4.16699 17.1965L5.16685 17.2133ZM4.9029 16.186L5.77078 15.6893L5.77078 15.6893L4.9029 16.186ZM4.83337 16.0646L3.96549 16.5613L3.96549 16.5613L4.83337 16.0646ZM4.0699 15.3104L3.58376 16.1842L3.58376 16.1842L4.0699 15.3104ZM2.52248 14.4495L2.03633 15.3234L2.03633 15.3234L2.52248 14.4495ZM2.00863 13.5779L1.00863 13.5802L2.00863 13.5779ZM2.00147 10.4261L3.00146 10.4238L2.00147 10.4261ZM2.51675 9.54914L3.00146 10.4238L3.00146 10.4238L2.51675 9.54914ZM4.07164 8.68748L3.58692 7.8128L3.58692 7.8128L4.07164 8.68748ZM4.83403 7.93852L3.96812 7.43832L3.96812 7.43833L4.83403 7.93852ZM4.89892 7.82619L5.76483 8.32638L5.76484 8.32638L4.89892 7.82619ZM5.16681 6.79216L6.16667 6.77533L6.16667 6.77533L5.16681 6.79216ZM5.13685 5.01125L4.13699 5.02807L4.13699 5.02807L5.13685 5.01125ZM5.63473 4.12954L6.1367 4.99442L6.1367 4.99442L5.63473 4.12954ZM8.36272 2.54625L8.86469 3.41113L8.86469 3.41113L8.36272 2.54625ZM9.3794 2.55377L8.86469 3.41113L8.86469 3.41113L9.3794 2.55377ZM10.9055 3.46994L10.3908 4.3273L10.3908 4.3273L10.9055 3.46994ZM13.094 3.47113L12.5803 2.61318L12.5803 2.61318L13.094 3.47113ZM14.6131 2.56155L14.0994 1.70359L14.0994 1.70359L14.6131 2.56155ZM15.6261 2.55307L16.1254 1.68663L16.1254 1.68663L15.6261 2.55307ZM18.3628 4.13007L18.8621 3.26364L18.8621 3.26364L18.3628 4.13007ZM18.8634 5.01333L17.8635 4.99651L17.8635 4.99651L18.8634 5.01333ZM18.8334 6.79216L17.8336 6.77533L17.8336 6.77534L18.8334 6.79216ZM18.2354 8.32638L18.3012 8.44023L20.033 7.43985L19.9672 7.326L18.2354 8.32638ZM19.4405 9.56129L20.9916 10.4242L21.9639 8.67644L20.4128 7.81354L19.4405 9.56129ZM20.9916 10.4242L20.9988 13.576L22.9988 13.5715L22.9916 10.4197L20.9916 10.4242ZM20.9988 13.576L19.4439 14.4377L20.4133 16.187L21.9682 15.3254L20.9988 13.576ZM18.3003 15.5611L18.2354 15.6735L19.9672 16.6738L20.0321 16.5615L18.3003 15.5611ZM17.8336 17.2245L17.8635 19.0054L19.8633 18.9718L19.8333 17.1909L17.8336 17.2245ZM17.8635 19.0054L15.1356 20.5887L16.1395 22.3185L18.8675 20.7352L17.8635 19.0054ZM15.1356 20.5887L13.6095 19.6725L12.5801 21.3873L14.1061 22.3034L15.1356 20.5887ZM12.0654 19.2446H11.9337V21.2446H12.0654V19.2446ZM10.3925 19.6708L8.87341 20.5803L9.90085 22.2963L11.4199 21.3867L10.3925 19.6708ZM8.87341 20.5803L6.13677 19.0033L5.1382 20.7362L7.87484 22.3132L8.87341 20.5803ZM6.13677 19.0034L6.16671 17.2302L4.16699 17.1965L4.13706 18.9696L6.13677 19.0034ZM5.77078 15.6893L5.70125 15.5678L3.96549 16.5613L4.03502 16.6828L5.77078 15.6893ZM4.55605 14.4365L3.00862 13.5756L2.03633 15.3234L3.58376 16.1842L4.55605 14.4365ZM3.00862 13.5756L3.00146 10.4238L1.00147 10.4284L1.00863 13.5802L3.00862 13.5756ZM3.00146 10.4238L4.55635 9.56215L3.58692 7.8128L2.03203 8.67447L3.00146 10.4238ZM5.69995 8.43871L5.76483 8.32638L4.03301 7.32599L3.96812 7.43832L5.69995 8.43871ZM6.16667 6.77533L6.1367 4.99442L4.13699 5.02807L4.16695 6.80898L6.16667 6.77533ZM6.1367 4.99442L8.86469 3.41113L7.86075 1.68136L5.13277 3.26465L6.1367 4.99442ZM8.86469 3.41113L10.3908 4.3273L11.4202 2.61258L9.89412 1.69641L8.86469 3.41113ZM11.9349 4.75522H12.0666V2.75522H11.9349V4.75522ZM13.6078 4.32909L15.1268 3.41951L14.0994 1.70359L12.5803 2.61318L13.6078 4.32909ZM15.1268 3.41951L17.8635 4.99651L18.8621 3.26364L16.1254 1.68663L15.1268 3.41951ZM17.8635 4.99651L17.8336 6.77533L19.8333 6.80898L19.8632 5.03016L17.8635 4.99651ZM17.8635 4.99651L17.8635 4.99651L19.8632 5.03016C19.8755 4.3031 19.4921 3.6267 18.8621 3.26364L17.8635 4.99651ZM15.1268 3.41951L15.1268 3.41951L16.1254 1.68663C15.497 1.32449 14.7217 1.33098 14.0994 1.70359L15.1268 3.41951ZM12.0666 4.75522C12.6094 4.75522 13.1421 4.60795 13.6078 4.32909L12.5803 2.61318C12.4251 2.70613 12.2475 2.75522 12.0666 2.75522V4.75522ZM10.3908 4.3273C10.8572 4.6073 11.3909 4.75522 11.9349 4.75522V2.75522C11.7536 2.75522 11.5757 2.70592 11.4202 2.61258L10.3908 4.3273ZM8.86469 3.41113L8.86469 3.41113L9.89412 1.69641C9.26964 1.3215 8.49071 1.31574 7.86075 1.68136L8.86469 3.41113ZM6.1367 4.99442L6.1367 4.99442L5.13277 3.26465C4.50578 3.62855 4.12479 4.30324 4.13699 5.02807L6.1367 4.99442ZM5.76484 8.32638C6.03692 7.85536 6.17582 7.31922 6.16667 6.77533L4.16695 6.80898C4.17 6.99027 4.1237 7.16899 4.03301 7.326L5.76484 8.32638ZM4.55635 9.56215C5.0324 9.29834 5.42771 8.90999 5.69995 8.43871L3.96812 7.43833C3.87738 7.59542 3.7456 7.72487 3.58692 7.8128L4.55635 9.56215ZM3.00146 10.4238L3.00146 10.4238L2.03204 8.67447C1.39464 9.0277 0.999815 9.69964 1.00147 10.4284L3.00146 10.4238ZM3.00863 13.5756L3.00862 13.5756L1.00863 13.5802C1.01027 14.3045 1.40339 14.9713 2.03633 15.3234L3.00863 13.5756ZM5.70126 15.5678C5.42971 15.0934 5.03372 14.7022 4.55605 14.4365L3.58376 16.1842C3.74298 16.2728 3.87498 16.4032 3.96549 16.5613L5.70126 15.5678ZM6.16671 17.2302C6.17582 16.6903 6.03904 16.1579 5.77078 15.6893L4.03502 16.6828C4.12443 16.839 4.17003 17.0165 4.16699 17.1965L6.16671 17.2302ZM6.13677 19.0033L6.13677 19.0034L4.13706 18.9696C4.12478 19.6967 4.50813 20.3731 5.1382 20.7362L6.13677 19.0033ZM8.87341 20.5803L8.87341 20.5803L7.87484 22.3132C8.50328 22.6754 9.27855 22.6689 9.90085 22.2963L8.87341 20.5803ZM11.9337 19.2446C11.3908 19.2446 10.8582 19.3919 10.3925 19.6708L11.4199 21.3867C11.5752 21.2937 11.7527 21.2446 11.9337 21.2446V19.2446ZM13.6095 19.6725C13.1431 19.3925 12.6093 19.2446 12.0654 19.2446V21.2446C12.2467 21.2446 12.4246 21.2939 12.5801 21.3873L13.6095 19.6725ZM15.1356 20.5887L15.1356 20.5887L14.1061 22.3034C14.7306 22.6783 15.5095 22.6841 16.1395 22.3185L15.1356 20.5887ZM17.8635 19.0054L17.8635 19.0054L18.8675 20.7352C19.4945 20.3713 19.8755 19.6966 19.8633 18.9718L17.8635 19.0054ZM18.2354 15.6735C17.9633 16.1445 17.8244 16.6806 17.8336 17.2245L19.8333 17.1909C19.8302 17.0096 19.8765 16.8309 19.9672 16.6738L18.2354 15.6735ZM19.4439 14.4377C18.9679 14.7015 18.5725 15.0898 18.3003 15.5611L20.0321 16.5615C20.1229 16.4044 20.2546 16.275 20.4133 16.187L19.4439 14.4377ZM20.9988 13.576L20.9988 13.576L21.9682 15.3254C22.6056 14.9721 23.0004 14.3002 22.9988 13.5715L20.9988 13.576ZM20.9916 10.4242L20.9916 10.4242L22.9916 10.4197C22.99 9.69536 22.5969 9.02856 21.9639 8.67644L20.9916 10.4242ZM18.3012 8.44023C18.5726 8.91007 18.9663 9.29751 19.4405 9.56129L20.4128 7.81353C20.2547 7.72561 20.1235 7.59646 20.033 7.43985L18.3012 8.44023ZM19.9672 7.32599C19.8765 7.16899 19.8302 6.99028 19.8333 6.80898L17.8336 6.77534C17.8244 7.31922 17.9633 7.85536 18.2354 8.32638L19.9672 7.32599Z" fill="#AFB8CC"/>
+</svg></span><span>Energy<br>                      Management</span></a></li>
+                <li class="logout-btn">
+                   
+                </li>
+                <li class="ads">
+              
+                </li>
+             </ul>
+
+               </div>
+             <div class="bottom-action">
+              <a href = "{{url_for('accounts.logout')}}">
+                <button class="logout">
+                    <span><svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 4L7.6 5.4L10.2 8H0V10H10.2L7.6 12.6L9 14L14 9L9 4ZM18 16H10V18H18C19.1 18 20 17.1 20 16V2C20 0.9 19.1 0 18 0H10V2H18V16Z" fill="#AFB8CC"/>
+                        </svg>
+                        </span>
+                        <span>Log Out</span>
+                </button>
+              </a>
+                   <div class="ads__box">
+                
+                    <div class="img">
+                        <img style = 'width: 134px; height: 134px;'src="{{url_for('static',filename='img/' + building_id + '.png')}}" alt="">
+                    </div>
+                     <h2>{{buidling_description}}</h2>
+                     <p>{{building_address}}</p>
+                     <div class="ads__box--cta">
+                         <a href="#">
+                             <span>
+                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.0415 6.87499H5.95817V7.79166H5.0415V6.87499ZM5.0415 3.20832H5.95817V5.95832H5.0415V3.20832ZM5.49525 0.916656C2.96525 0.916656 0.916504 2.96999 0.916504 5.49999C0.916504 8.02999 2.96525 10.0833 5.49525 10.0833C8.02984 10.0833 10.0832 8.02999 10.0832 5.49999C10.0832 2.96999 8.02984 0.916656 5.49525 0.916656ZM5.49984 9.16666C3.474 9.16666 1.83317 7.52582 1.83317 5.49999C1.83317 3.47416 3.474 1.83332 5.49984 1.83332C7.52567 1.83332 9.1665 3.47416 9.1665 5.49999C9.1665 7.52582 7.52567 9.16666 5.49984 9.16666Z" fill="#498DE1"/>
+                                    </svg>
+                                    
+                             </span>
+                             <span>
+                                 About
+                             </span>
+                         </a>
+                         <a href="{{url_for('commercial.switchfacilities')}}">
+                       <span>
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.375 7.90624V9.62499H3.09375L8.16292 4.55582L6.44417 2.83707L1.375 7.90624ZM9.81292 2.90582L8.09417 1.18707L6.93458 2.35124L8.65333 4.06999L9.81292 2.90582Z" fill="#498DE1"/>
+                            </svg>
+                            
+                       </span>
+                       <span>Switch</span>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             </div>
+             <div class="inventory__components">
+              <div style = 'position: relative; top: 70px; right: 30px'>
+            <a href = "{{url_for('commercial.lighting', building_id=building_id)}}"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_317_358)">
+                  <path d="M9.6665 14.5L16.9165 21.75L18.6203 20.0463L13.0861 14.5L18.6203 8.95375L16.9165 7.25L9.6665 14.5Z" fill="#0D1758"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_317_358">
+                  <rect width="29" height="29" fill="white" transform="translate(0 29) rotate(-90)"/>
+                  </clipPath>
+                  </defs>
+                  </svg></a>
+                </div>
+               <h2>RTU</h2>
+               <div class="inventory__components__container">
+                   
+                   <div class="electricity-flex" >
+
+                        <div class="electricity-flex--3" style = 'margin-top: 80px;'>
+                           <div class="part-1">
+                               <div class="img">
+                               </div>
+                               <div style = 'bottom: 130px; position: relative;' class="bottom-part" onclick = 'openAbout();'>
+                                <div class="explore-simulation">
+                                    <a>
+                                      <span class="txt" style = 'bottom: 50px; position: relative;'>About</span>
+                                      <span >
+                                        <svg  style = 'bottom: 50px; position: relative;' width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 9L3 -3.93402e-07L0.885 2.115L7.755 9L0.885 15.885L3 18L12 9Z" fill="#0D1758"></path>
+                                        </svg>
+                                      </span>
+                                    </a>
+                                  </div>
+                            </div>
+                           <div class = 'light-image' style= >
+                             <img style = 'width: 100%; height: 100%;' src = '{{url_for("static", filename ="img/rtu.png")}}'/>
+                           </div>
+                           <div class = stat-block  style="width: auto; left: -10px;">
+                           <p class = 'stat-title'> Number of units</p>
+                           <p class = 'stat'>{{totalLights}}</p>
+                           <p class = 'stat-title'> energy per unit</p>
+                           <p class = 'stat' style="width: auto;">69 BTU</p>
+                         </div>
+
+                            
+                           </div>
+                           <div class="part-2">
+                            <div class="img" style = 'border-bottom: 2px solid #E3E7ED; top: 55px; position: relative; width: 95%; margin-right: auto; margin-left: auto;'>
+                               </div>
+                               <div style = 'top: 60px; position: relative;' class="bottom-part" onclick = 'openStats();'>
+                                <div class="explore-simulation" >
+                                    <a>
+                                      <span class="txt" style = 'bottom: 50px; position: relative;  '>Stats</span>
+                                      <span>
+                                        <svg style = 'bottom: 50px; position: relative;' width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 9L3 -3.93402e-07L0.885 2.115L7.755 9L0.885 15.885L3 18L12 9Z" fill="#0D1758"></path>
+                                        </svg>
+                                      </span>
+                                    </a>
+                                  </div>
+                            </div>
+                           <div class = 'light-image' style = 'top: 30px; position: relative; width: 62px; height: 62px; right: 50px;'>
+                             <img style = 'width: 100%; height: 100%;' src = '{{url_for("static", filename ="img/lightpie.png")}}'/>
+                           </div>
+                           <div class = stat-block style = 'bottom: 40px; position: relative;'>
+                           <p class = 'stat-title' style = 'text-align: center;'> Uses</p>
+                           <p class = 'stat' style = 'text-align: center;'>1.7%</p>
+                           <p class = 'stat-title' style = 'text-align: center; margin-bottom: 10px;'> of electricty</p>
+                           <p class = 'stat-decimal'>.21</p>
+                           <p class = 'stat' style = 'right: 50px; position: relative;'>$645</p>
+
+                           <p class = 'stat-title' style = 'right: 50px; position: relative;'>est. cost / year</p>
+                         </div>
+                           </div>
+                          
+                       </div>
+                       
+                       <div class="electricity-flex--2" style = 'margin-top: 80px; width: 600px;'>
+                        <div class="box">
+                          <span class="txt2">Annual Usage Pattern</span>
+                            <div class="box--top">
+                                <div class="utility-chart">
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                    
+                                     
+                                    <p class="title">j</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                     
+                                      <p class="title">f</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                     
+                                   
+                                      <p class="title">m</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                   
+                                 
+                                      <p class="title">a</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                    
+                                  
+                                      <p class="title">m</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                      
+                                    
+                                      <p class="title">j</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                      
+                                    
+                                        <p class="title">j</p>
+                                      </div>
+                                  
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                      
+                                    
+                                      <p class="title">a</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                      
+                                   
+                                      <p class="title">s</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                     
+                                      
+                                      <p class="title">o</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                     
+                                      <p class="title">n</p>
+                                    </div>
+                                    <div class="column" style = 'background-color: #293F8A'>
+                                     
+                                 
+                                      <p class="title">d</p>
+                                    </div>
+                              
+                                  </div>
+                                  
+                            </div>
+                            <div class="box--bottom">
+                                <div class="explore-simulation">
+                                    <a href="{{url_for('commercial.electricalgraph', building_id=building_id)}}">
+                                      <span class="txt">Explore Energy Usage</span>
+                                      <span>
+                                        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 9L3 -3.93402e-07L0.885 2.115L7.755 9L0.885 15.885L3 18L12 9Z" fill="#0D1758"></path>
+                                        </svg>
+                                      </span>
+                                    </a>
+                                  </div>
+                            </div>
+                        </div>
+                       </div>
+                       <div class="electricity-flex--1">
+                           
+                           <div class="box">
+                            <div class="box__bottom" style = 'top: 50px; position: relative;'>
+                                <div class="explore-simulation">
+                                    <a href="#">
+                                      <span class="txt" style = 'bottom: 50px; position: relative; color: #0D1758;'>Specs</span>
+                                      <span>
+                                        <svg style = 'bottom: 50px; position: relative;' width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 9L3 -3.93402e-07L0.885 2.115L7.755 9L0.885 15.885L3 18L12 9Z" fill="#0D1758"></path>
+                                        </svg>
+                                      </span>
+                                    </a>
+                                  </div>
+                               </div>
+                               <div class="box__top">
+                                <div class="box__top--1">
+                                    <img  style = 'width: 240px; height: 240px;' src="{{url_for('static',filename='img/rtu.png')}}" alt="Enmax">
+                                </div>
+                                <div class="box__top--2">
+                               <div class = stat-block style = 'left: -15px; bottom: 110px; position: relative; width: auto;'>
+                                 <p class = 'stat-title'>Type</p>
+                                 <p class = 'stat' style="font-size: 25px; width: auto;">RTU</p>
+                                 <p class = 'stat-title'>Manufacturer</p>
+                                 <p class = 'stat' style="font-size: 25px;">Furnace Manufa</p>
+                                 <p class = 'stat-title'>Model #</p>
+                                 <p class = 'stat' style="font-size: 25px;">s8412g</p>
+                                 <p class = 'stat-title'>Serial #</p>
+                                 <p class = 'stat' style="font-size: 25px;">3wFF12</p>
+                                </div>
+                                </div>
+
+                               </div>
+                               
+
+                           </div>
+                       </div>
+                       <div style = 'width: 250px; height: 2px; background-color: #E3E7ED; position: absolute; top: 618px; left: 655px; z-index: 1000;' ></div>
+                       <div class="electricity-flex--4" style = 'width: 600px; height: 335.5px;'>
+                       <div class="part-1" style = 'width: 280px; height: 335.5px;'>
+                        <div class="bottom" style = "top: 10px; position: relative;">
+                            <div class="explore-simulation">
+                                <a href="#">
+                                  <span class="txt">Savings</span>
+                                  <span>
+                                    <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12 9L3 -3.93402e-07L0.885 2.115L7.755 9L0.885 15.885L3 18L12 9Z" fill="#0D1758"></path>
+                                    </svg>
+                                  </span>
+                                </a>
+                              </div>
+                          </div>
+                          <div class="top" style = 'background-color: white;'>
+                              <img style = 'width: 171px; height: 171px; left: 50px; position: relative;' src = "{{url_for('static',filename='img/rtu.png')}}"/>
+
+                          </div>
+                          <p class = 'savings'><span style = 'font-size: 18px;'>$</span>334<span  style = 'font-size: 18px;'>.82</span><br> <span style = 'font-size: 18px;'>/year</span></p>
+                       </div>
+                       <div class="part-2" style = 'width: 280px; height: 335.5px;'>
+                        <p class = 'coming-soon'>Coming<br>soon</p>
+                       </div>
+                   </div>
+              
+
+               </div>
+
+
+             </div>
+
+         </div>
+        </div>
+        <div class="group-8064" id = 'aboutPopup'>
+        <div class="group-8004">
+          <div class="group-7557">
+            <div class="flex-row-1">
+              <div class="x2x4-troffer-about avertacy-bold-white-32px">
+                <span class="avertacy-bold-gulf-blue-32px">RTU - </span
+                ><span class="avertacy-bold-gulf-blue-32px-2">About</span>
+              </div>
+              <img onclick = 'closeAbout();' class="cancel" src="{{url_for('static',filename='img/cancel@2x.svg')}}" />
+            </div>
+            <div class="rectangle-4473"></div>
+          </div>
+          <div class="group-8003">
+            <div class="overlap-group"><div class="about avertacy-bold-white-11px">About</div></div>
+            <div class="overlap-group1 border-1px-gulf-blue"  onclick = 'openStats()'>
+              <div class="stats avertacy-bold-gulf-blue-11px">Stats</div>
+            </div>
+          </div>
+          <div class="group-8000">
+            <div class="group-7989">
+              <div class="specs avertacy-bold-gulf-blue-20px">Specs</div>
+              <div class="rectangle-5030"></div>
+            </div>
+            <div class="group-798">
+              <div class="fixture-type avertacy-bold-gray-15px">Type</div>
+              <div class="x2x4-troffer avertacy-bold-gulf-blue-15px" style = 'margin-left: 2px;'>RTU</div>
+            </div>
+            <div class="group-798-1">
+              <div class="number-of-bulbs avertacy-bold-gray-15px">Manufacturer</div>
+              <div class="number avertacy-bold-gulf-blue-15px" style = 'margin-left: 30px;'>Furnance Manufac</div>
+            </div>
+            <div class="group-798">
+              <div class="type-of-bulbs avertacy-bold-gray-15px">Model #</div>
+              <div class="t8 avertacy-bold-gulf-blue-15px">s8412g</div>
+            </div>
+            <div class="group-798-1">
+              <div class="wattage avertacy-bold-gray-15px">Serial #</div>
+              <div class="x35w avertacy-bold-gulf-blue-15px" style = 'margin-left: 182px;'>3wFF12</div>
+            </div>
+            <div class="group-798-1">
+              <div class="total-wattage avertacy-bold-gray-15px">Efficiency</div>
+              <div class="x140w avertacy-bold-gulf-blue-15px" style = 'margin-left: 162px;'>74%</div>
+            </div>
+            <div class="group-7996">
+              <div class="wattage-of-all-fixtures-combibed avertacy-bold-gray-15px">
+                Heating Capacity<br />output (btu / H)
+              </div>
+              <div class="x10360w avertacy-bold-gulf-blue-15px" style = 'margin-left: 80px;'>69k BTU</div>
+            </div>
+          </div>
+          <div class="group-7999">
+            <div class="group-7997">
+              <div class="gallery avertacy-bold-gulf-blue-20px">Gallery</div>
+              <div class="rectangle-5030"></div>
+            </div>
+            <div class="group-7998">
+              <img class="expand_less" src="{{url_for('static',filename='img/expand-less@2x.svg')}}" />
+              <img class="troffer2x4-6" src="{{url_for('static',filename='img/rtu.png')}}" />
+              <img class="expand_less-1" src="{{url_for('static',filename='img/expand-less-1@2x.svg')}}" />
+            </div>
+          </div>
+        </div>
+        <div class="group-8024">
+          <div class="group-container">
+            <div class="group-7995">
+              <div class="group-7982">
+                <div class="area-count avertacy-bold-gulf-blue-20px">Area / Count</div>
+                <div class="rectangle-5050"></div>
+              </div>
+              <div class="overlap-group-container">
+                <div style = 'position: relative; right: 10px; top: 10px;' class="overlap-group-5" id = 'chart' >
+                </div>
+              </div>
+              <div class="group-7983">
+
+                {% for i in range (0,numAreas) %}
+                <div class="group-7977">
+                  <div class="flex-row">
+                    <div class="ellipse-97" style="background-color: {{colours[i]}};"></div>
+                    <div class="main-office avertacy-bold-shadow-blue-15px">{{equipmentDf.iloc[i][1]}}</div>
+                    <div class="percent avertacy-bold-gulf-blue-15px">{{"%.2f"|format((equipmentDf.iloc[i][2]/percentSum) * 100) | float}}%</div>
+                  </div>
+                  <div class="rectangle-505"></div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="group-8023">
+              <div class="total-lights avertacy-bold-gulf-blue-15px">Total Units</div>
+              <div class="number-6 avertacy-bold-gulf-blue-20px">{{totalLights}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="frame-1 screen" id = 'statsPopup'>
+        <div class="group-8007">
+          <div class="flex-row">
+            <div class="x2x4-troffer-stats avertacy-bold-white-32px">
+              <span class="avertacy-bold-gulf-blue-32px">RTU - </span
+              ><span class="avertacy-bold-gulf-blue-32px-2">Stats</span>
+            </div>
+            <img onclick = 'closeAbout();' class="cancel" src="{{url_for('static',filename='img/cancel@2x.svg')}}" />
+          </div>
+          <div class="rectangle-4473"></div>
+        </div>
+        <div class="overlap-group-container">
+          <div class="overlap-group2 border-1px-gulf-blue"  onclick = 'openAbout()'>
+            <div class="about avertacy-bold-gulf-blue-11px">About</div>
+          </div>
+          <div class="overlap-group3"><div class="stats avertacy-bold-white-11px">Stats</div></div>
+        </div>
+        <div class="overlap-group-container-1">
+          <div class="overlap-group">
+            <div class="overview avertacy-bold-gulf-blue-20px">Overview</div>
+            <div class="rectangle-505"></div>
+            <div class="group-8013">
+              <div class="avg-times-on-month avertacy-bold-star-dust-18px">Avg times on / month</div>
+              <h1 class="title avertacy-bold-gulf-blue-38px">37x</h1>
+              <div class="rectangle-5051"></div>
+            </div>
+            <div class="group-8014">
+              <div class="avg-run-time avertacy-bold-star-dust-18px">Avg run time</div>
+              <div class="x6h-22m avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">6</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">h</span
+                ><span class="span-1 avertacy-bold-gulf-blue-38px"> 22</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">m</span>
+              </div>
+              <div class="rectangle-5052"></div>
+            </div>
+            <div class="group-8015">
+              <div class="avg-hours-per-month avertacy-bold-star-dust-18px">Avg hours per month</div>
+              <div class="x1812h avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">181.2</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">h</span>
+              </div>
+              <div class="rectangle-5053"></div>
+            </div>
+            <div class="group-8016">
+              <div class="avg-of-total-energy-used avertacy-bold-star-dust-18px">Avg % of total energy used</div>
+              <div class="percent avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">1.7</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">%</span>
+              </div>
+            </div>
+          </div>
+          <div class="overlap-group1">
+            <div class="place avertacy-bold-gulf-blue-20px">Energy</div>
+            <div class="rectangle-505"></div>
+            <div class="group-8017">
+              <div class="avg-cost-per-month avertacy-bold-star-dust-18px">Avg cost per month</div>
+              <div class="price avertacy-bold-gulf-blue-18px">
+                <span class="span-2 avertacy-bold-gulf-blue-18px">$</span
+                ><span class="span-1 avertacy-bold-gulf-blue-38px">32.10</span>
+              </div>
+              <div class="rectangle-5051-1"></div>
+            </div>
+            <div class="group-8018">
+              <div class="est-k-wh-month avertacy-bold-star-dust-18px">Est. kWh / month</div>
+              <div class="x298k-wh avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">298</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">kWh</span>
+              </div>
+              <div class="rectangle-5052"></div>
+            </div>
+            <div class="group-8020">
+              <div class="est-cost-per-year avertacy-bold-star-dust-18px">Est. cost per year</div>
+              <div class="price-1 avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">295.67</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">$</span>
+              </div>
+              <div class="rectangle-5053"></div>
+            </div>
+            <div class="group-8019">
+              <div class="est-k-wh-year avertacy-bold-star-dust-18px">Est kWh / year</div>
+              <div class="x3455k-wh avertacy-bold-gulf-blue-38px">
+                <span class="span-1 avertacy-bold-gulf-blue-38px">3,455</span
+                ><span class="span-2 avertacy-bold-gulf-blue-18px">kWh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="file.js"></script>
+</body>
+</html>
+
+
+
+<script>
+  
+  function openAbout(){
+    document.getElementById("aboutPopup").style.width = '744px';
+    document.getElementById("aboutPopup").style.boxShadow = "0 0 0 10000px rgba(0,0,0,.50)";
+    document.getElementById("aboutPopup").style.zIndex = "1000";
+    document.getElementById("statsPopup").style.zIndex = "0";
+    
+  }
+
+  function openStats(){
+    document.getElementById("statsPopup").style.width = '744px';
+    document.getElementById("statsPopup").style.boxShadow = "0 0 0 10000px rgba(0,0,0,.50)";
+    document.getElementById("statsPopup").style.zIndex = "1000";
+    document.getElementById("aboutPopup").style.zIndex = "0";
+    
+  }
+
+  function closeAbout(){
+    document.getElementById("aboutPopup").style.width = '0';
+    document.getElementById("aboutPopup").style.boxShadow = "0 0 0 0 rgba(0,0,0,.50)";
+    document.getElementById("statsPopup").style.width = '0';
+    document.getElementById("statsPopup").style.boxShadow = "0 0 0 0 rgba(0,0,0,.50)";
+  }
+</script>
+
+  <script >
+    var areaCount = {{areaCount | tojson}};
+    var colours = {{colours | tojson}};
+    var areaList = {{areaList | tojson}};
+    var options = {
+                              labels: areaList,
+                              series: areaCount,
+                              chart: {
+                              width: 250,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: true,
+                                fillSeriesColor: false,
+                                x: {
+                                  show: false,
+                            style: {
+                                    fontSize: '12px',
+                                    fontFamily: " Helvetica, Averta CY-Bold"
+                                  },
+                          
+                              fixed: {
+                                enabled: true,
+                                position: 'topRight',
+                                offsetX: 0,
+                                offsetY: 0,
+                            },
+                          },
+                          marker: {
+                                show: false,
+                            },
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:colours,
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+
+</script>

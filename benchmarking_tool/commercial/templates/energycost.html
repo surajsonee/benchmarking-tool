@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/energycost.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="dashboard-day" />
+    <div class="container-center-horizontal">
+      <div class="dashboard-day screen">
+        <div class="rectangle-2893-F7L3xZ"></div>
+        <img class="header-F7L3xZ" src="img/header@2x.svg" /><img
+          class="kaltire-256-2-F7L3xZ"
+          src="img/kaltire--256-2@2x.png"
+        />
+        <div class="facility-F7L3xZ avertacy-bold-chathams-blue-20px">Facility</div>
+        <div class="address-F7L3xZ avertacy-bold-chathams-blue-20px">Address</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-F7L3xZ">4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS</p>
+        <div class="group-7195-F7L3xZ">
+          <div class="rectangle-2316-o1IRD0"></div>
+          <img class="chevron-down-o1IRD0" src="img/chevron-down@2x.svg" />
+        </div>
+        <img class="group-7234-F7L3xZ" src="img/group-7234@2x.svg" /><img
+          class="vector-F7L3xZ"
+          src="img/vector@2x.svg"
+        />
+        <div class="overview-F7L3xZ avertacy-bold-chathams-blue-20px">Overview</div>
+        <div class="kpis-F7L3xZ avertacy-bold-cerulean-frost-11px">KPI’S</div>
+        <div class="inventory-F7L3xZ avertacy-bold-cerulean-frost-11px">Inventory</div>
+        <div class="utilities-F7L3xZ avertacy-bold-cerulean-frost-11px">Utilities</div>
+        <div class="group-7196-F7L3xZ">
+          <div class="rectangle-2316-RzOHL3"></div>
+          <img class="chevron-down-RzOHL3" src="img/chevron-down-1@2x.svg" />
+        </div>
+        <img class="group-7235-F7L3xZ" src="img/group-7235@2x.svg" />
+        <h1 class="title-F7L3xZ">Inventory</h1>
+        <div class="group-7249-F7L3xZ">
+          <div class="energy-breakdown-p5fOm9">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12" style ="left:10px;">
+                            <div id="chart"></div>
+                        </div>
+                          <script>
+                            var options = {
+                              labels: ["Appliances", "Lighting", "Hot Water", "Heating", "Ventilation"],
+                              series: [{{appliance_usage}}, {{light_usage}}, {{dhw_usage}},{{heating_usage}}, {{ventilation_usage}}],
+                              chart: {
+                              width: 380,
+                              type: 'donut',
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                horizontalAlign:'left',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+                        </script>
+                    </div>
+                  </div>
+          <div class="total-9899-p5fOm9">
+            <span class="span0-bZ1v2N">Total<br /></span><span class="span1-bZ1v2N"><br /></span
+            ><span class="span2-bZ1v2N">${{total}}</span>
+          </div>
+        </div>
+        <div class="rectangle-2960-F7L3xZ"></div>
+        <div class="energy-cost-F7L3xZ avertacy-bold-chathams-blue-20px">Energy Cost</div>
+        <img class="alert-circle-F7L3xZ" src="{{url_for('static',filename='img/alert-circle@2x.svg')}}" />
+        <div class="rectangle-16-F7L3xZ"></div>
+        <img class="vector-ukLjjV" src="img/vector-1@2x.svg" />
+        <div class="group-7250-F7L3xZ">
+          <div class="rectangle-2340-W2awws"></div>
+          <div class="group-4340-W2awws">
+            <div class="legend-items-gnnSpv">
+              <div class="group-23-3kVVI7">
+                <div class="x1632-kcEyfD avertacy-normal-chathams-blue-14px">${{appliance_usage}}</div>
+              </div>
+            </div>
+            <img class="group-4339-gnnSpv" src="{{url_for('static',filename='img/group-4339@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="appliances-F7L3xZ avertacy-bold-chathams-blue-15px">Appliances</div>
+        <div class="group-7251-F7L3xZ">
+          <div class="group-6927-2TpIqu">
+            <div class="rectangle-2316-8lhfI5"></div>
+            <img class="chevron-down-8lhfI5" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+          </div>
+        </div>
+        <a href = "{{url_for('commercial.energycostlighting')}}"><div class="group-7252-F7L3xZ">
+          <div class="rectangle-2340-TSpVXA"></div>
+          <div class="chevron-left-TSpVXA"></div>
+          <div class="group-4340-TSpVXA">
+            <div class="legend-items-0S5Tg3">
+              <div class="group-23-jP1aWy">
+                <div class="x2321-z09OM1 avertacy-normal-chathams-blue-14px">${{light_usage}}</div>
+              </div>
+            </div>
+            <img class="group-4339-0S5Tg3" src="{{url_for('static',filename='img/group-4339-1@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="group-7253-F7L3xZ">
+          <div class="group-6927-duvlAO">
+            <div class="rectangle-2316-20LytC"></div>
+            <img class="chevron-down-20LytC" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="lighting-F7L3xZ avertacy-bold-chathams-blue-15px">Lighting</div></a>
+        <div class="group-7021-F7L3xZ">
+          <div class="rectangle-2340-onf5dx"></div>
+          <div class="group-4340-onf5dx">
+            <div class="legend-items-YIid8D">
+              <div class="group-23-flanxG">
+                <div class="x1632-5PUESx avertacy-normal-chathams-blue-14px">${{dhw_usage}}</div>
+              </div>
+            </div>
+            <img class="group-4339-YIid8D" src="{{url_for('static',filename='img/group-4339-2@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="group-7024-F7L3xZ">
+          <div class="group-6927-vjvV3L">
+            <div class="rectangle-2316-LoF0Zw"></div>
+            <img class="chevron-down-LoF0Zw" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="hot-water-F7L3xZ avertacy-bold-chathams-blue-15px">Hot Water</div>
+        <div class="group-7022-F7L3xZ">
+          <div class="rectangle-2340-SpK9Ns"></div>
+          <div class="group-4340-SpK9Ns">
+            <div class="legend-items-cxH1KA">
+              <div class="group-23-ScV14D">
+                <div class="x1458-wFtuux avertacy-normal-chathams-blue-14px">${{heating_usage}}</div>
+              </div>
+            </div>
+            <img class="group-4339-cxH1KA" src="{{url_for('static',filename='img/group-4339-3@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="group-7025-F7L3xZ">
+          <div class="group-6927-Bgu5Br">
+            <div class="rectangle-2316-iuUeFF"></div>
+            <img class="chevron-down-iuUeFF" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="heating-F7L3xZ avertacy-bold-chathams-blue-15px">Heating</div>
+        <div class="group-7023-F7L3xZ">
+          <div class="rectangle-2340-FTtLJu"></div>
+          <div class="group-4340-FTtLJu">
+            <div class="legend-items-vmQuQm">
+              <div class="group-23-7z4Ivo"><div class="x699-FPGQDJ avertacy-normal-chathams-blue-14px">${{ventilation_usage}}</div></div>
+            </div>
+            <img class="group-4339-vmQuQm" src="{{url_for('static',filename='img/group-4339-4@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="group-7026-F7L3xZ">
+          <div class="group-6927-60cLEZ">
+            <div class="rectangle-2316-YxR33m"></div>
+            <img class="chevron-down-YxR33m" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+          </div>
+        </div>
+        <div class="ventilation-F7L3xZ avertacy-bold-chathams-blue-15px">Ventilation</div>
+      </div>
+    </div>
+  </body>
+</html>

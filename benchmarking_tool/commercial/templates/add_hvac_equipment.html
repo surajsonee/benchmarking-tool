@@ -1,0 +1,232 @@
+{% if add == 'steam_boiler' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+
+{% include 'snippets/steam_boiler.html' %}
+    {{ form.hidden_tag() }}
+{% endif %}
+
+
+
+
+{% if add == 'hydronic_boiler' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+{% include 'snippets/hydronic_boiler.html' %}
+    {{ form.hidden_tag() }}
+</form>
+{% endif %}
+
+
+{% if add == 'furnace' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/furnace.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+
+{% endif %}
+
+
+{% if add == 'unit_heater' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/unit_heater.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+
+{% endif %}
+
+
+{% if add == 'gas_fired_heating_coil' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+
+{% include 'snippets/gas_fired_heating_coil.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+
+{% endif %}
+
+
+
+{% if add == 'heat_pump' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+
+{% include 'snippets/heat_pump.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+{% endif %}
+
+
+
+{% if add == 'electric_rest_heating_coil' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/electric_rest_heating_coil.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+{% endif %}
+
+
+{% if add == 'infrared_heater' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+
+{% include 'snippets/infrared_heater.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+{% endif %}
+
+
+
+
+{% if add == 'make_up_air_unit' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+    <div class = "form-row">
+    <div class = "col-sm-10 my-1">
+    <label for="newStuff class = "sr-only">Adding {{ add }} to {{ area.name }} </label>
+     <p>
+        {{ form.manufacturer(class_ = "form-control", placeholder="Manufacturer")}}
+    </p>
+     <p>
+        {{ form.model_number(class_ = "form-control", placeholder="Model Number")}}
+    </p>
+    <p>
+        {{ form.serial_number(class_ = "form-control", placeholder="Serial Number")}}
+    </p>
+     <p>
+        {{ form.year_built(class_ = "form-control", placeholder="Year Number")}}
+    </p>
+
+{% include 'snippets/make_up_air_unit.html' %}
+    {{ form.hidden_tag() }}
+    {{ form.photo(multiple="multiple")}}
+    <button type = 'submit' class ="btn btn-primary btn-block">Add</button>
+
+</div>
+</div>
+</form>
+{% endif %}
+
+
+
+
+{% if add == 'packaged_rtu' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+{% include 'snippets/packaged_rtu.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+{% endif %}
+
+
+
+
+{% if add == 'chiller' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+{% include 'snippets/chiller.html' %}
+    {{ form.hidden_tag() }}
+    {{ form.photo(multiple="multiple")}}
+
+</form>
+
+{% endif %}
+
+
+
+
+{% if add == 'mini_split_system' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/mini_split_system.html' %}
+    {{ form.hidden_tag() }}
+</form>
+
+{% endif %}
+
+
+
+{% if add == 'packaged_terminal_ac' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+
+
+{% include 'snippets/packaged_terminal_ac.html' %}
+    {{ form.hidden_tag() }}
+
+</form>
+
+{% endif %}
+
+
+{% if add == 'condensing_unit_system' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/condensing_unit_system.html' %}
+    {{ form.hidden_tag() }}
+</form>
+
+{% endif %}
+
+
+
+
+
+
+{% if add == 'window_air_conditioner' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+
+{% include 'snippets/window_air_conditioner.html' %}
+    {{ form.hidden_tag() }}
+</form>
+{% endif %}
+
+
+
+
+
+
+{% if add == 'motor' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+{% include 'snippets/motor.html' %}
+    {{ form.hidden_tag() }}
+</form>
+{% endif %}
+
+
+
+
+
+{% if add == 'pump' %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+{% include 'snippets/pump.html' %}
+    {{ form.hidden_tag() }}
+
+</div>
+</div>
+</form>
+{% endif %}

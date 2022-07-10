@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/historical-usage-lines-display-category.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/utilities.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  </head>
+{% if error %}
+  <header>
+        <div class=error><strong>Error:</strong> {{ error }}</div>
+  </header>
+{% endif %}
+  <body style="margin: 0; background: #ffffff" onload = 'getTotal(); createBarChart("energy");'> 
+    <input type="hidden" id="anPageName" name="page" value="historical-usage-lines-display-category" />
+    <div class="container-center-horizontal">
+      <div class="historical-usage-lines-display-category screen" style = 'bottom: 10px;'>
+        <div class = 'inventory-page'>
+            <div class="container-inventory">
+         <div class="inventory">
+        <div class="inventory__sidebar">
+                 <div class="arrow-toggle">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_175_397)">
+                        <path d="M7.3335 11L12.8335 16.5L14.126 15.2075L9.92766 11L14.126 6.7925L12.8335 5.5L7.3335 11Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_175_397">
+                        <rect width="22" height="22" fill="white" transform="translate(0 22) rotate(-90)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+                 </div>
+               <div class="inventory__sidebar--logo">
+                   <a href="#">
+                    <svg width="50" height="58" viewBox="0 0 50 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.31689 36.604C2.31689 29.8725 7.36509 25.1192 14.265 25.1192C21.2491 25.1192 26.2552 29.8725 26.2552 36.604C26.2552 43.3354 21.2491 48.1309 14.265 48.1309C7.3666 48.1309 2.31689 43.3339 2.31689 36.604ZM20.9543 36.604C20.9543 32.3124 18.0933 29.5777 14.265 29.5777C10.4789 29.5777 7.61781 32.3124 7.61781 36.604C7.61781 40.8955 10.4789 43.6302 14.265 43.6302C18.0933 43.6287 20.9543 40.894 20.9543 36.604Z" fill="#4DAAE8"/>
+                        <path d="M18.3551 21.7392C22.5696 21.7392 25.986 18.3227 25.986 14.1082C25.986 9.89373 22.5696 6.47723 18.3551 6.47723C14.1406 6.47723 10.7241 9.89373 10.7241 14.1082C10.7241 18.3227 14.1406 21.7392 18.3551 21.7392Z" fill="#98C355"/>
+                        <path d="M3.80871 57.4301C5.91221 57.4301 7.61743 55.7248 7.61743 53.6213C7.61743 51.5178 5.91221 49.8126 3.80871 49.8126C1.70522 49.8126 0 51.5178 0 53.6213C0 55.7248 1.70522 57.4301 3.80871 57.4301Z" fill="#4DAAE8"/>
+                        <path d="M46.0467 9.99562C47.9899 9.99562 49.5651 8.42039 49.5651 6.47723C49.5651 4.53407 47.9899 2.95883 46.0467 2.95883C44.1036 2.95883 42.5283 4.53407 42.5283 6.47723C42.5283 8.42039 44.1036 9.99562 46.0467 9.99562Z" fill="#DB4B46"/>
+                        <path d="M33.9446 8.85992C36.3912 8.85992 38.3746 6.87656 38.3746 4.42996C38.3746 1.98336 36.3912 0 33.9446 0C31.498 0 29.5146 1.98336 29.5146 4.42996C29.5146 6.87656 31.498 8.85992 33.9446 8.85992Z" fill="#F7CA50"/>
+                        </svg>
+                        <svg width="102" height="22" viewBox="0 0 102 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.3163 11.6663C13.3163 15.1636 10.8975 17.3598 7.90859 17.3598C6.62698 17.3598 5.59057 16.9732 4.83845 16.2015V21.1204H0.975586V6.15627H4.65493V7.25436C5.38749 6.3804 6.46452 5.97275 7.90859 5.97275C10.8975 5.97275 13.3163 8.16893 13.3163 11.6663ZM9.41282 11.6663C9.41282 9.99958 8.39596 9.04289 7.0948 9.04289C5.79364 9.04289 4.77678 9.99807 4.77678 11.6663C4.77678 13.3345 5.79364 14.2896 7.0948 14.2896C8.39596 14.2896 9.41282 13.333 9.41282 11.6663Z" fill="black"/>
+                            <path d="M22.709 16.728C22.0381 17.1552 21.0423 17.3583 20.0254 17.3583C17.199 17.3583 15.5518 15.9759 15.5518 13.1494V9.44903H13.9453V6.56241H15.5518V3.69534H19.4147V6.56241H21.9358V9.44903H19.4147V13.1088C19.4147 13.9226 19.8825 14.3694 20.573 14.3694C21.0002 14.3694 21.4274 14.2475 21.7523 14.0234L22.709 16.728Z" fill="black"/>
+                            <path d="M23.7661 2.88305C23.7661 1.72479 24.7017 0.829773 26.1247 0.829773C27.5478 0.829773 28.4834 1.66312 28.4834 2.82288C28.4834 4.04281 27.5478 4.93783 26.1247 4.93783C24.7017 4.93632 23.7661 4.04131 23.7661 2.88305ZM24.1933 6.15626H28.0562V17.1763H24.1933V6.15626Z" fill="black"/>
+                            <path d="M30.2915 9.89728H36.2287V12.8651H30.2915V9.89728V9.89728Z" fill="black"/>
+                            <path d="M57.2512 10.8735V17.1763H53.3883V11.5038C53.3883 9.91835 52.737 9.24746 51.7217 9.24746C50.604 9.24746 49.7902 9.99957 49.7902 11.7069V17.1763H45.9274V11.5038C45.9274 9.91835 45.2971 9.24746 44.2607 9.24746C43.122 9.24746 42.3082 9.99957 42.3082 11.7069V17.1763H38.4453V6.15627H42.1247V7.31452C42.958 6.4195 44.1178 5.97275 45.4189 5.97275C46.9232 5.97275 48.2048 6.52179 48.9764 7.70111C49.8504 6.60302 51.2132 5.97275 52.7987 5.97275C55.3604 5.97275 57.2512 7.45743 57.2512 10.8735Z" fill="black"/>
+                            <path d="M59.2646 2.88305C59.2646 1.72479 60.2003 0.829773 61.6233 0.829773C63.0463 0.829773 63.9819 1.66312 63.9819 2.82288C63.9819 4.04281 63.0463 4.93783 61.6233 4.93783C60.1988 4.93632 59.2646 4.04131 59.2646 2.88305ZM59.6903 6.15626H63.5532V17.1763H59.6903V6.15626Z" fill="black"/>
+                            <path d="M75.65 14.2881V17.1748H65.4844V14.8973L70.5882 9.02182H65.6273V6.15475H75.4469V8.4111L70.343 14.2866H75.65V14.2881Z" fill="black"/>
+                            <path d="M88.4398 12.6425H80.4298C80.7547 13.7601 81.7099 14.4115 83.1344 14.4115C84.2114 14.4115 84.9229 14.1061 85.675 13.4563L87.7088 15.5712C86.6513 16.7506 85.1064 17.3598 83.0126 17.3598C79.088 17.3598 76.5474 14.941 76.5474 11.6467C76.5474 8.33288 79.1301 5.97424 82.6064 5.97424C85.8601 5.97424 88.503 8.04858 88.503 11.6873C88.5015 11.9701 88.4594 12.3371 88.4398 12.6425ZM80.3681 10.6088H84.8823C84.6792 9.45052 83.8248 8.71796 82.626 8.71796C81.4271 8.71796 80.5922 9.45052 80.3681 10.6088Z" fill="black"/>
+                            <path d="M102 2.09033V17.1763H98.3205V16.0782C97.588 16.9521 96.511 17.3598 95.0879 17.3598C92.0795 17.3598 89.6592 15.1636 89.6592 11.6467C89.6592 8.14938 92.078 5.97426 95.0879 5.97426C96.368 5.97426 97.406 6.33979 98.137 7.11296V2.09033H102ZM98.1987 11.6452C98.1987 9.97852 97.2029 9.04289 95.9017 9.04289C94.5795 9.04289 93.5837 9.97852 93.5837 11.6452C93.5837 13.333 94.5795 14.2881 95.9017 14.2881C97.2014 14.2881 98.1987 13.333 98.1987 11.6452Z" fill="black"/>
+                            </svg>
+                                                    
+                        
+                   </a>
+               </div>
+               <div class="inventory__sidebar--links">
+             <ul>
+                 <li>
+                     <a href="{{url_for('commercial.datastream', building_id=building_id)}}">
+                         <span>
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H9C9.55 12 10 11.55 10 11V3C10 2.45 9.55 2 9 2H3C2.45 2 2 2.45 2 3V11C2 11.55 2.45 12 3 12ZM3 22H9C9.55 22 10 21.55 10 21V17C10 16.45 9.55 16 9 16H3C2.45 16 2 16.45 2 17V21C2 21.55 2.45 22 3 22ZM15 22H21C21.55 22 22 21.55 22 21V13C22 12.45 21.55 12 21 12H15C14.45 12 14 12.45 14 13V21C14 21.55 14.45 22 15 22ZM14 3V7C14 7.55 14.45 8 15 8H21C21.55 8 22 7.55 22 7V3C22 2.45 21.55 2 21 2H15C14.45 2 14 2.45 14 3Z" stroke="#AFB8CC" stroke-width="2"/>
+                            </svg>
+                            </span>
+                         <span>Overview</span>
+                     </a>
+                 </li>
+                 <li>
+                    <a href = "{{url_for('commercial.datastream', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.5 7L13.5 15.5L9.5 11L3.5 17" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </span>
+                        <span>Data Stream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('commercial.inventory', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        </span>
+                        <span> Inventory </span>
+                       
+                    
+                </a>
+                </li>
+                <li>
+                    <a href="{{url_for('commercial.utilities', building_id=building_id)}}">
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C16.1175 22 19.5 18.737 19.5 14.549C19.5 13.521 19.4475 12.419 18.8775 10.706C18.3075 8.993 18.193 8.772 17.5905 7.714C17.333 9.8725 15.9555 10.7725 15.6055 11.0415C15.6055 10.7615 14.7725 7.668 13.509 5.8165C12.2685 4 10.5815 2.8085 9.5925 2C9.5925 3.535 9.161 5.817 8.5425 6.98C7.9245 8.1425 7.8085 8.185 7.036 9.05C6.264 9.915 5.9095 10.1825 5.2635 11.2325C4.618 12.2825 4.5 13.681 4.5 14.709C4.5 18.897 7.8825 22 12 22Z" stroke="#AFB8CC" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        </span>
+                      <span>  Utilities &amp;<br/>
+                        Alternatives</span>
+                    </a>
+                </li>
+                <li><a href="{{url_for('commercial.energymanagement', building_id=building_id)}}"><span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#AFB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.1013 7.82619L19.9672 7.326L19.9672 7.32599L19.1013 7.82619ZM19.1671 7.94004L18.3012 8.44023L18.3012 8.44023L19.1671 7.94004ZM19.9266 8.68741L20.4128 7.81354L20.4128 7.81353L19.9266 8.68741ZM21.4778 9.55032L20.9916 10.4242L20.9916 10.4242L21.4778 9.55032ZM21.9916 10.4219L20.9916 10.4242L20.9916 10.4242L21.9916 10.4219ZM21.9988 13.5738L20.9988 13.576L20.9988 13.576L21.9988 13.5738ZM21.4835 14.4507L20.9988 13.576L20.9988 13.576L21.4835 14.4507ZM19.9286 15.3124L20.4133 16.187L20.4133 16.187L19.9286 15.3124ZM19.1662 16.0613L18.3003 15.5611L18.3003 15.5611L19.1662 16.0613ZM19.1013 16.1737L19.9672 16.6738L19.9672 16.6738L19.1013 16.1737ZM18.8334 17.2077L17.8336 17.2245L17.8336 17.2245L18.8334 17.2077ZM18.8634 18.9886L17.8635 19.0054L17.8635 19.0054L18.8634 18.9886ZM18.3655 19.8703L17.8635 19.0054L17.8635 19.0054L18.3655 19.8703ZM15.6375 21.4536L16.1395 22.3185L16.1395 22.3185L15.6375 21.4536ZM14.6208 21.4461L15.1356 20.5887L15.1356 20.5887L14.6208 21.4461ZM13.0948 20.5299L12.5801 21.3873L12.5801 21.3873L13.0948 20.5299ZM10.9062 20.5287L11.4199 21.3867L11.4199 21.3867L10.9062 20.5287ZM9.38713 21.4383L8.87341 20.5803L8.87341 20.5803L9.38713 21.4383ZM8.37412 21.4468L8.87341 20.5803L8.87341 20.5803L8.37412 21.4468ZM5.63749 19.8698L6.13677 19.0033L6.13677 19.0033L5.63749 19.8698ZM5.13692 18.9865L6.13677 19.0034L6.13677 19.0034L5.13692 18.9865ZM5.16685 17.2133L4.16699 17.1965L4.16699 17.1965L5.16685 17.2133ZM4.9029 16.186L5.77078 15.6893L5.77078 15.6893L4.9029 16.186ZM4.83337 16.0646L3.96549 16.5613L3.96549 16.5613L4.83337 16.0646ZM4.0699 15.3104L3.58376 16.1842L3.58376 16.1842L4.0699 15.3104ZM2.52248 14.4495L2.03633 15.3234L2.03633 15.3234L2.52248 14.4495ZM2.00863 13.5779L1.00863 13.5802L2.00863 13.5779ZM2.00147 10.4261L3.00146 10.4238L2.00147 10.4261ZM2.51675 9.54914L3.00146 10.4238L3.00146 10.4238L2.51675 9.54914ZM4.07164 8.68748L3.58692 7.8128L3.58692 7.8128L4.07164 8.68748ZM4.83403 7.93852L3.96812 7.43832L3.96812 7.43833L4.83403 7.93852ZM4.89892 7.82619L5.76483 8.32638L5.76484 8.32638L4.89892 7.82619ZM5.16681 6.79216L6.16667 6.77533L6.16667 6.77533L5.16681 6.79216ZM5.13685 5.01125L4.13699 5.02807L4.13699 5.02807L5.13685 5.01125ZM5.63473 4.12954L6.1367 4.99442L6.1367 4.99442L5.63473 4.12954ZM8.36272 2.54625L8.86469 3.41113L8.86469 3.41113L8.36272 2.54625ZM9.3794 2.55377L8.86469 3.41113L8.86469 3.41113L9.3794 2.55377ZM10.9055 3.46994L10.3908 4.3273L10.3908 4.3273L10.9055 3.46994ZM13.094 3.47113L12.5803 2.61318L12.5803 2.61318L13.094 3.47113ZM14.6131 2.56155L14.0994 1.70359L14.0994 1.70359L14.6131 2.56155ZM15.6261 2.55307L16.1254 1.68663L16.1254 1.68663L15.6261 2.55307ZM18.3628 4.13007L18.8621 3.26364L18.8621 3.26364L18.3628 4.13007ZM18.8634 5.01333L17.8635 4.99651L17.8635 4.99651L18.8634 5.01333ZM18.8334 6.79216L17.8336 6.77533L17.8336 6.77534L18.8334 6.79216ZM18.2354 8.32638L18.3012 8.44023L20.033 7.43985L19.9672 7.326L18.2354 8.32638ZM19.4405 9.56129L20.9916 10.4242L21.9639 8.67644L20.4128 7.81354L19.4405 9.56129ZM20.9916 10.4242L20.9988 13.576L22.9988 13.5715L22.9916 10.4197L20.9916 10.4242ZM20.9988 13.576L19.4439 14.4377L20.4133 16.187L21.9682 15.3254L20.9988 13.576ZM18.3003 15.5611L18.2354 15.6735L19.9672 16.6738L20.0321 16.5615L18.3003 15.5611ZM17.8336 17.2245L17.8635 19.0054L19.8633 18.9718L19.8333 17.1909L17.8336 17.2245ZM17.8635 19.0054L15.1356 20.5887L16.1395 22.3185L18.8675 20.7352L17.8635 19.0054ZM15.1356 20.5887L13.6095 19.6725L12.5801 21.3873L14.1061 22.3034L15.1356 20.5887ZM12.0654 19.2446H11.9337V21.2446H12.0654V19.2446ZM10.3925 19.6708L8.87341 20.5803L9.90085 22.2963L11.4199 21.3867L10.3925 19.6708ZM8.87341 20.5803L6.13677 19.0033L5.1382 20.7362L7.87484 22.3132L8.87341 20.5803ZM6.13677 19.0034L6.16671 17.2302L4.16699 17.1965L4.13706 18.9696L6.13677 19.0034ZM5.77078 15.6893L5.70125 15.5678L3.96549 16.5613L4.03502 16.6828L5.77078 15.6893ZM4.55605 14.4365L3.00862 13.5756L2.03633 15.3234L3.58376 16.1842L4.55605 14.4365ZM3.00862 13.5756L3.00146 10.4238L1.00147 10.4284L1.00863 13.5802L3.00862 13.5756ZM3.00146 10.4238L4.55635 9.56215L3.58692 7.8128L2.03203 8.67447L3.00146 10.4238ZM5.69995 8.43871L5.76483 8.32638L4.03301 7.32599L3.96812 7.43832L5.69995 8.43871ZM6.16667 6.77533L6.1367 4.99442L4.13699 5.02807L4.16695 6.80898L6.16667 6.77533ZM6.1367 4.99442L8.86469 3.41113L7.86075 1.68136L5.13277 3.26465L6.1367 4.99442ZM8.86469 3.41113L10.3908 4.3273L11.4202 2.61258L9.89412 1.69641L8.86469 3.41113ZM11.9349 4.75522H12.0666V2.75522H11.9349V4.75522ZM13.6078 4.32909L15.1268 3.41951L14.0994 1.70359L12.5803 2.61318L13.6078 4.32909ZM15.1268 3.41951L17.8635 4.99651L18.8621 3.26364L16.1254 1.68663L15.1268 3.41951ZM17.8635 4.99651L17.8336 6.77533L19.8333 6.80898L19.8632 5.03016L17.8635 4.99651ZM17.8635 4.99651L17.8635 4.99651L19.8632 5.03016C19.8755 4.3031 19.4921 3.6267 18.8621 3.26364L17.8635 4.99651ZM15.1268 3.41951L15.1268 3.41951L16.1254 1.68663C15.497 1.32449 14.7217 1.33098 14.0994 1.70359L15.1268 3.41951ZM12.0666 4.75522C12.6094 4.75522 13.1421 4.60795 13.6078 4.32909L12.5803 2.61318C12.4251 2.70613 12.2475 2.75522 12.0666 2.75522V4.75522ZM10.3908 4.3273C10.8572 4.6073 11.3909 4.75522 11.9349 4.75522V2.75522C11.7536 2.75522 11.5757 2.70592 11.4202 2.61258L10.3908 4.3273ZM8.86469 3.41113L8.86469 3.41113L9.89412 1.69641C9.26964 1.3215 8.49071 1.31574 7.86075 1.68136L8.86469 3.41113ZM6.1367 4.99442L6.1367 4.99442L5.13277 3.26465C4.50578 3.62855 4.12479 4.30324 4.13699 5.02807L6.1367 4.99442ZM5.76484 8.32638C6.03692 7.85536 6.17582 7.31922 6.16667 6.77533L4.16695 6.80898C4.17 6.99027 4.1237 7.16899 4.03301 7.326L5.76484 8.32638ZM4.55635 9.56215C5.0324 9.29834 5.42771 8.90999 5.69995 8.43871L3.96812 7.43833C3.87738 7.59542 3.7456 7.72487 3.58692 7.8128L4.55635 9.56215ZM3.00146 10.4238L3.00146 10.4238L2.03204 8.67447C1.39464 9.0277 0.999815 9.69964 1.00147 10.4284L3.00146 10.4238ZM3.00863 13.5756L3.00862 13.5756L1.00863 13.5802C1.01027 14.3045 1.40339 14.9713 2.03633 15.3234L3.00863 13.5756ZM5.70126 15.5678C5.42971 15.0934 5.03372 14.7022 4.55605 14.4365L3.58376 16.1842C3.74298 16.2728 3.87498 16.4032 3.96549 16.5613L5.70126 15.5678ZM6.16671 17.2302C6.17582 16.6903 6.03904 16.1579 5.77078 15.6893L4.03502 16.6828C4.12443 16.839 4.17003 17.0165 4.16699 17.1965L6.16671 17.2302ZM6.13677 19.0033L6.13677 19.0034L4.13706 18.9696C4.12478 19.6967 4.50813 20.3731 5.1382 20.7362L6.13677 19.0033ZM8.87341 20.5803L8.87341 20.5803L7.87484 22.3132C8.50328 22.6754 9.27855 22.6689 9.90085 22.2963L8.87341 20.5803ZM11.9337 19.2446C11.3908 19.2446 10.8582 19.3919 10.3925 19.6708L11.4199 21.3867C11.5752 21.2937 11.7527 21.2446 11.9337 21.2446V19.2446ZM13.6095 19.6725C13.1431 19.3925 12.6093 19.2446 12.0654 19.2446V21.2446C12.2467 21.2446 12.4246 21.2939 12.5801 21.3873L13.6095 19.6725ZM15.1356 20.5887L15.1356 20.5887L14.1061 22.3034C14.7306 22.6783 15.5095 22.6841 16.1395 22.3185L15.1356 20.5887ZM17.8635 19.0054L17.8635 19.0054L18.8675 20.7352C19.4945 20.3713 19.8755 19.6966 19.8633 18.9718L17.8635 19.0054ZM18.2354 15.6735C17.9633 16.1445 17.8244 16.6806 17.8336 17.2245L19.8333 17.1909C19.8302 17.0096 19.8765 16.8309 19.9672 16.6738L18.2354 15.6735ZM19.4439 14.4377C18.9679 14.7015 18.5725 15.0898 18.3003 15.5611L20.0321 16.5615C20.1229 16.4044 20.2546 16.275 20.4133 16.187L19.4439 14.4377ZM20.9988 13.576L20.9988 13.576L21.9682 15.3254C22.6056 14.9721 23.0004 14.3002 22.9988 13.5715L20.9988 13.576ZM20.9916 10.4242L20.9916 10.4242L22.9916 10.4197C22.99 9.69536 22.5969 9.02856 21.9639 8.67644L20.9916 10.4242ZM18.3012 8.44023C18.5726 8.91007 18.9663 9.29751 19.4405 9.56129L20.4128 7.81353C20.2547 7.72561 20.1235 7.59646 20.033 7.43985L18.3012 8.44023ZM19.9672 7.32599C19.8765 7.16899 19.8302 6.99028 19.8333 6.80898L17.8336 6.77534C17.8244 7.31922 17.9633 7.85536 18.2354 8.32638L19.9672 7.32599Z" fill="#AFB8CC"/>
+</svg></span><span>Energy<br>                      Management</span></a></li>
+                <li class="logout-btn">
+                   
+                </li>
+                <li class="ads">
+              
+                </li>
+             </ul>
+
+               </div>
+             <div class="bottom-action">
+                <a href = "{{url_for('accounts.logout')}}">
+                <button class="logout" style = 'position: relative; top: 200px;'>
+                    <span><svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 4L7.6 5.4L10.2 8H0V10H10.2L7.6 12.6L9 14L14 9L9 4ZM18 16H10V18H18C19.1 18 20 17.1 20 16V2C20 0.9 19.1 0 18 0H10V2H18V16Z" fill="#AFB8CC"/>
+                        </svg>
+                        </span>
+                        <span>Log Out</span>
+                </button></a>
+                   <div class="ads__box" style = 'position: relative; top: 200px;'>
+                
+                    <div class="img">
+                        <img style = 'width: 134px; height: 134px; position: relative;'src="{{url_for('static',filename='img/' + building_id + '.png')}}" alt="">
+                    </div>
+                     <h2>{{buidling_description}}</h2>
+                     <p>{{building_address}}</p>
+                     <div class="ads__box--cta">
+                         <a href="#">
+                             <span>
+                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.0415 6.87499H5.95817V7.79166H5.0415V6.87499ZM5.0415 3.20832H5.95817V5.95832H5.0415V3.20832ZM5.49525 0.916656C2.96525 0.916656 0.916504 2.96999 0.916504 5.49999C0.916504 8.02999 2.96525 10.0833 5.49525 10.0833C8.02984 10.0833 10.0832 8.02999 10.0832 5.49999C10.0832 2.96999 8.02984 0.916656 5.49525 0.916656ZM5.49984 9.16666C3.474 9.16666 1.83317 7.52582 1.83317 5.49999C1.83317 3.47416 3.474 1.83332 5.49984 1.83332C7.52567 1.83332 9.1665 3.47416 9.1665 5.49999C9.1665 7.52582 7.52567 9.16666 5.49984 9.16666Z" fill="#498DE1"/>
+                                    </svg>
+                                    
+                             </span>
+                             <span>
+                                 About
+                             </span>
+                         </a>
+                         <a href="#">
+                       <span>
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.375 7.90624V9.62499H3.09375L8.16292 4.55582L6.44417 2.83707L1.375 7.90624ZM9.81292 2.90582L8.09417 1.18707L6.93458 2.35124L8.65333 4.06999L9.81292 2.90582Z" fill="#498DE1"/>
+                            </svg>
+                            
+                       </span>
+                       <span>Switch</span>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+        <div class = "rightside" id = 'rightside' style = 'right: 0; top: 0;'>
+            <div class = 'retractblock'>
+                <img class = 'retractbutton'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonbackground.png')}}"/><img class = 'retractbuttonarrowright' id = 'rightarrow'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonarrow.png')}}"/>
+            </div>
+            <div class = "rightabsolute">
+              
+            <div class = "rightpanel" id = rightpanel>
+                <div class = 'rightsidetitle'>Panels</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart6"></div>
+                </div>
+                <div class="x100-l6cqYc" id = 'percent3'>100%</div>
+                <div class="rectangle-2973-l6cqYc">
+                <div class="rectangle-152-l6cqYc"></div>
+                <div class="electrical-panels-l6cqYc2 avertacy-bold-sapphire-15px">Electrical Panels</div>
+
+                {% for i in range(0, numpanels) %}
+
+                <div class="rectangle-23402-l6cqYc">
+                <div class="panel-a2-l6cqYc avertacy-bold-sapphire-12px" style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][0]}}</div>
+                <div class="x43-l6cqYc avertacy-bold-sapphire-12px" style = 'color: {{panelsdf.iloc[i][2]}};'></div>
+                <input onclick = 'togglePanels("{{strippedNames[i]}}");' style = 'background-color: {{panelsdf.iloc[i][2]}};' type= 'checkbox'  class="rectangle-30242-l6cqYc" checked/><label for = 'panel1check'></label>
+                <div class="info"><img class="info-image" src="{{url_for('static',filename='img/infoimage1.png')}}"/></div></div>
+                <div class = 'panelpercent avertacy-bold-sapphire-12px' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][1]}}%</div>
+
+                {% endfor %}
+            </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Inventory</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart7'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{categoriesdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{(categoriesdf.iloc[i][1])}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openCategorySidebar(); changeDotColourCategory()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Time Loads</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart8'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][1]}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openTimeSidebar()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+            <div class = "rightpanel" id = rightcategory>
+                <div class = 'rightsidetitle'>Categories</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart10"></div>
+                </div>
+        <div class="x100-l6cqYc"id = 'percent4'>100%</div>
+        <div class="rectangle-2973-l6cqYc">
+
+        <div class="electrical-panels-l6cqYc avertacy-bold-sapphire-15px">Categories</div>
+        <div class="rectangle-15-l6cqYc"></div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[0][2]}};' onclick = 'toggleCategories("{{categoriesdf.iloc[0][3]}}"); checkIf0();' type= 'checkbox' class="rectangle-3024-l6cqYc" id= '{{categoriesdf.iloc[0][3]}}check' checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[0][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[0][1])}}%</div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[1][2]}};'  onclick = 'toggleCategories("{{categoriesdf.iloc[1][3]}}"); checkIf0();' type= 'checkbox' class="rectangle-3025-l6cqYc"id= '{{categoriesdf.iloc[1][3]}}check' checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[1][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[1][1])}}%</div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[2][2]}};' onclick = 'toggleCategories("{{categoriesdf.iloc[2][3]}}"); checkIf0();' type= 'checkbox'class="rectangle-3026-l6cqYc" id= '{{categoriesdf.iloc[2][3]}}check' checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[2][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[2][1])}}%</div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[3][2]}};' onclick = 'toggleCategories("{{categoriesdf.iloc[3][3]}}"); checkIf0();' type= 'checkbox'class="rectangle-3026-l6cqYc" id= '{{categoriesdf.iloc[3][3]}}check' checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[3][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[3][1])}}%</div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[4][2]}};'  onclick = 'toggleCategories("{{categoriesdf.iloc[4][3]}}"); checkIf0();' type= 'checkbox'class="rectangle-3028-l6cqYc"id= '{{categoriesdf.iloc[4][3]}}check'checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[4][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[4][1])}}%</div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input style = 'background-color: {{categoriesdf.iloc[5][2]}};'  onclick = 'toggleCategories("{{categoriesdf.iloc[5][3]}}"); checkIf0();' type= 'checkbox'class="rectangle-3029-l6cqYc"id= '{{categoriesdf.iloc[5][0]}}check' checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[5][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px">{{(categoriesdf.iloc[5][1])}}%</div>
+        </div>
+    </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Electrical Panels</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart11'></div>
+                        {% for i in range (0, numpanels) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{panelsdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][1]}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openPanelSidebar();'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Time Loads</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart12'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][1]}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openTimeSidebar()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+                    <div class = "rightpanel" id = righttimeloads>
+                <div class = 'rightsidetitle'>Time Loads</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart13"></div>
+                </div>
+                <div class="x100-l6cqYc" id = 'percent3'>100%</div>
+                <div class="rectangle-2973-l6cqYc">
+                <div class="rectangle-152-l6cqYc"></div>
+                <div class="electrical-panels-l6cqYc2 avertacy-bold-sapphire-15px">Time Loads</div>
+
+                {% for i in range(0, 3) %}
+
+                <div class="rectangle-23402-l6cqYc">
+                <div class="panel-a2-l6cqYc avertacy-bold-sapphire-12px" style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][0]}}</div>
+                <div class="x43-l6cqYc avertacy-bold-sapphire-12px"></div>
+                <input style = 'background-color: {{timeloads.iloc[i][2]}};' type= 'checkbox' class="rectangle-30242-l6cqYc" id = 'panel1check'checked/><label for = 'panel1check' ></label>
+                <div class="info"><img class="info-image" src="{{url_for('static',filename='img/infoimage1.png')}}"/></div></div>
+                <div class = 'panelpercent avertacy-bold-sapphire-12px' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][1]}}</div>
+
+                {% endfor %}
+            </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Inventory</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart14'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{categoriesdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{(categoriesdf.iloc[i][1])}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openCategorySidebar();'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Electrical Panels</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart15'></div>
+                        {% for i in range (0, numpanels) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{panelsdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][1]}}</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openPanelSidebar();><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+                <div class = 'rightsidetitle' id = title></div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Inventory</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, 3) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                                    <div class = 'category-name' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{categoriesdf.iloc[i][0]}}</div>
+                                    <div class = 'category-percent' style = 'color: {{categoriesdf.iloc[i][2]}};'>{{(categoriesdf.iloc[i][1])}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openCategorySidebar();'>
+                            <div class = 'explore-text' onclick= 'openCategorySidebar();'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openCategorySidebar();'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Panels</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart3'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, numpanels) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{panelsdf.iloc[i][2]}};'></div>
+                                    <div class = 'category-name' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][0]}}</div>
+                                    <div class = 'category-percent' style = 'color: {{panelsdf.iloc[i][2]}};'>{{panelsdf.iloc[i][1]}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openPanelSidebar();'>
+                            <div class = 'explore-text' onclick= 'openPanelSidebar();'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openPanelSidebar();'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Time Loads</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart4'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, 3) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                                    <div class = 'category-name' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][0]}}</div>
+                                    <div class = 'category-percent' style = 'color: {{timeloads.iloc[i][2]}};'>{{timeloads.iloc[i][1]}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openTimeSidebar()'>
+                            <div class = 'explore-text' onclick= 'openTimeSidebar()'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openTimeSidebar()'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+
+        <h2 class="histrocial-main-title" style = 'position: absolute; top: 20px; left: 310px;'>
+    <a href="{{url_for('commercial.datastream', building_id=building_id)}}"><span style = 'position: relative; top: 7px;'><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_7_3183)"> <path d="M9.66669 14.5L16.9167 21.75L18.6204 20.0463L13.0863 14.5L18.6204 8.95375L16.9167 7.25L9.66669 14.5Z" fill="#0D1758"></path></g>
+        <defs><clipPath id="clip0_7_3183"><rect width="29" height="29" fill="white" transform="translate(0 29) rotate(-90)"></rect></clipPath></defs></svg>
+    </span></a>
+  Past Use
+</h2>
+        <div class="rectangle-2984-L7BXHD" id = 'Live-Usage'>
+        <div class = 'circuit-block' id = 'circuit-block' style = 'transition: 0.5s;'>
+            <div class = 'circuit-header'>
+                <div class = 'circuit-title' id = 'circuit-title'>Name</div>
+                <div class = 'exit-button' onclick = 'closeCircuitBlock();'><img class = 'exit-button-image' src ="{{url_for('static',filename='img/exit-button-image.png')}}"/></div>
+            </div>
+            <div class = 'circuit-content'>
+                <div class = 'popup-selector'>
+                    <div class = 'pastuse-popup' onclick= "openOverview()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/overviewoffpopup.png')}}"/></div>
+                    <div class = 'pastuse-popup'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/pastuseonpopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 3px; position: relative;' onclick="openCarbonLevy()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/co2image.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 2px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/doubleringimage.png')}}"/></div>
+                    <div class = 'pastuse-popup'onclick= "openLoadPredict()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/loadpredictimage.png')}}"/></div>
+                </div>
+                <div class = 'past-use'>Past-Use</div>
+                    <div class = 'total-block1'>    
+                    <div class = 'total-box' style = 'margin-right: 20px;'><span style = 'font-size: 20px;'>$</span><span id = 'cost-whole'></span><span class = 'decimal-span' style = 'font-size: 10px;' id = 'cost-decimal'></span><div class = total-box-line>Costs</div></div>
+
+                    <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'circuit-whole'></span><span class = 'decimal-span' id = 'circuit-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kWh</span><div class = total-box-line>Usage</div></div>
+
+                    <div class = 'total-box'style = 'margin-right: 60px;'><span id = 'circuitemission-whole'></span><span class = 'decimal-span' id = 'circuitemission-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kg/CO2</span><div class = total-box-line>Emissions</div></div>
+                </div>
+                    <img class="rectangle-3269-L7BXHD" id="todayrectangle" src="./48ast65s_files/rectangle-3269@2x.svg" style="top: 256px; left: 525px">
+                    <form onsubmit="" method="POST" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <div class="group-7286-L7BXHD" style="top: 270px; left: 535px;">
+                      <input onchange="submit();" name="date" id="today3" type="date" class="march-18th-2021-tkyWp6" value="2022-03-06">
+                      <div id="total" style="color: transparent;"></div>
+                      <div id="totalprice" style="color: transparent;"></div>
+                      <div id="percentage" style="color: transparent;">100</div>
+                    </div>
+                    </form>
+                 <div class = week-day-offimage-block-circuit>
+                    <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" /></div>
+                    <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                </div>
+                <div class = week-day-onimage-block-circuit>
+                    <div class = onimage-frame-day><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" /></div>
+                </div>
+                <div class = 'circuit-graph' id = 'chart5'></div>
+            </div>
+        </div>
+        <div class = 'circuit-block' id = 'overview'>
+            <div class = 'circuit-header'>
+                <div class = 'circuit-title' id = 'overview-title'>Name</div>
+                <div class = 'exit-button' onclick = 'closeCircuitBlock();'><img class = 'exit-button-image' src ="{{url_for('static',filename='img/exit-button-image.png')}}"/></div>
+            </div>
+            <div class = 'circuit-content'>
+                <div class = 'popup-selector'>
+                    <div class = 'pastuse-popup'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/overviewpopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' onclick= "closeOverview()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/pastusepopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 3px; position: relative;'  onclick="openCarbonLevy()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/co2image.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 2px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/doubleringimage.png')}}"/></div>
+                    <div class = 'pastuse-popup'onclick= "openLoadPredict()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/loadpredictimage.png')}}"/></div>
+                </div>
+                <div class = 'past-use'>Overview</div>
+                <div class = 'overview-stats-block'>
+                    <div class = 'general-info-block'>
+                        <div class = 'general-info-header'>General Info</div>
+                        <div class = 'general-info-content'>
+                            <div class = 'general-info-rectangle'>
+                                <div class = 'general-info-title'>Panel</div>
+                                <div class = 'general-info-data' id = 'general-info-panel'></div>
+                                <div class = 'general-info-panel-circle' id = 'panel-circle-color'></div>
+
+                            </div>
+                            <div class = 'general-info-rectangle'>
+                                <div class = 'general-info-title'>Category</div>
+                                <div class = 'general-info-data' id = 'general-info-category'></div>
+                                <div class = 'general-info-panel-circle' id = 'category-circle-color'></div>
+                            </div>
+                            <div class = 'general-info-rectangle' style = 'margin-top: 25px'>
+                                <div class = 'general-info-title'>Time Loads</div>
+                            </div>
+                            <div class = 'general-info-rectangle-time'>
+                                <div class = 'general-info-title' id = 'on-hours-circuit'>26.5%</div>
+                                <div class = 'general-info-data' id = 'general-info-data'>On-Hours</div>
+                                <div class = 'general-info-panel-circle' id = 'time-on-circle'></div>
+                            </div>
+                            <div class = 'general-info-rectangle-time'>
+                                <div class = 'general-info-title' id = 'off-hours-circuit'>73.5%</div>
+                                <div class = 'general-info-data' id = 'general-info-data'>Off-Hours</div>
+                                <div class = 'general-info-panel-circle' id = 'time-off-circle'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Run Times</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title'>Avg times on/month</div>
+                                <div class = 'run-times-data' id = 'run-times-category'>24x</div>
+                            </div>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title'>Avg run time</div>
+                                <div class = 'run-times-data' id = 'run-times-time' style = 'font-size: 15px;'>4h 33m</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'load-predict-block'>
+                        <div class = 'load-predict-header'>Load Pred. Score</div>
+                        <div class = 'load-predict-content'>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Monthly Stats</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title' style = 'width: 59px'>Avg cost per month</div>
+                                <div class = 'run-times-data' id = 'monthly-avg-cost'>24x</div>
+                            </div>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title'>Est. kWh /month</div>
+                                <div class = 'monthly-data' id = 'monthly-avg-kwh' style = 'font-size: 15px;'>4h 33m</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Annual Stats</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title' style = 'width: 59px'>Avg cost per year</div>
+                                <div class = 'run-times-data' id = 'yearly-avg-cost'>24x</div>
+                            </div>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'run-times-title'>Est. kWh / year</div>
+                                <div class = 'monthly-data' id = 'yearly-avg-kwh' style = 'font-size: 15px;'>4h 33m</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Power Draw %</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'power-draw-title'>Avg % of total energy</div>
+                                <div class = 'run-times-data' id = 'avg-circuit-total-percent'>24x</div>
+                            </div>
+                            <div class = 'run-times-rectangle'>
+                                <div class = 'power-draw-title' style = 'width: 74px;'>Avg % of panel energy</div>
+                                <div class = 'power-data' id = 'avg-circuit-panel-percent'>4h 33m</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Carbon Levy</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'carbon-levy-rectangle' style = 'border-right: solid 1px #ECE9F1;'>
+                                <div class = 'carbon-levy-title'>Est. Emissions</div>
+                                <div class = 'carbon-levy-data' id = 'carbon-levy-kg'>24x</div>
+                                <div class = 'carbon-levy-bottom-title'>kg/CO2</div>
+                            </div>
+                            <div class = 'carbon-levy-rectangle'>
+                                <div class = 'carbon-levy-title'>Est. Costs</div>
+                                <div class = 'carbon-levy-data' id = 'carbon-levy-cost'>4h</div>
+                                <div class = 'carbon-levy-bottom-title'>annually</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Typical Load</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'typical-load-block'><img class = 'typical-load-image' src ="{{url_for('static',filename='img/typicalload.png')}}"/></div>
+                            <div class = 'typical-load-title' id = 'typical-load'></div>
+                        </div>
+                    </div>
+                    <div class = 'run-times-block'>
+                        <div class = 'run-times-header'>Load Fluctuation</div>
+                        <div class = 'run-times-content'>
+                            <div class = 'load-fluctuation-title' id = 'load-fluctuation'>0.7%-1.3%</div>
+                            <div class = 'load-fluctuation-block'><img class = 'load-fluctuation-image' src ="{{url_for('static',filename='img/loadfluctuation.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class = 'circuit-block' id = 'load-predict'>
+            <div class = 'circuit-header'>
+                <div class = 'circuit-title' id = 'load-title'>Name</div>
+                <div class = 'exit-button' onclick = 'closeCircuitBlock();'><img class = 'exit-button-image' src ="{{url_for('static',filename='img/exit-button-image.png')}}"/></div>
+            </div>
+            <div class = 'circuit-content'>
+                <div class = 'popup-selector'>
+                    <div class = 'pastuse-popup' onclick= "openOverview()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/overviewoffpopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' onclick = 'closeLoadPredict()'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/pastusepopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 3px; position: relative;' onclick="openCarbonLevy()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/co2image.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 2px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/doubleringimage.png')}}"/></div>
+                    <div class = 'pastuse-popup'onclick= "openLoadPredict()" style = 'width: 32px; height: 32px; bottom: 2px; right: 5px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/loadpredictimageon.png')}}"/></div>
+                </div>
+                <div class = 'past-use'>Load Predictability</div>
+                    <div class = 'predict-block'>
+                        <div class = 'score-block'>
+                            <div class = score-header>Load Pred. Score</div>
+                            <div class = 'score content'>
+                                <div class = 'score-percent' id = 'score-percent'>99.9</div>
+                                <div class = 'score-chart' id = chart0></div>
+                            </div>
+                        </div>
+                        <div class = 'typical-block'>
+                            <div class = 'typical-header'>Typical Load</div>
+                                <div class = typical-rectangle style = 'border-right: 2px solid #E3E7ED;'>
+                                    <div class = 'typical-number' id = 'highnumber'>1105w</div>
+                                    <div class = 'typical-title'>High</div>
+                                </div>
+                                <div class = typical-rectangle style = 'border-right: 2px solid #E3E7ED;'>
+                                    <div class = 'typical-number' id = 'lownumber'>1105w</div>
+                                    <div class = 'typical-title'>Low</div>
+                                </div>
+                                <div class = typical-rectangle>
+                                    <div class = 'typical-number' id = 'averagenumber'>1105w</div>
+                                    <div class = 'typical-title'>Avg</div>
+                                </div>
+                        </div>
+                        <div class = 'fluctuation-block'>
+                            <div class = 'fluctuation-header'>Load Fluctuation</div>
+                            <div class = 'fluctuation-content' id = 'fluctuation-percent'></div>
+                        </div>
+                        <div id = chart01></div>
+                    </div>
+                <div class = 'circuit-graph' id = 'chart5'></div>
+            </div>
+        </div>
+        <div class = 'circuit-block' id = 'carbon-levy'>
+            <div class = 'circuit-header'>
+                <div class = 'circuit-title' id = 'levy-title'>Name</div>
+                <div class = 'exit-button' onclick = 'closeCircuitBlock();'><img class = 'exit-button-image' src ="{{url_for('static',filename='img/exit-button-image.png')}}"/></div>
+            </div>
+            <div class = 'circuit-content'>
+                <div class = 'popup-selector'>
+                    <div class = 'pastuse-popup' onclick= "openOverview()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/overviewoffpopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' onclick = 'closeCarbonLevy()'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/pastusepopup.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 3px; position: relative;' onclick= "openCarbonLevy()"><img class = 'pastuse-image' src ="{{url_for('static',filename='img/co2imageon.png')}}"/></div>
+                    <div class = 'pastuse-popup' style = 'width: 32px; height: 32px; bottom: 2px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/doubleringimage.png')}}"/></div>
+                    <div class = 'pastuse-popup'onclick= "openLoadPredict()" style = 'width: 24px; height: 24px; bottom: 0px; right: 0px; position: relative;'><img class = 'pastuse-image' src ="{{url_for('static',filename='img/loadpredictimage.png')}}"/></div>
+                </div>
+                <div class = 'past-use'>Carbon Levy</div>
+                    <div class = 'predict-block'>
+                        <div class = 'annual-emmisions-block'>
+                            <div class = annual-emmisions-header>Est. Annual Emmisions</div>
+                            <div class = 'annual-emmisions-content'>
+                                <div class = 'annual-emmisions' id = 'carbon-levy-annual'>54.37</div>
+                                <div class = 'annual-emmisions-label'>kg/CO2</div>
+                            </div>
+                        </div>
+                        <div class = 'total-levy-block'>
+                            <div class = total-levy-header>Total Levy Spent</div>
+                            <div class = 'total-levy-content'>
+                                <div class = 'annual-emmisions' id = 'carbon-cost-annual'>$57.61</div>
+                                <div class = 'annual-emmisions-label'>by 2030</div>
+                            </div>
+                        </div>
+                        <div class = 'annual-emmisions-block' style ='width: 177px;'>
+                            <div class = annual-emmisions-header style ='width: 147px;'>Total Est. Emissions</div>
+                            <div class = 'annual-emmisions-content'>
+                                <div class = 'annual-emmisions' id = 'carbon-levy-total'>598.07</div>
+                                <div class = 'annual-emmisions-label'>kg/CO2</div>
+                            </div>
+                        </div>
+                        <div class = 'levy-schedule-block'>
+                            <div class = levy-schedule-header>Total Est. Emissions</div>
+                            <div class = 'annual-emmisions-content'>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule' style = 'color: #0D1758;'>Year</div>
+                                    <div class = 'price-per-ton' style = 'color: #0D1758;'>$/Ton</div>
+                                    <div class = 'estimated-levy' style = 'color: #0D1758;'>Est. Levy</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2020</div>
+                                    <div class = 'price-per-ton'>$30</div>
+                                    <div class = 'estimated-levy' id = 'estimate1'>$1.63</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2021</div>
+                                    <div class = 'price-per-ton'>$40</div>
+                                    <div class = 'estimated-levy' id = 'estimate2'>$2.17</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2022</div>
+                                    <div class = 'price-per-ton'>$50</div>
+                                    <div class = 'estimated-levy' id = 'estimate3'>$2.71</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2023</div>
+                                    <div class = 'price-per-ton'>$65</div>
+                                    <div class = 'estimated-levy' id = 'estimate4'>$3.53</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2024</div>
+                                    <div class = 'price-per-ton'>$80</div>
+                                    <div class = 'estimated-levy' id = 'estimate5'>$4.35</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2025</div>
+                                    <div class = 'price-per-ton'>$95</div>
+                                    <div class = 'estimated-levy' id = 'estimate6'>$5.17</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2026</div>
+                                    <div class = 'price-per-ton'>$110</div>
+                                    <div class = 'estimated-levy' id = 'estimate7'>$5.98</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2027</div>
+                                    <div class = 'price-per-ton'>$125</div>
+                                    <div class = 'estimated-levy' id = 'estimate8'>$6.80</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2028</div>
+                                    <div class = 'price-per-ton'>$140</div>
+                                    <div class = 'estimated-levy' id = 'estimate9'>$7.61</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2029</div>
+                                    <div class = 'price-per-ton'>$155</div>
+                                    <div class = 'estimated-levy' id = 'estimate10'>$8.42</div>
+                                </div>
+                                <div class = 'levy-schedule-rectangle'>
+                                    <div class = 'year-schedule'>2030</div>
+                                    <div class = 'price-per-ton'>$170</div>
+                                    <div class = 'estimated-levy' id = 'estimate11'>$9.24</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = levy-graph>
+                            <img class = levy-graph-image src ="{{url_for('static',filename='img/levygraph.png')}}"/>
+                        </div>
+                        <div id = chart01></div>
+                    </div>
+                <div class = 'circuit-graph' id = 'chart5'></div>
+            </div>
+        </div>
+
+            <div class = 'total-block'>    
+            <div class = 'total-box' style = 'margin-right: 20px;'><span style = 'font-size: 20px;'>$</span><span id = 'totalprice-whole'></span><span class = 'decimal-span' style = 'font-size: 10px;' id = 'totalprice-decimal'></span><div class = total-box-line>Costs</div></div>
+
+            <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'total-whole'></span><span class = 'decimal-span' id = 'total-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kWh</span><div class = total-box-line>Usage</div></div>
+
+            <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'emission-whole'></span><span class = 'decimal-span' id = 'emission-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kg/CO2</span><div class = total-box-line>Emissions</div></div>
+        </div>
+
+        <div class = "graph-background" id ='graph-background'> </div>
+
+        <div class = 'calendar-block' id = 'calendar-block'>
+        <img class="rectangle-3207-L7BXHD" src="{{url_for('static',filename='img/rectangle-3207@2x.svg')}}" />
+        <a href = "#"><div class="day-L7BXHD">Day</div></a></div>
+
+
+        <div class = Historical-Usage-Block id = 'Historical-Usage-Block'>
+         <div class = 'header' id = 'header'>
+          <div class="column-names">
+              <div class = 'runningcolumn'>Circuit</div>
+              <div class = 'percentcolumn'>Percentage</div>
+              <div class = "tabss tabssusage" style = 'background-color: transparent;'>
+                  <input type = 'radio' checked id = 'watts' name = 'liveusagedata' class="k-wh-l6cqYc tablinksss" onclick ="changeUnits();createBarChart('energy');"><label for = 'watts' class=k-wh-l6cqYc>Energy</label>
+                  <input type = 'radio' id = 'cost' name = 'liveusagedata' class="x-l6cqYc tablinksss" id = "defaultOpenss" onclick = 'changeUnits();createBarChart("cost");'><label for = 'cost' class = x-l6cqYc>Cost</label>
+          </div>
+          </div>
+      </div>
+
+        <div class = scrollable id = 'scrollable'>
+        <div class = 'Energy' id = 'circuits'>  
+      {% for i in range(0, numcircuits) %}
+        <div class='rectangle-3165-L7BXHD {{categories[i]}}rectangle {{strippedPanels[i]}}rectangle' id = '{{channel_names[i]}}' onclick = 'exploreCircuit("{{channel_names[i]}}");'>
+        <div class = 'categorycircle {{categories[i]}}colour {{strippedPanels[i]}}colour'></div>
+
+        <div class="lunchroom-lights-L7BXHD avertacy-bold-sapphire-11px {{categories[i]}} {{strippedPanels[i]}}">{{channel_names[i]}}</div>
+
+        <div class="x345-L7BXHD avertacy-bold-sapphire-11px {{categories[i]}}value {{strippedPanels[i]}}value {{categories[i]}} {{strippedPanels[i]}}">{{usage[i]}} kWH</div>
+
+        <div class="rectangle-3184-L7BXHD {{categories[i]}}colour {{strippedPanels[i]}}colour" style= "width: {{percent[i]}}px;">
+
+          <div class="x21-L7BXHD avertacy-bold-sapphire-11px {{categories[i]}} {{strippedPanels[i]}}" style = "left: {{percent[i] + 5}}px;">{{percent[i]}}%</div></div>
+
+        <div class = 'explore-image-box' id = '{{channel_names[i]}}image'  onclick = "createChart('{{channel_names[i]}}',{{i}}, '{{strippedPanels[i]}}', '{{categories[i]}}', '{{percent[i]}}');"><img class="explore-image" src="{{url_for('static',filename='img/explore-image.png')}}" /></div>  
+        
+    </div>
+
+        {% endfor %}
+    </div>
+  </div>
+  </div>
+    <div class="chart-figma">
+      <div class="chart-figma__container">
+        <div class="chart-xaxis">
+          <div class="morning" id = morning>
+              <p class="title">12 am</p>
+              <svg class="icon-svg-day" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.9999 10.79C18.8426 12.4922 18.2038 14.1144 17.1581 15.4668C16.1125 16.8192 14.7034 17.8458 13.0956 18.4265C11.4878 19.0073 9.74789 19.1181 8.0794 18.7461C6.41092 18.3741 4.8829 17.5345 3.67413 16.3258C2.46536 15.117 1.62584 13.589 1.25381 11.9205C0.881777 10.252 0.992617 8.51208 1.57336 6.9043C2.15411 5.29651 3.18073 3.88737 4.53311 2.84175C5.8855 1.79614 7.5077 1.15731 9.2099 1C8.21331 2.34827 7.73375 4.00945 7.85843 5.68141C7.98312 7.35338 8.70376 8.92506 9.8893 10.1106C11.0748 11.2961 12.6465 12.0168 14.3185 12.1415C15.9905 12.2662 17.6516 11.7866 18.9999 10.79V10.79Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+          </div>
+          <div class="afternoon" id = afternoon>
+            <p class="title">noon</p>
+            <svg class="icon-svg-day" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 1V3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 21V23" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4.21973 4.21997L5.63973 5.63997" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.3604 18.36L19.7804 19.78" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 12H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12H23" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4.21973 19.78L5.63973 18.36" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.3604 5.63997L19.7804 4.21997" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+          </div>
+          <div class="night" id = night>
+            <p class="title">12 am</p>
+            <svg class="icon-svg-day" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.9999 10.79C18.8426 12.4922 18.2038 14.1144 17.1581 15.4668C16.1125 16.8192 14.7034 17.8458 13.0956 18.4265C11.4878 19.0073 9.74789 19.1181 8.0794 18.7461C6.41092 18.3741 4.8829 17.5345 3.67413 16.3258C2.46536 15.117 1.62584 13.589 1.25381 11.9205C0.881777 10.252 0.992617 8.51208 1.57336 6.9043C2.15411 5.29651 3.18073 3.88737 4.53311 2.84175C5.8855 1.79614 7.5077 1.15731 9.2099 1C8.21331 2.34827 7.73375 4.00945 7.85843 5.68141C7.98312 7.35338 8.70376 8.92506 9.8893 10.1106C11.0748 11.2961 12.6465 12.0168 14.3185 12.1415C15.9905 12.2662 17.6516 11.7866 18.9999 10.79V10.79Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="{{url_for('static',filename='scripts/code.js', version= correctdate)}}"></script>
+        <img class="rectangle-3269-L7BXHD" id = 'todayrectangle' src="{{url_for('static',filename='img/rectangle-3269@2x.svg')}}" />
+        <form onsubmit="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="group-7286-L7BXHD">
+            <!-- <input onchange="submit(); getTotal();" name="date" id="today2" type="date" class="march-18th-2021-tkyWp6" value="2022-03-06">-->
+            <!-- modifications started -->
+            <!-- WIP -->
+           
+            <article class="date-carousel">
+                <button class="prev-day btn btn-outline-secondary"><i class="fa fa-angle-left" aria-hidden='true'></i></button>
+                <input onchange= "submit();" type='text' id='datepicker' name='datepicker'>
+                <button class='next-day btn btn-outline-secondary'><i class='fa fa-angle-right' aria-hidden='true'></i></button>
+            </article>
+            <!-- modifications started -->
+          </div>
+        </form>
+
+  </body>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    if ( $('#today2')[0].type != 'date' ) $('#today2').datepicker();
+  </script> -->
+<script >
+   chart_colors = {{chart_colours | tojson}};
+  var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 200,
+                              height: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart10 = new ApexCharts(document.querySelector("#chart10"), options);
+                            chart10.render();
+                            
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart7 = new ApexCharts(document.querySelector("#chart7"), options);
+                            chart7.render();
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart14 = new ApexCharts(document.querySelector("#chart14"), options);
+                            chart14.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart3 = new ApexCharts(document.querySelector("#chart3"), options);
+                            chart3.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 200,
+                              height: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart6 = new ApexCharts(document.querySelector("#chart6"), options);
+                            chart6.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart11 = new ApexCharts(document.querySelector("#chart11"), options);
+                            chart11.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart15 = new ApexCharts(document.querySelector("#chart15"), options);
+                            chart15.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
+                            chart4.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 200,
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart13 = new ApexCharts(document.querySelector("#chart13"), options);
+                            chart13.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart8 = new ApexCharts(document.querySelector("#chart8"), options);
+                            chart8.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart12 = new ApexCharts(document.querySelector("#chart12"), options);
+                            chart12.render();
+</script>
+  <script >var options = {
+                              labels: ['Accuracy', 'Inaccuracy'],
+                              series: [99.9, 0.1],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#00A2E8','#FFFFFF'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart0 = new ApexCharts(document.querySelector("#chart0"), options);
+                            chart0.render();
+                            
+</script>
+<script>
+                        weeklabels = {{weeklabels | tojson}};
+                            var options = {
+                                  series: [
+                                  {
+                                    name: "Predicted",
+                                    data: [28, 29, 33, 36, 32, 32, 33]
+                                  },
+                                  {
+                                    name: "Last Weeks Usage",
+                                    data: [12, 11, 14, 18, 17, 13, 13]
+                                  }
+                                ],
+                                  chart: {
+                                  height: 340,
+                                  type: 'line',
+                                  toolbar: {
+                                    show: false
+                                  }
+                                },
+                                colors: ['#0409C5', '#216721'],
+                                dataLabels: {
+                                  enabled: false,
+                                },
+                                stroke: {
+                                  curve: 'straight',
+                                  width: 2,
+                                },
+                                title: {
+                                  text: 'Weekly Prediction',
+                                  align: 'left'
+                                },
+                                grid: {
+                                  show: false,
+                                },
+                                xaxis: {
+                                  type: 'category',
+                                  categories: weeklabels,
+                                  labels:{
+                                    showDuplicates: false,
+                                    rotate: 0,
+                                  },
+                                },
+                                yaxis: {
+                                },
+                                legend: {
+                                  position: 'top',
+                                  horizontalAlign: 'right',
+                                  floating: true,
+                                  offsetY: -25,
+                                  offsetX: -5
+                                }
+                                };
+
+                                var chart01 = new ApexCharts(document.querySelector("#chart01"), options);
+                                chart01.render();
+
+
+                                var options = {
+                                  colors:['#0D1758'],
+                                  series: [
+                                  {
+                                    name: "Panel A",
+                                    data: []
+                                  },
+                                ],
+                                  chart: {
+                                  height: '100%',
+                                  width: '100%',
+                                  type: 'bar',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                plotOptions:{
+                                    bar:{
+                                        columnWidth: '100%',
+                                        barHeight: '70%',
+                                        distributed: true,
+                                        borderRadius: 10,
+                                        colors: {
+                                          backgroundBarColors: chart_colors,
+                                          backgroundBarOpacity: 1,
+                                          backgroundBarRadius: 0,
+                                      },
+                                    },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                    show: true,
+                                    borderColor: '#E6E9EF',
+                                    position: 'back',
+                                    xaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },   
+                                    yaxis: {
+                                        lines: {
+                                            show: true
+                                        }
+                                    },
+
+                                                                },
+                                xaxis: {
+                                  labels:{
+                                    show: false
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                yaxis:{
+                                  labels:{
+                                  style:{
+                                      colors: '#AFB8CC',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  maxHeight: undefined,
+                                   "formatter": function (val) {
+                                    return val.toFixed(2)
+                                },
+                                },
+                                },
+                                };
+                                var chart5 = new ApexCharts(document.querySelector("#chart5"), options);
+                                chart5.render();
+      
+                        </script>
+<script>
+        function array(newarray){
+        return newarray;
+    }
+      function createChart(name, number, panel, category, percent){
+        var data = {{schedule | tojson}};
+        var panelnames = {{panelnames | tojson}};
+        var paneltotals = {{panelchart | tojson}};
+        var predicted_line = {{predicted_line | safe}};
+        var last_week_cd = {{last_week_cd | safe}};
+        var current_last_week = last_week_cd[name];
+        console.log(last_week_cd)
+        console.log(current_last_week)
+        var monday = current_last_week[0];
+        var tuesday = current_last_week[1];
+        var wednesday = current_last_week[2];
+        var thursday = current_last_week[3];
+        var friday = current_last_week[4];
+        var saturday = current_last_week[5];
+        var sunday = current_last_week[6];
+        var last_week_data =  [];
+        var current_line = predicted_line[name];
+        var current_line_data = current_line['week_line'];
+        var current_line_error = current_line['Error'];
+        var current_line_sum = 0;
+        var string = data[number];
+        string = string.replace('[', '')
+        string = string.replace(']', '')
+        var datalist = string.split(",");
+        chart5.updateSeries([{ 
+            name: name,
+            data: datalist,
+        } 
+        ]); 
+
+        last_week_data = Object.values(monday[0]);
+        last_week_data = last_week_data.concat(tuesday[0])
+        last_week_data = last_week_data.concat(wednesday[0])
+        last_week_data = last_week_data.concat(thursday[0])
+        last_week_data = last_week_data.concat(friday[0])
+        last_week_data = last_week_data.concat(saturday[0])
+        last_week_data = last_week_data.concat(sunday[0])
+        chart01.updateSeries([
+        { 
+            name: 'Predicted',
+            data: current_line_data,
+        },
+        {   
+            name: 'Last Weeks Usage',
+            data: last_week_data,
+        }, 
+        ]); 
+        chart0.updateSeries(100 - current_line_error, current_line_error);
+        var sum = 0;
+        var runtime = 0;
+        for(var i = 0; i < datalist.length; i++){
+            sum += (parseFloat(datalist[i]) / 1000);
+            if(datalist[i] != 0){
+                runtime += 1;
+            }
+        }
+        for(var p = 0; p < current_line_data.length; p++){
+            current_line_sum += current_line_data[p]
+        }
+        sum = Math.round(sum * 100) / 100;
+        cost = sum * 0.09;
+        cost = Math.round(cost * 100) / 100;
+        sumSplit = String(sum).split('.')
+        costSplit = String(cost).split('.')
+        emission = (sum * 0.82).toFixed(2);
+        emissionSplit = String(emission).split('.')
+        var totallevyspent = ((((sum * 0.82) * 30) * 365)/1000) + ((((sum * 0.82) * 40) * 365)/1000) +((((sum * 0.82) * 50) * 365)/1000) +((((sum * 0.82) * 65) * 365)/1000) +((((sum * 0.82) * 80) * 365)/1000) +((((sum * 0.82) * 95) * 365)/1000) +((((sum * 0.82) * 110) * 365)/1000) +((((sum * 0.82) * 125) * 365)/1000) +((((sum * 0.82) * 140) * 365)/1000) +((((sum * 0.82) * 155) * 365)/1000) +((((sum * 0.82) * 170) * 365)/1000)
+        if(emissionSplit[1] == undefined){
+            emissionSplit[1] = '00'
+          }
+          if(sumSplit[1] == undefined){
+            sumSplit[1] = '00'
+          }
+          if(costSplit[1] == undefined){
+            costSplit[1] = '00'
+          }
+        document.getElementById("circuitemission-whole").innerHTML = Math.abs(emissionSplit[0]);
+        document.getElementById("circuitemission-decimal").innerHTML = '.' + Math.abs(emissionSplit[1]);
+        document.getElementById('circuit-block').style.width = '744px';
+        document.getElementById('load-predict').style.width = '0px';
+        document.getElementById("circuit-title").innerHTML = name;
+        document.getElementById("overview-title").innerHTML = name;
+        document.getElementById("load-title").innerHTML = name;
+        document.getElementById("levy-title").innerHTML = name;
+        document.getElementById('circuit-block').style.border = 'border: 2px solid #E3E7ED';
+        document.getElementById('circuit-whole').textContent = sumSplit[0];
+        document.getElementById('circuit-decimal').textContent = '.' + sumSplit[1];
+        document.getElementById('cost-whole').textContent = costSplit[0];
+        document.getElementById('cost-decimal').textContent = '.' + costSplit[1];
+        document.getElementById("general-info-category").innerHTML = category;
+        document.getElementById("general-info-panel").innerHTML = panel;
+        document.getElementById("on-hours-circuit").innerHTML = {{timeloads.iloc[0][1]}} + '%';
+        document.getElementById("off-hours-circuit").innerHTML = {{timeloads.iloc[1][1]}} + '%';
+        document.getElementById('time-on-circle').style.backgroundColor = '{{timeloads.iloc[0][2]}}';
+        document.getElementById('time-off-circle').style.backgroundColor = '{{timeloads.iloc[1][2]}}';
+        document.getElementById("run-times-time").innerHTML = runtime + 'h';
+        document.getElementById("monthly-avg-kwh").innerHTML = (sum * 30).toFixed(2) + ' kWh';
+        document.getElementById("monthly-avg-cost").innerHTML = '$' + (cost * 30).toFixed(2);
+        document.getElementById("yearly-avg-kwh").innerHTML = (sum * 365).toFixed(2) + ' kWh';
+        document.getElementById("yearly-avg-cost").innerHTML = '$' + (cost * 365).toFixed(2);
+        document.getElementById("avg-circuit-total-percent").innerHTML = (percent * 1).toFixed(2) + '%';
+        document.getElementById("carbon-levy-kg").innerHTML = (sum * 0.82).toFixed(2);
+        document.getElementById("carbon-levy-kg").innerHTML = (sum * 0.82).toFixed(2);
+        document.getElementById("carbon-levy-annual").innerHTML = (((sum * 0.82) * 365)/1000).toFixed(2);
+        document.getElementById("carbon-levy-total").innerHTML = ((((sum * 0.82) * 365)/1000) * 11).toFixed(2);
+        document.getElementById("carbon-cost-annual").innerHTML = '$' + totallevyspent.toFixed(2);
+        document.getElementById("estimate1").innerHTML = '$' + ((((sum * 0.82) * 30) * 365)/1000).toFixed(2);
+        document.getElementById("estimate2").innerHTML = '$' + ((((sum * 0.82) * 40) * 365)/1000).toFixed(2);
+        document.getElementById("estimate3").innerHTML = '$' + ((((sum * 0.82) * 50) * 365)/1000).toFixed(2);
+        document.getElementById("estimate4").innerHTML = '$' + ((((sum * 0.82) * 65) * 365)/1000).toFixed(2);
+        document.getElementById("estimate5").innerHTML = '$' + ((((sum * 0.82) * 80) * 365)/1000).toFixed(2);
+        document.getElementById("estimate6").innerHTML = '$' + ((((sum * 0.82) * 95) * 365)/1000).toFixed(2);
+        document.getElementById("estimate7").innerHTML = '$' + ((((sum * 0.82) * 110) * 365)/1000).toFixed(2);
+        document.getElementById("estimate8").innerHTML = '$' + ((((sum * 0.82) * 125) * 365)/1000).toFixed(2);
+        document.getElementById("estimate9").innerHTML = '$' + ((((sum * 0.82) * 140) * 365)/1000).toFixed(2);
+        document.getElementById("estimate10").innerHTML = '$' + ((((sum * 0.82) * 155) * 365)/1000).toFixed(2);
+        document.getElementById("estimate11").innerHTML = '$' + ((((sum * 0.82) * 170) * 365)/1000).toFixed(2);
+        document.getElementById("circuit-block").style.boxShadow  = "0 0 0 10000px rgba(0,0,0,.50)";
+        document.getElementById("typical-load").innerHTML = (sum - 2).toFixed(2) + 'kWh' + '-' + (sum + 2).toFixed() + 'kWh';
+        document.getElementById("load-fluctuation").innerHTML = (percent - 2).toFixed(2) + '%' + ' - ' + (percent - -1).toFixed(2) + "%";
+        document.getElementById('score-percent').innerHTML = (100 - (current_line_error * 100)).toFixed(2) + "<span style = 'font-size: 14px;'>%</span>";
+        document.getElementById('highnumber').innerHTML = (Math.max( ...current_line_data) * 1000).toFixed(0) + "<span style = 'font-size: 14px;'>w</span>";
+        document.getElementById('lownumber').innerHTML = (Math.min( ...current_line_data) * 1000).toFixed(0) + "<span style = 'font-size: 14px;'>w</span>";
+        document.getElementById('averagenumber').innerHTML = ((current_line_sum / current_line_data.length) * 1000).toFixed(0) + "<span style = 'font-size: 14px;'>w</span>";
+
+
+    if(category == 'lighting'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#3649A8';
+    }
+    if(category == 'plugload'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#EE8F37';
+    }
+    if(category == 'hvac'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#EE5937';
+    }
+    if(category == 'equipment'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#3BCDEE';
+    }
+    if(category == 'hotwater'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#90C449';
+    }
+    if(category == 'other'){
+        document.getElementById('category-circle-color').style.backgroundColor = '#DBE2F3';
+    }
+
+    for(var i = 0; i < panelnames.length; i++){
+        if(panel == panelnames[i]){
+            document.getElementById('panel-circle-color').style.backgroundColor = panelcolours[i];
+            document.getElementById("avg-circuit-panel-percent").innerHTML = (((sum * 1000) / paneltotals[i]) * 100).toFixed(2) + '%';
+        }
+    }
+    }
+</script>
+  <script>
+    var price = {{price | tojson }};
+    var energy = {{usage | tojson }};
+    var Cost = true;
+    var totalUsage = {{totalUsage}};
+    var totalPrice = {{totalPrice}};
+    var totalEmmissions = {{totalEmmissions}};
+
+function changeUnits(){
+    var usage = document.getElementsByClassName('x345-L7BXHD');
+
+    if(Cost){
+    for(var i = 0; i < usage.length; i++){
+      usage[i].innerHTML = '$ ' + price[i];
+      Cost = false;
+    }
+  }
+
+  else{
+    for(var i = 0; i < usage.length; i++){
+      usage[i].innerHTML = energy[i] + ' kWh';
+      Cost = true;
+    }
+  }
+}
+
+function openPanelSidebar(){
+    document.getElementById('rightpanel').style.width = '400px';
+    document.getElementById('rightcategory').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '0px';
+    document.getElementById('title').innerHTML = 'Electrical Panels';
+
+    var colours = {{colours | tojson}};
+       var x = {{numpanels}};
+       var panelnames = {{strippedPanels | tojson}};
+       var i;
+       for(i = 0; i < x; i++){
+         var j = document.getElementsByClassName(panelnames[i] + 'colour');
+         var k = document.getElementsByClassName(panelnames[i]);
+         for(var l = 0; l < j.length; l++){
+             j[l].style.backgroundColor = colours[i];
+         }
+         for(var l = 0; l < k.length; l++){
+             k[l].style.color = colours[i];
+         }
+       }
+
+}
+function openCategorySidebar(){
+    document.getElementById('rightcategory').style.width = '400px';
+    document.getElementById('rightpanel').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '0px';
+    document.getElementById('title').innerHTML = 'Inventory';
+
+    var colours = {{colours | tojson}};
+       var x = 6;
+       var categorynames = ['lighting','equipment','hvac','plugload','hotwater','other'];
+       var i;
+       for(i = 0; i < x; i++){
+         var j = document.getElementsByClassName(categorynames[i] + 'colour');
+         var k = document.getElementsByClassName(categorynames[i]);
+         for(var l = 0; l < j.length; l++){
+             j[l].style.backgroundColor = colours[i];
+         }
+         for(var l = 0; l < k.length; l++){
+             k[l].style.color = colours[i];
+         }
+       }
+}
+function openTimeSidebar(){
+    document.getElementById('rightcategory').style.width = '0px';
+    document.getElementById('rightpanel').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '400px';
+    document.getElementById('title').innerHTML = 'Time Loads';
+}
+
+
+function toggleCategories(category){
+  var circuits = document.getElementsByClassName(category + 'rectangle');
+  var circuitvalues = document.getElementsByClassName(category + 'value');
+
+  for (var i = 0; i < circuits.length; i++) {
+    if(!(circuits[i].classList.contains('panelhidden'))){
+      if(circuits[i].style.display === "none") {
+        circuits[i].style.display = "block";
+        circuits[i].classList.remove("categoryhidden");
+        if(Cost){
+          var value = circuitvalues[i].innerHTML.split(' ')[0]
+          totalPrice += parseFloat(value * 0.09);
+          totalUsage += parseFloat(value)
+        }
+        else{
+          var value = circuitvalues[i].innerHTML.split(' ')[1]
+          totalPrice += parseFloat(value);
+          totalUsage += parseFloat(value/0.09)
+        }
+      } 
+      else {
+        circuits[i].style.display = "none";
+        circuits[i].classList.add("categoryhidden");
+        if(Cost){
+          var value = circuitvalues[i].innerHTML.split(' ')[0]
+          totalPrice -= parseFloat(value * 0.09);
+          totalUsage -= parseFloat(value)
+        }
+        else{
+          var value = circuitvalues[i].innerHTML.split(' ')[1]
+          totalPrice -= parseFloat(value);
+          totalUsage -= parseFloat(value/0.09)
+        }
+
+      }
+    }
+    else{
+    if((circuits[i].classList.contains('categoryhidden'))) {
+        circuits[i].classList.remove("categoryhidden");
+
+      } 
+      else {
+        circuits[i].classList.add("categoryhidden");
+      }
+    }
+  }
+  totalEmmissions = totalUsage * 0.82;
+  getTotal();
+}
+
+function togglePanels(panels){
+  var circuits = document.getElementsByClassName(panels + 'rectangle');
+  var circuitvalues = document.getElementsByClassName(panels + 'value');
+
+  for (var i = 0; i < circuits.length; i++) {
+    if(!(circuits[i].classList.contains('categoryhidden'))){
+      if(circuits[i].style.display === "none") {
+        circuits[i].style.display = "block";
+        circuits[i].classList.remove("panelhidden");
+        if(Cost){
+          var value = circuitvalues[i].innerHTML.split(' ')[0]
+          totalPrice += parseFloat(value * 0.09);
+          totalUsage += parseFloat(value)
+        }
+        else{
+          var value = circuitvalues[i].innerHTML.split(' ')[1]
+          totalPrice += parseFloat(value);
+          totalUsage += parseFloat(value/0.09)
+        }
+      } 
+      else {
+        circuits[i].style.display = "none";
+        circuits[i].classList.add("panelhidden");
+        if(Cost){
+          var value = circuitvalues[i].innerHTML.split(' ')[0]
+          totalPrice -= parseFloat(value * 0.09);
+          totalUsage -= parseFloat(value)
+        }
+        else{
+          var value = circuitvalues[i].innerHTML.split(' ')[1]
+          totalPrice -= parseFloat(value);
+          totalUsage -= parseFloat(value/0.09)
+        }
+      }
+    }
+    else{
+      if((circuits[i].classList.contains('panelhidden'))) {
+        circuits[i].classList.remove("panelhidden");
+      } 
+      else {
+        circuits[i].classList.add("panelhidden");
+      }
+    }
+  }
+  totalEmmissions = totalUsage * 0.82;
+  getTotal();
+}
+
+
+function getTotal() {
+  if(totalUsage < 0){
+    totalUsage = 0
+  }
+  if(totalPrice < 0){
+    totalPrice = 0
+  }
+  if(totalEmmissions < 0){
+    totalEmmissions = 0
+  }
+  totalSplit = String(totalUsage.toFixed(2)).split('.')
+  priceSplit = String(totalPrice.toFixed(2)).split('.')
+  emissionSplit = String(totalEmmissions.toFixed(2)).split('.')
+
+
+  if(totalSplit[1] == undefined){
+      totalSplit[1] = '00'
+  }
+  if(emissionSplit[1] == undefined){
+      emissionSplit[1] = '00'
+  }
+  if(priceSplit[1] == undefined){
+      priceSplit[1] = '00'
+  }
+  document.getElementById("total-whole").innerHTML = totalSplit[0];
+  document.getElementById("total-decimal").innerHTML = '.' + totalSplit[1];
+  document.getElementById("emission-whole").innerHTML = (emissionSplit[0]);
+  document.getElementById("emission-decimal").innerHTML = '.' + (emissionSplit[1]);
+  document.getElementById("totalprice-whole").innerHTML = priceSplit[0];
+  document.getElementById("totalprice-decimal").innerHTML = '.' + priceSplit[1];
+}
+function exploreCircuit(circuitname){
+        var x = document.getElementsByClassName('rectangle-3165-L7BXHD');
+        var y = document.getElementsByClassName('explore-image-box');
+        var lighting = document.getElementsByClassName('lighting');
+        var equipment = document.getElementsByClassName('equipment');
+        var hvac = document.getElementsByClassName('hvac');
+        var plugload = document.getElementsByClassName('plugload');
+        var hotwater = document.getElementsByClassName('hotwater');
+        var other = document.getElementsByClassName('other');
+        for(var i = 0; i < x.length; i++){
+            x[i].style.backgroundColor = 'white';
+            y[i].style.display = 'none';
+
+        }
+        console.log(circuitname)
+        document.getElementById(circuitname).style.backgroundColor = '#0D1758';
+        document.getElementById(circuitname + 'image').style.display = 'block';
+    }
+
+function closeCircuitBlock(){
+    document.getElementById('circuit-block').style.width = '0px';
+    document.getElementById('circuit-block').style.border = "2px solid transparent";
+    document.getElementById('overview').style.width = '0px';
+    document.getElementById('load-predict').style.width = '0px';
+    document.getElementById('carbon-levy').style.width = '0px';
+    document.getElementById("circuit-block").style.boxShadow  = "0 0 0 0px rgba(0,0,0,.50)";
+}
+
+  </script>
+<script>
+
+      var end = {{endhours}};
+  var afternoon = document.getElementById('afternoon')
+  var night = document.getElementById('night')
+  if(end == 0){
+    night.style.overflow = 'hidden'
+    afternoon.style.overflow = 'hidden'
+  }
+         function openOverview(){
+        document.getElementById('overview').style.width = '744px';
+        document.getElementById('load-predict').style.width = '0px'
+        document.getElementById('carbon-levy').style.width = '0px'
+       }
+       function closeOverview(){
+        document.getElementById('overview').style.width = '0px';
+       }
+       function closeLoadPredict(){
+        document.getElementById('load-predict').style.width = '0px';
+       }
+
+       function openLoadPredict(){
+        document.getElementById('load-predict').style.width = '744px';
+        document.getElementById('overview').style.width = '0px'
+        document.getElementById('carbon-levy').style.width = '0px'
+       }
+       function openCarbonLevy(){
+        document.getElementById('load-predict').style.width = '0px';
+        document.getElementById('overview').style.width = '0px'
+        document.getElementById('carbon-levy').style.width = '744px'
+       }
+       function closeCarbonLevy(){
+        document.getElementById('carbon-levy').style.width = '0px';
+       }
+
+
+       function checkIf0(){
+        var lighting = document.getElementById('lightingcheck')
+        var hvac = document.getElementById('hvaccheck')
+        var dhw = document.getElementById('dhwcheck')
+        var equipment = document.getElementById('equipmentcheck')
+        var plugload = document.getElementById('plugloadcheck')
+        var other = document.getElementById('othercheck')
+
+        if(!(lighting.checked)){
+          if(!(hvac.checked)){
+            if(!(dhw.checked)){
+              if(!(equipment.checked)){
+                if(!(plugload.checked)){
+                  if(!(other.checked)){
+                        document.getElementById("total-whole").innerHTML = '0';
+                        document.getElementById("total-decimal").innerHTML = '.' + '00';
+                        document.getElementById("emission-whole").innerHTML = '0';
+                        document.getElementById("emission-decimal").innerHTML = '.' + '00';
+                        document.getElementById("totalprice-whole").innerHTML = '0';
+                        document.getElementById("totalprice-decimal").innerHTML = '.' + '00';
+                      }
+                    }
+                  }
+                }
+              }
+        }
+
+
+       }
+
+</script>
+<svg id="SvgjsSvg1383" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1384"></defs><polyline id="SvgjsPolyline1385" points="0,0"></polyline><path id="SvgjsPath1386" d="M0 0 "></path></svg>
+
+
+
+
+<script>
+  var util = {
+  qs(sel, ctx){ 
+    return (ctx || document).querySelector(sel);
+  },
+  qsa(sel, ctx){
+    return Array.from((ctx || document).querySelectorAll(sel));
+  }
+};
+
+class DateCarousel {
+  constructor(el) {
+    this.element = el;
+    this.prevButton = util.qs(".date-carousel-prev", el);
+    this.input = util.qs(".date-carousel-input",el);
+    this.nextButton = util.qs(".date-carousel-next",el);
+    this.input.valueAsDate = new Date();
+    this.prevButton.addEventListener("click",this.prev.bind(this));
+    this.nextButton.addEventListener("click",this.next.bind(this));
+  }
+  
+  prev(){
+    console.log('------------- prev', this.input.name);
+    this.input.stepDown();
+    
+  }
+  
+  next() {
+    console.log('------------- next', this.input.name);
+    this.input.stepUp();
+  }
+}
+
+util.qsa('.date-carousel').forEach(function(el){ new DateCarousel(el) });
+
+
+
+    </script>
+
+
+
+    <script>
+      $(document).ready(function(){
+      $('#datepicker').val(moment().subtract({{daysDifference}}, 'days').format('ddd, D MMM yy'));
+          $('#datepicker').datepicker({
+            dateFormat: "D, d M yy"
+          });
+         $('.next-day').on('click', function (e) {
+           e.preventDefault();
+             var date = $('#datepicker').datepicker('getDate');
+             date.setDate(date.getDate() +1)
+             
+
+
+             console.log(date, 'prev');
+             $('#datepicker').datepicker('setDate', date);
+             $("#datepicker").trigger('change');
+         });
+         $('.prev-day').on('click', function (e) {
+          e.preventDefault();
+             var date = $('#datepicker').datepicker('getDate');
+             date.setDate(date.getDate() -1)
+             $('#datepicker').datepicker('setDate', date);
+             $("#datepicker").trigger('change');
+             
+         });
+         $('.today-date').on('click', function (e) {
+          e.preventDefault();
+             var date = moment().format('MM D, YYYY');
+             date.setDate(date.getDate() -1)
+             $('#datepicker').datepicker('setDate', date);
+         });
+         });
+         </script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/register-page.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #f7f9fe">
+    <input type="hidden" id="anPageName" name="page" value="login-page" />
+    <div class="container-center-horizontal">
+      <div class="login-page screen">
+        <form class="login screen" name="form2" method="POST">
+        {{form.hidden_tag()}}
+        <div class="header-fmx5hU"><img class="pollen-2-B8pKgC" src="{{url_for('static',filename='img/pollen-2@2x.png')}}" /></div>
+        <img class="sidebar-fmx5hU" src="{{url_for('static',filename='img/sidebar@1222x.svg')}}" />
+        <div class="email"></div>
+        {{form.email(class="rectangle-3454-fmx5hU enter-your-email-fmx5hU avertacy-regular-normal-mist-gray-18px", id="inputEmail",placeholder="          Enter your email", type="email", style = "text-indent:40px;")}}
+          {% if form.email.errors %}
+            <div class="invalid-feedback">
+            {% for error in form.email.errors  %}
+            <span>{{error}}</span>
+            {% endfor %}
+            </div>
+           {% endif %}
+        <div class=""></div>         
+        {{form.password(placeholder="Enter your password", class = "rectangle-3455-fmx5hU enter-your-password-fmx5hU avertacy-regular-normal-mist-gray-18p", id='inputPassword', placeholder='Enter your password',type="password", style = "text-indent:40px;")}}
+              {% if form.password.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+              {% endif %}
+        <div class=""></div>         
+        {{form.confirm_password(placeholder="Confirm your password", class = "rectangle-3455-2-fmx5hU confirm-your-password-fmx5hU avertacy-regular-normal-mist-gray-18p", id='inputPassword', placeholder='Confirm your password',type="password", style = "text-indent:40px;")}}
+              {% if form.confirm_password.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.confirm_password.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+              {% endif %}
+                <div class=""></div>         
+        {{form.phone_number(placeholder="API ID", class = "rectangle-3455-3-fmx5hU confirm-your-password-fmx5hU avertacy-regular-normal-mist-gray-18p", placeholder='API ID', style = "text-indent:40px;")}}
+        <button class="rectangle-3456-fmx5hU" type = "Submit"></button>
+        <div class="sign-in-fmx5hU">Sign Up</div>
+        <img class="mail-fmx5hU" src="{{url_for('static', filename='img/mail@2x.svg')}}" />
+        <div class="x211855lockedicon-1-fmx5hU"><img class="vector-ehDLvy" src="{{url_for('static',filename='img/vector@1112x.svg')}}" /></div>
+        <div class="x211855lockedicon-2-fmx5hU"><img class="vector-ehDLvy" src="{{url_for('static',filename='img/vector@1112x.svg')}}" /></div>
+      </div>
+    </div>
+  </body>
+</html>

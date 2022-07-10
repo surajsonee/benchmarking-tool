@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/usage-day-on-hours.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    {% set active_page = "day" %}
+    <input type="hidden" id="anPageName" name="page" value="equipment-area" />
+    <div class="container-center-horizontal">
+      <div class="equipment-area screen">
+        <a href = ""><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="view-hvac-equipment-C61RwL">Usage</div>
+              <a href = "{{url_for('commercial.usageday')}}"><div class="xday-tsxGPL {{ 'active' if active_page == 'day' else '' }} avertacy-normal-gray-chateau-10px">Day</div></a>
+              <a href = "{{url_for('commercial.usageweek')}}"><div class="xweek-tsxGPL avertacy-normal-gray-chateau-10px">Week</div></a>
+              <a href = "{{url_for('commercial.usagemonth')}}"><div class="xmonth-tsxGPL avertacy-normal-gray-chateau-10px">Month</div></a>
+              <a href = "{{url_for('commercial.usageyear')}}"><div class="xyear-tsxGPL avertacy-normal-gray-chateau-10px">Year</div></a>
+              <div class="box">
+                <div class="graph">
+                    
+                    <div class="m"style="height: {{ home_upgrades[0] }}%; left: 0%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[1] }}%; left: 4.16666666667%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[2] }}%; left: 8.33333333334%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[3] }}%; left: 12.5%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[4] }}%; left: 16.6666666667%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[5] }}%; left: 20.8333333334%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[6] }}%; left: 25.0000000001%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[7] }}%; left: 29.1666666668%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[8] }}%; left: 33.3333333335%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[9] }}%; left: 37.5000000002%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[10] }}%; left: 41.6666666669%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[11] }}%; left: 45.8333333336%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[12] }}%; left: 50.0000000003%;"></div>
+                     <div class="m"style="height: {{ home_upgrades[13] }}%; left: 54.166666667%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[14] }}%; left: 58.3333333337%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[15] }}%; left: 62.5000000004%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[16] }}%; left: 66.6666666671%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[17] }}%; left: 70.8333333338%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[18] }}%; left: 75.0000000005%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[19] }}%; left: 79.1666666672%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[20] }}%; left: 83.3333333339%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[21] }}%; left: 87.5000000006%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[22] }}%; left: 91.6666666673%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[23] }}%; left: 95.833333334%;"></div>
+                    <div class="a"style="height: 90%; left: 0%;"></div>
+                </div>
+                              <div class="group-6885-0WEAec">
+              <div class="x0-tsxGPL avertacy-normal-gray-chateau-10px">12 am</div>
+              <div class="x200-tsxGPL avertacy-normal-gray-chateau-10px">Noon</div>
+              <div class="x1000-tsxGPL avertacy-normal-gray-chateau-10px">12 am</div>
+            </div>
+              <div class="frame-4297-0WEAec">
+              <div class="group-4318-Jx7vaB">
+                <div class="you-VFPxsv">$19.66 / 42.6 Kwh</div>
+              </div>
+            </div>
+              </div>
+         <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Panel</div>
+            <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+<div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Entire Facility</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Panel 1</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Panel 2</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      </details>
+            <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+          <div class="cooling-equipment-bwW810">Load Type</div>
+          <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+ <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Always On</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Off Hours</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details class = 'details2'>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">On Hours</div>
+            <div class="group-7190-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">asd</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href=""><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href=""><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="" />
+          </div>
+          {% endfor %}
+      </details>
+      </details>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

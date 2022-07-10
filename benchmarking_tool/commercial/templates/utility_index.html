@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "container">
+    <h1 = "my-4">Utility Meters for {{ building.name }}</h1>
+    {% if meters|length < 1 %}
+    <p>There are no Utility Meters added for this building</p>
+
+    {% else %}
+    <table class = 'table'>
+        <thead>
+            <tr>
+                <th>Utility Provider</th>
+                <th>Meter Number</th>
+                <th>Account Number</th>
+                <th>Energy Type</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for meter in meters %}
+            <tr>
+                <td><a>{{ meter.distributer }}</a></td>
+                <td>{{ meter.meter_number }}</td>
+                <td>{{ meter.account_number }}</td>
+                <td>{{ meter.energy_type }}</td>
+                <td class = 'text_right'><a class ="btn btn-success btn-sm" href ='/uploadbills/{{ meter.id }}'>Upload the Excel Document</a></td>
+
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+    <a class ="btn btn-danger btn-sm" href ='/utilityinfoupload/{{ building.id }}'>Add Meter</a>
+
+
+
+{% endblock %}

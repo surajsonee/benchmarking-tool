@@ -1,0 +1,2595 @@
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5b9675837e37c4000994e7a8/Averta Cyrillic Bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://anima-uploads.s3.amazonaws.com/5b9675837e37c4000994e7a8/Averta Cyrillic SemiBold.otf")
+    format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+.auto-animated div {
+  opacity: 0;
+  position: absolute;
+  --z-index: -1;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+.auto-animated div {
+  opacity: 0;
+  position: absolute;
+  --z-index: -1;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/6078a9ace8a3cd8478d1e524.6078a9ade8a3cd8478d1e527.y176lxB.hcp.png");
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body{
+ /* overflow-y: hidden;*/
+}
+
+
+
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Bold.ttf");
+  font-style: "Bold";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-semibold);
+  src: url("./fonts/AvertaCY-Light.ttf");
+  font-style: "Light";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-regular);
+  src: url("./fonts/AvertaCY-Regular.ttf");
+  font-style: "Regular";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-semibold);
+  src: url("./fonts/AvertaCY-Semibold.ttf");
+  font-style: "semi-bold";
+}
+/*classes for fonts*/
+.av-bold {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+.av-light {
+  font-family: var(--font-family-averta_cy-semibold);
+}
+
+.av-reg {
+  font-family: var(--font-family-averta_cy-regular);
+}
+
+.av-sembold {
+  font-family: var(--font-family-averta_cy-semibold);
+}
+
+.size-8 {
+  font-size: 8px;
+}
+
+.size-10 {
+  font-size: 10px;
+}
+
+.size-11 {
+  font-size: 11px;
+}
+
+.size-12 {
+  font-size: 12.33px;
+}
+
+.size-19 {
+  font-size: 19px;
+}
+
+.size-20 {
+  font-size: 20px;
+}
+
+.size-32 {
+  font-size: 32px;
+}
+
+.size-36 {
+  font-size: 36px;
+}
+
+.size-45 {
+  font-size: 45px;
+}
+
+.size-8 {
+  font-size: 8px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-13 {
+  font-size: 13px;
+}
+
+.size-15 {
+  font-size: 15px;
+}
+
+.size-17 {
+  font-size: 17px;
+}
+
+.size-18 {
+  font-size: 18px;
+}
+
+.size-20 {
+  font-size: 20px;
+}
+
+.size-22 {
+  font-size: 22px;
+}
+
+.size-25 {
+  font-size: 25px;
+}
+
+.size-28 {
+  font-size: 28px;
+}
+
+.size-30 {
+  font-size: 30px;
+}
+
+.size-26 {
+  font-size: 26px;
+}
+
+.size-22 {
+  font-size: 22px;
+}
+
+.size-35 {
+  font-size: 35px;
+}
+
+.size-45 {
+  font-size: 45px;
+}
+
+.size-68 {
+  font-size: 68px;
+}
+
+.maincolor {
+  color: #0D1758;
+}
+
+.grey {
+  color: #B0B0B0;
+}
+
+.green {
+  color: #22B14C;
+}
+
+.d-grey {
+  color: #7F7F7F;
+}
+
+/*some reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p, a {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*display classes*/
+.dis-flex {
+  display: flex;
+}
+
+.alignCntr {
+  align-items: center;
+}
+
+.dblock {
+  display: block;
+}
+
+.spbtween {
+  justify-content: space-between;
+}
+
+.sparound {
+  justify-content: space-around;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.txtcntr {
+  text-align: center;
+}
+
+.justCntr {
+  justify-content: center;
+}
+
+/*Ui Classes*/
+.ml-5 {
+  margin-left: 5px;
+}
+
+.dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.blueBk {
+  background-color: #44AAFD;
+}
+
+.yelBK {
+  background-color: #FFC90E;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-5 {
+  left: -8px;
+}
+
+.w-170 {
+  width: 167px;
+  margin: 10px auto;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0D1758;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0D1758;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.print-container {
+  width: 1000px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  position: relative;
+}
+
+.main-title-h2 {
+  color: #0D1758;
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 32px;
+}
+
+.calendar {
+  margin-top: 5px;
+}
+.calendar > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.calendar .day {
+  width: 110px;
+}
+.calendar .titleday {
+  color: #7F7F7F;
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.calendar .content {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 20px 0;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.calendar .content .numberDay {
+  width: 100%;
+  color: #0D1758;
+  font-size: 12.3px;
+  font-family: var(--font-family-averta_cy-bold);
+  text-align: right;
+  margin-right: 10px;
+  height: 16px;
+}
+.calendar .column {
+  border-top: 1px solid #F5F5F5;
+  border-bottom: 1px solid #F5F5F5;
+  padding: 10px 0;
+  display: flex;
+  color: #28B152;
+  padding-right: 5px;
+  padding-left: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+.calendar .column .hrs p {
+  font-size: 20px;
+}
+.calendar .column .mnts {
+  line-height: 1;
+  font-size: 14px;
+}
+.calendar .column .spancolumn {
+  width: 3px;
+  display: block;
+  background-color: #CBD1EF;
+  margin-right: 3px;
+}
+.calendar .column .closed {
+  color: #DB4B46;
+}
+.calendar .dash {
+  display: block;
+  color: #28B152;
+}
+.calendar .contentValue {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: center;
+}
+.calendar .contentValue .kwhUnit {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.calendar .contentValue span {
+  color: #0D1758;
+  font-size: 14px;
+  font-family: var(--font-family-averta_cy-bold);
+  position: relative;
+  top: -5px;
+}
+.calendar .contentValue .totalValue {
+  font-size: 35px;
+  color: #0D1758;
+  font-family: var(--font-family-averta_cy-bold);
+}
+.calendar .contentValue .totalValue sup {
+  font-size: 14px;
+}
+.calendar .secondweek .titleday, .calendar .thirdweek .titleday, .calendar .fourthweek .titleday, .calendar .fifthweek .titleday {
+  display: none;
+}
+
+.inventory__sidebar {
+  height: 100%;
+  width: 250px;
+  position: relative;
+  border-right: 1px solid #e3e7ed;
+  padding-top: 20px;
+  height: 100vh;
+}
+.inventory__sidebar .arrow-toggle {
+  position: absolute;
+  right: 0;
+  background-color: #3649a8;
+  border-radius: 0px 12px 12px 0px;
+  width: 23px;
+  padding: 10px 0px;
+  transform: rotate(180deg);
+  top: 70px;
+  cursor: pointer;
+  z-index: 99999;
+}
+.inventory__sidebar .arrow-toggle svg {
+  transform: rotate(180deg);
+}
+.inventory__sidebar--logo {
+  position: relative;
+  height: 65px;
+  padding-left: 20px;
+}
+.inventory__sidebar--logo a svg:nth-child(2) {
+  position: absolute;
+  top: 25px;
+  left: 48px;
+}
+.inventory__sidebar--links ul {
+  padding-top: 25px;
+}
+.inventory__sidebar--links ul li {
+  height: 60px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: 0.5s;
+}
+.inventory__sidebar--links ul li:hover .inventory__sidebar--links ul li::after {
+  opacity: 1;
+}
+.inventory__sidebar--links ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6285fb;
+  width: 5px;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+  opacity: 0;
+}
+.inventory__sidebar--links ul li a {
+  font-family: "Averta";
+  color: #afb8cc;
+  display: flex;
+  font-size: 16px;
+  transition: 0.25s;
+  font-family: var(--font-family-averta_cy-semibold);
+}
+.inventory__sidebar--links ul li a:hover {
+  color: #6285fb;
+}
+.inventory__sidebar--links ul li a svg path {
+  transition: 0.25s;
+}
+.inventory__sidebar--links ul li a:hover span svg path {
+  stroke: #6285fb;
+}
+.inventory__sidebar--links ul li a span {
+  display: block;
+}
+.inventory__sidebar--links ul li a span:nth-child(2) {
+  margin-left: 25px;
+}
+.inventory__sidebar--links ul li:last-child a {
+  align-items: center;
+}
+.inventory__sidebar--links ul li.ads {
+  height: auto;
+}
+
+.ads__box {
+  font-family: "Averta";
+  background: #293f8a;
+  border-radius: 14px;
+  padding: 15px 0;
+  font-family: var(--font-family-averta_cy-semibold);
+}
+.ads__box .img {
+  width: 180px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 15px auto;
+  position: relative;
+  height: 70px;
+  margin-top: 0;
+}
+.ads__box .img img {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ads__box h2 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 14px;
+  margin: 0;
+}
+.ads__box p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 14px;
+  margin-bottom: 0;
+  margin: 7px 0;
+  letter-spacing: 1px;
+}
+.ads__box--cta {
+  display: flex;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+.ads__box--cta a {
+  display: flex;
+  justify-content: center;
+  background: #f8fafe;
+  border-radius: 8px;
+  padding: 3.5px 14px;
+  color: #498de1;
+  font-size: 10px;
+}
+.ads__box--cta a:nth-child(2) {
+  margin-left: 10px;
+}
+.ads__box--cta a span {
+  margin: 0;
+  display: inline-block;
+}
+.ads__box--cta a span:nth-child(1) {
+  position: relative;
+  top: 2px;
+}
+.ads__box--cta a span:nth-child(2) {
+  margin-left: 8px;
+}
+
+.bottom-action {
+  position: absolute;
+  width: 215px;
+  left: 20px;
+  bottom: 150px;
+}
+
+button.logout {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-bottom: 40px;
+}
+button.logout svg path {
+  transition: 0.25s;
+}
+button.logout:hover span {
+  color: #6285fb;
+}
+button.logout:hover span svg path {
+  fill: #6285fb;
+}
+button.logout span {
+  font-family: "Averta";
+  color: #afb8cc;
+  font-size: 16px;
+  font-family: var(--font-family-averta_cy-semibold);
+}
+button.logout span:nth-child(2) {
+  margin-left: 25px;
+}
+
+.inventory__sidebar--links ul li:hover::after {
+  opacity: 1;
+}
+
+.GneralInfo .title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(176, 176, 176, 0.5);
+}
+.GneralInfo .title p {
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.GneralInfo .about-gnral {
+  margin: 20px 0;
+}
+.GneralInfo .content-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.GneralInfo .content-info .data {
+  background: #F5F7FB;
+  border-radius: 18px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 400px;
+  padding-bottom: 20px;
+}
+.GneralInfo .content-info .data > h3 {
+  border-bottom: 1px solid #b0b0b033;
+}
+.GneralInfo .content-info .data > div {
+  display: flex;
+  justify-content: space-between;
+}
+.GneralInfo .content-info .data > div .part1 > h3, .GneralInfo .content-info .data > div .part2 > h3 {
+  margin: 10px 0;
+}
+.GneralInfo .content-info .data > div .part1 > p, .GneralInfo .content-info .data > div .part2 > p {
+  width: 150px;
+  text-align: center;
+  padding: 15px 0;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.GneralInfo .container-calendar {
+  background-color: #e5e5e580;
+  width: 95%;
+  padding: 20px 40px;
+  margin: auto;
+  border-radius: 18px;
+  margin-top: 15px;
+}
+
+.bottom-line {
+  display: flex;
+  width: 100%;
+  width: 100%;
+  margin-top: 50px;
+}
+.bottom-line span {
+  display: block;
+  width: 25%;
+  height: 10px;
+  background-color: #f00;
+}
+.bottom-line span:nth-child(1) {
+  background-color: #4DAAE8;
+}
+.bottom-line span:nth-child(2) {
+  background-color: #98C355;
+}
+.bottom-line span:nth-child(3) {
+  background-color: #F7CA50;
+}
+.bottom-line span:nth-child(4) {
+  background-color: #DB4B46;
+}
+
+.footer-bottom {
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.data-stream {
+  display: flex;
+}
+.data-stream .data-stream-content > h2 {
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+.data-stream .datastream-container {
+  background: #F5F5F5;
+  border-radius: 10px;
+  width: 1107px;
+  margin-left: 50px;
+  padding-left: 10px;
+  padding-top: 35px;
+  display: flex;
+  padding-bottom: 55px;
+  justify-content: space-around;
+  max-width: 95%;
+}
+.data-stream .datastream-container .electrical > h3 {
+  margin-bottom: 15px;
+}
+.data-stream .electricalcontainer {
+  width: 470px;
+  border-radius: 15px;
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+.data-stream .electricalcontainer .part1 {
+  display: flex;
+  align-items: center;
+}
+.data-stream .electricalcontainer .part1 > div {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
+}
+.data-stream .electricalcontainer .part1 .flow {
+  flex-grow: 0.75;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 0.25s;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg:nth-child(4) {
+  animation-name: effect4;
+  animation-delay: 1s;
+}
+.data-stream .electricalcontainer .part1 .flow .row1 svg:nth-child(5) {
+  animation-name: effect5;
+  animation-delay: 1.25s;
+}
+.data-stream .electricalcontainer .part1 .viewBy {
+  width: 62%;
+  align-items: flex-start;
+  padding: 15px 18px;
+  background-color: #F8FAFE;
+  margin-left: 5%;
+  border-radius: 18px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div {
+  padding-bottom: 6px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span {
+  display: block;
+  height: 4px;
+  border-radius: 12px;
+  background-color: #09A837;
+  margin-bottom: 5px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(1) {
+  width: 46px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(2) {
+  width: 40px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(3) {
+  width: 35px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(4) {
+  width: 40px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(5) {
+  width: 25px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(6) {
+  width: 46px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(7) {
+  width: 40px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(8) {
+  width: 35px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(9) {
+  width: 40px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(1) > div > div span:nth-child(10) {
+  width: 25px;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(2) > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  border: 2px solid #0D1758;
+  width: 52px;
+  justify-content: center;
+  justify-content: space-around;
+  padding: 3px 2px;
+  border-radius: 7px;
+  margin-left: auto;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(2) > div:nth-of-type(1) span {
+  display: block;
+}
+.data-stream .electricalcontainer .part1 .viewBy > div:nth-child(2) > div:nth-of-type(1) span:nth-child(1) {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #09A837;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder {
+  background: #FFFFFF;
+  border: 1px solid #E3E7ED;
+  border-radius: 18px;
+  padding-left: 10px;
+  width: 120px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  margin-top: 15px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding-right: 20px;
+  position: relative;
+  padding-top: 6px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  background-color: #E3E7ED;
+  height: 1px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > a.invtoryLink {
+  margin-top: 33px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > svg:nth-child(2) {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > svg:nth-child(3) {
+  position: absolute;
+  top: 66px;
+  left: 13px;
+}
+.data-stream .electricalcontainer .part1 .viewBy .contnentBorder > svg:nth-child(4) {
+  position: absolute;
+  top: 50px;
+}
+.data-stream .electricalcontainer .part2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.data-stream .electricalcontainer .part2 .first-section {
+  margin-left: 25%;
+}
+.data-stream .electricalcontainer .part2 .downFlow {
+  display: flex;
+  flex-direction: column;
+}
+.data-stream .electricalcontainer .part2 .downFlow svg {
+  display: block;
+  margin-bottom: 25px;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+  margin-left: 40px;
+}
+.data-stream .electricalcontainer .part2 .downFlow svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 0.25s;
+}
+.data-stream .electricalcontainer .part2 .downFlow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .electricalcontainer .part2 .downFlow svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .electricalcontainer .part2 .line-flow {
+  display: flex;
+  margin-bottom: 15px;
+}
+.data-stream .electricalcontainer .part2 .line-flow svg {
+  display: block;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .electricalcontainer .part2 .line-flow svg:nth-child(2) {
+  margin: 0 15px;
+}
+.data-stream .electricalcontainer .part2 .line-flow svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 1s;
+}
+.data-stream .electricalcontainer .part2 .line-flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 1.25s;
+}
+.data-stream .electricalcontainer .part2 .line-flow svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 1.5s;
+}
+.data-stream .electricalcontainer .part2 .last-flow {
+  display: flex;
+  flex-direction: column;
+}
+.data-stream .electricalcontainer .part2 .last-flow svg {
+  margin-bottom: 15px;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .electricalcontainer .part2 .last-flow svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 2s;
+}
+.data-stream .electricalcontainer .part2 .last-flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 2.25s;
+}
+.data-stream .electricalcontainer .part2 .second-section {
+  display: flex;
+}
+.data-stream .electricalcontainer .part2 .second-section .column {
+  display: flex;
+  flex-direction: column;
+}
+.data-stream .electricalcontainer .part2 .second-section .column:nth-of-type(2) {
+  margin-left: 15px;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg {
+  margin-bottom: 15px;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+  transform: rotate(90deg);
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 0.25s;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(4) {
+  animation-name: effect4;
+  animation-delay: 1s;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(5) {
+  animation-name: effect5;
+  animation-delay: 1.25s;
+}
+.data-stream .electricalcontainer .part2 .second-section .column svg:nth-child(6) {
+  animation-name: effect6;
+  animation-delay: 1.5s;
+}
+.data-stream .electricalcontainer .part3 {
+  display: flex;
+  justify-content: center;
+}
+.data-stream .electricalcontainer .part3 .first-sec {
+  background: #FFFFFF;
+  border: 1px solid #E3E7ED;
+  box-sizing: border-box;
+  border-radius: 18px;
+  width: 120px;
+  position: relative;
+  padding: 10px 0;
+  padding-bottom: 0;
+  margin-left: 130px;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(1) {
+  border: 2px solid #0D1758;
+  display: flex;
+  border-radius: 7px;
+  max-width: 70px;
+  padding: 0px 5px;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999999;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(1) span {
+  display: block;
+  margin-left: 3px;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(1) span:nth-child(1) {
+  width: 5px;
+  height: 5px;
+  background-color: #F3BA87;
+  border-radius: 50%;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(2) {
+  position: relative;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(2) p {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  right: 10px;
+  margin: auto;
+  width: 100%;
+}
+.data-stream .electricalcontainer .part3 .first-sec > div:nth-of-type(2) img {
+  width: 100%;
+  margin: auto;
+  display: block;
+  height: 100px;
+}
+.data-stream .electricalcontainer .part3 .first-sec > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: -10px;
+  padding-top: 6px;
+}
+.data-stream .electricalcontainer .part3 .first-sec > a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background-color: #E3E7ED;
+  right: 0;
+  margin: auto;
+}
+.data-stream .electricalcontainer .part3 .second-section {
+  width: 120px;
+  border: 1px solid #E3E7ED;
+  border-radius: 18px;
+  margin-left: auto;
+  margin-right: 25px;
+}
+.data-stream .electricalcontainer .part3 .second-section .charts {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+.data-stream .electricalcontainer .part3 .second-section a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  border-top: 1px solid #E3E7ED;
+  width: 80%;
+  margin: auto;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn, .data-stream .electricalcontainer .part3 .second-section .secondcolumn, .data-stream .electricalcontainer .part3 .second-section .thirdcolumn {
+  display: flex;
+  background-color: #E6E9EF;
+  align-items: flex-end;
+  position: relative;
+  width: 25%;
+  height: 90px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn svg, .data-stream .electricalcontainer .part3 .second-section .secondcolumn svg, .data-stream .electricalcontainer .part3 .second-section .thirdcolumn svg {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span, .data-stream .electricalcontainer .part3 .second-section .secondcolumn span, .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span {
+  display: block;
+  background: #0D1758;
+  border-radius: 11px 11px 0px 0px;
+  width: 3px;
+  height: 22px;
+  margin-right: 2px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span:nth-child(1), .data-stream .electricalcontainer .part3 .second-section .secondcolumn span:nth-child(1), .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span:nth-child(1) {
+  height: 22px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span:nth-child(2), .data-stream .electricalcontainer .part3 .second-section .secondcolumn span:nth-child(2), .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span:nth-child(2) {
+  height: 25px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span:nth-child(3), .data-stream .electricalcontainer .part3 .second-section .secondcolumn span:nth-child(3), .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span:nth-child(3) {
+  height: 30px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span:nth-child(4), .data-stream .electricalcontainer .part3 .second-section .secondcolumn span:nth-child(4), .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span:nth-child(4) {
+  height: 25px;
+}
+.data-stream .electricalcontainer .part3 .second-section .firstcolumn span:nth-child(5), .data-stream .electricalcontainer .part3 .second-section .secondcolumn span:nth-child(5), .data-stream .electricalcontainer .part3 .second-section .thirdcolumn span:nth-child(5) {
+  height: 35px;
+}
+.data-stream .electricalcontainer .part3 .second-section .secondcolumn {
+  background-color: transparent;
+}
+.data-stream .NaturalGas > h3 {
+  margin-bottom: 15px;
+}
+.data-stream .NaturalGas .NaturalGascontainer {
+  width: 470px;
+  max-width: 100%;
+  border-radius: 18px;
+  background-color: #fff;
+  position: relative;
+  padding: 10px 15px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .naturalGaslink {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 40px;
+  left: 46px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .offline {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  border: 2px solid #0D1758;
+  border-radius: 7px;
+  justify-content: center;
+  padding: 3px 0;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .offline span {
+  display: block;
+}
+.data-stream .NaturalGas .NaturalGascontainer .offline span.dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #7F7F7F;
+  margin-right: 5px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow {
+  display: flex;
+  align-items: flex-end;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow {
+  margin-left: 25px;
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  align-items: center;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 6s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 6.25s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 6.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(4) {
+  animation-name: effect4;
+  animation-delay: 6.25s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(5) {
+  animation-name: effect5;
+  animation-delay: 6.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .rest-flow svg:nth-child(6) {
+  animation-name: effect5;
+  animation-delay: 7s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus {
+  border: 1px solid #DBDBDB;
+  box-sizing: border-box;
+  border-radius: 21px;
+  padding: 10px 20px;
+  margin: 0 15px;
+  position: relative;
+  top: 45px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus .num {
+  display: flex;
+  align-items: center;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus .num .numsupValue {
+  font-size: 50px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus .num .numsupValue sup {
+  font-size: 20px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus .num .letter {
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .last-flow {
+  width: 30px;
+  justify-content: space-between;
+  display: flex;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .last-flow svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .last-flow svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 8s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .line-flow .last-flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 8.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  align-items: center;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(1) {
+  animation-name: effect1;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(4) {
+  animation-name: effect4;
+  animation-delay: 1s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(5) {
+  animation-name: effect5;
+  animation-delay: 1.25s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow svg:nth-child(6) {
+  animation-name: effect5;
+  animation-delay: 1.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 {
+  display: flex;
+  margin-left: 105px;
+  width: 45px;
+  justify-content: space-between;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(1) svg {
+  margin-bottom: 15px;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(1) svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 1.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(1) svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 2s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(1) svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 2.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(2) svg {
+  margin-bottom: 15px;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(2) svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 4s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .flow2 > div:nth-of-type(2) svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 5s;
+}
+.data-stream .NaturalGas .NaturalGascontainer .device {
+  width: 260px;
+}
+.data-stream .NaturalGas .NaturalGascontainer .device img {
+  display: block;
+  margin: auto;
+}
+.data-stream .NaturalGas .water-title {
+  margin: 25px 0;
+}
+.data-stream .NaturalGas .watercontainer {
+  width: 470px;
+  max-width: 100%;
+  border-radius: 18px;
+  background-color: #fff;
+  position: relative;
+  padding: 10px 15px;
+  margin-top: 15px;
+  padding-bottom: 75px;
+}
+.data-stream .NaturalGas .watercontainer .offline {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  border: 2px solid #0D1758;
+  border-radius: 7px;
+  justify-content: center;
+  padding: 3px 0;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.data-stream .NaturalGas .watercontainer .offline span {
+  display: block;
+}
+.data-stream .NaturalGas .watercontainer .offline span.dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #7F7F7F;
+  margin-right: 5px;
+}
+.data-stream .NaturalGas .watercontainer .naturalGaslink {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 40px;
+  left: 46px;
+  margin-bottom: 50px;
+}
+.data-stream .NaturalGas .watercontainer .water-flow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow1 {
+  display: flex;
+  justify-content: space-between;
+  width: 35px;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow1 svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow1 svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 3s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow1 svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 4s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 {
+  width: 60px;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  right: 10px;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 svg:nth-child(1) {
+  animation-name: effect1;
+  animation-delay: 1s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 svg:nth-child(3) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .flow2 svg:nth-child(4) {
+  animation-name: effect4;
+  animation-delay: 0.25s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .last-flow {
+  width: 50px;
+  justify-content: space-between;
+  display: flex;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .last-flow svg {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .last-flow svg:nth-child(1) {
+  animation-name: effect3;
+  animation-delay: 0.75s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .last-flow svg:nth-child(2) {
+  animation-name: effect2;
+  animation-delay: 0.5s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .last-flow svg:nth-child(3) {
+  animation-name: effect1;
+  animation-delay: 0.25s;
+}
+.data-stream .NaturalGas .watercontainer .water-flow .img {
+  position: relative;
+  top: 25px;
+}
+.data-stream .NaturalGas .watercontainer .apparatus {
+  border: 1px solid #DBDBDB;
+  box-sizing: border-box;
+  border-radius: 21px;
+  padding: 10px 25px;
+  margin: 0 15px;
+  position: relative;
+  top: 45px;
+}
+.data-stream .NaturalGas .watercontainer .apparatus .num {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.data-stream .NaturalGas .watercontainer .apparatus .num .numsupValue {
+  font-size: 50px;
+  line-height: 1;
+}
+.data-stream .NaturalGas .watercontainer .apparatus .num .numsupValue sup {
+  font-size: 20px;
+}
+.data-stream .NaturalGas .watercontainer .apparatus .num .letter {
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+@keyframes effect1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes effect2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes effect3 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes effect4 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes effect5 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes effect6 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.data-stream-content{
+  width: calc(100% - 250px)
+}
+/*responsive*/
+
+@media only screen and (max-width: 1300px) {
+  .datastream-container {
+    flex-direction: column;
+  }
+  .data-stream .electricalcontainer , .data-stream .NaturalGas .NaturalGascontainer,.data-stream .NaturalGas .watercontainer{
+    width: 100%;
+    max-width: 95%;
+  }
+  .NaturalGascontainer{
+    padding-left: 25% !important;
+  }
+  .electricalcontainer >div{
+    width: 80%;
+    margin: auto;
+  }
+  .electricalcontainer >div.part3{
+    justify-content: space-around;
+  }
+  .electricalcontainer >div.part3 .first-sec{
+    margin-left: 0 !important;
+
+  }
+  .electricalcontainer >div.part3 .second-section{
+margin-left: 0;
+  }
+  .waterontent{
+    width: 80%;
+    margin: auto;
+  }
+  .inventory__sidebar.responsive-sidebar{
+    position: fixed;
+  }
+  .data-stream-content{
+    margin-left: 220px;
+  }
+  .data-stream{
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .NaturalGascontainer{
+    padding-left: 15% !important;
+  }
+  .data-stream .electricalcontainer .part1{
+    flex-direction: column;
+  }
+  .data-stream .electricalcontainer .part1 > div{
+    width: 75%;
+  }
+  .data-stream .electricalcontainer .part1 .viewBy{
+    width: 75%;
+    margin-left: 0  !important;
+  }
+  .data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus .num .numsupValue,.data-stream .NaturalGas .watercontainer .apparatus .num .numsupValue{
+    font-size: 25px;
+  }
+  .electricalcontainer >div{
+    width: 90%;
+  }
+  .data-stream .electricalcontainer .part3{
+    width: 80% !important;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .inventory__sidebar.responsive-sidebar {
+    width: 200px;
+  }
+  .inventory__sidebar.responsive-sidebar .ads__box .img{
+    max-width: 75%;
+  }
+  .inventory__sidebar.responsive-sidebar .ads__box--cta a:nth-child(2){
+margin-left: 5px;
+  }
+  .NaturalGascontainer{
+    padding-left: 2% !important;
+  }
+  .data-stream .electricalcontainer .part1 .viewBy{
+    width: 95%;
+  }
+  .data-stream .datastream-container{
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .data-stream-content{
+    width: calc(100% - 230px);
+  }
+  .data-stream .data-stream-content > h2{
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .data-stream .electricalcontainer .part3{
+    width: 100%  !important;
+    justify-content: space-around;
+  }
+  .data-stream .electricalcontainer .part3 .second-section{
+    margin: 0 !important;
+  }
+
+
+}
+@media only screen and (max-width: 550px) {
+  .data-stream .electricalcontainer .part1 .viewBy{
+flex-direction: column;
+position: relative;
+  }
+
+  .data-stream .electricalcontainer .part1 .viewBy > div:nth-child(2) > div:nth-of-type(1){
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  .data-stream .electricalcontainer .part1 .viewBy >div{
+    width: 100%;
+  }
+  .data-stream .electricalcontainer .part1 .viewBy .contnentBorder{
+    width: 100%;
+  }
+  .data-stream .electricalcontainer .part2 .first-section{
+    margin-left: 0 !important;
+  }
+  .data-stream .electricalcontainer .part3{
+    flex-direction: column;
+  }
+  .data-stream .electricalcontainer .part3 .first-sec{
+    width: 80%;
+    margin-left:auto !important;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .data-stream .electricalcontainer .part3 .second-section{
+    width: 80%;
+    margin-left:auto !important;
+    margin-right: auto !important;
+    
+  }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .data-stream .NaturalGas .NaturalGascontainer{
+    padding-bottom: 120px;
+  }
+  .data-stream .NaturalGas .NaturalGascontainer .line-flow .apparatus{
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    top: 259px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 120px;
+  }
+  .data-stream .NaturalGas .NaturalGascontainer .naturalGaslink{
+    margin-bottom: 50px;
+    left: 20px;
+    width: 100px;
+  }
+
+  .data-stream .NaturalGas .watercontainer .water-flow .img img{
+    width: 50px;
+  }
+
+  .data-stream .NaturalGas .watercontainer .water-flow .img{
+    top: 15px;
+  }
+
+
+  .data-stream .NaturalGas .waterontent{
+    padding-bottom: 120px;
+  }
+  .data-stream .NaturalGas .watercontainer .apparatus{
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    top: 160px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 120px;
+  }
+  .data-stream .NaturalGas .waterontent .naturalGaslink{
+    margin-bottom: 50px;
+    left: 20px;
+    width: 100px;
+  }
+
+
+
+  .data-stream .NaturalGas .NaturalGascontainer .naturalGaslink span{
+    font-size: 15px;
+  }
+  .data-stream .NaturalGas .waterontent .naturalGaslink span{
+font-size: 15px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 550px) {
+  .inventory__sidebar.responsive-sidebar{
+    width: 180px;
+  }
+  .inventory__sidebar.responsive-sidebar .ads__box--cta{
+flex-direction: column;
+padding-left: 0;
+width: 80%;
+margin: auto;
+  }
+  .inventory__sidebar.responsive-sidebar .ads__box--cta a:nth-child(2){
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .data-stream-content{
+    width: calc(100% - 200px);
+    margin-left: 190px;
+  }
+  .data-stream .electricalcontainer .part3 .second-section .firstcolumn, .data-stream .electricalcontainer .part3 .second-section .secondcolumn, .data-stream .electricalcontainer .part3 .second-section .thirdcolumn{
+    width: 30%;
+    justify-content: center;
+  }
+
+
+}
+
+
+/*# sourceMappingURL=style.css.map */

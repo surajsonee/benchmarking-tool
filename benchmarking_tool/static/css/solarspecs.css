@@ -1,0 +1,541 @@
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Bold.ttf");
+  font-style: "Bold";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Light.ttf");
+  font-style: "Light";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Regular.ttf");
+  font-style: "Regular";
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Semibold.ttf");
+  font-style: "semi-bold";
+}
+/*classes for fonts*/
+.av-bold {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+.av-light {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+.av-reg {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+.av-sembold {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+.size-8 {
+  font-size: 8px;
+}
+
+.size-12 {
+  font-size: 12.33px;
+}
+
+.size-19 {
+  font-size: 19px;
+}
+
+.size-20 {
+  font-size: 20px;
+}
+
+.size-45 {
+  font-size: 45px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-13 {
+  font-size: 13px;
+}
+
+.size-15 {
+  font-size: 15px;
+}
+
+.size-18 {
+  font-size: 18px;
+}
+
+.size-25 {
+  font-size: 25px;
+}
+
+.size-28 {
+  font-size: 28px;
+}
+
+.size-30 {
+  font-size: 30px;
+}
+
+.size-35 {
+  font-size: 35px;
+}
+
+.size-45 {
+  font-size: 45px;
+}
+
+.maincolor {
+  color: #0D1758;
+}
+
+.grey {
+  color: #B0B0B0;
+}
+
+.green {
+  color: #22B14C;
+}
+
+/*some reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p, a {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*display classes*/
+.dis-flex {
+  display: flex;
+}
+
+.alignCntr {
+  align-items: center;
+}
+
+.dblock {
+  display: block;
+}
+
+.spbtween {
+  justify-content: space-between;
+}
+
+.sparound {
+  justify-content: space-around;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.txtcntr {
+  text-align: center;
+}
+
+.justCntr {
+  justify-content: center;
+}
+
+/*Ui Classes*/
+.ml-5 {
+  margin-left: 5px;
+}
+
+.dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.blueBk {
+  background-color: #44AAFD;
+}
+
+.yelBK {
+  background-color: #FFC90E;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-5 {
+  left: -8px;
+}
+
+.w-170 {
+  width: 167px;
+  margin: 10px auto;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.main-title-h2 {
+  color: #0D1758;
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 32px;
+}
+
+.inventory__sidebar {
+  height: 100%;
+  width: 250px;
+  position: relative;
+  border-right: 1px solid #e3e7ed;
+  padding-top: 20px;
+  height: 100vh;
+}
+.inventory__sidebar .arrow-toggle {
+  position: absolute;
+  right: 0;
+  background-color: #3649a8;
+  border-radius: 0px 12px 12px 0px;
+  width: 23px;
+  padding: 10px 0px;
+  transform: rotate(180deg);
+  top: 70px;
+  cursor: pointer;
+  z-index: 99999;
+}
+.inventory__sidebar .arrow-toggle svg {
+  transform: rotate(180deg);
+}
+.inventory__sidebar--logo {
+  position: relative;
+  height: 65px;
+  padding-left: 20px;
+}
+.inventory__sidebar--logo a svg:nth-child(2) {
+  position: absolute;
+  top: 25px;
+  left: 48px;
+}
+.inventory__sidebar--links ul {
+  padding-top: 25px;
+}
+.inventory__sidebar--links ul li {
+  height: 60px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: 0.5s;
+}
+.inventory__sidebar--links ul li:hover .inventory__sidebar--links ul li::after {
+  opacity: 1;
+}
+.inventory__sidebar--links ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6285fb;
+  width: 5px;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+  opacity: 0;
+}
+.inventory__sidebar--links ul li a {
+  font-family: "Averta";
+  color: #afb8cc;
+  display: flex;
+  font-size: 16px;
+  transition: 0.25s;
+  font-family: var(--font-family-averta_cy-bold);
+}
+.inventory__sidebar--links ul li a:hover {
+  color: #6285fb;
+}
+.inventory__sidebar--links ul li a svg path {
+  transition: 0.25s;
+}
+.inventory__sidebar--links ul li a:hover span svg path {
+  stroke: #6285fb;
+}
+.inventory__sidebar--links ul li a span {
+  display: block;
+}
+.inventory__sidebar--links ul li a span:nth-child(2) {
+  margin-left: 25px;
+}
+.inventory__sidebar--links ul li:last-child a {
+  align-items: center;
+}
+.inventory__sidebar--links ul li.ads {
+  height: auto;
+}
+
+.ads__box {
+  font-family: "Averta";
+  background: #293f8a;
+  border-radius: 14px;
+  padding: 15px 0;
+  font-family: var(--font-family-averta_cy-bold);
+}
+.ads__box .img {
+  width: 180px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 15px auto;
+  position: relative;
+  height: 70px;
+  margin-top: 0;
+}
+.ads__box .img img {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ads__box h2 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 14px;
+  margin: 0;
+}
+.ads__box p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 14px;
+  margin-bottom: 0;
+  margin: 7px 0;
+  letter-spacing: 1px;
+}
+.ads__box--cta {
+  display: flex;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+.ads__box--cta a {
+  display: flex;
+  justify-content: center;
+  background: #f8fafe;
+  border-radius: 8px;
+  padding: 3.5px 14px;
+  color: #498de1;
+  font-size: 10px;
+}
+.ads__box--cta a:nth-child(2) {
+  margin-left: 10px;
+}
+.ads__box--cta a span {
+  margin: 0;
+  display: inline-block;
+}
+.ads__box--cta a span:nth-child(1) {
+  position: relative;
+  top: 2px;
+}
+.ads__box--cta a span:nth-child(2) {
+  margin-left: 8px;
+}
+
+.bottom-action {
+  position: absolute;
+  width: 215px;
+  left: 20px;
+  bottom: 50px;
+}
+
+button.logout {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-bottom: 40px;
+}
+button.logout svg path {
+  transition: 0.25s;
+}
+button.logout:hover span {
+  color: #6285fb;
+}
+button.logout:hover span svg path {
+  fill: #6285fb;
+}
+button.logout span {
+  font-family: "Averta";
+  color: #afb8cc;
+  font-size: 16px;
+  font-family: var(--font-family-averta_cy-bold);
+}
+button.logout span:nth-child(2) {
+  margin-left: 25px;
+}
+
+.inventory__sidebar--links ul li:hover::after {
+  opacity: 1;
+}
+
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard, .mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .firstCard {
+  width: 48%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(100, 100, 100, 0.15);
+  border-radius: 8px;
+  padding: 15px 20px;
+  padding-bottom: 0;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard > a, .mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .firstCard > a {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaedf1;
+}
+
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .system-loss, .mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .General-Info {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(100, 100, 100, 0.15);
+  border-radius: 8px;
+  padding: 10px 17px;
+  padding-bottom: 20px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .system-loss > a, .mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .General-Info > a {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaedf1;
+  margin-bottom: 10px;
+}
+
+.mainpageLayout {
+  display: flex;
+  align-items: stretch;
+}
+.mainpageLayout .right-side-solar-spec {
+  padding: 20px 40px;
+}
+.mainpageLayout .right-side-solar-spec > h2 {
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+.mainpageLayout .right-side-solar-spec > h2 svg {
+  margin-right: 25px;
+  display: inline-block;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 35px 25px;
+  max-width: 100%;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards {
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .firstCard .numsupValue sup {
+  font-size: 14px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart {
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(1) span:nth-of-type(1) {
+  height: 20px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(1) span:nth-of-type(2) {
+  height: 30px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(2) span:nth-of-type(1) {
+  height: 25px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(2) span:nth-of-type(2) {
+  height: 15px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(3) span:nth-of-type(1) {
+  height: 17px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(3) span:nth-of-type(2) {
+  height: 23px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(4) span:nth-of-type(1) {
+  height: 39px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column:nth-of-type(4) span:nth-of-type(2) {
+  height: 24px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  bottom: -15px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column span {
+  width: 6px;
+  border-radius: 5px 5px 0px 0px;
+  height: 29px;
+  display: block;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column span:nth-of-type(2) {
+  height: 24px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column span:nth-of-type(2) {
+  background-color: #44aafd;
+  margin-left: 5px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .chart .column span:nth-of-type(1) {
+  background-color: #ffc90e;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--views .two-cards .secondCard .title-bottom {
+  justify-content: space-around;
+  width: 70%;
+  margin: 25px auto;
+  margin-bottom: 0;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info {
+  margin-left: 25px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .General-Info > ul > li {
+  height: 63px;
+  justify-content: space-between;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .General-Info > ul > li > p:nth-of-type(2) {
+  align-self: flex-end;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .system-loss {
+  margin-top: 22px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .system-loss .chart-dounghts {
+  width: 100px;
+}
+.mainpageLayout .right-side-solar-spec .solar-spec-content .solar-spec-content--info .system-loss .singletxt {
+  line-height: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

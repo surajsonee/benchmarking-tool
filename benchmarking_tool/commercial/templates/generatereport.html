@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/generatereport.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body id= 'invoice'> 
+    <button onclick="pdfPrinter()">Download as PDF</button>
+    <div class="firstPage" id = '0'> 
+      <div class="print-container">
+        <div class="logo"> <img  style = 'width: 580px; height: 280px;' src="{{url_for('static',filename='img/canmore.png')}}"></div>
+        <div class="main-header"> 
+          <h1 class="av-bold maincolor size-28" style = 'font-size: 70px;'>Energy Report </h1><br>
+          <h2 class="av-bold maincolor size-25" style = 'font-size: 50px;'>{{monthname}} 2021</h2>
+        </div>
+        <div class="home-print" style = 'width: 380px; height: 280px;'> <img style = 'width: 380px; height: 380px;' src="{{url_for('static',filename='img/' + building_id + '.png')}}"></div>
+        <div class="address av-bold grey"> 
+          <h3 class="av-bold maincolor size-{{endminutes[1]}}" style = 'font-size: 30px;'>{{buidling_description}}</h3><br>
+          <h4 style ='width: 120px; font-size: 20px;'>{{building_address}}</h4>
+        </div>
+        <div style = 'height: 300px;'>
+        <img style ='position: relative; left: 75%; top: 180px;'; src="{{url_for('static',filename='img/optimizedlogo.png')}}">
+      </div>
+      </div>
+    </div>
+<div class="pagebreak"> </div>
+
+<div class = 'secondPage' id = '1'>
+  <div class="print-container">
+    <h1 class="av-bold maincolor size-28" style = 'font-size: 70px; margin-bottom: 10px;'>Background Info </h1>
+    <div style = 'width: 100%; height: 2px; background-color: rgba(176, 176, 176, 0.5); margin-bottom: 30px;'></div>
+    <p class = 'description'> <b>The report is createed using data that is gathered from the facility by monitoring individual circuits within the electrical panel. The circuits are monitored using clip on CT clamps</b></p>
+    <img style = 'position: relative; height: 800px; top: 0px; ' src="{{url_for('static',filename='img/clamps.png')}}">
+    <p class = 'description' style="position: relative;"><b>These clamps stay clipped on the circuits 25/7 and transmits information to the cloud helping us understand what running, when it's running, how long adn what it's costing</b></p>
+    <p class = 'description' style="position: relative;"><b>The data sets being sent are huge and can be quite overwhelming, so we are using an algorythm to help sort the information as well as help us identify energy saving opportunities within the facility</b></p>
+    </div>
+  </div>
+</div>
+<div class="pagebreak"> </div>
+
+<div class="GneralInfo" id = '2'> 
+      <div class="print-container">
+        <div class="title">
+          <h1 class="av-bold maincolor" style="font-size: 50px;"><b>General Info</b></h1>
+        </div><br>
+        <div class="about-gnral"> 
+          <h3 class="av-bold maincolor size-26" style="font-size: 30px;"><b>About Facility</b></h3>
+        </div>
+        <div class="content-info"> 
+          <div class="logo"> <img style = 'width: 350px;' src="{{url_for('static',filename='img/' + building_id + '.png')}}"></div>
+          <div class="data"> 
+            <h3 class="av-bold maincolor size-26"><b>{{buidling_description}}</b></h3>
+            <div class="top-part"> 
+              <div class="part1"> 
+                <h3 class="d-grey av-bold size-15"><b>type of facility </b></h3>
+                <p class="av-bold maincolor size-22"><b>Arena</b></p>
+              </div>
+              <div class="part2">
+                <h3 class="d-grey av-bold size-15"><b>year built</b></h3>
+                <p class="av-bold maincolor size-22"><b>1982</b></p>
+              </div>
+            </div>
+            <div class="bottom-part"> 
+              <div class="part1"> 
+                <h3 class="d-grey av-bold size-15"><b>square feet </b></h3>
+                <p class="av-bold maincolor size-22"><b>55,239<span>ft <sup>2</sup></span></p>
+              </div>
+              <div class="part2">
+                <h3 class="d-grey av-bold size-15"><b>square meter </b></h3>
+                <p class="av-bold maincolor size-22"><b>5,109</b><span>m <sup>2</sup></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="operatingHrs"> 
+          <h3 class="av-bold maincolor size-26">Operating Hours </h3>
+          <div class="container-calendar">
+            <div class="calendar">
+              <div class="firstweek">
+                <div class="sunday day">
+                  <p class="titleday">Sunday</p>
+                  {% if starthours[0] == None %}
+                        <div class="content">
+                    <p class="numberDay">1</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">1</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[0]}}</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[0]}}</p>
+                        <p class="size-14">{{startam[0]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[0]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[0]}}</p>
+                        <p class="size-14">{{endam[0]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="monday day">
+                  <p class="titleday">Monday</p>
+                  {% if starthours[1] == None %}
+                        <div class="content">
+                    <p class="numberDay">2</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">2</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[1]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[1]}}</p>
+                        <p class="size-14">{{startam[1]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[1]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[1]}}</p>
+                        <p class="size-14">{{endam[1]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tuesday day">
+                  <p class="titleday">Tuesday</p>
+                  {% if starthours[2] == None %}
+                        <div class="content">
+                    <p class="numberDay">3</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">3</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[2]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[2]}}</p>
+                        <p class="size-14">{{startam[2]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[2]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[2]}}</p>
+                        <p class="size-14">{{endam[2]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="wednsday day">
+                  <p class="titleday">Wednesday</p>
+                  {% if starthours[3] == None %}
+                        <div class="content">
+                    <p class="numberDay">4</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">4</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[3]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[3]}}</p>
+                        <p class="size-14">{{startam[3]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[3]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[3]}}</p>
+                        <p class="size-14">{{endam[3]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="thursday day">
+                  <p class="titleday">Thursday</p>
+                  {% if starthours[4] == None %}
+                        <div class="content">
+                    <p class="numberDay">5</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">5</p>
+                    <div class="info-column">
+                      
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[4]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[4]}}</p>
+                        <p class="size-14">{{startam[4]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[4]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[4]}}</p>
+                        <p class="size-14">{{endam[4]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="friday day">
+                  <p class="titleday">Friday</p>
+                  {% if starthours[5] == None %}
+                        <div class="content">
+                    <p class="numberDay">6</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">6</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[5]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[5]}}</p>
+                        <p class="size-14">{{startam[5]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[5]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[5]}}</p>
+                        <p class="size-14">{{endam[5]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="saturday day">
+                  <p class="titleday">Saturday</p>
+                  {% if starthours[6] == None %}
+                        <div class="content">
+                    <p class="numberDay">7</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">7</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[6]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[6]}}</p>
+                        <p class="size-14">{{startam[6]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[6]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[6]}}</p>
+                        <p class="size-14">{{endam[6]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+              <div class="secondweek">
+                <div class="sunday day">
+                  <p class="titleday">Sunday</p>
+                  {% if starthours[7] == None %}
+                        <div class="content">
+                    <p class="numberDay">8</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">8</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[7]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[7]}}</p>
+                        <p class="size-14">{{startam[7]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[7]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[7]}}</p>
+                        <p class="size-14">{{endam[7]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="monday day">
+                  <p class="titleday">Monday</p>
+                  {% if starthours[8] == None %}
+                        <div class="content">
+                    <p class="numberDay">9</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">9 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[8]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[8]}}</p>
+                        <p class="size-14">{{startam[8]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[8]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[8]}}</p>
+                        <p class="size-14">{{endam[8]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tuesday day">
+                  <p class="titleday">Tuesday</p>
+                  {% if starthours[9] == None %}
+                        <div class="content">
+                    <p class="numberDay">10</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">10 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[9]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[9]}}</p>
+                        <p class="size-14">{{startam[9]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[9]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[9]}}</p>
+                        <p class="size-14">{{endam[9]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="wednesday day">
+                  <p class="titleday">Wednesday</p>
+                  {% if starthours[10] == None %}
+                        <div class="content">
+                    <p class="numberDay">11</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">11 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[10]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[10]}}</p>
+                        <p class="size-14">{{startam[10]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[10]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[10]}}</p>
+                        <p class="size-14">{{endam[10]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="thursday day">
+                  <p class="titleday">Thursday</p>
+                  {% if starthours[11] == None %}
+                        <div class="content">
+                    <p class="numberDay">12</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">12 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[11]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[11]}}</p>
+                        <p class="size-14">{{startam[11]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[11]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[11]}}</p>
+                        <p class="size-14">{{endam[11]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="friday day">
+                  <p class="titleday">Friday</p>
+                  {% if starthours[12] == None %}
+                        <div class="content">
+                    <p class="numberDay">13</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">13 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[12]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[12]}}</p>
+                        <p class="size-14">{{startam[12]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[12]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[12]}}</p>
+                        <p class="size-14">{{endam[12]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="saturday day">
+                  <p class="titleday">Saturday</p>
+                  {% if starthours[13] == None %}
+                        <div class="content">
+                    <p class="numberDay">14</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">14 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[13]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[13]}}</p>
+                        <p class="size-14">{{startam[13]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[13]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[13]}}</p>
+                        <p class="size-14">{{endam[13]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="thirdweek">
+                <div class="sunday day">
+                  <p class="titleday">Sunday</p>
+                  {% if starthours[14] == None %}
+                        <div class="content">
+                    <p class="numberDay">15</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">15 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[14]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[14]}}</p>
+                        <p class="size-14">{{startam[14]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[14]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[14]}}</p>
+                        <p class="size-14">{{endam[14]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="monday day">
+                  <p class="titleday">Monday</p>
+                  {% if starthours[15] == None %}
+                        <div class="content">
+                    <p class="numberDay">16</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">16 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[15]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[15]}}</p>
+                        <p class="size-14">{{startam[15]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[15]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[15]}}</p>
+                        <p class="size-14">{{endam[15]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tuesday day">
+                  <p class="titleday">Tuesday</p>
+                  {% if starthours[16] == None %}
+                        <div class="content">
+                    <p class="numberDay">17</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay"> 17</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[16]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[16]}}</p>
+                        <p class="size-14">{{startam[16]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[16]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[16]}}</p>
+                        <p class="size-14">{{endam[16]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="wednesday day">
+                  <p class="titleday">Wednesday</p>
+                  {% if starthours[17] == None %}
+                        <div class="content">
+                    <p class="numberDay">18</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay"> 18</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[17]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[17]}}</p>
+                        <p class="size-14">{{startam[17]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[17]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[17]}}</p>
+                        <p class="size-14">{{endam[17]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="thursday day">
+                  <p class="titleday">Thursday</p>
+                  {% if starthours[18] == None %}
+                        <div class="content">
+                    <p class="numberDay">19</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">19 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[18]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[18]}}</p>
+                        <p class="size-14">{{startam[18]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[18]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[18]}}</p>
+                        <p class="size-14">{{endam[18]}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="friday day">
+                  <p class="titleday">Friday</p>
+                  {% if starthours[19] == None %}
+                        <div class="content">
+                    <p class="numberDay">20</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">20 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[19]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[19]}}</p>
+                        <p class="size-14">{{startam[19]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[19]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[19]}}</p>
+                        <p class="size-14">{{endam[19]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="saturday day">
+                  <p class="titleday">Saturday</p>
+                  {% if starthours[20] == None %}
+                        <div class="content">
+                    <p class="numberDay">21</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">21 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[20]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[20]}}</p>
+                        <p class="size-14">{{startam[20]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[20]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[20]}}</p>
+                        <p class="size-14">{{endam[20]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="fourthweek">
+                <div class="sunday day">
+                  <p class="titleday">Sunday</p>
+                  {% if starthours[21] == None %}
+                        <div class="content">
+                    <p class="numberDay">22</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay"> 22</p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[21]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[21]}}</p>
+                        <p class="size-14">{{startam[21]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[21]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[21]}}</p>
+                        <p class="size-14">{{endam[21]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="monday day">
+                  <p class="titleday">Monday</p>
+                  {% if starthours[22] == None %}
+                        <div class="content">
+                    <p class="numberDay">23</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">23 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[22]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[22]}}</p>
+                        <p class="size-14">{{startam[22]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[22]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[22]}}</p>
+                        <p class="size-14">{{endam[22]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tuesday day">
+                  <p class="titleday">Tuesday</p>
+                  {% if starthours[23] == None %}
+                        <div class="content">
+                    <p class="numberDay">24</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">24 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[23]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[23]}}</p>
+                        <p class="size-14">{{startam[23]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[23]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[23]}}</p>
+                        <p class="size-14">{{endam[23]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="wednesday day">
+                  <p class="titleday">Wednesday</p>
+                  {% if starthours[24] == None %}
+                        <div class="content">
+                    <p class="numberDay">25</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">25 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[24]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[24]}}</p>
+                        <p class="size-14">{{startam[24]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[24]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[24]}}</p>
+                        <p class="size-14">{{endam[24]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="thursday day">
+                  <p class="titleday">Thursday</p>
+                  {% if starthours[25] == None %}
+                        <div class="content">
+                    <p class="numberDay">26</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">26 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[25]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[25]}}</p>
+                        <p class="size-14">{{startam[25]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[25]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[25]}}</p>
+                        <p class="size-14">{{endam[25]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="friday day">
+                  <p class="titleday">Friday</p>
+                  {% if starthours[26] == None %}
+                        <div class="content">
+                    <p class="numberDay">27</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">27 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[26]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[26]}}</p>
+                        <p class="size-14">{{startam[26]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[26]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[26]}}</p>
+                        <p class="size-14">{{endam[26]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="saturday day">
+                  <p class="titleday">Saturday</p>
+                  {% if starthours[27] == None %}
+                        <div class="content">
+                    <p class="numberDay">28</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay"> </p>
+                    <div class="info-column"></div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="fifthweek">
+                <div class="sunday day">
+                  <p class="titleday">Sunday</p>
+                  {% if starthours[27] == None %}
+                        <div class="content">
+                    <p class="numberDay">28</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">28 </p>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{starthours[27]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{startminutes[27]}}</p>
+                        <p class="size-14">{{startam[27]}}</p>
+                      </div>
+                    </div><span class="dash">-</span>
+                    <div class="info-column">
+                      <div class="hrs"> 
+                        <p class="av-bold size-16">{{endhours[27]}}:</p>
+                      </div>
+                      <div class="mnts av-bold size-16">
+                        <p>{{endminutes[27]}}</p>
+                        <p class="size-14">{{endam[27]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="monday day">
+                  <p class="titleday">Monday</p>
+                  {% if starthours[28] == None %}
+                        <div class="content">
+                    <p class="numberDay">29</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">29 </p>
+                    <div class="info-column"></div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tuesday day">
+                  <p class="titleday">Tuesday</p>
+                  {% if starthours[29] == None %}
+                        <div class="content">
+                    <p class="numberDay">30</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">30 </p>
+                    <div class="info-column"></div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="wednesday day">
+                  <p class="titleday">Wednesday</p>
+                  {% if starthours[30] == None %}
+                        <div class="content">
+                    <p class="numberDay">31</p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay">31 </p>
+                    <div class="info-column"></div>
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="thursday day">
+                  <p class="titleday">Thursday</p>
+                  {% if starthours == None %}
+                        <div class="content">
+                    <p class="numberDay"></p>
+                    <div class="info-column">
+                      <p class="closed av-bold">Closed</p>
+                    </div>
+                  </div>
+                      {% else %}
+                  <div class="content">
+                    <p class="numberDay"> </p>
+                    <div class="info-column"></div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="friday day">
+                  <p class="titleday">Friday</p>
+                  <div class="content">
+                    <p class="numberDay"> </p>
+                    <div class="info-column"></div>
+                  </div>
+                </div>
+                <div class="saturday day">
+                  <p class="titleday">Saturday</p>
+                  <div class="content">
+                    <p class="numberDay"> </p>
+                    <div class="info-column"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="energyUsage" id = '3'> 
+      <div class="print-container">
+        <div class="title">
+          <h1 class="av-bold maincolor" style = 'font-size: 50px;'>Energy Usage</h1>
+          <p class="av-bold d-grey">(overview) </p>
+        </div><br>
+        <div class="date"> 
+          <p class="av-bold maincolor size-30">{{monthname}} 2021</p>
+        </div><br>
+        <div class="electricalBox" style="margin-bottom: 50px;"> 
+          <h2 class="av-bold d-grey size-24" style = 'font-size: 28px;'>Electricity </h2>
+          <div class="electrical-content"> 
+            <div class="chart-content"> 
+              <div class="chart"> 
+                <div class="column"> <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="logo"> <img src="{{url_for('static',filename='img/fortis.png')}}"></div>
+            </div>
+            <div class="data-content"> 
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">rate</p>
+                <p class="av-bold maincolor"> <span class="size-14">$</span><span class="size-45">{{electricalrate}}</span><span class="size-14">/kwh</span></p>
+              </div>
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">usage</p>
+                <p class="av-bold maincolor"> <span class="size-45 numsupValue">{{electrialusage}}</span><span class="size-22">kWh</span></p>
+              </div>
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">total cost</p>
+                <p class="av-bold maincolor"> <span class="size-14">$</span><span class="size-45 numsupValue">{{electricalcost}}</span></p><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="GasBox"> 
+          <h2 class="av-bold d-grey size-24" style = 'font-size: 28px;'>Natural Gas</h2>
+          <div class="electrical-content"> 
+            <div class="chart-content"> 
+              <div class="chart"> 
+                <div class="column"> <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="logo"> <img src="{{url_for('static',filename='img/Atc-logo.png')}}"></div>
+            </div>
+            <div class="data-content"> 
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">rate</p>
+                <p class="av-bold maincolor"> <span class="size-14">$</span><span class="size-45 numsupValue">{{gasrate}}</span><span class="size-16">/GJ</span></p>
+              </div>
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">usage</p>
+                <p class="av-bold maincolor"> <span class="size-45 numsupValue">{{gasuage}}</span><span class="size-16">/GJ</span></p>
+              </div>
+              <div class="first-data"> 
+                <p class="av-bold d-grey size-15">total cost</p>
+                <p class="av-bold maincolor"> <span class="size-14">$</span><span class="size-45 numsupValue">{{gascost}}</span></p><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--script(src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js")-->
+    <script src="{{url_for('static',filename='scripts/electricalreport.js')}}"></script>
+  
+<div class="pagebreak"> </div>
+
+ 
+    <div class="pagenoSix" id = '4'> 
+      <div class="print-container">
+        <div class="title">
+          <h1 class="av-bold maincolor" style="font-size: 50px;">Benchmarking</h1>
+          <p class="av-bold d-grey" style="font-size: 30px;">(Comparison)</p>
+        </div><br>
+        <div class="middle-text"> 
+          <p class="av-bold d-grey size-20" style="font-size: 30px; width: 2000px;">How does your facility rank in energy performance vs other simular facilities?</p>
+        </div>
+        <div class="first-section"> 
+          <div class="logo"> <img style = 'width: 480px;' src="{{url_for('static',filename='img/espm_logo.png')}}"></div>
+          <div class="info av-bold grey size-16"> 
+            <p>Energy star Score </p>
+            <p class="number"> <span>78</span><span>/100</span></p>
+          </div>
+        </div>
+        <div class="second-section" style="margin-bottom: 300px;"> 
+          <div class="logo"> <img style = 'width: 400px; height: 400px;' src="{{url_for('static',filename='img/' + building_id + '.png')}}"></div>
+          <div class="info av-bold maincolor size-16"> 
+            <p>Energy Usage</p>
+            <p class="number"> <span class="numsupValue">87.4</span><span>/kBtu</span></p><span class="d-grey">per sqft</span>
+          </div>
+        </div>
+        <div class="third-section"> 
+          <div class="right-content--flex--right">
+            <div class="display-animate-column">
+              <div class="containerSpan"><span class="green"> </span><span class="yellow"> </span><span class="orange"> </span></div>
+              <svg width="51" height="21" viewbox="0 0 51 21" fill="none" xmlns="http://www.w3.org/{{endminutes[1]}}00/svg">
+                <path d="M0 6.10355e-05C0 6.10355e-05 21.0826 0.000189691 34.5913 6.10355e-05C41 1.30967e-10 51 6.00012 51 10.5001C51 15 42 21.0001 34.5913 21.0001C21.0826 21.0001 0 21.0001 0 21.0001V6.10355e-05Z" fill="#3649A8"></path>
+              </svg>
+            </div>
+            <div class="display-data-column txtcntr">
+              <div class="Mostefficient">
+                <p class="av-bold grey size-13 w100 txtcntr">Most efficient </p>
+                <p class="dis-flex alignCntr justCntr"><span class="av-bold maincolor size-{{endminutes[1]}}">&gt;</span><span class="av-bold maincolor size-35">35</span></p>
+                <p class="av-bold size-15 maincolor">watts</p>
+              </div>
+              <div class="avgfficient">
+                <p class="av-bold grey size-13 w100 txtcntr">average </p>
+                <div class="middle-content dis-flex spbtween">
+                  <p><span class="av-bold maincolor size-35 dblock">10</span></p>
+                  <p class="av-bold size-35 maincolor">-</p>
+                  <p><span class="av-bold maincolor size-35 dblock">15</span></p>
+                </div>
+                <p class="av-bold size-15 maincolor">watts</p>
+              </div>
+              <div class="Lessefficient">
+                <p class="av-bold grey size-13">Least efficient</p>
+                <p class="dis-flex alignCntr justCntr"><span class="av-bold maincolor size-35">10</span><span class="av-bold maincolor size-{{endminutes[1]}}">&gt;</span></p>
+                <p class="av-bold size-15 maincolor">watts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--script(src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js")-->
+    <script src="{{url_for('static',filename='scripts/comparereport.js')}}"></script>
+
+  <div class="pagebreak"> </div>
+  
+  <div class="firstPage" id = '5'> 
+      <div class="print-container">
+        <div class="logo"> <img  style = 'width: 380px; height: 210px;' src="{{url_for('static',filename='img/canmore.png')}}"></div>
+        <div class="main-header"> 
+          <h1 class="av-bold maincolor size-28" style = 'font-size: 50px; width: 100%; position: relative; left: 150px;'>Electrical Panel Schedule</h1><br>
+        </div>
+        <div class="home-print" style = 'width: 280px; height: 280px;'> <img style = 'width: 580px; height: 580px; position: relative; left: 120px; top: 50px;' src="{{url_for('static',filename='img/Panel-Shecdule.png')}}"></div>
+        <div class="address av-bold grey" style = 'position: relative; top: 480px;'> 
+          <h3 class="av-bold maincolor size-{{endminutes[1]}}" style = 'font-size: 30px;'>{{buidling_description}}</h3><br>
+          <h4 style ='width: 120px; font-size: 20px;'>{{building_address}}</h4>
+        </div>
+        <img style ='position: relative; left: 75%; top: 380px;'; src="{{url_for('static',filename='img/optimizedlogo.png')}}">
+      </div>
+      </div>
+    </div>
+<div class="pagebreak"> </div>
+    
+
+    <div class="material-section" id = '6' style="position: relative;top: 50px;"> 
+      <div class="material-container">
+        <h2 class="av-bold maincolor size-32" style="font-size: 50px; margin-bottom: 100px;">Material Standard Panel </h2>
+        <div class="material-section"> 
+          <h3 class="av-bold maincolor size-28Material" style="margin-bottom: 40px;">Materials</h3>
+          <div class="four-sections"> 
+            <div class="left-side"> 
+              <div class="part1" style = 'height: 200px;'>
+                <div class="img"> <img src="{{url_for('static',filename='img/img-1.png')}}"></div>
+                <div class="text"> 
+                  <h3 class="av-bold maincolor size-22Material">Energy meter</h3>
+                  <p class="av-bold d-grey size-14Material"> Each panel will require an energy meter. Meter have 14 channels, so multiple meters may be required per panel</p>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{energy_meter_cost}}</span><span>/</span><span>meter </span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="part2" style = 'height: 200px;'> 
+                <h3 class="av-bold maincolor size-22Material" style="margin-bottom: 20px;">Miscellaneous</h3>
+                <div>
+                  <p class="av-bold d-grey size-14Material" style="margin-bottom: 20px;">This includes small things required to complete  an install, such as utility box, conduit, wires marettes and   zip ties</p>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{misc_cost}}</span><span>/</span><span>panel </span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-side"> 
+              <h3 class="av-bold maincolor size-22Material">CT Clamps / Flex-Coils</h3>
+              <div class="first-row"style="margin-bottom: 20px;"> 
+                <div class="part1"> 
+                  <div class="img"><img src="{{url_for('static',filename='img/wire.png')}}"></div>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{lead_cost}}</span><span>/</span><span>lead </span></p>
+                  </div>
+                </div>
+                <div class="part2"> 
+                  <p class="av-bold d-grey size-14Material"> <span class="maincolor size-18">Panel Leads - </span>The panel leads will be monitored with either a large CT Clamp or if space is limited a Coil. These are made to handle a higher amp range  then individual circuits</p>
+                </div>
+              </div>
+              <div class="first-row"> 
+                <div class="part1"> 
+                  <div class="img"><img src="{{url_for('static',filename='img/horse.png')}}"></div>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{circuit_cost}}</span><span>/</span><span>circuit </span></p>
+                  </div>
+                </div>
+                <div class="part2"> 
+                  <p class="av-bold d-grey size-14Material"> <span class="maincolor size-18">Individual circuits  - </span>Smaller CT clamps are used on individual circuits. They are much smaller then the ones on the mains and are made to handle smaller amp ranges </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="av-bold maincolor size-28Material labour-title" style = 'margin-top: 80px; margin-bottom: 30px;'>Labour  </h2>
+          <div class="bottom-section"> 
+            <div class="two-section"> 
+              <div class="left-section" style = 'height: 300px; width: 400px;'> 
+                <h3 class="av-bold maincolor size-22Material">Electrical</h3>
+                <div>
+                  <p class="av-bold d-grey size-14Material" style = ' margin-bottom: 60px;'>This would include all electrical related to getting the meter mounted in a individual utility box beside the panel, mounting a conduit connection between the two, wiring and powering the panel,as well as connecting all the individual circuits</p>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{electrical_cost}}</span><span>/</span><span>panel </span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="right-section" style = 'height: 300px; width: 400px;'> 
+                <h3 class="av-bold maincolor size-22Material">Commissioning</h3>
+                <div>
+                  <p class="av-bold d-grey size-14Material" style = ' margin-bottom: 60px;'>Commissioning included everything to get the meter communicating correctly with the dashboard. Once the meter has been set up the meter has to be calibrated accordingly to the CT clamps that have been installed. The readings will by cross vertified and tested to make sure they are correctly depositing into the cloud.</p>
+                  <div class="price-component"> 
+                    <p class="av-bold maincolor"><span class="size-12">$</span><span class="numsupValue">{{comissioning_cost}}</span><span>/</span><span>panel </span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="{{url_for('static',filename='css/material.css')}}"></script>
+
+
+    <div class="pagebreak"> </div>
+
+
+
+
+
+<div class="panel-price"  id = '7' style = 'position: relative; bottom: 10px; '>
+      <div class="panel-container">
+        <div class="top-header"> 
+          <h2 class="av-bold size-32 maincolor" style="font-size: 50px;">Panel Pricing</h2>
+        </div>
+        <div class="first-section" style  = 'height: 160px;'> 
+          <div class="img"><img src="{{url_for('static',filename='img/Panel-Shecdule.png')}}"></div>
+          <div class="data av-bold"> 
+            <p> <span class="maincolor size-28 ">{{num_standard_panels}}</span><span class="d-grey size-14">Panels </span></p>
+            <p> <span class="green size-32">{{total_num_circuits_panels}}</span><span class="d-grey size-14">Circuits</span></p>
+          </div>
+          <div class="show-data" style = 'height: 140px;'> 
+            <div class="first-row av-bold maincolor">
+              <p> <span>Panel</span><span>Mains Only</span></p>
+              <p> <span>$</span><span class="size-26 numsupValue">{{mains_total}}</span></p>
+            </div>
+            <div class="first-row av-bold maincolor">
+              <p> <span>all individual</span><span>circuits</span></p>
+              <p> <span>$</span><span class="size-26 numsupValue">{{circuits_total}}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="second-section">
+          <div class="part1"> 
+            <h2 class="av-bold maincolor size-32">Panel breakdown</h2>
+            <div class="rows-data"> 
+
+              {% for i in range(0,len) %}
+              {% if type_list[i] != 'MCC Unit' %}
+              <div class="row-data av-bold grey"style = 'height: 20px;'> 
+                <p class="maincolor" style = 'width: 80px;'>{{panel_name_list[i]}}</p>
+                <p style = 'width: 80px;'>{{voltage_list[i]}}</p>
+                <P>{{circuit_name_list[i] | length}} Circuits</P>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="part2"> 
+            <div class="firstcolumn"> 
+              <h3 class="av-bold maincolor size-20"><span>Panel </span><span>Leads Only</span></h3>
+              <ul>
+                {% for i in range(0,len) %}
+                {% if type_list[i] != 'MCC Unit' %}
+                <li class="av-bold maincolor " style = 'height: 20px;'>${{panel_mains_cost_list[i]}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="secondcolumn"> 
+              <h3 class="av-bold maincolor size-20"><span>All indivdual </span><span>Circuits</span></h3>
+              <ul>
+                {% for i in range(0,len) %}
+                {% if type_list[i] != 'MCC Unit' %}
+                <li class="av-bold maincolor "style = 'height: 20px;'>${{panel_cost_list[i]}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="{{url_for('static',filename='scripts/panel-price.js')}}"></script>
+  
+
+  <div class="pagebreak"> </div>
+
+
+<!--   <div class="panel-price"  id = '8' style = 'position: relative; bottom: 10px;'>
+      <div class="panel-container">
+        <div class="top-header"> 
+          <h2 class="av-bold size-32 maincolor" style=" font-size: 50px;">Panel Pricing</h2>
+        </div>
+        <div class="first-section" style  = 'height: 160px;'> 
+          <div class="img"><img src="{{url_for('static',filename='img/Panel-Shecdule.png')}}"></div>
+          <div class="data av-bold"> 
+            <p> <span class="maincolor size-28 ">{{num_standard_panels}}</span><span class="d-grey size-14">Panels </span></p>
+            <p> <span class="green size-32">{{total_num_circuits_panels}}</span><span class="d-grey size-14">Circuits</span></p>
+          </div>
+          <div class="show-data" style = 'height: 140px;'> 
+            <div class="first-row av-bold maincolor">
+              <p> <span>Panel</span><span>Mains Only</span></p>
+              <p> <span>$</span><span class="size-26 numsupValue">{{mains_total}}</span></p>
+            </div>
+            <div class="first-row av-bold maincolor">
+              <p> <span>all individual</span><span>circuits</span></p>
+              <p> <span>$</span><span class="size-26 numsupValue">{{circuits_total}}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="second-section">
+          <div class="part1"> 
+            <h2 class="av-bold maincolor size-32">Panel breakdown</h2>
+            <div class="rows-data"> 
+
+              {% for i in range(35,len) %}
+              {% if type_list[i] != 'MCC Unit' %}
+              <div class="row-data av-bold grey"style = 'height: 20px;'> 
+                <p class="maincolor" style = 'width: 80px;'>{{panel_name_list[i]}}</p>
+                <p style = 'width: 80px;'>{{voltage_list[i]}}</p>
+                <P>{{circuit_name_list[i] | length}} Circuits</P>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="part2"> 
+            <div class="firstcolumn"> 
+              <h3 class="av-bold maincolor size-20"><span>Panel </span><span>Leads Only</span></h3>
+              <ul>
+                {% for i in range(35,len) %}
+                {% if type_list[i] != 'MCC Unit' %}
+                <li class="av-bold maincolor " style = 'height: 20px;'>${{panel_mains_cost_list[i]}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="secondcolumn"> 
+              <h3 class="av-bold maincolor size-20"><span>All indiivdual </span><span>Circuits</span></h3>
+              <ul>
+                {% for i in range(35,len) %}
+                {% if type_list[i] != 'MCC Unit' %}
+                <li class="av-bold maincolor "style = 'height: 20px;'>${{panel_cost_list[i]}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="{{url_for('static',filename='scripts/panel-price.js')}}"></script>
+  
+
+  <div class="pagebreak"> </div> -->
+
+{% set pageNumber = namespace(value=7) %}
+{% for i in range(0,len) %}
+{% if type_list[i] != 'MCC Unit' %}
+{% set pageNumber.value = pageNumber.value + 1 %}
+<div style ='display: none;'>
+                {% set sorted_categories = [] %} 
+                {{sorted_categories.append([lighting_count[i], 'Lighting'])}}
+                {{sorted_categories.append([hvac_count[i], 'HVAC'])}}
+                {{sorted_categories.append([dhw_count[i], 'DHW'])}}
+                {{sorted_categories.append([plug_count[i], 'Plug-Load'])}}
+                {{sorted_categories.append([other_count[i], 'Other'])}}
+                {{sorted_categories.append([spare_count[i], 'Spare'])}}
+                {{sorted_categories.append([boiler_count[i], 'DHW'])}}
+                {% set sorted_categories = sorted_categories|sort(reverse = True) %}
+</div>
+<div class="panel-Schedule" id = '{{pageNumber.value}}'>
+      <div class="panel-container">
+        <div class="top-header"> 
+          <h2 class="av-bold size-32 maincolor">Panel Schedule<span class="grey size-18">({{panel_name_list[i]}})</span></h2>
+        </div>
+        <div class="panel-section"> 
+          <div class="part1"> 
+            <h2 class="av-bold maincolor size-32">{{panel_name_list[i]}}</h2>
+            <div class="img"> <img src=" {% if voltage_list[i] == 'Standard' %} {{url_for('static',filename='img/Mcc.jpg')}}   {% else %}{{url_for('static',filename='img/Panel-Shecdule.png')}} {% endif %}"></div>
+          </div>
+          <div class="part2 av-bold d-grey"> 
+            <p class="size-28">{{circuit_name_list[i] | length}}</p>
+            <p class="size-16">Circuits </p>
+            <p class="size-30">{{voltage_list[i]}} <span class="size-20"></span></p>
+            <p class="size-22">voltage</p>
+          </div>
+          <div class="part3"> 
+            <div class="svg-section"> 
+              <h3 class="av-bold maincolor size-22">Circuit Breakdown</h3>
+              <div class="chart-svg" style="position: relative; height:150px; width:150px">
+                <canvas style = 'position: relative; bottom: 25px;' id={{panel_name_ids[i]}}></canvas>
+              </div>
+            </div>
+            <div class="list-data"> 
+              <ul class="av-bold d-grey">
+                <li class="bluee"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[0][0] > 0%}{{"{:.2f}".format((sorted_categories[0][0] | int/(circuit_name_list[i] | length)) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[0][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[0][1]}}"> </span><span>{{sorted_categories[0][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="sky"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[1][0] > 0 %}{{"{:.2f}".format((sorted_categories[1][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[1][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[1][1]}}"> </span><span>{{sorted_categories[1][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="orange">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[2][0] > 0 %}{{"{:.2f}".format((sorted_categories[2][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[2][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[2][1]}}"> </span><span>{{sorted_categories[2][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="orange-2"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[3][0] > 0 %}{{"{:.2f}".format((sorted_categories[3][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[3][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[3][1]}}"> </span><span>{{sorted_categories[3][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[4][0] > 0 %}{{"{:.2f}".format((sorted_categories[4][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[4][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[4][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[5][0] > 0 %}{{"{:.2f}".format((sorted_categories[5][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[5][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[5][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[6][0] > 0 %}{{"{:.2f}".format((sorted_categories[6][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[6][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[6][1]}}</span> {% else %}{% endif %}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="list-section"> 
+          <ul class="first-list  av-bold ">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k < (circuit_name_list[i] | length)/3 %}
+            <li style = 'margin-bottom: 4px;'> <span class="number" style="font-size: 14px;">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey" style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} font-size: 12px;">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          <ul class="second-list av-bold">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k >= (circuit_name_list[i] | length)/3 and k < (circuit_name_list[i] | length) * (2/3) %}
+            <li style = 'margin-bottom: 4px;'> <span class="number" style="font-size: 14px;">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey"style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} font-size: 12px;">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          <ul class="third-list av-bold">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k >= (circuit_name_list[i] | length) * (2/3) %}
+            <li style = 'margin-bottom: 4px;'> <span class="number" style="font-size: 14px;">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey"style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} font-size: 12px;">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+
+          </ul>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <div class="pagebreak"> </div>
+    {% endif %}
+    {% endfor %}
+
+
+ <div class="firstPage" id = '{{pageNumber.value + 1}}'> 
+      <div class="print-container">
+        <div class="logo"> <img  style = 'width: 580px; height: 230px;' src="{{url_for('static',filename='img/canmore.png')}}"></div>
+        <div class="main-header"> 
+          <h1 class="av-bold maincolor size-28" style = 'font-size: 60px; width: 100%; position: relative; left: 100px;' >MCC Costs Breakdown </h1><br>
+        </div>
+        <div class="home-print" style = 'width: 380px; height: 280px;'> <img style = 'width: 580px; height: 580px; position: relative; left: 120px; top: 50px;' src="{{url_for('static',filename='img/Mcc.png')}}"></div>
+        <div class="address av-bold grey" style = 'position: relative; top: 480px;'> 
+          <h3 class="av-bold maincolor size-{{endminutes[1]}}" style = 'font-size: 30px;'>{{buidling_description}}</h3><br>
+          <h4 style ='width: 120px; font-size: 20px;'>{{building_address}}</h4>
+        </div>
+        <img style ='position: relative; left: 75%; top: 380px;'; src="{{url_for('static',filename='img/optimizedlogo.png')}}">
+      </div>
+      </div>
+    </div>
+<div class="pagebreak"> </div>
+
+
+<div class="panel-price" id = '{{pageNumber.value + 2}}' style = 'position: relative; bottom: 20px;'>
+      <div class="panel-container">
+        <div class="top-header"> 
+          <h2 class="av-bold size-32 maincolor" style = 'font-size: 50px;'>Metering MCC Unit</h2>
+        </div>
+        <div class="first-section" style  = 'height: 160px;'> 
+          <div class="img"><img src="{{url_for('static',filename='img/Mcc.png')}}"></div>
+          <div class="data av-bold"> 
+            <p> <span class="maincolor size-28 ">{{num_mcc_panels}}</span><span class="d-grey size-14">Panels </span></p>
+            <p> <span class="green size-32">{{total_num_circuits_mcc}}</span><span class="d-grey size-14">Circuits</span></p>
+          </div>
+          <div class="show-data"> 
+            <div class="first-row av-bold maincolor">
+              <p> <span>all individual</span><span>circuits</span></p>
+              <p> <span>$</span><span class="size-26 numsupValue">{{mcc_circuits_total}}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="second-section">
+          <div class="part1"> 
+            <h2 class="av-bold maincolor size-32">MCC breakdown</h2>
+            <div class="fist-column-list">
+              <h2 class="av-bold maincolor size-18">Details</h2>
+              <ul class="av-bold d-grey size-15">
+                <li>
+                  3 Ct clamps or coils per circuit
+                </li>
+                <li>
+                  30 channels per meter, or 10 circuits per meter
+
+                </li>
+                <li>
+                  Multiple meters will be required for MMC units over 10 circuits
+
+                </li>
+              </ul>
+            </div>
+            </div>
+            <div class="rows-data2" > 
+
+              {% for i in range(0,len) %}
+              {% if type_list[i] == 'MCC Unit' %}
+              <div class="row-data2 av-bold grey"style = 'height: 20px;'> 
+                <p class="maincolor" style = 'width: 120px;'>{{panel_name_list[i]}}</p>
+                <P>{{circuit_name_list[i] | length}} Circuits</P>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          
+          <div class="part2 part22"> 
+            <div class="secondcolumn"> 
+              <h3 class="av-bold maincolor size-20"><span>All indivdual </span><span>Circuits</span></h3>
+              <ul>
+                {% for i in range(0,len) %}
+                {% if type_list[i] == 'MCC Unit' %}
+                <li class="av-bold maincolor "style = 'height: 20px;'>${{panel_cost_list[i]}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="{{url_for('static',filename='scripts/panel-price.js')}}"></script>
+  
+
+  <div class="pagebreak"> </div>
+
+{% for i in range(0,len) %}
+{% if type_list[i] == 'MCC Unit' %}
+{% set pageNumber.value = pageNumber.value + 1 %}
+<div style ='display: none;'>
+                {% set sorted_categories = [] %} 
+                {{sorted_categories.append([lighting_count[i], 'Lighting'])}}
+                {{sorted_categories.append([hvac_count[i], 'HVAC'])}}
+                {{sorted_categories.append([dhw_count[i], 'DHW'])}}
+                {{sorted_categories.append([plug_count[i], 'Plug-Load'])}}
+                {{sorted_categories.append([other_count[i], 'Other'])}}
+                {{sorted_categories.append([spare_count[i], 'Spare'])}}
+                {{sorted_categories.append([boiler_count[i], 'DHW'])}}
+                {% set sorted_categories = sorted_categories|sort(reverse = True) %}
+</div>
+<div class="panel-Schedule" id = '{{pageNumber.value + 1}}'>
+      <div class="panel-container">
+        <div class="top-header"> 
+          <h2 class="av-bold size-32 maincolor">Panel Schedule<span class="grey size-18">({{panel_name_list[i]}})</span></h2>
+        </div>
+        <div class="panel-section"> 
+          <div class="part1"> 
+            <h2 class="av-bold maincolor size-32">{{panel_name_list[i]}}</h2>
+            <div class="img"> <img src=" {% if type_list[i] == 'MCC Unit' %} {{url_for('static',filename='img/Mcc.jpg')}}   {% else %}{{url_for('static',filename='img/Panel-Shecdule.png')}} {% endif %}"></div>
+          </div>
+          <div class="part2 av-bold d-grey"> 
+            <p class="size-28">{{circuit_name_list[i] | length}}</p>
+            <p class="size-16">Circuits </p>
+            <p class="size-30">{{voltage_list[i]}} <span class="size-20"></span></p>
+            <p class="size-22">voltage</p>
+          </div>
+          <div class="part3"> 
+            <div class="svg-section"> 
+              <h3 class="av-bold maincolor size-22">Circuit Breakdown</h3>
+              <div class="chart-svg" style="position: relative; height:150px; width:150px">
+                <canvas style = 'position: relative; bottom: 25px;' id={{panel_name_ids[i]}}></canvas>
+              </div>
+            </div>
+            <div class="list-data"> 
+              <ul class="av-bold d-grey">
+                <li class="bluee"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[0][0] > 0%}{{"{:.2f}".format((sorted_categories[0][0] | int/(circuit_name_list[i] | length)) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[0][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[0][1]}}"> </span><span>{{sorted_categories[0][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="sky"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[1][0] > 0 %}{{"{:.2f}".format((sorted_categories[1][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[1][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[1][1]}}"> </span><span>{{sorted_categories[1][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="orange">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[2][0] > 0 %}{{"{:.2f}".format((sorted_categories[2][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[2][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[2][1]}}"> </span><span>{{sorted_categories[2][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="orange-2"> 
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[3][0] > 0 %}{{"{:.2f}".format((sorted_categories[3][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[3][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[3][1]}}"> </span><span>{{sorted_categories[3][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[4][0] > 0 %}{{"{:.2f}".format((sorted_categories[4][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[4][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[4][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[5][0] > 0 %}{{"{:.2f}".format((sorted_categories[5][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[5][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[5][1]}}</span> {% else %}{% endif %}
+                </li>
+                <li class="yellow">
+                  <p> <span style = 'width: 4.5ch; overflow: hidden;'>{% if  circuit_name_list[i] | length > 0 and sorted_categories[6][0] > 0 %}{{"{:.2f}".format((sorted_categories[6][0] | int/circuit_name_list[i] | length) * 100)}} {% else %}{% endif %} </span>{%  if sorted_categories[6][0] > 0 %}<span class="signpercent">%</span></p><span class="shape {{sorted_categories[4][1]}}"> </span><span>{{sorted_categories[6][1]}}</span> {% else %}{% endif %}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="list-section"> 
+          <ul class="first-list  av-bold ">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k < (circuit_name_list[i] | length)/3 %}
+            <li> <span class="number">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey" style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} width: 150px">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          <ul class="second-list av-bold">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k >= (circuit_name_list[i] | length)/3 and k < (circuit_name_list[i] | length) * (2/3) %}
+            <li> <span class="number">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey"style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} width: 150px">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          <ul class="third-list av-bold">
+            {% for k in range(0,circuit_name_list[i] | length) %}
+            {% if k >= (circuit_name_list[i] | length) * (2/3) %}
+            <li> <span class="number">{{k + 1}}<span></span></span><span class="dotcircle {{category_list[i][k]}}"></span><span class="d-grey"style="{% if circuit_name_list[i][k] == '-' %}position: relative; bottom: 2px;{% endif %} width: 300px;">{{circuit_name_list[i][k]}}</span></li>
+            {% endif %}
+            {% endfor %}
+
+          </ul>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <div class="pagebreak"> </div>
+    {% endif %}
+    {% endfor %}
+
+
+<div id="my_mm" style="height:100mm;display:none"></div>
+  </body>
+  <footer style = 'position: fixed; bottom: 0px; width: 100%;'>        
+    <div class="bottom-line"> <span> </span><span> </span><span> </span><span> </span></div>
+        <div class="footer-bottom d-flex">
+          <p class="av-bold maincolor">Panel Schedule</p>
+          <p class="av-bold maincolor"></p>
+          <p class="av-bold maincolor">Powered by Opti-mized</p>
+        </footer>
+
+        <script>
+      panel_name_list = {{panel_name_ids | tojson}};
+      lighting_count = {{lighting_count | tojson}};
+      hvac_count = {{hvac_count | tojson}};
+      dhw_count = {{dhw_count | tojson}};
+      plug_count = {{plug_count | tojson}};
+      other_count = {{other_count | tojson}};
+      spare_count = {{spare_count | tojson}};
+      boiler_count = {{boiler_count | tojson}};
+      for(var i = 0; i < panel_name_list.length; i++){
+            const ctx = document.getElementById(panel_name_list[i]).getContext("2d");
+
+
+              const myChart = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                  datasets: [
+                    {
+                      data: [hvac_count[i], dhw_count[i], lighting_count[i], plug_count[i], other_count[i],spare_count[i], boiler_count[i]],
+                      backgroundColor: [
+                        "#3BCDEE",
+                        "#EE5937",
+                        "#3649A8",
+                        "#EE8F37",
+                        "#FEC754",
+                        "#7F7F7C",
+                        "#EC5A38",
+                       
+                      ],
+                      borderWidth: 0,
+                    },
+                  ],
+                },
+                options: {
+                  cutout: 45,
+                  
+                },
+              });
+    }
+
+</script>
+<script>
+  function pdfPrinter(){
+    var body = document.body.innerHTML;
+    body = String(body).split('<div class="pagebreak"> </div>')
+    body.pop()
+    body.pop()
+    console.log(body.length)
+    var element = exportHTMLToPDF(body)
+    console.log(element)
+     html2pdf().from(element).save();
+  }
+      function generatePDF() {
+        // Choose the element that our invoice is rendered in.
+        const element = document.getElementById('invoice');
+        // Choose the element and save the PDF for our user.
+        var opt = {
+          filename:     'myfile.pdf',
+          html2canvas:  { scale: 1},
+          jsPDF:        { unit: 'mm', format: 'A3', orientation: 'portrait', hotfixes: ["px_scaling"] }
+        };
+        html2pdf().set(opt).from(element).save();
+      }
+
+      const exportHTMLToPDF = async (pages, outputType='blob') => {
+  const opt = {
+    margin:       [5,5],
+    filename:     'myfile.pdf',
+    image:        { type: 'jpg', quality: 0.98 },
+    html2canvas:  { dpi: 192, letterRendering: true },
+    jsPDF:        { unit: 'pt', format: 'A4', orientation: 'portrait', hotfixes: ["px_scaling"]}
+  };
+  const doc = new jsPDF(opt.jsPDF);
+  // const pageSize = jsPDF.getPageSize(opt.jsPDF);
+  for(let i = 0; i < pages.length; i++){
+    const page = pages[i];
+    height = document.getElementById(i)
+
+    if(height == null){
+      height = document.getElementById('1')
+    }
+    imageHeight = pxTomm(height.clientHeight)
+    imageWidth = pxTomm(height.clientWidth)
+    const pageImage = await html2pdf().from(page).set(opt).outputImg();
+    if(i != 0) {
+      doc.addPage();
+    }
+    doc.addImage(pageImage.src, 'jpg', opt.margin[0], opt.margin[1]);
+  }
+  // This can be whatever output you want. I prefer blob. 
+  const pdf = doc.output('save', outputType);
+  return pdf;
+}
+
+    </script>
+
+    <script>
+      var pxTomm = function(px){   
+   return Math.floor(px/($('#my_mm').height()/100)); //JQuery returns sizes in PX
+ };
+    </script>
+</html>
+
+

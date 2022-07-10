@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1="my-4">Areas for {{ building.name }}</h1=>
+        {% if areas|length < 1 %}
+        <p>There are no rooms added in the system</p>
+
+        {% else %}
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Area Name</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for area in areas %}
+                <tr>
+                    <td><a>{{ area.name }}</a></td>
+
+
+                    <td class='text_right'><a class="btn btn-success btn-sm" href='/commercial/equipmentindex/{{ area.id }}'>Add
+                            Equipment</a></td>
+                    <td class='text_right'><a class="btn btn-success btn-sm" href='/commercial/lightindex/{{ area.id }}'>Add
+                            lights</a>
+                    </td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletearea', id=area.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updatearea', id=area.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                    </td>
+
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% endif %}
+
+        <form action='/commercial/areaindex/{{ building.id }}' method="POST">
+            <div class="form-row">
+                <div class="col-sm-10 my-1">
+                    <label for="newStuff class = " sr-only">Add Area</label>
+                    <input type='text' class='form-control' name='name' id="newArea"
+                        placeholder="Enter Name of New Area">
+                    <button type='submit' class="btn btn-primary btn-block">Add</button>
+                </div>
+            </div>
+        </form>
+
+
+</div>
+{% endblock %}

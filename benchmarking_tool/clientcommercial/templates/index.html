@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+    <h1 = "my-4">Clients</h1>
+    {% if clients|length < 1 %}
+    <p>There are no clients added in the system</p>
+    <a class ="btn btn-success btn-sm" href ='{{ url_for("commercial.addclient") }}'>Add Client</a>
+
+    {% else %}
+    <table class = 'table'>
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Time Added</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+                <td><a>{{ client.company }}</a></td>
+                <td>{{ client.created_at.date() }}</td>
+                <td class = 'text_right'><a class ="btn btn-primary btn-sm" href ="{{ url_for('commercial.buildingindex', id=client.id)  }}">Buildings</a></td>
+                 <td>
+                        <form action ="{{ url_for('commercial.deleteclient', id=client.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updateclient', id=client.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                    </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class ="btn btn-success btn-sm" href ='{{ url_for("commercial.addclient") }}'>Add Client</a>
+    {% endif %}
+
+</div>
+{% endblock %}

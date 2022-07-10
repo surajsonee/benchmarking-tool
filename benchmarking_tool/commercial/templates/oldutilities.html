@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/historical-usage-lines-display-category.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff" onload="changeToElectricity();">
+    <input type="hidden" id="anPageName" name="page" value="historical-usage-lines-display-category" />
+    <div class="container-center-horizontal">
+      <div class="historical-usage-lines-display-category screen">
+        <div class="rectangle-2893-l6cqYc"  id = 'leftretract'>
+        <div class = 'activeline'></div>
+        <img class = 'retractbuttonleft' id = 'leftbutton' onclick = "retractleft()" src = "{{url_for('static',filename='img/retractbuttonbackground.png')}}"/><img class = 'retractbuttonarrowleft'  onclick = "retractleft()" id = 'leftarrow' src = "{{url_for('static',filename='img/retractbuttonarrow.png')}}"/>
+        <div class="header-l6cqYc" id = 'logodiv'><img class="pollen-2-7QcJ16" id = logoimage src="{{url_for('static',filename='img/logoimage.png')}}" /></div>
+        <div class="dashboard-l6cqYc" id = 'dashboard'><img class="dashboardimage" src="{{url_for('static',filename='img/dashboardimage.png')}}" />Dashboard</div>
+        <a href = '{{url_for("commercial.datastream")}}'><div class="overview-l6cqYc" id = 'liveusage'><img class="liveusageimage" src="{{url_for('static',filename='img/liveusageonimageoff.png')}}" />Data Stream</div></a>
+        <div class="inventory-l6cqYc" id = 'inventory'><img class="inventoryimage" src="{{url_for('static',filename='img/inventoryimage.png')}}" />Inventory</div>
+        <div class="utilities-l6cqYc" id = 'utilities' style = 'color: #6285FB;'><img class="utilitiesimage" src="{{url_for('static',filename='img/utilitiesimageon.png')}}" />Utilities</div>
+        <a href = "{{url_for('accounts.logout')}}"><div class="logout-l6cqYc avertacy-bold-sapphire-13px" id = 'logout'><img class="logoutimage" src="{{url_for('static',filename='img/logoutimage.png')}}" />Logout</div></a>
+
+        <div class = 'imageblock' id ='imageblock'>
+        <img class="kaltire-256-2-l6cqYc" src="{{url_for('static',filename='img/kaltire--256-2@22x.png')}}" />
+        <div class = 'buildingname'>Butetown Store</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-l6cqYc">4720 Yellowhead Trail NW</p>
+        <a href = "{{url_for('commercial.liveusage')}}"><div class = 'aboutbutton'><img class="info-imageblue" src="{{url_for('static',filename='img/infoimageblue.png')}}"/>About</div></a>
+        <div class = 'switchbutton'><img class="info-imageblue" src="{{url_for('static',filename='img/switchimage.png')}}"/>Switch</div>
+        <div class="group-7195-l6cqYc">
+          <div class="rectangle-2316-33iHaU"></div>
+          <div class="chevron-down-33iHaU"><img class="vector-LNtgXx" src="{{url_for('static',filename='img/vector@22x.svg')}}" /></div>
+            </div>
+        </div>
+    </div>
+        <div class = 'calendar-block2' id = 'calendar-block'>
+         <div class="month-L7BXHD2 avertacy-bold-sapphire-13px">Month</div>
+        <img class="rectangle-3207-L7BXHD2" src="{{url_for('static',filename='img/rectangle-3207@2x.svg')}}" />
+        <div class="day-L7BXHD2">Year</div></div>
+
+        <div class = "rightside" id = 'rightside'>
+            <div class = 'retractblock'>
+                <img class = 'retractbutton'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonbackground.png')}}"/><img class = 'retractbuttonarrowright' id = 'rightarrow'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonarrow.png')}}"/>
+            </div>
+            <div class = "rightabsolute">
+                <div class = 'general-block'>
+                    <div class = 'general-header'>General Info</div>
+                    <div class = 'general-rectangle'>
+                        <div class = 'general-rectangle-title'>Site ID</div>
+                        <div class = 'general-rectangle-info'>0001199396313</div>
+                    </div>
+                    <div class = 'general-rectangle'>
+                        <div class = 'general-rectangle-title'>Account Number</div>
+                        <div class = 'general-rectangle-info'>C6363713-08</div>
+                    </div>
+                    <div class = 'general-rectangle'>
+                        <div class = 'general-rectangle-title'>Site Description</div>
+                        <div class = 'general-rectangle-info'>Arena</div>
+                    </div>
+                    <div class = 'general-rectangle'>
+                        <div class = 'general-rectangle-title'>Site Address</div>
+                        <div class = 'general-rectangle-info'>5603 48 Ave St. Paul AB T0A 3A0</div>
+                    </div>
+                    <div class = 'general-rectangle'>
+                        <div class = 'general-rectangle-title'>Billing Period</div>
+                        <div class = 'general-rectangle-info'>01-Jan 2019- 31-Dec 2019</div>
+                    </div>
+                </div>
+                <div class = 'bill-breakdown'>
+                    <div class = 'bill-header'>Bill Breakdown</div>
+                    <div class = 'bill-rectangle'>
+                        <div id = chart6 style = 'width: 100px; height: 100px;'></div>
+                    </div>
+                    <div class = 'bill-rectangle'>
+                        <div class = 'bill-legend-rectangle'><div class = 'legend-dot' style = 'background-color: #B5E61D'></div>Retailer</div>
+                        <div class = 'bill-legend-rectangle'><div class = 'legend-dot' style = 'background-color: #00A2E8'></div>Trans/Distr.</div>
+                        <div class = 'bill-legend-rectangle'><div class = 'legend-dot' style = 'background-color: #ED1C24'></div>3rd Party</div>
+                        <div class = 'bill-legend-rectangle'><div class = 'legend-dot' style = 'background-color: #7F7F7F'></div>Carbon Levy</div>
+                    </div>
+                </div>
+                <div class = 'bill-breakdown'>
+                    <div class = 'bill-header'>Bill Breakdown</div>
+                    <div class = 'bill-rectangle'>
+                        <div id = chart style = 'width: 100px; height: 100px;'></div>
+                    </div>
+                    <div class = 'bill-rectangle'>
+                        <div class = 'bill-legend-rectangle2'><div class = 'legend-dot' style = 'background-color: #3649A8'></div>HVAC</div>
+                        <div class = 'bill-legend-rectangle2'><div class = 'legend-dot' style = 'background-color: #3BCDEE'></div>DHW</div>
+                        <div class = 'bill-legend-rectangle2'><div class = 'legend-dot' style = 'background-color: #EE5937'></div>Radiant Heaters</div>
+                        <div class = 'bill-legend-rectangle2'><div class = 'legend-dot' style = 'background-color: #EE8F37'></div>Plug Load</div>
+                        <div class = 'bill-legend-rectangle2'><div class = 'legend-dot' style = 'background-color: #FEC754'></div>Motors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="title-L7BXHD">Utilities</h1>
+        <div class = 'link-block'>Renewables <img class = 'link-image'src = "{{url_for('static',filename='img/peaks.png')}}"/> <img class = 'link-image'src = "{{url_for('static',filename='img/solarimage.png')}}"/></div>
+        <div class = 'link-block'>Utilities <img class = 'link-image'src = "{{url_for('static',filename='img/water.png')}}"/> <img class = 'link-image'src = "{{url_for('static',filename='img/electricity.png')}}" onclick="changeToElectricity()" /><img class = 'link-image'src = "{{url_for('static',filename='img/gas.png')}}" onclick="changeToGas()" /> <img class = 'link-image'src = "{{url_for('static',filename='img/power.png')}}"/></div>
+        <div class="rectangle-2984-L7BXHD" id = 'Live-Usage'>
+            <div class = 'electricity-block'>
+                <div class = 'electricity-header' id = 'utility-title'></div>
+                <div class = 'electricity-content'>
+                    <div class = 'totals-block'>
+                        <div class = 'total-header'>Facility Total</div>
+                        <div class = 'totals-rectangle' style = 'border-bottom: 2px solid #E3E7ED; '>
+                            <div class = 'total-cost'></div>
+                            <div class = 'total-cost-number' id = sumcost></div>
+                        </div>
+                        <div class = 'totals-rectangle'>
+                            <div class = 'total-cost'></div>
+                            <div class = 'total-cost-number' id = sum></div>
+                        </div>
+                    </div>
+                    <div class = 'squarefoot-block'>
+                        <div class = 'squarefoot-header'>Per sqm</div>
+                        <div class = 'squarefoot-rectangle' id = 'sqmcost'></div>
+                        <div class = 'squarefoot-rectangle' id = 'sqm'></div>
+                    </div>
+                    <div class = 'squarefoot-block'>
+                        <div class = 'squarefoot-header'>Per sqft</div>
+                        <div class = 'squarefoot-rectangle' id = 'sqftcost'></div>
+                        <div class = 'squarefoot-rectangle' id = 'sqft'></div>
+                    </div>
+                    <div id="chart2" style = 'position: relative; top: 40px;'></div>
+                    <div class = 'compare-block'>
+                        <div class = 'compare-header'>Compare</div>
+                        <div class = 'compare-rectangle' style = 'border-right: 2px solid #E3E7ED; '>
+                            <div class = 'compare-text'>Past-Usage</div>
+                            <div class = 'compare-image-block'><img class = 'compare-image' src = "{{url_for('static',filename='img/compareimage.png')}}"/></div>
+                        </div>
+                        <div class = 'compare-rectangle'>
+                            <div class = 'compare-text'>Against other facilities</div>
+                            <div class = 'compare-image-block' style = 'top: 30%'><img class = 'compare-image' src = "{{url_for('static',filename='img/compareimage.png')}}"/></div>
+                        </div>
+                    </div>
+                    <div class = 'carbonlevy-block'>
+                        <div class = 'compare-header'>Carbon Levy <div class = 'compare-image-block2'><img class = 'compare-image' src = "{{url_for('static',filename='img/compareimage.png')}}"/></div></div>
+                        <div class = 'compare-rectangle' style = 'border-right: 2px solid #E3E7ED; '>
+                            <div class = 'carbonlevy-numbers' id = 'levy'></div>
+                            <div class = 'carbonlevy-text'>tons/CO2</div>
+                        </div>
+                        <div class = 'compare-rectangle'>
+                            <div class = 'carbonlevy-numbers' id = 'levycost'></div>
+                            <div class = 'carbonlevy-text' style = 'width: 72px'>Carbon Levy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="rectangle-3269-L7BXHD2" id = 'todayrectangle' src="{{url_for('static',filename='img/rectangle-3269@2x.svg')}}" />
+        <form onsubmit="setTimeout(function(){window.location.reload();},10);" method = "POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class = 'file-box'><input onchange= "submit();" type = "file" name = "file" /></div>
+        <div class="group-7286-L7BXHD2">
+          <input onchange= "submit(); getTotal();" name = 'date' id = 'today2' type = 'number' class="march-18th-2021-tkyWp62" min="1900" max="2099" step="1" value="2019" />
+          <div id = 'total' style = 'color: transparent;'></div>
+          <div id = 'totalprice' style = 'color: transparent;'></div>
+          <div id = 'percentage' style = 'color: transparent;'></div>
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+                            electricaldata = {{electricaldata | tojson}};
+                            var options = {
+                                  colors:['#FFC90E'],
+                                  series: [
+                                  {
+                                    name: "Electricity",
+                                    data: []
+                                  },
+                                ],
+                                  chart: {
+                                  height: '100%',
+                                  width: '100%',
+                                  type: 'bar',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                plotOptions:{
+                                    bar:{
+                                        columnWidth: '15%',
+                                        barHeight: '100%',
+                                        distributed: true,
+                                    },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                    show: false,
+                                    borderColor: '#E6E9EF',
+                                    position: 'back',
+                                    xaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },   
+                                    yaxis: {
+                                        lines: {
+                                            show: true
+                                        }
+                                    },
+
+                                                                },
+                                xaxis: {
+                                    categories: ['J', 'F', 'M', 'A' , 'M', 'J', "J", 'A' , 'S', 'O' , 'N' ,'D'],
+                                  labels:{
+                                labels:{
+                                  style:{
+                                      colors: '#7F7F7F',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                },
+                                },
+                                yaxis: {
+                                    labels:{
+                                        show: false,
+                                    },
+                                }
+                                };
+
+                                var chart2 = new ApexCharts(document.querySelector("#chart2"), options);
+                                chart2.render();
+                        </script>
+  <script >
+    var options = {
+                              labels: ['Retailer', 'Trans/Distr.','3rd Party','Carbon Levy'],
+                              series: [],
+                              chart: {
+                              width: 150,
+                              height: 150,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: true,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#B5E61D','#00A2E8','#ED1C24', '#7F7F7F','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart6 = new ApexCharts(document.querySelector("#chart6"), options);
+                            chart6.render();
+</script>
+
+  <script >
+    var options = {
+                              labels: ['HVAC', 'DHW','Radiant Heaters','Plug Load', 'Motors'],
+                              series: [100, 200, 200, 150, 50],
+                              chart: {
+                              width: 150,
+                              height: 150,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: true,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#FEC754','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+</script>
+
+<script>
+     function retractleft() {
+    if(document.getElementById("leftretract").style.width != "80px"){
+  document.getElementById("leftretract").style.width = "80px";
+  document.getElementById("dashboard").style.color = "white";
+  document.getElementById("liveusage").style.color = "white";
+  document.getElementById("historical").style.color = "white";
+  document.getElementById("inventory").style.color = "white";
+  document.getElementById("utilities").style.color = "white";
+  document.getElementById("logout").style.color = "white";
+  document.getElementById("leftbutton").style.left = "57px";
+  document.getElementById("leftarrow").style.left = "64px";
+  document.getElementById("leftarrow").style.transform = "rotate(0.5turn)";
+  document.getElementById("logoimage").src = "{{url_for('static',filename='img/logosmall.png')}}";
+  document.getElementById("logodiv").style.left = "15px";
+  document.getElementById("imageblock").style.display = "none";
+
+  if(document.getElementById("rightside").style.width != "40px"){ //Close left while right is open
+      document.getElementById("Live-Usage").style.width = "912px";
+      document.getElementById("header").style.width = "800px";
+      document.getElementById("scrollable").style.width = "800px";
+      document.getElementById("graph-background").style.width = "800px";
+      document.getElementById("Historical-Usage-Block").style.width = "800px";
+      document.getElementById("bar-chart").style.width = "867px";
+      document.getElementById("bar-chart").style.left = "-10px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '100px';
+      document.getElementById('total-box2').style.marginRight = '100px';
+      document.getElementById('total-box3').style.marginRight = '100px';
+      document.getElementById('today2').style.left = '230px';
+      document.getElementById('todayrectangle').style.left = '690px';
+      document.getElementById('calendar-block').style.left = '32px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+  }
+
+    else if(document.getElementById("rightside").style.width == "40px"){//Close left while right is closed
+      document.getElementById("Live-Usage").style.width = "1300px";
+      document.getElementById("header").style.width = "1200px";
+      document.getElementById("scrollable").style.width = "1200px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("graph-background").style.width = "1200px";
+      document.getElementById("Historical-Usage-Block").style.width = "1200px";
+      document.getElementById("bar-chart").style.width = "1270px";
+      document.getElementById("bar-chart").style.left = "-10px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '150px';
+      document.getElementById('total-box2').style.marginRight = '150px';
+      document.getElementById('total-box3').style.marginRight = '150px';
+      document.getElementById('today2').style.left = '640px';
+      document.getElementById('todayrectangle').style.left = '1100px';
+      document.getElementById('calendar-block').style.left = '442px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+
+  }
+}
+else{
+  document.getElementById("leftretract").style.width = "248px";
+  document.getElementById("dashboard").style.color = "#AFB8CC";
+  document.getElementById("liveusage").style.color = "#AFB8CC";
+  document.getElementById("historical").style.color = "#6285FB";
+  document.getElementById("inventory").style.color = "#AFB8CC";
+  document.getElementById("utilities").style.color = "#AFB8CC";
+  document.getElementById("logout").style.color = "#AFB8CC";
+  document.getElementById("leftbutton").style.left = "225px";
+  document.getElementById("leftarrow").style.left = "232px";
+  document.getElementById("leftarrow").style.transform = "rotate(1turn)";
+  document.getElementById("logoimage").src = "{{url_for('static',filename='img/logoimage.png')}}";
+  document.getElementById("logodiv").style.left = "33px";
+  document.getElementById("imageblock").style.display = "block";
+
+  if(document.getElementById("rightside").style.width != "40px"){//Open left while right is open
+      document.getElementById("Live-Usage").style.width = "744px";
+      document.getElementById("header").style.width = "600px";
+      document.getElementById("scrollable").style.width = "744px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("scrollable").style.width = "600px";
+      document.getElementById("graph-background").style.width = "582px";
+      document.getElementById("Historical-Usage-Block").style.width = "643px";
+      document.getElementById("bar-chart").style.width = "670px";
+      document.getElementById("bar-chart").style.left = "5px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("total-block").style.width = '438px'
+      document.getElementById('total-box1').style.marginRight = '10px';
+      document.getElementById('total-box2').style.marginRight = '10px';
+      document.getElementById('total-box3').style.marginRight = '10px';
+      document.getElementById('today2').style.left = '0px';
+      document.getElementById('todayrectangle').style.left = '458px';
+      document.getElementById('calendar-block').style.left = '-200px';
+      document.getElementById('graph-buttons-block').style.left = '550px';   
+    }
+    else if(document.getElementById("rightside").style.width == "40px"){//Open left while right is closed
+      document.getElementById("Live-Usage").style.width = "1150px";
+      document.getElementById("scrollable").style.width = "1150px";
+      document.getElementById("header").style.width = "1000px";
+      document.getElementById("scrollable").style.width = "1000px";
+      document.getElementById("graph-background").style.width = "1000px";
+      document.getElementById("Historical-Usage-Block").style.width = "1000px";
+      document.getElementById("bar-chart").style.width = "1070px";
+      document.getElementById("bar-chart").style.left = "15px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '120px';
+      document.getElementById('total-box2').style.marginRight = '120px';
+      document.getElementById('total-box3').style.marginRight = '120px';
+      document.getElementById('today2').style.left = '500px';
+      document.getElementById('todayrectangle').style.left = '958px';
+      document.getElementById('calendar-block').style.left = '300px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+    }
+    }
+}
+
+    function retract() {
+    if(document.getElementById("rightside").style.width != "40px"){
+  document.getElementById("rightside").style.width = "40px";
+  document.getElementById("rightarrow").style.transform = "rotate(1turn)";
+
+  if(document.getElementById("leftretract").style.width != "80px"){//Close right while left is open
+      document.getElementById("Live-Usage").style.width = "1150px";
+      document.getElementById("scrollable").style.width = "1150px";
+      document.getElementById("header").style.width = "1000px";
+      document.getElementById("scrollable").style.width = "1000px";
+      document.getElementById("graph-background").style.width = "1000px";
+      document.getElementById("Historical-Usage-Block").style.width = "1000px";
+      document.getElementById("bar-chart").style.width = "1070px";
+      document.getElementById("bar-chart").style.left = "15px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '120px';
+      document.getElementById('total-box2').style.marginRight = '120px';
+      document.getElementById('total-box3').style.marginRight = '120px';
+      document.getElementById('today2').style.left = '500px';
+      document.getElementById('todayrectangle').style.left = '958px';
+      document.getElementById('calendar-block').style.left = '300px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+
+      console.log('closed')
+    }
+  else if(document.getElementById("leftretract").style.width == "80px"){//Close right while right is closed
+      document.getElementById("Live-Usage").style.width = "1300px";
+      document.getElementById("header").style.width = "1200px";
+      document.getElementById("scrollable").style.width = "1200px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("graph-background").style.width = "1200px";
+      document.getElementById("Historical-Usage-Block").style.width = "1200px";
+      document.getElementById("bar-chart").style.width = "1270px";
+      document.getElementById("bar-chart").style.left = "-10px";
+  }
+}
+else{
+      document.getElementById("rightside").style.width = "400px";
+      document.getElementById("rightarrow").style.transform = "rotate(0.5turn)";
+      if(document.getElementById("leftretract").style.width != "80px"){//Open right when left is open
+          document.getElementById("Live-Usage").style.width = "744px";
+          document.getElementById("header").style.width = "600px";
+          document.getElementById("Live-Usage").style.left = "320px";
+          document.getElementById("scrollable").style.width = "600px";
+          document.getElementById("graph-background").style.width = "582px";
+          document.getElementById("Historical-Usage-Block").style.width = "643px";
+          document.getElementById("bar-chart").style.width = "670px";
+          document.getElementById("bar-chart").style.left = "5px";
+          document.getElementById("Live-Usage").style.left = "320px";
+          document.getElementById("total-block").style.width = '438px'
+          document.getElementById('total-box1').style.marginRight = '10px';
+          document.getElementById('total-box2').style.marginRight = '10px';
+          document.getElementById('total-box3').style.marginRight = '10px';
+          document.getElementById('today2').style.left = '0px';
+          document.getElementById('todayrectangle').style.left = '458px';
+          document.getElementById('calendar-block').style.left = '-200px';
+          document.getElementById('graph-buttons-block').style.left = '550px';      
+      }
+  else if(document.getElementById("leftretract").style.width == "80px"){//Open right when left is closed
+          document.getElementById("Live-Usage").style.width = "912px";
+          document.getElementById("Live-Usage").style.width = "912px";
+          document.getElementById("header").style.width = "800px";
+          document.getElementById("scrollable").style.width = "800px";
+          document.getElementById("graph-background").style.width = "800px";
+          document.getElementById("Historical-Usage-Block").style.width = "800px";
+          document.getElementById("bar-chart").style.width = "867px";
+          document.getElementById("bar-chart").style.left = "-10px";
+          document.getElementById("Live-Usage").style.left = "152px";
+          document.getElementById("total-block").style.width = '938px'
+          document.getElementById('total-box1').style.marginRight = '100px';
+          document.getElementById('total-box2').style.marginRight = '100px';
+          document.getElementById('total-box3').style.marginRight = '100px';
+          document.getElementById('today2').style.left = '230px';
+          document.getElementById('todayrectangle').style.left = '690px';
+          document.getElementById('calendar-block').style.left = '32px';
+          document.getElementById('graph-buttons-block').style.left = '750px';
+  }
+}
+}
+
+function changeToGas(){
+    gasdata = {{gasdata | tojson}};
+    var sum = 0;
+    for(var i = 0; i < gasdata.length; i++){
+        sum += parseFloat(gasdata[i]);
+    }
+    var sumcost = sum * 0.09;
+    var levy = (sum * 0.82) / 1000;
+    var levycost = levy * 40;
+    var sqft = sum / 29040;
+    var sqftcost = sqft * 0.09;
+    var sqm = sum / 8851.392;
+    var sqmcost = sqm * 0.09;
+    var gaspie = [1508.294,5779.51,452.5,levycost]
+    console.log(gasdata);
+    document.getElementById('utility-title').innerHTML = 'Natural Gas';
+    document.getElementById('sum').innerHTML = sum.toFixed(2)  + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sumcost').innerHTML = '$' + sumcost.toFixed(2);
+    document.getElementById('levy').innerHTML = levy.toFixed(2);
+    document.getElementById('levycost').innerHTML = '$' + levycost.toFixed(2);
+    document.getElementById('sqft').innerHTML = sqft.toFixed(2)  + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sqftcost').innerHTML = '$' + sqftcost.toFixed(2);
+    document.getElementById('sqm').innerHTML = sqm.toFixed(2)  + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sqmcost').innerHTML = '$' + sqmcost.toFixed(2);
+        chart2.updateOptions({
+  colors: ['#FF7F27']
+})
+        chart2.updateSeries([{ 
+            data: gasdata,
+        } 
+        ]);
+        chart6.updateSeries(gaspie);
+}
+        
+
+function changeToElectricity(){
+    electricaldata = {{electricaldata | tojson}};
+    var sum = 0;
+    for(var i = 0; i < electricaldata.length; i++){
+        sum += parseFloat(electricaldata[i]);
+    }
+    var sumcost = sum * 0.09;
+    var levy = (sum * 0.82) / 1000;
+    var levycost = levy * 40;
+    var sqft = sum / 29040;
+    var sqftcost = sqft * 0.09;
+    var sqm = sum / 8851.392;
+    var sqmcost = sqm * 0.09;
+    var electricpie = [34414.7,1914.6,1455.571,levycost];
+    document.getElementById('utility-title').innerHTML = 'Electricity';
+    document.getElementById('sum').innerHTML = sum.toFixed(2) + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sumcost').innerHTML = '$' + sumcost.toFixed(2);
+    document.getElementById('levy').innerHTML = levy.toFixed(2);
+    document.getElementById('levycost').innerHTML = '$' + levycost.toFixed(2);
+    document.getElementById('sqft').innerHTML = sqft.toFixed(2)  + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sqftcost').innerHTML = '$' + sqftcost.toFixed(2);
+    document.getElementById('sqm').innerHTML = sqm.toFixed(2) + ' <span style = "font-size: 12px">kWh</span>';
+    document.getElementById('sqmcost').innerHTML = '$' + sqmcost.toFixed(2);
+        chart2.updateOptions({
+  colors: ['#FFC90E']
+})
+        chart2.updateSeries([{ 
+            data: electricaldata,
+        } 
+        ]);
+        chart6.updateSeries(electricpie);
+}
+</script>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='https://animaproject.s3.amazonaws.com/home/favicon.png')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/overview-main.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff" onload="random()">
+    <input type="hidden" id="anPageName" name="page" value="overview-main" />
+    <div class="container-center-horizontal">
+      <div class="overview-main screen">
+        <div class="rectangle-2893-l6cqYc"></div>
+        <div class="header-l6cqYc"><img class="pollen-2-7QcJ16" src="{{url_for('static',filename='img/pollen-2@2x.png')}}" /></div>
+        <div class="welcome-john-l6cqYc avertacy-bold-sapphire-20px">Welcome John,</div>
+        <div class="overview-l6cqYc avertacy-bold-sapphire-20px">Live Usage</div>
+        <div class="kpis-l6cqYc avertacy-bold-sapphire-13px">KPI’S</div>
+        <a href = "{{url_for('commercial.historicalusage')}}"><div class="historical-l6cqYc avertacy-bold-sapphire-13px">Historical</div></a>
+        <div class="inventory-l6cqYc avertacy-bold-sapphire-13px">Inventory</div>
+        <div class="utilities-l6cqYc avertacy-bold-sapphire-13px">Utilities</div>
+        <a href = "{{url_for('accounts.logout')}}"><div class="logout-l6cqYc avertacy-bold-sapphire-13px">Logout</div></a>
+        <div class="group-7235-l6cqYc">
+          <img class="x3-c-path-x3-e-Hra7rU" src="{{url_for('static',filename='img/x3c-path-x3e@22x.svg')}}" />
+          <div class="ellipse-437-Hra7rU"></div>
+        </div>
+        <img class="rectangle-2938-l6cqYc" src="{{url_for('static',filename='img/rectangle-2938@22x.svg')}}" />
+        <img class="kaltire-256-2-l6cqYc" src="{{url_for('static',filename='img/kaltire--256-2@22x.png')}}" />
+        <div class="store-087-l6cqYc">Store #087</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-l6cqYc">4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS</p>
+        <div class="your-viewing-l6cqYc">Your Viewing</div>
+        <h1 class="title-l6cqYc">Live Usage:</h1>
+        <div class = 'whole_sidebar_button'>
+            <div class = 'sidebar_bubble' id = 'sidebar_bubble' onclick="openNav()"></div>
+            <div class = 'sidebar_arrow' id = 'sidebar_arrow' onclick="openNav()"></div>
+        </div>
+        <div id="mySidenav" class="sidenav">
+          <div class = 'sidebar_exit' id = 'sidebar_exit' onclick="closeNav()"></div>
+          <div class = 'Electrical'>Electrical</div>
+          <div class = 'Loads'>Loads</div>
+          <div class = 'HVAC'>HVAC</div>
+          <div class = 'HVAC-Arrow' onclick = "openHVACOnOverview()"><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Lighting'>Lighting</div>
+          <div class = 'Lighting-Arrow'  onclick = "openLightingOverview()"><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Always-On'>Always On</div>
+          <div class = 'Always-On-Arrow'  onclick = "openAlwaysOnOverview()"><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'PlugLoad'>PlugLoad</div>
+          <div class = 'PlugLoad-Arrow'  onclick = "openPlugLoadOverview()"><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Other'>Other</div>
+          <div class = 'Other-Arrow' onclick = "openOtherOverview()"><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'HVAC-Watts'>6423w<br>$6.15/hr</div>
+          <div class = 'Lighting-Watts'>2,113w<br>$2.55/hr</div>
+          <div class = 'Always-On-Watts'>2,043w<br>$2.23/hr</div>
+          <div class = 'PlugLoad-Watts'>1,233w<br>$1.23/hr</div>
+          <div class = 'Other-Watts'>789w<br>$0.83/hr</div>
+        </div>
+
+
+        <div id="HVAC-Overview" class="sidenav">
+          <div class = 'Sidebar-Title'>HVAC</div>
+          <div class = 'HVAC-Back-Arrow' onclick = "closeHVACOverview()"><img class="HVAC-Back-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'General-Info'>General Info</div>
+          <div class = 'General-Info-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Historical-Usage'>Historical Usage</div>
+          <div class = 'Historical-Usage-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Comparisons'>Comparisons</div>
+          <div class = 'Comparisons-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+        </div>
+
+        <div id="Lighting-Overview" class="sidenav">
+          <div class = 'Sidebar-Title'>Lighting</div>
+          <div class = 'HVAC-Back-Arrow' onclick = "closeLightingOverview()"><img class="HVAC-Back-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'General-Info'>General Info</div>
+          <div class = 'General-Info-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Historical-Usage'>Historical Usage</div>
+          <div class = 'Historical-Usage-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Comparisons'>Comparisons</div>
+          <div class = 'Comparisons-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+        </div>
+
+        <div id="Always-On-Overview" class="sidenav">
+          <div class = 'Sidebar-Title'>Always-On</div>
+          <div class = 'HVAC-Back-Arrow' onclick = "closeAlwaysOnOverview()"><img class="HVAC-Back-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'General-Info'>General Info</div>
+          <div class = 'General-Info-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Historical-Usage'>Historical Usage</div>
+          <div class = 'Historical-Usage-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Comparisons'>Comparisons</div>
+          <div class = 'Comparisons-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+        </div>
+
+        <div id="PlugLoad-Overview" class="sidenav">
+          <div class = 'Sidebar-Title'>PlugLoad</div>
+          <div class = 'HVAC-Back-Arrow' onclick = "closePlugLoadOverview()"><img class="HVAC-Back-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'General-Info'>General Info</div>
+          <div class = 'General-Info-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Historical-Usage'>Historical Usage</div>
+          <div class = 'Historical-Usage-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Comparisons'>Comparisons</div>
+          <div class = 'Comparisons-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+        </div>
+
+        <div id="Other-Overview" class="sidenav">
+          <div class = 'Sidebar-Title'>Other</div>
+          <div class = 'HVAC-Back-Arrow' onclick = "closeOtherOverview()"><img class="HVAC-Back-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'General-Info'>General Info</div>
+          <div class = 'General-Info-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Historical-Usage'>Historical Usage</div>
+          <div class = 'Historical-Usage-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+          <div class = 'Comparisons'>Comparisons</div>
+          <div class = 'Comparisons-Arrow'><img class="Electrical-Vector" src="{{url_for('static',filename='img/vector@222x.svg')}}" /></div>
+        </div>
+        <figure class="highcharts-figure">
+            <div id="container"></div>
+            <p class="highcharts-description" style = 'color: white;'>
+                Packed bubble charts are visualizations where the size and optionally
+                the color of the bubbles are used to visualize the data. The positioning
+                of the bubbles is not significant, but is optimized for compactness.
+                Try dragging the bubbles in this chart around, and see the effects.Packed bubble charts are visualizations where the size and optionally
+                the color of the bubbles are used to visualize the data. The positioning
+                of the bubbles is not significant, but is optimized for compactness.
+                Try dragging the bubbles in this chart around, and see the effects.Packed bubble charts are visualizations where the size and optionally
+                the color of the bubbles are used to visualize the data. The positioning
+                of the bubbles is not significant, but is optimized for compactness.
+                Try dragging the bubbles in this chart around, and see the effects.
+            </p>
+        </figure>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'packedbubble',
+        height: '100%',
+        style: {
+
+            fontFamily: 'Averta CY-Bold',
+            color: '#ffffff',
+        }
+    },
+    colors: ['#EE5937', '#3044A5', '#3BCDEE', '#EE8F37', '#C4C4C4'],
+    legend: {
+        enabled: false
+    },
+    navigation: {
+        buttonOptions: {
+          enabled: false
+          }
+         },
+    credits:{
+        enabled: false
+    },
+    title: {
+        text: ''
+    },
+    tooltip: {
+        useHTML: true,
+        pointFormat: '<b>{point.name}:</b> {point.value}w'
+    },
+    plotOptions: {
+        packedbubble: {
+            minSize: '30%',
+            maxSize: '120%',
+            zMin: 0,
+            zMax: 1000,
+            layoutAlgorithm: {
+                splitSeries: false,
+                gravitationalConstant: 0.02
+            },
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}',
+                filter: {
+                    property: 'y',
+                    operator: '>',
+                    value: 1
+                },
+                style: {
+                    color: 'white',
+                    textOutline: 'none',
+                    fontWeight: 'bold'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Always On',
+        data: [{
+            name: "Always On",
+            value: 7.2,
+        }]
+    }, {
+        name: 'HVAC',
+        data: [{
+            name: "HVAC",
+            value: 141.5
+        }]
+    }, {
+        name: 'Lighting',
+        data: [{
+            name: "Lighting",
+            value: 7.1
+        }]
+    }, {
+        name: 'PlugLoad',
+        data: [{
+            name: "PlugLoad",
+            value: 456.3
+        }]
+    }, {
+        name: 'Other',
+        data: [{
+            name: "Other",
+            value: 195.2
+        }]
+    }]
+});
+  </script>
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "366px";
+  document.getElementById("sidebar_bubble").style.width = "0";
+  document.getElementById("sidebar_arrow").style.color = "0";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function openAlwaysOnOverview() {
+  document.getElementById("Always-On-Overview").style.width = "366px";
+}
+
+function closeAlwaysOnOverview() {
+  document.getElementById("Always-On-Overview").style.width = "0";
+}
+function openHVACOnOverview() {
+  document.getElementById("HVAC-Overview").style.width = "366px";
+}
+
+function closeHVACOverview() {
+  document.getElementById("HVAC-Overview").style.width = "0";
+}
+function openLightingOverview() {
+  document.getElementById("Lighting-Overview").style.width = "366px";
+}
+
+function closeLightingOverview() {
+  document.getElementById("Lighting-Overview").style.width = "0";
+}
+function openPlugLoadOverview() {
+  document.getElementById("PlugLoad-Overview").style.width = "366px";
+}
+
+function closePlugLoadOverview() {
+  document.getElementById("PlugLoad-Overview").style.width = "0";
+}
+function openOtherOverview() {
+  document.getElementById("Other-Overview").style.width = "366px";
+}
+
+function closeOtherOverview() {
+  document.getElementById("Other-Overview").style.width = "0";
+}
+
+</script>
+</html>

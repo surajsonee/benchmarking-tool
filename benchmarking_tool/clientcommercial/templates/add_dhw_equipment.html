@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action=" " method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="col-sm-10 my-1">
+            <label for="newStuff class = " sr-only">Add DHW</label>
+            <p>
+                {{ form.equipment_type(class_ = "form-control", placeholder = "Equipment Type")}}
+            </p>
+            <p>
+                {{ form.tag(class_ = "form-control", placeholder = "Equipment Tag")}}
+            </p>
+                {{ form.manufacturer(class_ = "form-control", placeholder = "Manufacturer")}}
+            </p>
+            <p>
+                {{ form.model_number(class_ = "form-control", placeholder = "Model Number")}}
+            </p>
+                {{ form.serial_number(class_ = "form-control", placeholder =  "Serial Number")}}
+            </p>
+            <p>
+                {{ form.input_capacity(class_ = "form-control", placeholder = "Input Capacity")}}
+            </p>
+                {{ form.fuel_type(class_ = "form-control", placeholder = "Fuel Type")}}
+            </p>
+            </p>
+                {{ form.efficiency(class_ = "form-control", placeholder = "Efficiency")}}
+            </p>
+            </p>
+                {{ form.storage_volume(class_ = "form-control", placeholder = "Storage Volume")}}
+            </p>
+            </p>
+                {{ form.set_point(class_ = "form-control", placeholder = "Set Point")}}
+            </p>
+    {{ form.hidden_tag() }}
+    {{ form.photo(multiple="multiple")}}
+            <button type='submit' class="btn btn-primary btn-block">Add</button>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

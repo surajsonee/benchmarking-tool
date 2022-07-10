@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<form action = " " method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="col-sm-10 my-1">
+            <label for="newStuff class = " sr-only">Add appliance</label>
+            <p>
+            {{ form.appliance_type(class_ = "form-control", placeholder = "Appliance Type")}}
+            </p>
+             <p>
+            {{ form.quantity(class_ = "form-control", placeholder = "Quantity")}}
+            </p>
+            {{ form.wattage(class_ = "form-control", placeholder = "Wattage")}}
+            </p>
+    {{ form.hidden_tag() }}
+    {{ form.photo(multiple="multiple")}}
+            <button type='submit' class="btn btn-primary btn-block">Add</button>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

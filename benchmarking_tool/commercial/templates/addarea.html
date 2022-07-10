@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-area.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-area" />
+    <div class="container-center-horizontal">
+      <div class="add-area screen">
+        <div class="add-area-C61RwL">Add Area</div>
+        <div class="area-name-C61RwL">Area Name</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <form action = " " method = "POST" enctype="multipart/form-data">
+              {{ form.hidden_tag() }}
+        <div class="group-6899-C61RwL">
+          <div>{{ form.name(class="rectangle-2345-Mz8XNq")}}</div>
+        </div>
+        <div class="rectangle-2775-C61RwL"></div>
+        <div class="add-photos-C61RwL">Add Photos</div>
+         <div id="content"class="pexels-pixabay-209251-1-C61RwL">
+            <label for="areaphoto1" class='btncam pt-2' >
+            <div class="group-2671-4eduM0">
+              <div class="camera-aLfFH4">
+                <img id ='output1' width='150' height='100'>
+              </div>
+            </div>
+            <br />
+            </label>
+            <input type="file" style='display: none;' accept="image/*" capture="user"  id='areaphoto1' onchange="loadFile1(event);" required class="btn btn-default btn-lg button" style="border:none"
+            name="areaphoto1">
+            </div>
+
+         <div id="content"class="pexels-pixabay-221047-1-C61RwL">
+            <label for="areaphoto2" class='btncam pt-2' >
+            <div class="group-2671-4eduM0">
+              <div class="camera-aLfFH4">
+                <img id ='output2' width='150' height='100'>
+              </div>
+            </div>
+            <br />
+            </label>
+            <input type="file" style='display: none;' accept="image/*" capture="user"  id='areaphoto2' onchange="loadFile2(event);" required class="btn btn-default btn-lg button" style="border:none"
+            name="areaphoto2"><img id ='output2' width='200'>
+            </div>
+        <button type = 'submit' class="rectangle-2778-C61RwL"></button>
+        <div class="save-C61RwL">Add</div>
+      </div>
+    </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  var loadFile1 = function(event){
+    var image = document.getElementById('output1');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
+<script>
+  var loadFile2 = function(event){
+    var image = document.getElementById('output2');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>

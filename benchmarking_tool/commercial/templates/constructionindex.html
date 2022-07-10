@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/construction.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="equipment-area" />
+    <div class="container-center-horizontal">
+      <div class="equipment-area screen">
+        <a href = "{{url_for('commercial.onsiteaudit', id = building.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="view-hvac-equipment-C61RwL">View Building Envelope</div>
+         <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Exterior Walls</div>
+          <div class="rectangle-17-bwW810"></div>
+            <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for exteriorwall in exteriorwalls %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{exteriorwall.material}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{exteriorwall.rvalue}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href="{{ url_for('commercial.addexteriorwall', id=exteriorwall.id)  }}"><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="{{ url_for('commercial.updateexteriorwall', id=exteriorwall.id)  }}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href="{{ url_for('commercial.deleteexteriorwall', id=exteriorwall.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + exteriorwall.photo_id) }}" />
+          </div>
+          {% endfor %}
+        <a href = "{{ url_for('commercial.addexteriorwall',id=building.id)  }}"><div class="rectangle-2778-C61RwL"></div></a>
+        <a href = "{{ url_for('commercial.addexteriorwall',id=building.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add</div></a>
+      </details>
+            <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+          <div class="cooling-equipment-bwW810">Roof</div>
+          <div class="rectangle-17-bwW810"></div>
+          <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for roof in roofs %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Roof</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{roof.material}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{roof.rvalue}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href="{{ url_for('commercial.addroof', id=roof.id)  }}"><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="{{ url_for('commercial.updateroof', id=roof.id)  }}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href="{{ url_for('commercial.deleteroof', id=roof.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + roof.photo_id) }}" />
+          </div>
+          {% endfor %}
+                  <a href = "{{ url_for('commercial.addroof',id=building.id)  }}"><div class="rectangle-2778-C61RwL"></div></a>
+        <a href = "{{ url_for('commercial.addroof',id=building.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add</div></a>
+      </details>
+            <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+          <div class="cooling-equipment-bwW810">Roof Finish</div>
+          <div class="rectangle-17-bwW810"></div>
+          <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for rooffinish in rooffinishs %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Roof Finish</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{rooffinish.material}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{rooffinish.rvalue}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href="{{ url_for('commercial.addrooffinish', id=rooffinish.id)  }}"><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="{{ url_for('commercial.updaterooffinish', id=rooffinish.id)  }}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href="{{ url_for('commercial.deleterooffinish', id=rooffinish.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + rooffinish.photo_id) }}" />
+          </div>
+          {% endfor %}
+                  <a href = "{{ url_for('commercial.addrooffinish',id=building.id)  }}"><div class="rectangle-2778-C61RwL"></div></a>
+        <a href = "{{ url_for('commercial.addrooffinish',id=building.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add</div></a>
+      </details>
+            <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+          <div class="cooling-equipment-bwW810">Foundation</div>
+          <div class="rectangle-17-bwW810"></div>
+          <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for foundation in foundations %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Foundation</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Material</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{foundation.material}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">R Value</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{foundation.rvalue}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <a href="{{ url_for('commercial.addfoundation', id=foundation.id)  }}"><div class="add-K2Koio coresansc-55-medium-white-11px">Add</div></a>
+                <a href="{{ url_for('commercial.updatefoundation', id=foundation.id)  }}"><div class="update-K2Koio coresansc-55-medium-white-11px">Update</div></a>
+                <a href="{{ url_for('commercial.deletefoundation', id=foundation.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + foundation.photo_id) }}" />
+          </div>
+          {% endfor %}
+                  <a href = "{{ url_for('commercial.addfoundation',id=building.id)  }}"><div class="rectangle-2778-C61RwL"></div></a>
+        <a href = "{{ url_for('commercial.addfoundation',id=building.id)  }}"><div class="add-area-C61RwL coresansc-65-bold-white-11px">Add</div></a>
+      </details>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

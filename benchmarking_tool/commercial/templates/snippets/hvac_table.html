@@ -1,0 +1,26 @@
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                    <th> Type</th>
+                    <th>Lamp Type</th>
+                    <th>Lamp Wattage</th>
+                    <th>Lamps per Fixture</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for light in lights %}
+                <tr>
+                    <td><a>{{ light.fixture_count }}</a></td>
+                    <td>{{ light.hours }}</td>
+                    <td>{{ light.fixture }}</td>
+                    <td>{{ light.lamp }}</td>
+                    <td>{{ light.wattage }}</td>
+                    <td>{{ light.lamp_count }}</td>
+
+
+
+                </tr>

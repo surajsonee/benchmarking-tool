@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-pump.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-pump" />
+    <div class="container-center-horizontal">
+    <form action = " " method = "POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+      <div class="add-pump screen">
+        <div class="add-pump-C61RwL">Add Pump</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="group-6899-C61RwL">
+          <div>{{ form.appliance_type(class="rectangle-2345-Mz8XNq border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6902-C61RwL">
+          <div>{{ form.quantity(class="rectangle-2345-5fxYOr border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6903-C61RwL">
+          <div>{{ form.wattage(class="rectangle-2345-fJ0smy border-1px-mystic")}}</div>
+        </div>
+        <div class="manufacturer-C61RwL coresansc-65-bold-cerulean-frost-11px">Type</div>
+        <div class="head-C61RwL coresansc-65-bold-cerulean-frost-11px">Quantity</div>
+        <div class="gpm-C61RwL coresansc-65-bold-cerulean-frost-11px">Wattage</div>
+        <div class="group-7192-C61RwL">
+          <button type = 'submit' class="rectangle-2755-9xz0lo"></button>
+          <div class="add-9xz0lo">Add</div>
+        </div>
+        <div class="group-7194-C61RwL">
+          <a href= '{{url_for("commercial.equipmentindex", id = area.id)}}'><div class="rectangle-2755-mfpI2o"></div></a>
+          <a href= '{{url_for("commercial.equipmentindex", id = area.id)}}'><div class="cancel-mfpI2o">Cancel</div></a>
+        </div>
+        <div class="rectangle-2806-C61RwL border-1px-mystic"><img id ='output1' width='314' height='130'></div>
+        <div class="group-7219-C61RwL">
+          <label for='pump_photo' class="rectangle-2755-83XzNc"><input type="file" style='display: none;' accept="image/*" capture="user"  id='pump_photo' onchange="loadFile1(event);" required class="btn btn-default btn-lg button" style="border:none"
+            name="pump_photo"></label>
+          <label for='pump_photo' class="add-photo-83XzNc">Add Photo</label>
+        </div>
+        <div class="group-7220-C61RwL">
+          <div class="rectangle-2807-KSWG3U"></div>
+          <div class="view-photos-KSWG3U">View Photos</div>
+        </div>
+        <div class="layer-1-C61RwL">
+        </div>
+      </div>
+    </div>
+</form>
+  </body>
+</html>
+<script>
+  var loadFile1 = function(event){
+    var image = document.getElementById('output1');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>

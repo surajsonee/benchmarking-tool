@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+    <h1 = "my-4">Buildings for {{ client.company }}</h1>
+    {% if buildings|length < 1 %}
+    <p>There are no buildings added in the system</p>
+    <a class ="btn btn-danger btn-sm" href ='/commercial/addbuilding/{{ client.id }}'>Add Building</a>
+
+    {% else %}
+    <table class = 'table'>
+        <thead>
+            <tr>
+                <th>Building</th>
+                <th>Square Footage</th>
+                <th>Address</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for building in buildings %}
+            <tr>
+                <td><a>{{ building.name }}</a></td>
+                <td>{{ building.square_footage }}</td>
+                <td>{{ building.address }}</td>
+                <td class = 'text_right'><a class ="btn btn-success btn-sm" href ='/commercial/areaindex/{{ building.id }}'>View Rooms/Add Equipment</a></td>
+                <td class = 'text_right'><a class ="btn btn-success btn-sm" href ='/commercial/constructionindex/{{ building.id }}'>Add Construction</a></td>
+                <td class = 'text_right'><a class ="btn btn-primary btn-sm" href ='/commercial/utilityindex/{{ building.id }}'>Utility Bill Uploader</a></td>
+                <td class = 'text_right'><a class ="btn btn-primary btn-sm" href ='{{ url_for("commercial.gen_docx", id=building.id)  }}'>Generate Report</a></td>
+                <td class = 'text_right'><a class ="btn btn-primary btn-sm" href ='/commercial/test/{{ building.id }}'>test</a></td>
+                <td>
+                        <form action ="{{ url_for('commercial.deletebuilding', id=building.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.updatebuilding', id=building.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                    </td>
+
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class ="btn btn-danger btn-sm" href ='/commercial/addbuilding/{{ client.id }}'>Add Building</a>
+
+    {% endif %}
+
+</div>
+{% endblock %}

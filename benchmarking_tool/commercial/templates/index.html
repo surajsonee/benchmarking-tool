@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/companies.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="companies" />
+    <div class="container-center-horizontal">
+      <div class="companies screen">
+        <div class="chevron-left-C61RwL"><img class="vector-lCWmxx" src="img/vector-4@2x.svg" /></div>
+        <div class="companies-C61RwL">Companies</div>
+        <div class="sort-by-C61RwL">Sort by</div>
+        <div class="frame-4317-4eduM0">
+        {% for client in clients %}
+        <div class="frame-4311-nIxcen">
+        <div class="company-C61RwL coresansc-75extra-extra-bold-chathams-blue-14px">Company</div>
+        <div class="time-added-C61RwL coresansc-75extra-extra-bold-chathams-blue-14px">Time Added</div>
+        <div class="contact-info-C61RwL coresansc-75extra-extra-bold-chathams-blue-14px">Contact Info</div>
+        <div class="client-1-C61RwL coresansc-55-medium-cerulean-frost-13px">{{ client.company }}</div>
+        <div class="x2021-02-27-C61RwL coresansc-55-medium-cerulean-frost-13px">{{ client.created_at.date() }}</div>
+        <div class="x389-77-791-C61RwL coresansc-55-medium-cerulean-frost-13px">389 77 791</div>
+        <a href="{{url_for('commercial.buildingindex', id = client.id)}}">
+          <div class="group-6-C61RwL">
+            <div class="rectangle-2755-PIEh7b"></div>
+            <div class="buildings-PIEh7b coresansc-65-bold-white-10px">Buildings</div>
+          </div></a>
+        <div class="group-6912-C61RwL">
+          <div class="rectangle-2756-Sfp1p9"></div>
+          <a href ="{{url_for('commercial.updateclient', id= client.id)}}"><div class="update-Sfp1p9 coresansc-65-bold-white-10px">Update</div></a>
+        </div>
+        <div class="group-6913-C61RwL">
+          <a href ="{{url_for('commercial.updateclient', id= client.id)}}"><div class="add-logo-rZJ3W0 coresansc-65-bold-nepal-10px">Add Logo</div>
+          <div class="rectangle-2756-rZJ3W0 border-1-5px-nepal"></div></a>
+        </div>
+        <div class="group-7-C61RwL">
+          <a href="{{url_for('commercial.deleteclient', id = client.id)}}"><div class="rectangle-2757-SO40Oe"></div></a>
+          <a href="{{url_for('commercial.deleteclient', id = client.id)}}"><div class="delete-SO40Oe coresansc-65-bold-white-10px">Delete</div></a>
+        </div>
+    </div>
+        {% endfor %}
+      </div>
+        <a href="{{url_for('commercial.addclient')}}"> <div class="rectangle-2778-C61RwL"></div></a>
+        <a href="{{url_for('commercial.addclient')}}"> <div class="add-company-C61RwL coresansc-65-bold-white-11px">Add Company</div></a>
+      </div>
+    </div>
+  </body>
+</html>

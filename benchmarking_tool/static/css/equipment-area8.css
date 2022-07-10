@@ -1,0 +1,611 @@
+/* screen - equipment-area8 */
+
+.equipment-area8 {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.equipment-area8 .add-lighting-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .decorative-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 97px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 448px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .double-bulb-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 229px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 566px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .ellipse-10-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 217px;
+  position: absolute;
+  top: 277px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-11-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 92px;
+  position: absolute;
+  top: 152px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-12-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 208px;
+  position: absolute;
+  top: 152px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-13-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 100px;
+  position: absolute;
+  top: 362px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-14-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 216px;
+  position: absolute;
+  top: 362px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-15-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 77px;
+  position: absolute;
+  top: 447px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-16-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 216px;
+  position: absolute;
+  top: 447px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-17-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 140px;
+  position: absolute;
+  top: 478px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-18-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 209px;
+  position: absolute;
+  top: 565px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-19-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 68px;
+  position: absolute;
+  top: 565px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-20-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 60px;
+  position: absolute;
+  top: 662px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-21-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 139px;
+  position: absolute;
+  top: 662px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-22-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 206px;
+  position: absolute;
+  top: 662px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-23-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 272px;
+  position: absolute;
+  top: 662px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-24-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 10px;
+  left: 70px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 567px;
+  width: 10px;
+}
+.equipment-area8 .ellipse-25-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 10px;
+  left: 94px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 154px;
+  width: 10px;
+}
+.equipment-area8 .ellipse-26-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 10px;
+  left: 219px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 245px;
+  width: 10px;
+}
+.equipment-area8 .ellipse-27-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 10px;
+  left: 102px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 364px;
+  width: 10px;
+}
+.equipment-area8 .ellipse-28-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 10px;
+  left: 79px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 449px;
+  width: 10px;
+}
+.equipment-area8 .ellipse-7-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 82px;
+  position: absolute;
+  top: 243px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-8-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 217px;
+  position: absolute;
+  top: 243px;
+  width: 14px;
+}
+.equipment-area8 .ellipse-9-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 82px;
+  position: absolute;
+  top: 277px;
+  width: 14px;
+}
+.equipment-area8 .group-6900-C61RwL {
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.equipment-area8 .highbay-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 109px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 278px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .indoor-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 112px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 153px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .led-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 663px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .linear-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 244px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .outdoor-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 228px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 153px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .placement-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 143px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 120px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .potlight-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 244px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 277px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .quality-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 156px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 627px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .quantity-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 150px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 533px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .rectangle-2829-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 86px;
+  left: 29px;
+  position: absolute;
+  top: 100px;
+  width: 316px;
+}
+.equipment-area8 .rectangle-2830-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 114px;
+  left: 29px;
+  position: absolute;
+  top: 194px;
+  width: 316px;
+}
+.equipment-area8 .rectangle-2831-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 74px;
+  left: 29px;
+  position: absolute;
+  top: 316px;
+  width: 316px;
+}
+.equipment-area8 .rectangle-2832-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 110px;
+  left: 29px;
+  position: absolute;
+  top: 398px;
+  width: 316px;
+}
+.equipment-area8 .rectangle-2833-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 86px;
+  left: 29px;
+  position: absolute;
+  top: 516px;
+  width: 316px;
+}
+.equipment-area8 .rectangle-2834-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 88px;
+  left: 29px;
+  position: absolute;
+  top: 610px;
+  width: 316px;
+}
+.equipment-area8 .single-bulb-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 88px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 566px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .size-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 170px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 330px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .standard-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 236px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 448px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .style-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 170px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 415px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .t12-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 293px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 663px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .t5-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 160px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 663px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .t8-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 227px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 663px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .troffer-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 109px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .type-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 166px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 211px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .vapor-tight-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 160px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 479px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .vector-88-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.equipment-area8 .vector-89-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.equipment-area8 .vector-90-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.equipment-area8 .x4-ft-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 120px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 363px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area8 .x8-ft-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 236px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 363px;
+  white-space: nowrap;
+  width: auto;
+}

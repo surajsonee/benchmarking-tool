@@ -1,0 +1,317 @@
+/* screen - add-company-3 */
+
+.add-company-3 {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.add-company-3 .add-C61RwL {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 254px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 693px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .add-company-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .address-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 392px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .company-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 112px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .email-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 322px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .first-name-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 182px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .group-6899-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 132px;
+  width: 315px;
+}
+.add-company-3 .group-6900-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 202px;
+  width: 315px;
+}
+.add-company-3 .group-6901-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 272px;
+  width: 315px;
+}
+.add-company-3 .group-6902-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 342px;
+  width: 315px;
+}
+.add-company-3 .group-6903-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 412px;
+  width: 315px;
+}
+.add-company-3 .group-6904-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 482px;
+  width: 315px;
+}
+.add-company-3 .group-6905-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 552px;
+  width: 315px;
+}
+.add-company-3 .group-6906-C61RwL {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 622px;
+  width: 315px;
+}
+.add-company-3 .group-6907-C61RwL {
+  background-color: transparent;
+  height: 16px;
+  left: 317px;
+  position: absolute;
+  top: 632px;
+  width: 14px;
+}
+.add-company-3 .last-name-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 252px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .postal-code-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 532px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .province-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 462px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .rectangle-2345-5fxYOr {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-CvPFFg {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-HV8MUu {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-Mz8XNq {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-fJ0smy {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-gxjIOi {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-lrkHPC {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2345-vxW5MR {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-company-3 .rectangle-2755-C61RwL {
+  background-color: var(--picton-blue);
+  border-radius: 6px;
+  height: 36px;
+  left: 195px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 681px;
+  width: 150px;
+}
+.add-company-3 .upload-logo-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 602px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-company-3 .vector-QfahVf {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 14px;
+  width: 14px;
+}
+.add-company-3 .vector-pg83Rh {
+  background-color: transparent;
+  height: 12px;
+  left: 3px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 8px;
+}

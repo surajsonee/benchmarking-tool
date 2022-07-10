@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-heat-pump.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-heat-pump" />
+    <div class="container-center-horizontal">
+      <div class="add-heat-pump screen">
+        <div class="add-heat-pump-C61RwL">Add Heat Pump</div>
+        <img class="vector-88-C61RwL" src="img/vector-88@2x.svg" />
+        <img class="vector-90-C61RwL" src="img/vector-88@2x.svg" />
+        <img class="vector-89-C61RwL" src="img/vector-89@2x.svg" />
+        <div >{{ form.manufacturer(class="rectangle-2345-C61RwL border-1px-mystic")}}</div>
+        <div>{{ form.model_number( class="rectangle-2345-VMr6Om border-1px-mystic")}}</div>
+        <div>{{ form.serial_number( class="rectangle-2345-mzXdH9 border-1px-mystic")}}</div>
+        <div >{{ form.year_built(class="rectangle-2345-QxM5SU border-1px-mystic")}}</div>
+        <div class="rectangle-2345-2P4qUJ border-1px-mystic"></div>
+        <div >{{ form.fuel_type(class="rectangle-2345-qr8e7q border-1px-mystic")}}</div>
+        <div class="manufacturer-C61RwL coresansc-65-bold-cerulean-frost-11px">Manufacturer</div>
+        <div class="model-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Model Number</div>
+        <div class="serial-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Serial Number</div>
+        <div class="year-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Year Number</div>
+        <div class="heating-input-C61RwL coresansc-65-bold-cerulean-frost-11px">Heating Input</div>
+        <div class="fuel-type-C61RwL coresansc-65-bold-cerulean-frost-11px">Fuel Type</div>
+        <img class="vector-C61RwL" src="img/vector@2x.svg" />
+        <img class="vector-VMr6Om" src="img/vector-1@2x.svg" />
+        <div class="rectangle-2755-C61RwL"></div>
+        <div class="add-C61RwL">Add</div>
+        <div class="group-7196-C61RwL">
+          <div class="rectangle-2755-WjY3xc"></div>
+          <div class="cancel-WjY3xc">Cancel</div>
+        </div>
+        <div class="rectangle-2806-C61RwL border-1px-mystic"></div>
+         <label for='heat_photo' class="rectangle-2755-VMr6Om"><input type="file" style='display: none;' accept="image/*" capture="user"  id='heat_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+            name="heat_photo"></label>
+          <label for='heat_photo' class="add-photo-C61RwL">Add Photo</label>
+        <div class="rectangle-2807-C61RwL"></div>
+        <div class="view-photos-C61RwL">View Photos</div>
+        <img class="vector-mzXdH9" src="img/vector-2@2x.svg" />
+        <img class="vector-QxM5SU" src="img/vector-3@2x.svg" />
+      </div>
+    </div>
+  </body>
+</html>

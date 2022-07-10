@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action = " " method = "POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    {{ form.csrf_token }}
+    <div class = "form-row">
+        <div class = "col-sm-10 my-1">
+    <label for="newStuff class = "sr-only">Add Comapny</label>
+    <p>
+        {{ form.company(class_ = "form-control", placeholder = "Company")}}
+    </p>    
+    <p>
+        {{ form.first_name(class_ = "form-control", placeholder = "First Name")}}
+    </p> 
+    <p>
+        {{ form.last_name(class_ = "form-control", placeholder = "Last Name")}}
+    </p> 
+    <p>
+        {{ form.email(class_ = "form-control", placeholder = "Email")}}
+    </p>     
+    <p>
+        {{ form.address(class_ = "form-control", placeholder = "Address")}}
+    </p>    
+    <p>
+        {{ form.province(class_ = "form-control", placeholder = "Province")}}
+    </p>   
+    <p>
+        {{ form.postal_code(class_ = "form-control", placeholder = "Postal Code")}}
+    </p>   
+
+    <button type = 'submit' class ="btn btn-primary btn-block">Add</button>
+         </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

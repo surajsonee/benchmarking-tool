@@ -1,0 +1,290 @@
+/* screen - add-exterior-wall-input-form */
+
+.add-exterior-wall-input-form {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.add-exterior-wall-input-form .add-53IeU9 {
+  background-color: transparent;
+  height: auto;
+  left: 59px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .add-exterior-wall-lPNUag {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .add-file-SetkpH {
+  background-color: transparent;
+  height: auto;
+  left: 35px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .brick-veneer-lPNUag {
+  background-color: transparent;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 127px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .cancel-Jf1vn7 {
+  background-color: transparent;
+  height: auto;
+  left: 47px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .group-6899-lPNUag {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 116px;
+  width: 315px;
+}
+.add-exterior-wall-input-form .group-6900-lPNUag {
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.add-exterior-wall-input-form .group-6905-lPNUag {
+  background-color: transparent;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 173px;
+  width: 315px;
+}
+.add-exterior-wall-input-form .group-7192-lPNUag {
+  background-color: transparent;
+  height: 36px;
+  left: 195px;
+  position: absolute;
+  top: 384px;
+  width: 152px;
+}
+.add-exterior-wall-input-form .group-7194-lPNUag {
+  background-color: transparent;
+  height: 36px;
+  left: 30px;
+  position: absolute;
+  top: 384px;
+  width: 152px;
+}
+.add-exterior-wall-input-form .group-7219-lPNUag {
+  background-color: transparent;
+  height: 24px;
+  left: 57px;
+  position: absolute;
+  top: 309px;
+  width: 111px;
+}
+.add-exterior-wall-input-form .group-7220-lPNUag {
+  background-color: transparent;
+  height: 24px;
+  left: 209px;
+  position: absolute;
+  top: 309px;
+  width: 111px;
+}
+.add-exterior-wall-input-form .layer-1-lPNUag {
+  background-color: transparent;
+  height: 26px;
+  left: 176px;
+  position: absolute;
+  top: 260px;
+  width: 24px;
+}
+.add-exterior-wall-input-form .rectangle-2345-D8gBOy {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-exterior-wall-input-form .rectangle-2345-R3Y4Fc {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 315px;
+}
+.add-exterior-wall-input-form .rectangle-2755-53IeU9 {
+  background-color: var(--chateau-green);
+  border-radius: 6px;
+  height: 36px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+.add-exterior-wall-input-form .rectangle-2755-Jf1vn7 {
+  background-color: var(--cerulean-frost);
+  border-radius: 6px;
+  height: 36px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+.add-exterior-wall-input-form .rectangle-2755-SetkpH {
+  background-color: var(--cerulean-frost);
+  border-radius: 3px;
+  height: 24px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 109px;
+}
+.add-exterior-wall-input-form .rectangle-2806-lPNUag {
+  background-color: transparent;
+  height: 132px;
+  left: 30px;
+  position: absolute;
+  top: 230px;
+  width: 315px;
+}
+.add-exterior-wall-input-form .rectangle-2807-TjByEo {
+  background-color: transparent;
+  border-radius: 3px;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 109px;
+}
+.add-exterior-wall-input-form .vector-3w7QsO {
+  background-color: transparent;
+  height: 6px;
+  left: 15px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 17px;
+  width: 6px;
+}
+.add-exterior-wall-input-form .vector-88-ltkze1 {
+  background-color: transparent;
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.add-exterior-wall-input-form .vector-89-ltkze1 {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.add-exterior-wall-input-form .vector-90-ltkze1 {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.add-exterior-wall-input-form .vector-DJJx32 {
+  background-color: transparent;
+  height: 27px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: -0px;
+  width: 24px;
+}
+.add-exterior-wall-input-form .vector-lPNUag {
+  background-color: transparent;
+  height: 5px;
+  left: 318px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 190px;
+  width: 9px;
+}
+.add-exterior-wall-input-form .vector-vJowxV {
+  background-color: transparent;
+  height: 5px;
+  left: 318px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 132px;
+  width: 9px;
+}
+.add-exterior-wall-input-form .view-files-TjByEo {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-exterior-wall-input-form .x120-lPNUag {
+  background-color: transparent;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 184px;
+  white-space: nowrap;
+  width: auto;
+}

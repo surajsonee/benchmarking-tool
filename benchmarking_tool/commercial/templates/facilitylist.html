@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/all-facilities.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="all-facilities" />
+    <div class="container-center-horizontal">
+      <div class="all-facilities screen">
+        <div class="rectangle-2893-QcASUY"></div>
+        <img class="header-QcASUY" src="img/header@2x.svg" /><img
+          class="kaltire-256-2-QcASUY"
+          src="img/kaltire--256-2@2x.png"
+        />
+        <div class="facility-QcASUY avertacy-bold-chathams-blue-20px">Facility</div>
+        <div class="address-QcASUY avertacy-bold-chathams-blue-20px">Address</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-QcASUY">4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS</p>
+        <div class="group-7195-QcASUY">
+          <div class="rectangle-2316-fnVQgl"></div>
+          <img class="chevron-down-fnVQgl" src="img/chevron-down@2x.svg" />
+        </div>
+        <img class="group-7234-QcASUY" src="img/group-7234@2x.svg" /><img
+          class="vector-QcASUY"
+          src="img/vector@2x.svg"
+        />
+        <div class="overview-QcASUY avertacy-bold-chathams-blue-20px">Overview</div>
+        <div class="kpis-QcASUY avertacy-bold-cerulean-frost-11px">KPI’S</div>
+        <div class="inventory-QcASUY avertacy-bold-cerulean-frost-11px">Inventory</div>
+        <div class="utilities-QcASUY avertacy-bold-cerulean-frost-11px">Utilities</div>
+        <div class="group-7196-QcASUY">
+          <div class="rectangle-2316-PtyRHQ"></div>
+          <img class="chevron-down-PtyRHQ" src="img/chevron-down-1@2x.svg" />
+        </div>
+        <img class="group-7235-QcASUY" src="img/group-7235@2x.svg" />
+        <div class="rectangle-2958-QcASUY"></div>
+        <div class="rectangle-2959-QcASUY"></div>
+        <div class="rectangle-2966-QcASUY"></div>
+        <div class="metrics-QcASUY avertacy-normal-white-14px">Metrics</div>
+        <div class="sort-by-QcASUY avertacy-normal-white-14px">Sort by :</div>
+        <div class="location-QcASUY avertacy-normal-white-14px">Location</div>
+        <div class="search-QcASUY">Search</div>
+        <img class="vector-ycrrjB" src="img/vector-1@2x.svg" /><img
+          class="vector-NJ0xT7"
+          src="img/vector-1@2x.svg"
+        />
+        <div class = 'building-container' onclick = "openNav()">
+         {% for building in buildings %}
+        <div class = 'building-list'>
+        <img
+          class="kaltire6-1-QcASUY"
+          src="{{ url_for('static', filename='appliance_photos/img/' + building.photo_id)}}"
+        />
+        <div class = 'address avertacy-bold-white-13px'>{{building.address}} </div>
+        <div class = 'name avertacy-bold-white-13px'>{{building.name}} </div>
+        <img class="vector-n7UIr1" src="{{ url_for('static', filename='img/thingy.svg')}}" /><img
+          class="group-7236-QcASUY"
+          src="{{ url_for('static', filename='img/group-7238@2x.svg')}}"
+        />
+        </div>{% endfor %}</div>
+        <div class="ellipse-440-QcASUY"></div>
+        <div id = 'sidebar' class = 'sidebar'>
+        <div class="group-7263-QcASUY">
+          <div class="rectangle-2316-uAdgnm"></div>
+          <img class="chevron-down-uAdgnm" src="{{url_for('static',filename='img/chevron-down-2@2x.svg')}}" />
+        </div>
+        <img class="group-QcASUY" src="img/group@2x.svg" />
+        <div class="general-info-QcASUY avertacy-bold-chathams-blue-20px">General Info</div>
+        <div class="address-ycrrjB avertacy-normal-chathams-blue-14px">Address:</div>
+        <div class="phone-QcASUY avertacy-normal-chathams-blue-14px">Phone</div>
+        <div class="square-footage-QcASUY avertacy-normal-chathams-blue-14px">Square Footage</div>
+        <div class="energy-usage-QcASUY avertacy-normal-chathams-blue-14px">Energy Usage</div>
+        <div class="natural-gas-usage-QcASUY avertacy-normal-chathams-blue-14px">Natural Gas Usage</div>
+        <div class="age-of-building-QcASUY avertacy-normal-chathams-blue-14px">Age of Building</div>
+        <div class="x182-gj-QcASUY avertacy-bold-cerulean-frost-14px">182 GJ</div>
+        <div class="x15-years-QcASUY avertacy-bold-cerulean-frost-14px">15 years</div>
+        <div class="x1321-k-wh-QcASUY avertacy-bold-cerulean-frost-14px">1.321 kWh</div>
+        <div class="x72112-ft-QcASUY avertacy-bold-cerulean-frost-14px">72.112 ft</div>
+        <div class="x693-213-630-11-QcASUY avertacy-bold-cerulean-frost-14px">+693 213 630 11</div>
+        <div class="x1783-sunny-day-drive-ycrrjB avertacy-bold-cerulean-frost-14px">1783 Sunny Day Drive</div>
+        <img class="vector-HiAixB" src="{{url_for('static',filename='img/gear.svg')}}" />
+        <div class="pictures-QcASUY avertacy-bold-chathams-blue-20px">Pictures</div>
+        <img class="group-ycrrjB" src="{{url_for('static',filename='img/group-1@2x.svg')}}" />
+        <div class="rectangle-2992-QcASUY"></div>
+        <div class="rectangle-2993-QcASUY"></div>
+        <div class="next-facility-QcASUY avertacy-bold-white-13px">Next Facility</div>
+        <div class="prev-facility-QcASUY">Prev Facility</div>
+        <div class="rectangle-2994-QcASUY"></div>
+        <img class="kaltire4-6-QcASUY" src="img/kaltire4-6@2x.png" /><img
+          class="kaltire1-2-QcASUY"
+          src="img/kaltire1-2@2x.png"
+        /><img class="kaltire2-2-QcASUY" src="img/kaltire2-2@2x.png" /><img
+          class="kaltire5-3-QcASUY"
+          src="img/kaltire5-3@2x.png"
+        />
+        <div class="rectangle-2995-QcASUY"></div>
+        <div class="rectangle-2996-QcASUY"></div>
+        <div class="rectangle-2997-QcASUY"></div>
+        <div class="rectangle-2998-QcASUY"></div>
+        <img class="kaltire1-2-ycrrjB" src="img/kaltire1-2-1@2x.png" /></div>
+      </div>
+    </div>
+  </body>
+  <script>function openNav() {
+  document.getElementById("sidebar").style.width = "311px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0";
+}</script>
+</html>

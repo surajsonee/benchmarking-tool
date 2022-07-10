@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-steam-boiler.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-steam-boiler" />
+    <div class="container-center-horizontal">
+      <div class="add-steam-boiler screen">
+        <div class="add-steam-boiler-C61RwL">Add Steam Boiler</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="group-6899-C61RwL">
+          <div>{{ form.manufacturer( class="rectangle-2345-Mz8XNq border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6908-C61RwL">
+          <div>{{ form.model_number( class="rectangle-2345-ilCFrg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6909-C61RwL">
+          <div>{{ form.serial_number( class="rectangle-2345-eJPJAb border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6901-C61RwL">
+          <div>{{ form.year_built( class="rectangle-2345-CvPFFg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6910-C61RwL">
+          <div>{{ form.input_capacity( class="rectangle-2345-Z05HMs border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6902-C61RwL">
+          <div>{{ form.output_capacity( class="rectangle-2345-5fxYOr border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6903-C61RwL">
+          <div>{{ form.heating_eff( class="rectangle-2345-fJ0smy border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6904-C61RwL">
+          <div>{{ form.boiler_type( class="rectangle-2345-vxW5MR border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6905-C61RwL">
+          <div>{{ form.pressure( class="rectangle-2345-HV8MUu border-1px-mystic")}}</div>
+        </div>
+        <div class="manufacturer-C61RwL coresansc-65-bold-cerulean-frost-11px">Manufacturer</div>
+        <div class="model-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Model Number</div>
+        <div class="serial-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Serial Number</div>
+        <div class="year-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Year Number</div>
+        <div class="heating-input-C61RwL coresansc-65-bold-cerulean-frost-11px">Heating Input</div>
+        <div class="output-capacity-C61RwL coresansc-65-bold-cerulean-frost-11px">Output Capacity</div>
+        <div class="heating-efficiency-C61RwL coresansc-65-bold-cerulean-frost-11px">Heating Efficiency</div>
+        <div class="type-C61RwL coresansc-65-bold-cerulean-frost-11px">Type</div>
+        <div class="pressure-C61RwL coresansc-65-bold-cerulean-frost-11px">Pressure</div>
+        <div class="group-7193-C61RwL">
+          <img class="vector-LA17xu" src="img/vector@2x.svg" />
+          <img class="vector-TBtSab" src="img/vector-1@2x.svg" />
+        </div>
+        <div class="rectangle-2806-C61RwL border-1px-mystic"></div>
+        <div class="group-7219-C61RwL">
+          <label for='steam_photo' class="rectangle-2755-83XzNc"><input type="file" style='display: none;' accept="image/*" capture="user"  id='steam_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+            name="steam_photo"></label>
+          <label for='steam_photo' class="add-photo-83XzNc">Add Photo</label>
+        </div>
+        <div class="group-7220-C61RwL">
+          <div class="rectangle-2807-KSWG3U"></div>
+          <div class="view-photos-KSWG3U">View Photos</div>
+        </div>
+        <div class="layer-1-C61RwL">
+          <img class="vector-YBNzTx" src="img/vector-2@2x.svg" />
+          <img class="vector-FIkdjm" src="img/vector-3@2x.svg" />
+        </div>
+        <div class="group-7192-C61RwL">
+          <div class="rectangle-2755-9xz0lo"></div>
+          <div class="add-9xz0lo">Add</div>
+        </div>
+        <div class="group-7194-C61RwL">
+          <div class="rectangle-2755-mfpI2o"></div>
+          <div class="cancel-mfpI2o">Cancel</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

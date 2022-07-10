@@ -1,0 +1,286 @@
+/* screen - building-1 */
+
+.building-1 {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+
+.building-1 .address-of-building-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 223px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 148px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .begin-on-site-audit-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 136px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 367px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .building-1-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .delete-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 93px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 444px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .floor-plan-blueprints-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 127px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 270px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .generate-report-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 142px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 402px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .group-6900-C61RwL {
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.building-1 .group-6911-C61RwL {
+  background-color: transparent;
+  height: 132px;
+  left: 41px;
+  position: absolute;
+  top: 118px;
+  width: 168px;
+}
+.building-1 .operating-hours-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 223px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 192px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .pexels-pixabay-269077-2-nFnupU {
+  background-color: transparent;
+  height: 132px;
+  left: 0px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 168px;
+}
+.building-1 .rectangle-2767-nFnupU {
+  background-color: var(--black);
+  border-radius: 10px;
+  height: 132px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 168px;
+}
+.building-1 .rectangle-2769-C61RwL {
+  background-color: var(--zircon);
+  border-radius: 10px;
+  height: 386px;
+  left: 30px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 108px;
+  width: 315px;
+}
+.building-1 .rectangle-2775-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  height: 26px;
+  left: 41px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 263px;
+  width: 293px;
+}
+.building-1 .rectangle-2776-C61RwL {
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 26px;
+  left: 41px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 298px;
+  width: 293px;
+}
+.building-1 .rectangle-2777-C61RwL {
+  background-color: var(--cerulean-frost);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 26px;
+  left: 41px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 360px;
+  width: 293px;
+}
+.building-1 .rectangle-2778-C61RwL {
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 26px;
+  left: 41px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 395px;
+  width: 293px;
+}
+.building-1 .rectangle-2779-C61RwL {
+  background-color: var(--orange-red);
+  border-radius: 5px;
+  height: 26px;
+  left: 41px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 437px;
+  width: 140px;
+}
+.building-1 .rectangle-2780-C61RwL {
+  background-color: var(--chathams-blue-2);
+  border-radius: 5px;
+  height: 26px;
+  left: 194px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 437px;
+  width: 140px;
+}
+.building-1 .some-address-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 223px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 162px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .update-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 243px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 444px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .utilities-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 167px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 305px;
+  white-space: nowrap;
+  width: auto;
+}
+.building-1 .vector-88-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.building-1 .vector-89-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.building-1 .vector-90-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}
+.building-1 .x0800-1600-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 223px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 206px;
+  white-space: nowrap;
+  width: auto;
+}
+

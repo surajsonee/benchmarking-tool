@@ -1,0 +1,329 @@
+/* screen - add-heat-pump */
+
+.add-heat-pump {
+  background-color: var(--white);
+  height: 812px;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.add-heat-pump .add-C61RwL {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 254px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 577px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .add-heat-pump-C61RwL {
+  background-color: transparent;
+  color: #1d5280;
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .add-photo-C61RwL {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-55medium);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 86px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 484px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .cancel-WjY3xc {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 47px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .fuel-type-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 310px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .group-7196-C61RwL {
+  background-color: transparent;
+  height: 36px;
+  left: 30px;
+  position: absolute;
+  top: 565px;
+  width: 150px;
+}
+.add-heat-pump .heating-input-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 202px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .manufacturer-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 112px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .model-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 178px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .rectangle-2345-2P4qUJ {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 196px;
+  position: absolute;
+  top: 264px;
+  width: 149px;
+}
+.add-heat-pump .rectangle-2345-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 132px;
+  width: 315px;
+}
+.add-heat-pump .rectangle-2345-QxM5SU {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 264px;
+  width: 149px;
+}
+.add-heat-pump .rectangle-2345-VMr6Om {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 198px;
+  width: 149px;
+}
+.add-heat-pump .rectangle-2345-mzXdH9 {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 196px;
+  position: absolute;
+  top: 198px;
+  width: 149px;
+}
+.add-heat-pump .rectangle-2345-qr8e7q {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 35px;
+  left: 30px;
+  position: absolute;
+  top: 330px;
+  width: 315px;
+}
+.add-heat-pump .rectangle-2755-C61RwL {
+  background-color: #3ab54a;
+  border-radius: 6px;
+  height: 36px;
+  left: 195px;
+  position: absolute;
+  top: 565px;
+  width: 150px;
+}
+.add-heat-pump .rectangle-2755-VMr6Om {
+  background-color: var(--cerulean-frost);
+  border-radius: 3px;
+  height: 24px;
+  left: 57px;
+  position: absolute;
+  top: 478px;
+  width: 109px;
+}
+.add-heat-pump .rectangle-2755-WjY3xc {
+  background-color: var(--cerulean-frost);
+  border-radius: 6px;
+  height: 36px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+.add-heat-pump .rectangle-2806-C61RwL {
+  background-color: transparent;
+  height: 132px;
+  left: 30px;
+  position: absolute;
+  top: 399px;
+  width: 315px;
+}
+.add-heat-pump .rectangle-2807-C61RwL {
+  background-color: transparent;
+  border: 1.5px solid var(--cerulean-frost);
+  border-radius: 3px;
+  height: 24px;
+  left: 209px;
+  position: absolute;
+  top: 478px;
+  width: 109px;
+}
+.add-heat-pump .serial-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 205px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 178px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .vector-88-C61RwL {
+  background-color: transparent;
+  height: 2px;
+  left: 332px;
+  position: absolute;
+  top: 58px;
+  width: 14px;
+}
+.add-heat-pump .vector-89-C61RwL {
+  background-color: transparent;
+  height: 2px;
+  left: 321px;
+  position: absolute;
+  top: 64px;
+  width: 25px;
+}
+.add-heat-pump .vector-90-C61RwL {
+  background-color: transparent;
+  height: 2px;
+  left: 321px;
+  position: absolute;
+  top: 70px;
+  width: 14px;
+}
+.add-heat-pump .vector-C61RwL {
+  background-color: transparent;
+  height: 6px;
+  left: 158px;
+  position: absolute;
+  top: 273px;
+  width: 10px;
+}
+.add-heat-pump .vector-QxM5SU {
+  background-color: transparent;
+  height: 6px;
+  left: 191px;
+  position: absolute;
+  top: 446px;
+  width: 6px;
+}
+.add-heat-pump .vector-VMr6Om {
+  background-color: transparent;
+  height: 6px;
+  left: 158px;
+  position: absolute;
+  top: 284px;
+  width: 10px;
+}
+.add-heat-pump .vector-mzXdH9 {
+  background-color: transparent;
+  height: 27px;
+  left: 176px;
+  position: absolute;
+  top: 429px;
+  width: 24px;
+}
+.add-heat-pump .view-photos-C61RwL {
+  background-color: transparent;
+  color: var(--cerulean-frost);
+  font-family: var(--font-family-core_sans_c-55medium);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 234px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 484px;
+  white-space: nowrap;
+  width: auto;
+}
+.add-heat-pump .year-number-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 36px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 244px;
+  white-space: nowrap;
+  width: auto;
+}

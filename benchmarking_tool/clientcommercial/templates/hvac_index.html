@@ -1,0 +1,632 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <table class = 'table'>
+        <thead>
+            <tr>
+                <th>Heating Equipment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_steam_boiler/{{ area.id }}'>Steam Boiler</a></td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for steam_boiler in steam_boilers %}
+                <tr>
+                    <td>{{ steam_boiler.model_number }}</td>
+                    <td>{{ steam_boiler.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletesteamboiler', id=steam_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_steam_boiler', id = steam_boiler.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatesteamboiler', id=steam_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatesteamboiler', id=steam_boiler.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_hydronic_boiler/{{ area.id }}'>Hydronic Boiler</a></td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hydronic_boiler in hydronic_boilers %}
+                <tr>
+                    <td>{{ hydronic_boiler.model_number }}</td>
+                    <td>{{ hydronic_boiler.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletehydronicboiler', id=hydronic_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_hydronic_boiler', id=hydronic_boiler.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatehydronicboiler', id=hydronic_boiler.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatehydronicboiler', id=hydronic_boiler.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_pump/{{ area.id }}'>Add Pump</a></td></tr>
+                <tr>
+                    <th>Pump Head</th>
+                    <th>Pump GPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pump in pumps %}
+                <tr>
+                    <td>{{ pump.head }}</td>
+                    <td>{{ pump.gpm }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletepump', id=pump.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_pump', id=pump.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepump', id=pump.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepump', id=pump.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_motor/{{ area.id }}'>Add Motor</a></td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for motor in motors %}
+                <tr>
+                    <td>{{ motor.model_number }}</td>
+                    <td>{{ motor.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletemotor', id=motor.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_motor', id=motor.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatemotor', id=motor.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatemotor', id=motor.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_furnace/{{ area.id }}'>Furnace</a></td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for furnace in furnaces %}
+                <tr>
+                    <td>{{ furnace.model_number }}</td>
+                    <td>{{ furnace.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletefurnace', id=furnace.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_furnace', id=furnace.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatefurnace', id=furnace.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatefurnace', id=furnace.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_unit_heater/{{ area.id }}'>Unit Heater</a></td></tr>
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for unit_heater in unit_heaters %}
+                <tr>
+                    <td>{{ unit_heater.model_number }}</td>
+                    <td>{{ unit_heater.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteunitheater', id=unit_heater.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_unit_heater', id=unit_heater.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateunitheater', id=unit_heater.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateunitheater', id=unit_heater.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+            <tr><td></td>
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_gas_fired_heating_coil/{{ area.id }}'>Gas Fired Heating Coil</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gas_fired_heating_coil in gas_fired_heating_coils %}
+                <tr>
+                    <td>{{ gas_fired_heating_coil.model_number }}</td>
+                    <td>{{ gas_fired_heating_coil.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletegasfiredheatingcoil', id=gas_fired_heating_coil.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_gas_fired_heating_coil', id=gas_fired_heating_coil.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicategasfiredheatingcoil', id=gas_fired_heating_coil.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicategasfiredheatingcoil', id=gas_fired_heating_coil.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_heat_pump/{{ area.id }}'>Heat Pump</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for heat_pump in heat_pumps %}
+                <tr>
+                    <td>{{ heat_pump.model_number }}</td>
+                    <td>{{ heat_pump.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteheatpump', id=heat_pump.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_heat_pump', id=heat_pump.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateheatpump', id=heat_pump.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateheatpump', id=heat_pump.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_electric_rest_heating_coil/{{ area.id }}'>Electric Rest Heating Coil</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for electric_rest_heating_coil in electric_rest_heating_coils %}
+                <tr>
+                    <td>{{ electric_rest_heating_coil.model_number }}</td>
+                    <td>{{ electric_rest_heating_coil.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteelectricrestheatingcoil', id=electric_rest_heating_coil.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_electric_rest_heating_coil', id=electric_rest_heating_coil.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateelectricrestheatingcoil', id=electric_rest_heating_coil.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateelectricrestheatingcoil', id=electric_rest_heating_coil.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_infrared_heater/{{ area.id }}'>Infrared Heater</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for infrared_heater in infrared_heaters %}
+                <tr>
+                    <td>{{ infrared_heater.model_number }}</td>
+                    <td>{{ infrared_heater.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteinfraredheater', id=infrared_heater.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_infrared_heater', id=infrared_heater.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateinfraredheater', id=infrared_heater.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateinfraredheater', id=infrared_heater.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_make_up_air_unit/{{ area.id }}'>Make Up Air Unit</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for make_up_air_unit in make_up_air_units %}
+                <tr>
+                    <td>{{ make_up_air_unit.model_number }}</td>
+                    <td>{{ make_up_air_unit.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletemakeupairunit', id=make_up_air_unit.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_make_up_air_unit', id=make_up_air_unit.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatemakeupairunit', id=make_up_air_unit.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatemakeupairunit', id=make_up_air_unit.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+
+       <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_packaged_rtu/{{ area.id }}'>Packaged RTU</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for packaged_rtu in packaged_rtus %}
+                <tr>
+                    <td>{{ packaged_rtu.model_number }}</td>
+                    <td>{{ packaged_rtu.serial_number }}</td>
+                     <td>
+                        <form action ="{{ url_for('commercial.deletepackagedrtu', id=packaged_rtu.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_packaged_rtu', id=packaged_rtu.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepackagedrtu', id=packaged_rtu.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepackagedrtu', id=packaged_rtu.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </tbody>
+    </table>
+<table class = 'table'>
+        <thead>
+            <tr>
+                <th>Cooling Equipment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td></td></tr>
+
+
+           <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_chiller/{{ area.id }}'>Chiller</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chiller in chillers %}
+                <tr>
+                    <td>{{ chiller.model_number }}</td>
+                    <td>{{ chiller.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletechiller', id=chiller.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_chiller', id=chiller.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatechiller', id=chiller.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatechiller', id=chiller.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <tr><td></td></tr>
+
+
+           <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_mini_split_system/{{ area.id }}'>Mini Split System</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mini_split_system in mini_split_systems %}
+                <tr>
+                    <td>{{ mini_split_system.model_number }}</td>
+                    <td>{{ mini_split_system.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deleteminisplitsystem', id=mini_split_system.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_mini_split_system', id=mini_split_system.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateminisplitsystem', id=mini_split_system.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicateminisplitsystem', id=mini_split_system.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tr><td></td></tr>
+
+
+           <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_packaged_terminal_ac/{{ area.id }}'>Packaged Terminal AC</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for packaged_terminal_ac in packaged_terminal_acs %}
+                <tr>
+                    <td>{{ packaged_terminal_ac.model_number }}</td>
+                    <td>{{ packaged_terminal_ac.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletepackagedterminalac', id=packaged_terminal_ac.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_packaged_terminal_ac', id=packaged_terminal_ac.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepackagedterminalac', id=packaged_terminal_ac.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatepackagedterminalac', id=packaged_terminal_ac.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tr><td></td></tr>
+
+
+           <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_condensing_unit_system/{{ area.id }}'>Condensing Unit System</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for condensing_unit_system in condensing_unit_systems %}
+                <tr>
+                    <td>{{ condensing_unit_system.model_number }}</td>
+                    <td>{{ condensing_unit_system.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletecondensingunitsystem', id=condensing_unit_system.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_condensing_unit_system', id=condensing_unit_system.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatecondensingunitsystem', id=condensing_unit_system.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatecondensingunitsystem', id=condensing_unit_system.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tr><td></td></tr>
+
+           <table class='table table-sm table-bordered'>
+            <thead>
+                <tr><td colspan="3"><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_window_air_conditioner/{{ area.id }}'>Window Air Conditioner</a></td>
+
+                <tr>
+                    <th>Model Number</th>
+                    <th>Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for window_air_conditioner in window_air_conditioners %}
+                <tr>
+                    <td>{{ window_air_conditioner.model_number }}</td>
+                    <td>{{ window_air_conditioner.serial_number }}</td>
+                    <td>
+                        <form action ="{{ url_for('commercial.deletewindowairconditioner', id=window_air_conditioner.id)  }}" method = "POST">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form><br>
+                        <form action ="{{ url_for('commercial.update_window_air_conditioner', id=window_air_conditioner.id)  }}" method = "GET">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatewindowairconditioner', id=window_air_conditioner.id)  }}" method = "POST">
+                            <input class="btn btn-info" type="submit" value="Add One">
+                        </form>
+                        <form action ="{{ url_for('commercial.duplicatewindowairconditioner', id=window_air_conditioner.id)  }}" method = "POST">
+                            <input type="number" size="4"  id="duplicateammount" name="duplicateammount">
+                            <input class="btn btn-info" type="submit" value="Add Many">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </tbody>
+    </table>
+<table class = 'table'>
+        <thead>
+            <tr>
+                <th>Ventilation Equipment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a class ="btn btn-secondary btn-lg btn-block" href ='/commercial/add_make_up_air_unit/{{ area.id }}'>Make Up Air Unit</a></td></tr>
+            <tr><td><a class ="btn btn-secondary btn-lg btn-block" href ='/add_motor/{{ area.id }}'>Supply Fan</a></td></tr>
+            <tr><td><a class ="btn btn-secondary btn-lg btn-block" href ='/add_motor/{{ area.id }}'>Return Fan</a></td></tr>
+        </tbody>
+    </table>
+
+{% endblock %}

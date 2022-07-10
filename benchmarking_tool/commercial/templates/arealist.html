@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+    <h1 = "my-4">Areas</h1>
+    {% if areas|length < 1 %}
+    <p>There are no areas added in the system</p>
+
+    {% else %}
+    <table class = 'table'>
+        <tbody>
+            {% for building in buildings %}
+            <td><a><b>{{ building.name }}</b></a></td>
+            {% for area in areas %}
+            <tr>
+                {% if area.building_id == building.id %}
+                <td style="text-indent: 3em"><a href = "{{ url_for('commercial.equipmentindex', id=area.building_id)  }}">{{ area.name }}</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+
+</div>
+{% endblock %}

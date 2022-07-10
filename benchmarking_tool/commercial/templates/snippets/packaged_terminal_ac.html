@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/add-packaged-terminal-ac.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-packaged-terminal-ac" />
+    <div class="container-center-horizontal">
+      <div class="add-packaged-terminal-ac screen">
+        <div class="add-packaged-terminal-ac-C61RwL">Add Packaged Terminal AC</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="group-6899-C61RwL">
+          <div >{{ form.manufacturer(class="rectangle-2345-Mz8XNq border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6908-C61RwL">
+          <div>{{ form.model_number( class="rectangle-2345-ilCFrg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6909-C61RwL">
+          <div>{{ form.serial_number( class="rectangle-2345-eJPJAb border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6901-C61RwL">
+          <div>{{ form.year_built( class="rectangle-2345-CvPFFg border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7221-C61RwL">
+          <div></div>
+        </div>
+        <div class="group-7223-C61RwL">
+          <div>{{ form.refridgerant( class="rectangle-2345-ydzefS border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7224-C61RwL">
+          <div>{{ form.compressor_type( class="rectangle-2345-PRTlyn border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7222-C61RwL">
+          <div>{{ form.kwton( class="rectangle-2345-Sxblbp border-1px-mystic")}}</div>
+        </div>
+        <div class="group-7225-C61RwL">
+          <div>{{ form.eer( class="rectangle-2345-mfKJX0 border-1px-mystic")}}</div>
+        </div>
+        <div class="group-6910-C61RwL">
+          <div>{{ form.cooling_capacity( class="rectangle-2345-Z05HMs border-1px-mystic")}}</div>
+        </div>
+        <div class="manufacturer-C61RwL coresansc-65-bold-cerulean-frost-11px">Manufacturer</div>
+        <div class="model-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Model Number</div>
+        <div class="serial-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Serial Number</div>
+        <div class="year-number-C61RwL coresansc-65-bold-cerulean-frost-11px">Year Number</div>
+        <div class="refridgerant-C61RwL coresansc-65-bold-cerulean-frost-11px">Refridgerant</div>
+        <div class="compressor-type-C61RwL coresansc-65-bold-cerulean-frost-11px">Compressor Type</div>
+        <div class="kw-ton-C61RwL coresansc-65-bold-cerulean-frost-11px">KW / Ton</div>
+        <div class="eer-C61RwL coresansc-65-bold-cerulean-frost-11px">EER</div>
+        <div class="cooling-capacity-C61RwL coresansc-65-bold-cerulean-frost-11px">Cooling Capacity</div>
+        <div class="group-7193-C61RwL">
+          <img class="vector-LA17xu" src="img/vector@2x.svg" />
+          <img class="vector-TBtSab" src="img/vector-1@2x.svg" />
+        </div>
+        <div class="group-7192-C61RwL">
+          <div class="rectangle-2755-9xz0lo"></div>
+          <div class="add-9xz0lo">Add</div>
+        </div>
+        <div class="group-7196-C61RwL">
+          <div class="rectangle-2755-WjY3xc"></div>
+          <div class="cancel-WjY3xc">Cancel</div>
+        </div>
+        <div class="rectangle-2806-C61RwL border-1px-mystic"></div>
+        <div class="group-7219-C61RwL">
+          <label for='terminal_photo' class="rectangle-2755-83XzNc"><input type="file" style='display: none;' accept="image/*" capture="user"  id='terminal_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+            name="terminal_photo"></label>
+          <label for='terminal_photo' class="add-photo-83XzNc">Add Photo</label>
+        </div>
+        <div class="group-7220-C61RwL">
+          <div class="rectangle-2807-KSWG3U"></div>
+          <div class="view-photos-KSWG3U">View Photos</div>
+        </div>
+        <div class="layer-1-C61RwL">
+          <img class="vector-YBNzTx" src="img/vector-2@2x.svg" />
+          <img class="vector-FIkdjm" src="img/vector-3@2x.svg" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

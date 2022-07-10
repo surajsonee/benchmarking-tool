@@ -1,0 +1,122 @@
+/* screen - equipment-area2 */
+
+.equipment-area2 {
+  background-color: var(--white);
+  height: 812px;
+  mix-blend-mode: normal;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+.equipment-area2 .add-lighting-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area2 .ellipse-11-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  height: 14px;
+  left: 92px;
+  position: absolute;
+  top: 152px;
+  width: 14px;
+}
+.equipment-area2 .ellipse-12-C61RwL {
+  background-color: transparent;
+  border-radius: 7px;
+  height: 14px;
+  left: 208px;
+  position: absolute;
+  top: 152px;
+  width: 14px;
+}
+.equipment-area2 .group-6900-C61RwL {
+  background-color: transparent;
+  height: 12px;
+  left: 322px;
+  position: absolute;
+  top: 59px;
+  width: 23px;
+}
+.equipment-area2 .indoor-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 112px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 153px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area2 .outdoor-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 228px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 153px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area2 .placement-C61RwL {
+  background-color: transparent;
+  height: auto;
+  left: 143px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 120px;
+  white-space: nowrap;
+  width: auto;
+}
+.equipment-area2 .rectangle-2829-C61RwL {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 86px;
+  left: 29px;
+  position: absolute;
+  top: 100px;
+  width: 316px;
+}
+.equipment-area2 .vector-88-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+.equipment-area2 .vector-89-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 5px;
+  width: 25px;
+}
+.equipment-area2 .vector-90-lrkHPC {
+  background-color: transparent;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}

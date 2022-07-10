@@ -1,0 +1,2155 @@
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaDemoPECuttedDemo-Regular.otf");
+  font-style: var(--font-family-averta_cy-bold);
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaDemoPE-ExtraBold.otf");
+  font-style: var(--font-family-averta_cy-bold);
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Bold.ttf");
+  font-style: var(--font-family-averta_cy-bold);
+}
+@font-face {
+  font-family: "Averta-Light";
+  src: url("./fonts/AvertaCY-Light.ttf");
+  font-style: "Light";
+}
+@font-face {
+  font-family: "Averta-regular";
+  src: url("./fonts/AvertaCY-Regular.ttf");
+  font-style: var(--font-family-averta_cy-bold);
+}
+@font-face {
+  font-family: var(--font-family-averta_cy-bold);
+  src: url("./fonts/AvertaCY-Semibold.ttf");
+  font-style: var(--font-family-averta_cy-bold);
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item {
+  width: 176px;
+  max-width: 100%;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  z-index: 99999999999999;
+  font-family: var(--font-family-averta_cy-bold);
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .monthYearDay {
+  display: flex;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .monthYearDay span {
+  width: 50%;
+  padding: 11.5px 0;
+  text-align: center;
+  color: #3649a8;
+  cursor: pointer;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .monthYearDay span.active {
+  background-color: #3649a8;
+  border-radius: 8px 8px 0px 0px;
+  color: #fff;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent {
+  background-color: #3649a8;
+  border-radius: 0px 8px 8px 8px;
+  color: #fff;
+  font-size: 12.35px;
+  display: flex;
+  justify-content: space-around;
+  padding: 11.5px 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .yearData,
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .monthData {
+  min-width: 60px;
+  text-align: center;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent.adjust {
+  border-radius: 8px 0 8px 8px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent.adjust .monthData {
+  display: block;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent.adjust .yearData {
+  display: none;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent span:not(:nth-child(2)) {
+  cursor: pointer;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent span.hide {
+  position: relative;
+  z-index: -1;
+  opacity: 0.5;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .monthData {
+  display: none;
+}
+
+.progress-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress {
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  position: relative;
+  margin: 0;
+}
+.progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #FFECA8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress > span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.progress .progress-left {
+  left: 0;
+}
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 10px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+  border-color: #FFC90E;
+}
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 32.5px;
+  border-bottom-right-radius: 32.5px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.progress .progress-right {
+  right: 0;
+}
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 32.5px;
+  border-bottom-left-radius: 32.5px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+.progress .progress-value {
+  display: flex;
+  border-radius: 50%;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-weight: 300;
+}
+.progress .progress-value span {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.real-value {
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 50px;
+  color: #847F7F;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.real-value .val-percentage {
+  font-size: 24px;
+  position: relative;
+  left: -13px;
+  top: -2px;
+}
+
+/* This for loop creates the necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+.progress[data-percentage="1"] .progress-right .progress-bar {
+  animation: loading-1 0.5s linear forwards;
+}
+.progress[data-percentage="1"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="2"] .progress-right .progress-bar {
+  animation: loading-2 0.5s linear forwards;
+}
+.progress[data-percentage="2"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="3"] .progress-right .progress-bar {
+  animation: loading-3 0.5s linear forwards;
+}
+.progress[data-percentage="3"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="4"] .progress-right .progress-bar {
+  animation: loading-4 0.5s linear forwards;
+}
+.progress[data-percentage="4"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="5"] .progress-right .progress-bar {
+  animation: loading-5 0.5s linear forwards;
+}
+.progress[data-percentage="5"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="6"] .progress-right .progress-bar {
+  animation: loading-6 0.5s linear forwards;
+}
+.progress[data-percentage="6"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="7"] .progress-right .progress-bar {
+  animation: loading-7 0.5s linear forwards;
+}
+.progress[data-percentage="7"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="8"] .progress-right .progress-bar {
+  animation: loading-8 0.5s linear forwards;
+}
+.progress[data-percentage="8"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="9"] .progress-right .progress-bar {
+  animation: loading-9 0.5s linear forwards;
+}
+.progress[data-percentage="9"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="10"] .progress-right .progress-bar {
+  animation: loading-10 0.5s linear forwards;
+}
+.progress[data-percentage="10"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="11"] .progress-right .progress-bar {
+  animation: loading-11 0.5s linear forwards;
+}
+.progress[data-percentage="11"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="12"] .progress-right .progress-bar {
+  animation: loading-12 0.5s linear forwards;
+}
+.progress[data-percentage="12"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="13"] .progress-right .progress-bar {
+  animation: loading-13 0.5s linear forwards;
+}
+.progress[data-percentage="13"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="14"] .progress-right .progress-bar {
+  animation: loading-14 0.5s linear forwards;
+}
+.progress[data-percentage="14"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="15"] .progress-right .progress-bar {
+  animation: loading-15 0.5s linear forwards;
+}
+.progress[data-percentage="15"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="16"] .progress-right .progress-bar {
+  animation: loading-16 0.5s linear forwards;
+}
+.progress[data-percentage="16"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="17"] .progress-right .progress-bar {
+  animation: loading-17 0.5s linear forwards;
+}
+.progress[data-percentage="17"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="18"] .progress-right .progress-bar {
+  animation: loading-18 0.5s linear forwards;
+}
+.progress[data-percentage="18"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="19"] .progress-right .progress-bar {
+  animation: loading-19 0.5s linear forwards;
+}
+.progress[data-percentage="19"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="20"] .progress-right .progress-bar {
+  animation: loading-20 0.5s linear forwards;
+}
+.progress[data-percentage="20"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="21"] .progress-right .progress-bar {
+  animation: loading-21 0.5s linear forwards;
+}
+.progress[data-percentage="21"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="22"] .progress-right .progress-bar {
+  animation: loading-22 0.5s linear forwards;
+}
+.progress[data-percentage="22"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="23"] .progress-right .progress-bar {
+  animation: loading-23 0.5s linear forwards;
+}
+.progress[data-percentage="23"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="24"] .progress-right .progress-bar {
+  animation: loading-24 0.5s linear forwards;
+}
+.progress[data-percentage="24"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="25"] .progress-right .progress-bar {
+  animation: loading-25 0.5s linear forwards;
+}
+.progress[data-percentage="25"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="26"] .progress-right .progress-bar {
+  animation: loading-26 0.5s linear forwards;
+}
+.progress[data-percentage="26"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="27"] .progress-right .progress-bar {
+  animation: loading-27 0.5s linear forwards;
+}
+.progress[data-percentage="27"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="28"] .progress-right .progress-bar {
+  animation: loading-28 0.5s linear forwards;
+}
+.progress[data-percentage="28"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="29"] .progress-right .progress-bar {
+  animation: loading-29 0.5s linear forwards;
+}
+.progress[data-percentage="29"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="30"] .progress-right .progress-bar {
+  animation: loading-30 0.5s linear forwards;
+}
+.progress[data-percentage="30"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="31"] .progress-right .progress-bar {
+  animation: loading-31 0.5s linear forwards;
+}
+.progress[data-percentage="31"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="32"] .progress-right .progress-bar {
+  animation: loading-32 0.5s linear forwards;
+}
+.progress[data-percentage="32"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="33"] .progress-right .progress-bar {
+  animation: loading-33 0.5s linear forwards;
+}
+.progress[data-percentage="33"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="34"] .progress-right .progress-bar {
+  animation: loading-34 0.5s linear forwards;
+}
+.progress[data-percentage="34"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="35"] .progress-right .progress-bar {
+  animation: loading-35 0.5s linear forwards;
+}
+.progress[data-percentage="35"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="36"] .progress-right .progress-bar {
+  animation: loading-36 0.5s linear forwards;
+}
+.progress[data-percentage="36"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="37"] .progress-right .progress-bar {
+  animation: loading-37 0.5s linear forwards;
+}
+.progress[data-percentage="37"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="38"] .progress-right .progress-bar {
+  animation: loading-38 0.5s linear forwards;
+}
+.progress[data-percentage="38"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="39"] .progress-right .progress-bar {
+  animation: loading-39 0.5s linear forwards;
+}
+.progress[data-percentage="39"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="40"] .progress-right .progress-bar {
+  animation: loading-40 0.5s linear forwards;
+}
+.progress[data-percentage="40"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="41"] .progress-right .progress-bar {
+  animation: loading-41 0.5s linear forwards;
+}
+.progress[data-percentage="41"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="42"] .progress-right .progress-bar {
+  animation: loading-42 0.5s linear forwards;
+}
+.progress[data-percentage="42"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="43"] .progress-right .progress-bar {
+  animation: loading-43 0.5s linear forwards;
+}
+.progress[data-percentage="43"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="44"] .progress-right .progress-bar {
+  animation: loading-44 0.5s linear forwards;
+}
+.progress[data-percentage="44"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="45"] .progress-right .progress-bar {
+  animation: loading-45 0.5s linear forwards;
+}
+.progress[data-percentage="45"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="46"] .progress-right .progress-bar {
+  animation: loading-46 0.5s linear forwards;
+}
+.progress[data-percentage="46"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="47"] .progress-right .progress-bar {
+  animation: loading-47 0.5s linear forwards;
+}
+.progress[data-percentage="47"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="48"] .progress-right .progress-bar {
+  animation: loading-48 0.5s linear forwards;
+}
+.progress[data-percentage="48"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="49"] .progress-right .progress-bar {
+  animation: loading-49 0.5s linear forwards;
+}
+.progress[data-percentage="49"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="50"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="50"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="51"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="51"] .progress-left .progress-bar {
+  animation: loading-1 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="52"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="52"] .progress-left .progress-bar {
+  animation: loading-2 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="53"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="53"] .progress-left .progress-bar {
+  animation: loading-3 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="54"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="54"] .progress-left .progress-bar {
+  animation: loading-4 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="55"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="55"] .progress-left .progress-bar {
+  animation: loading-5 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="56"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="56"] .progress-left .progress-bar {
+  animation: loading-6 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="57"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="57"] .progress-left .progress-bar {
+  animation: loading-7 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="58"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="58"] .progress-left .progress-bar {
+  animation: loading-8 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="59"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="59"] .progress-left .progress-bar {
+  animation: loading-9 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="60"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="60"] .progress-left .progress-bar {
+  animation: loading-10 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="61"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="61"] .progress-left .progress-bar {
+  animation: loading-11 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="62"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="62"] .progress-left .progress-bar {
+  animation: loading-12 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="63"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="63"] .progress-left .progress-bar {
+  animation: loading-13 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="64"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="64"] .progress-left .progress-bar {
+  animation: loading-14 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="65"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="65"] .progress-left .progress-bar {
+  animation: loading-15 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="66"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="66"] .progress-left .progress-bar {
+  animation: loading-16 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="67"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="67"] .progress-left .progress-bar {
+  animation: loading-17 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="68"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="68"] .progress-left .progress-bar {
+  animation: loading-18 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="69"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="69"] .progress-left .progress-bar {
+  animation: loading-19 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="70"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="70"] .progress-left .progress-bar {
+  animation: loading-20 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="71"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="71"] .progress-left .progress-bar {
+  animation: loading-21 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="72"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="72"] .progress-left .progress-bar {
+  animation: loading-22 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="73"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="73"] .progress-left .progress-bar {
+  animation: loading-23 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="74"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="74"] .progress-left .progress-bar {
+  animation: loading-24 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="75"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="75"] .progress-left .progress-bar {
+  animation: loading-25 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="76"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="76"] .progress-left .progress-bar {
+  animation: loading-26 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="77"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="77"] .progress-left .progress-bar {
+  animation: loading-27 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="78"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="78"] .progress-left .progress-bar {
+  animation: loading-28 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="79"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="79"] .progress-left .progress-bar {
+  animation: loading-29 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="80"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="80"] .progress-left .progress-bar {
+  animation: loading-30 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="81"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="81"] .progress-left .progress-bar {
+  animation: loading-31 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="82"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="82"] .progress-left .progress-bar {
+  animation: loading-32 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="83"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="83"] .progress-left .progress-bar {
+  animation: loading-33 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="84"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="84"] .progress-left .progress-bar {
+  animation: loading-34 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="85"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="85"] .progress-left .progress-bar {
+  animation: loading-35 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="86"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="86"] .progress-left .progress-bar {
+  animation: loading-36 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="87"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="87"] .progress-left .progress-bar {
+  animation: loading-37 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="88"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="88"] .progress-left .progress-bar {
+  animation: loading-38 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="89"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="89"] .progress-left .progress-bar {
+  animation: loading-39 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="90"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="90"] .progress-left .progress-bar {
+  animation: loading-40 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="91"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="91"] .progress-left .progress-bar {
+  animation: loading-41 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="92"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="92"] .progress-left .progress-bar {
+  animation: loading-42 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="93"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="93"] .progress-left .progress-bar {
+  animation: loading-43 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="94"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="94"] .progress-left .progress-bar {
+  animation: loading-44 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="95"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="95"] .progress-left .progress-bar {
+  animation: loading-45 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="96"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="96"] .progress-left .progress-bar {
+  animation: loading-46 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="97"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="97"] .progress-left .progress-bar {
+  animation: loading-47 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="98"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="98"] .progress-left .progress-bar {
+  animation: loading-48 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="99"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="99"] .progress-left .progress-bar {
+  animation: loading-49 0.5s linear forwards 0.5s;
+}
+
+.progress[data-percentage="100"] .progress-right .progress-bar {
+  animation: loading-50 0.5s linear forwards;
+}
+.progress[data-percentage="100"] .progress-left .progress-bar {
+  animation: loading-50 0.5s linear forwards 0.5s;
+}
+
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(3.6);
+    transform: rotate(3.6deg);
+  }
+}
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(7.2);
+    transform: rotate(7.2deg);
+  }
+}
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(10.8);
+    transform: rotate(10.8deg);
+  }
+}
+@keyframes loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(14.4);
+    transform: rotate(14.4deg);
+  }
+}
+@keyframes loading-5 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(18);
+    transform: rotate(18deg);
+  }
+}
+@keyframes loading-6 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(21.6);
+    transform: rotate(21.6deg);
+  }
+}
+@keyframes loading-7 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(25.2);
+    transform: rotate(25.2deg);
+  }
+}
+@keyframes loading-8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(28.8);
+    transform: rotate(28.8deg);
+  }
+}
+@keyframes loading-9 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(32.4);
+    transform: rotate(32.4deg);
+  }
+}
+@keyframes loading-10 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36);
+    transform: rotate(36deg);
+  }
+}
+@keyframes loading-11 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(39.6);
+    transform: rotate(39.6deg);
+  }
+}
+@keyframes loading-12 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(43.2);
+    transform: rotate(43.2deg);
+  }
+}
+@keyframes loading-13 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(46.8);
+    transform: rotate(46.8deg);
+  }
+}
+@keyframes loading-14 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(50.4);
+    transform: rotate(50.4deg);
+  }
+}
+@keyframes loading-15 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(54);
+    transform: rotate(54deg);
+  }
+}
+@keyframes loading-16 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(57.6);
+    transform: rotate(57.6deg);
+  }
+}
+@keyframes loading-17 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(61.2);
+    transform: rotate(61.2deg);
+  }
+}
+@keyframes loading-18 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(64.8);
+    transform: rotate(64.8deg);
+  }
+}
+@keyframes loading-19 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(68.4);
+    transform: rotate(68.4deg);
+  }
+}
+@keyframes loading-20 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(72);
+    transform: rotate(72deg);
+  }
+}
+@keyframes loading-21 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(75.6);
+    transform: rotate(75.6deg);
+  }
+}
+@keyframes loading-22 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(79.2);
+    transform: rotate(79.2deg);
+  }
+}
+@keyframes loading-23 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(82.8);
+    transform: rotate(82.8deg);
+  }
+}
+@keyframes loading-24 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(86.4);
+    transform: rotate(86.4deg);
+  }
+}
+@keyframes loading-25 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90);
+    transform: rotate(90deg);
+  }
+}
+@keyframes loading-26 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(93.6);
+    transform: rotate(93.6deg);
+  }
+}
+@keyframes loading-27 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(97.2);
+    transform: rotate(97.2deg);
+  }
+}
+@keyframes loading-28 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(100.8);
+    transform: rotate(100.8deg);
+  }
+}
+@keyframes loading-29 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(104.4);
+    transform: rotate(104.4deg);
+  }
+}
+@keyframes loading-30 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(108);
+    transform: rotate(108deg);
+  }
+}
+@keyframes loading-31 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(111.6);
+    transform: rotate(111.6deg);
+  }
+}
+@keyframes loading-32 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(115.2);
+    transform: rotate(115.2deg);
+  }
+}
+@keyframes loading-33 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(118.8);
+    transform: rotate(118.8deg);
+  }
+}
+@keyframes loading-34 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(122.4);
+    transform: rotate(122.4deg);
+  }
+}
+@keyframes loading-35 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(126);
+    transform: rotate(126deg);
+  }
+}
+@keyframes loading-36 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(129.6);
+    transform: rotate(129.6deg);
+  }
+}
+@keyframes loading-37 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(133.2);
+    transform: rotate(133.2deg);
+  }
+}
+@keyframes loading-38 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(136.8);
+    transform: rotate(136.8deg);
+  }
+}
+@keyframes loading-39 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(140.4);
+    transform: rotate(140.4deg);
+  }
+}
+@keyframes loading-40 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144);
+    transform: rotate(144deg);
+  }
+}
+@keyframes loading-41 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(147.6);
+    transform: rotate(147.6deg);
+  }
+}
+@keyframes loading-42 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(151.2);
+    transform: rotate(151.2deg);
+  }
+}
+@keyframes loading-43 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(154.8);
+    transform: rotate(154.8deg);
+  }
+}
+@keyframes loading-44 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(158.4);
+    transform: rotate(158.4deg);
+  }
+}
+@keyframes loading-45 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(162);
+    transform: rotate(162deg);
+  }
+}
+@keyframes loading-46 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(165.6);
+    transform: rotate(165.6deg);
+  }
+}
+@keyframes loading-47 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(169.2);
+    transform: rotate(169.2deg);
+  }
+}
+@keyframes loading-48 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(172.8);
+    transform: rotate(172.8deg);
+  }
+}
+@keyframes loading-49 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(176.4);
+    transform: rotate(176.4deg);
+  }
+}
+@keyframes loading-50 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180);
+    transform: rotate(180deg);
+  }
+}
+.chart-solar {
+  width: 650px;
+  max-width: 100%;
+  border: 1px solid #e3e7ed;
+  border-top: 0;
+  margin: 50px auto;
+  height: 200px;
+}
+
+.chart-solar .columns {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.chart-solar .columns .column {
+  width: 26px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.chart-solar .columns .column:nth-child(odd) {
+  background-color: #f5f7fb;
+}
+
+.chart-solar .columns .column:nth-child(even) {
+  background-color: #fff;
+}
+
+.chart-solar .columns .column span {
+  display: block;
+  width: 8px;
+  border-radius: 10px;
+}
+
+.chart-solar .columns .column span.consumption {
+  background-color: #009cdf;
+}
+
+.chart-solar .columns .column span.production {
+  background-color: #ffc90e;
+}
+
+.chart-solar .columns.hideProduction .column span.production {
+  background-color: transparent;
+}
+
+.chart-solar .info {
+  display: flex;
+  font-family: var(--font-family-averta_cy-bold);
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.chart-solar .info p {
+  margin: 0;
+  color: #7f7f7f;
+  font-size: 12.35px;
+}
+
+.chart-solar .types {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.chart-solar .types p {
+  margin: 0;
+  font-family: var(--font-family-averta_cy-bold);
+  color: #7f7f7f;
+  font-size: 12.35px;
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.chart-solar .types span.circle {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  order: -5;
+  border: 1px solid #F5F7FB;
+}
+
+.chart-solar .types .production, .chart-solar .types .consumption {
+  display: flex;
+  align-items: center;
+}
+
+.chart-solar .types .production .circle {
+  background-color: #FFC90E;
+}
+
+.chart-solar .types .consumption {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.chart-solar .types .production {
+  cursor: pointer;
+}
+
+.chart-solar .types .consumption .circle {
+  background-color: #009CDF;
+}
+
+.chart-solar .hideProduction ~ .types .production span.circle {
+  background-color: transparent;
+}
+
+.chart-solar .hideConsumption ~ .types .consumption span.circle {
+  background-color: transparent;
+}
+
+.chart-solar .columns.hideConsumption .column span.consumption {
+  background-color: transparent;
+}
+
+.flatpickr-calendar {
+  font-family: var(--font-family-averta_cy-bold);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e5;
+}
+
+.solar-chart {
+  height: 100%;
+  display: flex;
+}
+
+.Solar-page-chart {
+  background-color: #e5e5e5;
+}
+.Solar-page-chart *,
+.Solar-page-chart ::after,
+.Solar-page-chart ::before {
+  box-sizing: border-box;
+}
+.Solar-page-chart ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+.Solar-page-chart a {
+  text-decoration: none;
+  color: #000;
+}
+.Solar-page-chart .container-inventory {
+  max-width: 98%;
+  background-color: #fff;
+  border-radius: 30px;
+  height: 96vh;
+  margin-top: 20px;
+  margin: 2vh auto;
+}
+.Solar-page-chart .inventory__components {
+  width: calc(100% - 250px);
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Solar-page-chart .inventory__components h2.h2-main {
+  width: 100%;
+  font-family: var(--font-family-averta_cy-bold);
+  color: #0d1758;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-family-averta_cy-bold);
+  display: flex;
+  align-items: center;
+}
+.Solar-page-chart .inventory__components h2.h2-main svg {
+  position: relative;
+  top: 2px;
+}
+.Solar-page-chart .inventory__components__container {
+  border-radius: 8px;
+  max-width: 100%;
+  width: 760px;
+  border: 1px solid #E3E7ED;
+  padding: 0 25px;
+}
+.Solar-page-chart .inventory__components__container--1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.Solar-page-chart .inventory__components__container--1 h3 {
+  font-family: var(--font-family-averta_cy-bold);
+  color: #0d1758;
+  font-size: 25px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph {
+  position: relative;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels {
+  display: flex;
+  width: 420px;
+  justify-content: space-between;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label {
+  width: 128px;
+  max-width: 100%;
+  padding: 5px 0;
+  border-radius: 8px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label p {
+  margin: 0;
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 11px;
+  text-align: center;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label p.numsupValue {
+  font-size: 35px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label p.numsupValue sup {
+  font-size: 13px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label p:nth-of-type(1) {
+  margin-left: 12px;
+  text-align: left;
+  position: relative;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label p:nth-of-type(1)::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 85%;
+  height: 1px;
+  background-color: #000000;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.production {
+  background-color: #FFC90E;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.consumption {
+  background-color: #44AAFD;
+  color: #fff;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.consumption p::after {
+  background-color: #fff;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units {
+  border: 1px solid #E3E7ED;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units p:first-of-type {
+  color: #0D1758;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units p.unitstitle::after {
+  background-color: #0D1758;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons {
+  margin-top: 6px;
+  padding-left: 12px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons p {
+  margin-left: 5px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons p::after {
+  display: none;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons .button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons .button:nth-of-type(2) {
+  margin: 4px 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons .button.active span.circle {
+  background-color: #0D1758;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .labels > div.label.units .toggleButtons span.circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #EAEDF1;
+  background-color: transparent;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item {
+  right: 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .monthYearDay span {
+  font-size: 12.33px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .dataTime {
+  display: none;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .dataTime.active {
+  display: block;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent {
+  align-items: center;
+  position: relative;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .datefire, .Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .monthdatefire {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: var(--font-family-averta_cy-bold);
+  width: 115px;
+  position: absolute;
+  text-align: center;
+  z-index: 99999;
+  top: 8px;
+  width: 100%;
+  left: 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .datefire:focus, .Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .tab-item .showCurrent .monthdatefire:focus {
+  outline: 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .chart-solar-container {
+  margin-top: 60px;
+  padding-left: 20px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .chart-solar-container .chart-solar {
+  width: auto;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation {
+  border: 1px solid #ECE9F1;
+  border-radius: 8px;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation p {
+  font-family: var(--font-family-averta_cy-bold);
+  color: #0D1758;
+  font-size: 25px;
+  margin: 0;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation {
+  font-family: var(--font-family-averta_cy-bold);
+  display: flex;
+  border: 1px solid #ECE9F1;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-right: 1px solid #ECE9F1;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-1 span {
+  padding: 10px 10px;
+  font-size: 13px;
+  color: #0D1758;
+  display: block;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ECE9F1;
+  padding-bottom: 5px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-1 span:nth-child(2) {
+  padding-top: 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-1 span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  border: none;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 {
+  display: flex;
+  overflow-x: scroll;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns {
+  display: flex;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column {
+  width: 52px;
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column:nth-child(odd) {
+  background-color: #fff;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column:nth-child(even) {
+  background-color: #F5F7FB;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span {
+  display: block;
+  text-align: center;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.hour {
+  font-size: 11px;
+  color: #7F7F95;
+  font-family: var(--font-family-averta_cy-bold);
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.degree {
+  font-size: 11px;
+  color: #7F7F95;
+  font-family: var(--font-family-averta_cy-bold);
+  position: relative;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.degree .ellipse {
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  border: 1px solid #7F7F95;
+  top: -1px;
+  right: -5px;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.kwh {
+  color: #0D1758;
+  font-size: 15px;
+  position: relative;
+  z-index: 99999;
+  line-height: 1.2;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.value {
+  position: absolute;
+  width: 100%;
+  background-color: #FFC90E;
+  bottom: 0;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.icon {
+  position: relative;
+  z-index: 999999999999;
+}
+.Solar-page-chart .inventory__components__container--1 .solar-chart-filed-graph .hourlySimulation .chart-simulation .part-2 .columns .column span.icon img {
+  display: block;
+  width: 32px;
+}
+.Solar-page-chart .inventory__components .side-right {
+  flex-grow: 1;
+  max-width: 100%;
+  padding-top: 25px;
+}
+.Solar-page-chart .inventory__components .side-right .production-Vs-usage {
+  text-align: center;
+  color: #0D1758;
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: 25px;
+}
+.Solar-page-chart .inventory__components .side-right .production-Vs-usage span {
+  display: block;
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar {
+  display: flex;
+  width: 370px;
+  /* justify-content: space-between; */
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar #circle canvas {
+  transform: rotate(60deg);
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar .text-progress {
+  font-family: var(--font-family-averta_cy-bold);
+  color: #909090;
+  color: #909090;
+  width: 150px;
+  text-align: center;
+  margin-left: 25px;
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar .text-progress p {
+  margin: 0;
+  font-size: 30px;
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar .text-progress p span {
+  font-size: 15px;
+}
+.Solar-page-chart .inventory__components .side-right .progress-bar .text-progress .desc {
+  font-size: 15px;
+}
+.Solar-page-chart .inventory__components .side-right .table-data {
+  font-family: var(--font-family-averta_cy-bold);
+  width: 330px;
+  max-width: 100%;
+  margin: 40px auto;
+  background-color: #F5F4F8;
+  padding: 20px 15px;
+}
+.Solar-page-chart .inventory__components .side-right .table-data p {
+  margin: 0;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header {
+  display: flex;
+  justify-content: space-between;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header p {
+  color: #0D1758;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header p.facility {
+  width: 100px;
+  text-align: center;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header .last-div {
+  display: flex;
+  flex-direction: column;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header .last-div > div {
+  display: flex;
+  align-items: center;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header .last-div > div span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header .last-div > div.prod span {
+  background-color: #FFC90E;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .header .last-div > div.cosnu span {
+  background-color: #44AAFD;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber {
+  font-size: 13px;
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: scroll;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber > div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px 0;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber .timetag {
+  color: #7F7F95;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber .percentage {
+  color: #22B14C;
+  width: 100px;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber .prod-cosnu {
+  position: relative;
+  right: 25px;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber .prod-cosnu .production-label {
+  color: #FFC90E;
+}
+.Solar-page-chart .inventory__components .side-right .table-data .dataNumber .prod-cosnu .consumption-label {
+  color: #44AAFD;
+}
+
+.Solar-page .inventory__sidebar--links ul li:hover::after {
+  opacity: 1;
+}
+
+.ads__box {
+  font-family: var(--font-family-averta_cy-bold);
+  background: #293f8a;
+  border-radius: 14px;
+  padding: 15px 0;
+}
+.ads__box .img {
+  width: 180px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 15px auto;
+  position: relative;
+  height: 70px;
+  margin-top: 0;
+}
+.ads__box .img img {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ads__box h2 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 14px;
+  margin: 0;
+}
+.ads__box p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 14px;
+  margin-bottom: 0;
+  margin: 7px 0;
+  letter-spacing: 1px;
+}
+.ads__box--cta {
+  display: flex;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+.ads__box--cta a {
+  display: flex;
+  justify-content: center;
+  background: #f8fafe;
+  border-radius: 8px;
+  padding: 3.5px 14px;
+  color: #498de1;
+  font-size: 10px;
+}
+.ads__box--cta a:nth-child(2) {
+  margin-left: 10px;
+}
+.ads__box--cta a span {
+  margin: 0;
+  display: inline-block;
+}
+.ads__box--cta a span:nth-child(1) {
+  position: relative;
+  top: 2px;
+}
+.ads__box--cta a span:nth-child(2) {
+  margin-left: 8px;
+}
+
+.bottom-action {
+  position: absolute;
+  width: 215px;
+  left: 20px;
+  bottom: 50px;
+}
+
+button.logout {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-bottom: 40px;
+}
+button.logout svg path {
+  transition: 0.25s;
+}
+button.logout:hover span {
+  color: #6285fb;
+}
+button.logout:hover span svg path {
+  fill: #6285fb;
+}
+button.logout span {
+  font-family: var(--font-family-averta_cy-bold);
+  color: #afb8cc;
+  font-size: 16px;
+}
+button.logout span:nth-child(2) {
+  margin-left: 25px;
+}
+
+.inventory__sidebar {
+  height: 100%;
+  width: 250px;
+  position: relative;
+  border-right: 1px solid #e3e7ed;
+  padding-top: 20px;
+}
+.inventory__sidebar .arrow-toggle {
+  position: absolute;
+  right: 0;
+  background-color: #3649a8;
+  border-radius: 0px 12px 12px 0px;
+  width: 23px;
+  padding: 10px 0px;
+  transform: rotate(180deg);
+  cursor: pointer;
+  z-index: 99999;
+}
+.inventory__sidebar .arrow-toggle svg {
+  transform: rotate(180deg);
+}
+.inventory__sidebar--logo {
+  position: relative;
+  height: 65px;
+  padding-left: 20px;
+}
+.inventory__sidebar--logo a svg:nth-child(2) {
+  position: absolute;
+  top: 25px;
+  left: 48px;
+}
+.inventory__sidebar--links ul {
+  padding-top: 25px;
+}
+.inventory__sidebar--links ul li {
+  height: 60px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: 0.5s;
+}
+.inventory__sidebar--links ul li:hover .inventory__sidebar--links ul li::after {
+  opacity: 1;
+}
+.inventory__sidebar--links ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6285fb;
+  width: 5px;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+  opacity: 0;
+}
+.inventory__sidebar--links ul li a {
+  font-family: var(--font-family-averta_cy-bold);
+  color: #afb8cc;
+  display: flex;
+  font-size: 16px;
+  transition: 0.25s;
+}
+.inventory__sidebar--links ul li a:hover {
+  color: #6285fb;
+}
+.inventory__sidebar--links ul li a svg path {
+  transition: 0.25s;
+}
+.inventory__sidebar--links ul li a:hover span svg path {
+  stroke: #6285fb;
+}
+.inventory__sidebar--links ul li a span {
+  display: block;
+}
+.inventory__sidebar--links ul li a span:nth-child(2) {
+  margin-left: 25px;
+}
+.inventory__sidebar--links ul li:last-child a {
+  align-items: center;
+}
+.inventory__sidebar--links ul li.ads {
+  height: auto;
+}
+
+.part-2 ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.part-2 ::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.nicescroll-cursors {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,780 @@
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5b9675837e37c4000994e7a8/Averta Cyrillic Bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://anima-uploads.s3.amazonaws.com/5b9675837e37c4000994e7a8/Averta Cyrillic SemiBold.otf")
+    format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+.auto-animated div {
+  opacity: 0;
+  position: absolute;
+  --z-index: -1;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+.auto-animated div {
+  opacity: 0;
+  position: absolute;
+  --z-index: -1;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-75ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://anima-uploads.s3.amazonaws.com/5c52030eb696f3000b47044e/S-Core - CoreSansC-75ExtraBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-55Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://anima-uploads.s3.amazonaws.com/5aaab7d49d0aae000be0d358/coresansc55.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Core Sans C-65Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/CoreSansC65.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Intelligent Design - AvertaCY-Regular.otf") format("opentype");
+}
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Averta CY-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Averta Cyrillic Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Averta CY-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Averta Cyrillic SemiBold.otf") format("opentype");
+}
+
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/6078a9ace8a3cd8478d1e524.6078a9ade8a3cd8478d1e527.y176lxB.hcp.png");
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body{
+  overflow-y: hidden;
+}

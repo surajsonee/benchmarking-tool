@@ -1,0 +1,21 @@
+from .base import db
+
+class Motor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    manufacturer = db.Column(db.String(200), unique=False, nullable = False)
+    model_number = db.Column(db.String(200), unique = False, nullable = False)
+    serial_number = db.Column(db.String(200), unique = False, nullable = False)
+    year_built = db.Column(db.Integer, unique = False, nullable = False)
+    condition = db.Column(db.String(200), unique = False, nullable = False)
+    horsepower = db.Column(db.Integer, unique = False, nullable = False)
+    rpm = db.Column(db.Integer, unique = False, nullable = False)
+    effciency = db.Column(db.Float, unique = False, nullable = False)
+    volts = db.Column(db.Float, unique = False, nullable = False)
+    bhp = db.Column(db.Float, unique = False, nullable = False)
+    frame = db.Column(db.Float, unique = False, nullable = False)
+    fla = db.Column(db.Float, unique = False, nullable = False)
+    cfm = db.Column(db.Float, unique = False, nullable = False)
+    phase = db.Column(db.Integer, unique = False, nullable = False)
+    area_id = db.Column(db.Integer, db.ForeignKey('area.id'))
+    photo_id = db.Column(db.String(300), unique=False, nullable=False)
+    building_id = db.Column(db.Integer, db.ForeignKey('building.id'))

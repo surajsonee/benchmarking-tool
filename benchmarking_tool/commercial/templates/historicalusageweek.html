@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/historical-usage-lines-display-category.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff" onload="resetVariables(); createTotalChart(); changetoEnergy(); getTotal(); changeDotColourCategory(); ">
+    <input type="hidden" id="anPageName" name="page" value="historical-usage-lines-display-category" />
+    <div class="container-center-horizontal">
+      <div class="historical-usage-lines-display-category screen">
+        <div class="rectangle-2893-l6cqYc"  id = 'leftretract'>
+        <div class = 'activeline'></div>
+        <img class = 'retractbuttonleft' id = 'leftbutton' onclick = "retractleft()" src = "{{url_for('static',filename='img/retractbuttonbackground.png')}}"/><img class = 'retractbuttonarrowleft'  onclick = "retractleft()" id = 'leftarrow' src = "{{url_for('static',filename='img/retractbuttonarrow.png')}}"/>
+        <div class="header-l6cqYc" id = 'logodiv'><img class="pollen-2-7QcJ16" id = logoimage src="{{url_for('static',filename='img/logoimage.png')}}" /></div>
+        <div class="dashboard-l6cqYc" id = 'dashboard'><img class="dashboardimage" src="{{url_for('static',filename='img/dashboardimage.png')}}" />Dashboard</div>
+        <a href = '{{url_for("commercial.facilityoverview")}}'><div class="overview-l6cqYc" id = 'liveusage'><img class="liveusageimage" src="{{url_for('static',filename='img/liveusageonimageoff.png')}}" />Live Usage</div></a>
+        <a href = "{{url_for('commercial.historicalusage')}}"><div class="historical-l6cqYc avertacy-bold-sapphire-13px" id = 'historical'><img class="historicalimage" src="{{url_for('static',filename='img/historicalimageon.png')}}" />Historical</div></a>
+        <div class="inventory-l6cqYc" id = 'inventory'><img class="inventoryimage" src="{{url_for('static',filename='img/inventoryimage.png')}}" />Inventory</div>
+        <div class="utilities-l6cqYc" id = 'utilities'><img class="utilitiesimage" src="{{url_for('static',filename='img/utilitiesimage.png')}}" />Utilities</div>
+        <a href = "{{url_for('accounts.logout')}}"><div class="logout-l6cqYc avertacy-bold-sapphire-13px" id = 'logout'><img class="logoutimage" src="{{url_for('static',filename='img/logoutimage.png')}}" />Logout</div></a>
+
+        <div class = 'imageblock' id ='imageblock'>
+        <img class="kaltire-256-2-l6cqYc" src="{{url_for('static',filename='img/kaltire--256-2@22x.png')}}" />
+        <div class = 'buildingname'>Butetown Store</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-l6cqYc">4720 Yellowhead Trail NW</p>
+        <div class = 'aboutbutton'><img class="info-imageblue" src="{{url_for('static',filename='img/infoimageblue.png')}}"/>About</div>
+        <div class = 'switchbutton'><img class="info-imageblue" src="{{url_for('static',filename='img/switchimage.png')}}"/>Switch</div>
+        <div class="group-7195-l6cqYc">
+          <div class="rectangle-2316-33iHaU"></div>
+          <div class="chevron-down-33iHaU"><img class="vector-LNtgXx" src="{{url_for('static',filename='img/vector@22x.svg')}}" /></div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class = "rightside" id = 'rightside'>
+            <div class = 'retractblock'>
+                <img class = 'retractbutton'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonbackground.png')}}"/><img class = 'retractbuttonarrowright' id = 'rightarrow'  onclick = "retract()" src = "{{url_for('static',filename='img/retractbuttonarrow.png')}}"/>
+            </div>
+            <div class = "rightabsolute">
+            <div class = "rightpanel" id = rightpanel>
+                <div class = 'rightsidetitle'>Panels</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart6"></div>
+                </div>
+                <div class="x100-l6cqYc" id = 'percent3'></div>
+                <div class="rectangle-2973-l6cqYc">
+                <div class="rectangle-152-l6cqYc"></div>
+                <div class="electrical-panels-l6cqYc2 avertacy-bold-sapphire-15px">Electrical Panels</div>
+
+                {% for i in range(0, numpanels) %}
+
+                <div class="rectangle-23402-l6cqYc">
+                <div class="panel-a2-l6cqYc avertacy-bold-sapphire-12px">{{paneltotals.iloc[i][0]}}</div>
+                <div class="x43-l6cqYc avertacy-bold-sapphire-12px" id = "{{panelnames[i]}}"></div>
+                <input type= 'checkbox' onclick = 'togglePanel("{{panelnames[i]}}", {{i}}); checkIf0();' class="rectangle-30242-l6cqYc"style = "background-color: {{colours[i]}};" id = 'panel1check'checked/><label for = 'panel1check'></label>
+                <div class="info"><img class="info-image" src="{{url_for('static',filename='img/infoimage1.png')}}"/></div></div>
+                <div class = 'panelpercent avertacy-bold-sapphire-12px'>{{paneltotals.iloc[i][2]}}%</div>
+
+                {% endfor %}
+            </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Inventory</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart7'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name'>{{categoriesdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{categoriesdf.iloc[i][5]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openCategorySidebar(); changeDotColourCategory()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Time Loads</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart8'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                            <div class = 'category-name'>{{timeloads.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{timeloads.iloc[i][1]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openTimeSidebar()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+            <div class = "rightpanel" id = rightcategory>
+                <div class = 'rightsidetitle'>Cetegories</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart10"></div>
+                </div>
+        <div class="x100-l6cqYc"id = 'percent4'></div>
+        <div class="rectangle-2973-l6cqYc">
+
+        <div class="electrical-panels-l6cqYc avertacy-bold-sapphire-15px">Categories</div>
+        <div class="rectangle-15-l6cqYc"></div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[0][2]}};' class="rectangle-3024-l6cqYc" id= 'panel1check' onclick= "toggleMaster('{{categoriesdf.iloc[0][0]}}'); checkIf0();" checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[0][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px" id = '{{categoriesdf.iloc[0][4]}}'></div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[1][2]}};' class="rectangle-3025-l6cqYc"id= 'panel2check' onclick= "toggleMaster('{{categoriesdf.iloc[1][0]}}'); checkIf0();" checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[1][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px"  id = '{{categoriesdf.iloc[1][4]}}'></div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[2][2]}};' class="rectangle-3026-l6cqYc"id= 'panel1check' onclick= "toggleMaster('{{categoriesdf.iloc[2][0]}}'); checkIf0();" checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[2][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px" id = '{{categoriesdf.iloc[2][4]}}'></div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[3][2]}};' class="rectangle-3027-l6cqYc"id= 'panel1check' onclick= "toggleMaster('{{categoriesdf.iloc[3][0]}}'); checkIf0();" checked/><label for = 'panel2check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[3][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px" id = '{{categoriesdf.iloc[3][4]}}'></div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[4][2]}};' class="rectangle-3028-l6cqYc"id= 'panel1check' onclick= "toggleMaster('{{categoriesdf.iloc[4][0]}}'); checkIf0(); " checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[4][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px" id = '{{categoriesdf.iloc[4][4]}}'></div>
+        </div>
+
+        <div class="rectangle-2974-l6cqYc">
+            <input type= 'checkbox' style = 'background-color: {{categoriesdf.iloc[5][2]}};' class="rectangle-3029-l6cqYc"id= 'panel1check' onclick= "toggleMaster('{{categoriesdf.iloc[5][0]}}'); checkIf0();" checked/><label for = 'panel1check'></label>
+            <div class="panel-a-l6cqYc avertacy-bold-sapphire-12px">{{categoriesdf.iloc[5][0]}}</div>
+            <div class="x12-l6cqYc avertacy-bold-sapphire-12px" id = '{{categoriesdf.iloc[5][4]}}'></div>
+        </div>
+    </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Electrical Panels</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart11'></div>
+                        {% for i in range (0, numpanels) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{colours[i]}};'></div>
+                            <div class = 'category-name'>{{paneltotals.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{paneltotals.iloc[i][2]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openPanelSidebar(); changeDotColourPanel()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Time Loads</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart12'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                            <div class = 'category-name'>{{timeloads.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{timeloads.iloc[i][1]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openTimeSidebar()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+                    <div class = "rightpanel" id = righttimeloads>
+                <div class = 'rightsidetitle'>Time Loads</div>
+                <div id="Panel" class="tabcontent">
+                <div class="energy-breakdown-l6cqYc">
+                <div id="chart13"></div>
+                </div>
+                <div class="x100-l6cqYc" id = 'percent3'></div>
+                <div class="rectangle-2973-l6cqYc">
+                <div class="rectangle-152-l6cqYc"></div>
+                <div class="electrical-panels-l6cqYc2 avertacy-bold-sapphire-15px">Electrical Panels</div>
+
+                {% for i in range(0, 3) %}
+
+                <div class="rectangle-23402-l6cqYc">
+                <div class="panel-a2-l6cqYc avertacy-bold-sapphire-12px">{{timeloads.iloc[i][0]}}</div>
+                <div class="x43-l6cqYc avertacy-bold-sapphire-12px"></div>
+                <input onclick = 'toggleTimeLoads();' type= 'checkbox' class="rectangle-30242-l6cqYc"style = "background-color: {{timeloads.iloc[i][2]}};" id = 'panel1check'checked/><label for = 'panel1check'></label>
+                <div class="info"><img class="info-image" src="{{url_for('static',filename='img/infoimage1.png')}}"/></div></div>
+                <div class = 'panelpercent avertacy-bold-sapphire-12px'>{{timeloads.iloc[i][1]}}%</div>
+
+                {% endfor %}
+            </div>
+            <div class = 'switch-block'>
+                <div class = 'switch-header'>Inventory</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart14'></div>
+                        {% for i in range (0, 3) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                            <div class = 'category-name'>{{categoriesdf.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{categoriesdf.iloc[i][5]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openCategorySidebar(); changeDotColourCategory()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+
+                <div class = 'switch-block'>
+                <div class = 'switch-header'>Electrical Panels</div>
+                <div class = 'graph-box'>
+                    <div class = 'small-donut-chart' id = 'chart15'></div>
+                        {% for i in range (0, numpanels) %}
+                        <div class = 'small-category-rectangle'>
+                            <div class = 'category-dot' style = 'background-color: {{colours[i]}};'></div>
+                            <div class = 'category-name'>{{paneltotals.iloc[i][0]}}</div>
+                            <div class = 'category-percent'>{{paneltotals.iloc[i][2]}}%</div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class = 'switch-image-block' onclick= 'openPanelSidebar(); changeDotColourPanel()'><img class = 'switch-image' src = "{{url_for('static',filename='img/switch-image.png')}}"/></div>
+            </div>
+            </div>
+        </div>
+                <div class = 'rightsidetitle' id = title></div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Inventory</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, 3) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{categoriesdf.iloc[i][2]}};'></div>
+                                    <div class = 'category-name'>{{categoriesdf.iloc[i][0]}}</div>
+                                    <div class = 'category-percent'>{{categoriesdf.iloc[i][5]}}%</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openCategorySidebar(); changeDotColourCategory()'>
+                            <div class = 'explore-text' onclick= 'openCategorySidebar(); changeDotColourCategory()'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openCategorySidebar(); changeDotColourCategory()'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Panels</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart3'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, numpanels) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{colours[i]}};'></div>
+                                    <div class = 'category-name'>{{paneltotals.iloc[i][0]}}</div>
+                                    <div class = 'category-percent'>{{paneltotals.iloc[i][2]}}%</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openPanelSidebar(); changeDotColourPanel()'>
+                            <div class = 'explore-text' onclick= 'openPanelSidebar(); changeDotColourPanel()'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openPanelSidebar(); changeDotColourPanel()'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'load-block'>
+                    <div class = 'load-header'>Time Loads</div>
+                    <div class = 'load-content'>
+                        <div class = 'donut-chart' id = 'chart4'></div>
+                        <div class = 'breakdown-block'>
+                            <div class = 'breakdown-header'>Breakdown</div>
+                            <div class = 'breakdown-content'>
+                                {% for i in range (0, 3) %}
+                                <div class = 'category-rectangle'>
+                                    <div class = 'category-dot' style = 'background-color: {{timeloads.iloc[i][2]}};'></div>
+                                    <div class = 'category-name'>{{timeloads.iloc[i][0]}}</div>
+                                    <div class = 'category-percent'>{{timeloads.iloc[i][1]}}%</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class = 'explore-block' onclick= 'openTimeSidebar()'>
+                            <div class = 'explore-text' onclick= 'openTimeSidebar()'>Explore</div>
+                            <div class = 'load-arrow' onclick= 'openTimeSidebar()'> <img class = 'load-arrow-image' src = "{{url_for('static',filename='img/load-arrow.png')}}"/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="title-L7BXHD">Historical Usage</h1>
+        <div class="rectangle-2984-L7BXHD" id = 'Live-Usage'>
+        <div class = 'circuit-block' id = 'circuit-block'>
+            <div class = 'circuit-header'>
+                <div class = 'circuit-title' id = 'circuit-title'>Name</div>
+                <div class = 'exit-button' onclick = 'closeCircuitBlock();'><img class = 'exit-button-image' src ="{{url_for('static',filename='img/exit-button-image.png')}}"/></div>
+            </div>
+            <div class = 'circuit-content'>
+                <div class = 'past-use'>Past-Use</div>
+                    <div class = 'total-block'>    
+                    <div class = 'total-box' style = 'margin-right: 20px;'><span style = 'font-size: 20px;'>$</span><span id = 'cost-whole'></span><span class = 'decimal-span' style = 'font-size: 10px;' id = 'cost-decimal'></span><div class = total-box-line>Costs</div></div>
+
+                    <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'circuit-whole'></span><span class = 'decimal-span' id = 'circuit-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kWh</span><div class = total-box-line>Usage</div></div>
+
+                    <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'circuitemission-whole'></span><span class = 'decimal-span' id = 'circuitemission-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kg/CO2</span><div class = total-box-line>Usage</div></div>
+                </div>
+                                <div class = 'week-day-block-circuit'>
+                                {% for day in daysinthisweek  %}
+                                <div class = 'week-day'>{{day}}</div>
+                                {% endfor %}
+                            </div>
+                            <div class = week-day-dividers-block-circuit>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                            </div>
+                            <div class = week-day-offimage-block-circuit-week>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" /></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                            </div>
+                            <div class = week-day-onimage-block-circuit-week>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" /></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                            </div>
+                <div class = 'circuit-graph' id = 'chart5'></div>
+
+            </div>
+        </div>
+        <div class = 'graph-buttons-block' id = 'graph-buttons-block'><a href = "{{url_for('commercial.historicalusage')}}"><div class = 'grah-buttons'><img class = 'graph-buttons-image' src ="{{url_for('static',filename='img/bar-image.png')}}"/> </div></a>
+        <a href = "{{url_for('commercial.historicalusageweekline')}}"><div class = 'grah-buttons'><img class = 'graph-buttons-image' src ="{{url_for('static',filename='img/line-image.png')}}"/> </div></div></a>
+
+            <div class = 'total-block'>    
+            <div class = 'total-box' style = 'margin-right: 20px;'><span style = 'font-size: 20px;'>$</span><span id = 'totalprice-whole'></span><span class = 'decimal-span' style = 'font-size: 10px;' id = 'totalprice-decimal'></span><div class = total-box-line>Costs</div></div>
+
+            <div class = 'total-box'style = 'margin-right: 20px;'><span id = 'total-whole'></span><span class = 'decimal-span' id = 'total-decimal' style = 'font-size: 9px;'></span><span class = 'kwh-total'>kWh</span><div class = total-box-line>Usage</div></div>
+
+            <div class = 'total-box'>6<span class = 'decimal-span' style = 'font-size: 9px; width: 15px;'>.09</span><span class = 'kwh-total'>kg/CO2</span><div class = total-box-line>Emmisions</div></div>
+        </div>
+
+        <div class = "graph-background" id ='graph-background'> </div>
+
+        <div class = 'calendar-block' id = 'calendar-block'>
+        <a href = "{{url_for('commercial.historicalusageweek')}}"><div class="week-L7BXHD avertacy-bold-sapphire-13px" style = "color: white;">Week</div></a>
+         <a href = "{{url_for('commercial.historicalusagemonth')}}"><div class="month-L7BXHD avertacy-bold-sapphire-13px">Month</div></a>
+        <img class="rectangle-3207-week" src="{{url_for('static',filename='img/rectangle-3207@2x.svg')}}" />
+        <a href = "{{url_for('commercial.historicalusage')}}"><div class="day-L7BXHD" style = "color: #3044A5;">Day</div></a></div>
+
+
+        <div class = Historical-Usage-Block id = 'Historical-Usage-Block'>
+         <div class = 'header' id = 'header'>
+          <div class="column-names">
+              <div class = 'runningcolumn'>Circuit</div>
+              <div class = 'percentcolumn'>Percentage</div>
+              <div class = "tabss tabssusage" style = 'background-color: transparent;'>
+                  <input type = 'radio' checked id = 'watts' name = 'liveusagedata' class="k-wh-l6cqYc tablinksss" onclick ="changetoEnergy();"><label for = 'watts' class=k-wh-l6cqYc>Energy</label>
+                  <input type = 'radio' id = 'cost' name = 'liveusagedata' class="x-l6cqYc tablinksss" id = "defaultOpenss" onclick = 'changetoCost();'><label for = 'cost' class = x-l6cqYc>Cost</label>
+          </div>
+          </div>
+      </div>
+        <div class = scrollable id = 'scrollable'>
+        <div class = 'Energy' id = 'Energy'>  
+        {% for i in range (0, len) %}
+
+        <div class="rectangle-3165-L7BXHD {{historicalusage.iloc[i][3]}} {{historicalusage.iloc[i][4]}}" id = '{{historicalusage.iloc[i][0]}}' onclick = 'exploreCircuit("{{historicalusage.iloc[i][0]}}")'>
+        <div class = 'categorycircle {{historicalusage.iloc[i][3]}}colour {{historicalusage.iloc[i][4]}}colour' ></div>
+        <div class="lunchroom-lights-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}energyname'>{{historicalusage.iloc[i][0]}}</div>
+        <div class="x345-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}energy'>{% if historicalusage.iloc[i][1] < 1000 %}{{"%.1f"|format(historicalusage.iloc[i][1]|float)}}w{% endif %} {% if historicalusage.iloc[i][1] > 1000 %}{{"%.1f"|format(historicalusage.iloc[i][1]/1000|float)}}kWH{% endif %}</div>
+        <div class="rectangle-3184-L7BXHD {{historicalusage.iloc[i][3]}}line" id = '{{historicalusage.iloc[i][0]}}energybar' {% if historicalusage.iloc[i][1] == 0 %} style = 'width: 2px; background-color: grey;'{% elif historicalusage.iloc[i][1] > 0  %} style = 'width: {{250 * (historicalusage.iloc[i][1]/total) + 5}}px;'{% endif %}><div class="x21-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}energypercent' {% if historicalusage.iloc[i][1] == 0 %} style = 'left: {{250 * (historicalusage.iloc[i][1]/total) + 5}}px;  color: grey;'{% elif historicalusage.iloc[i][1] > 0  %} style = 'left: {{250 * (historicalusage.iloc[i][1]/total) + 10}}px;'{% endif %}>{{"%.2f"|format(((historicalusage.iloc[i][1]/ total) * 100)|float)}}%</div></div>
+        <div class = 'explore-image-box' id = '{{historicalusage.iloc[i][0]}}image' onclick = "createChart('{{historicalusage.iloc[i][0]}}',{{i}});"><img class="explore-image" src="{{url_for('static',filename='img/explore-image.png')}}" /></div>
+    </div>
+        {% endfor %}
+    </div>
+    <div class = 'Cost' id = 'Cost'>  
+        {% for i in range (0, len) %}
+
+        <div class="rectangle-3165-L7BXHD {{historicalusage.iloc[i][3]}} {{historicalusage.iloc[i][4]}}" id = '{{historicalusage.iloc[i][0]}}cost' onclick = 'exploreCircuit("{{historicalusage.iloc[i][0]}}")'>
+        <div class = 'categorycircle {{historicalusage.iloc[i][3]}}colour {{historicalusage.iloc[i][4]}}colour' ></div>
+        <div class="lunchroom-lights-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}namecost'>{{historicalusage.iloc[i][0]}}</div>
+        <div class="x345-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}price'>${{"%.2f"|format(historicalusage.iloc[i][6]|float)}}/hr</div>
+        <div class="rectangle-3184-L7BXHD {{historicalusage.iloc[i][3]}}line" id = '{{historicalusage.iloc[i][0]}}costbar' {% if historicalusage.iloc[i][1] == 0 %} style = 'width: 2px; background-color: grey;'{% elif historicalusage.iloc[i][1] > 0  %} style = 'width: {{250 * (historicalusage.iloc[i][1]/total) + 5}}px;'{% endif %}><div class="x21-L7BXHD avertacy-bold-sapphire-11px {{historicalusage.iloc[i][3]}}" id = '{{historicalusage.iloc[i][0]}}costpercent' {% if historicalusage.iloc[i][1] == 0 %} style = 'left: {{250 * (historicalusage.iloc[i][1]/total) + 5}}px;  color: grey;'{% elif historicalusage.iloc[i][1] > 0  %} style = 'left: {{250 * (historicalusage.iloc[i][1]/total) + 10}}px;'{% endif %}>{{"%.2f"|format(((historicalusage.iloc[i][1]/ total) * 100)|float)}}%</div></div>
+        <div class = 'explore-image-box' id = '{{historicalusage.iloc[i][0]}}costimage'  onclick = "createChart('{{historicalusage.iloc[i][0]}}',{{i}});"><img class="explore-image" src="{{url_for('static',filename='img/explore-image.png')}}" /></div>
+        </div>
+        {% endfor %}
+    </div></div></div>
+                        <div class="bar-chart" id = 'bar-chart'>
+                            <div class = 'week-day-block'>
+                                {% for day in daysinthisweek  %}
+                                <div class = 'week-day'>{{day}}</div>
+                                {% endfor %}
+                            </div>
+                            <div class = week-day-dividers-block>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                                <div class = week-day-dividers></div>
+                            </div>
+                            <div class = week-day-offimage-block>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" /></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                                <div class = offimage-frame><img class = week-day-offimage src="{{url_for('static',filename='img/offHours.png')}}" ></div>
+                            </div>
+                            <div class = week-day-onimage-block>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" /></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                                <div class = onimage-frame><img class = week-day-onimage src="{{url_for('static',filename='img/onHours.png')}}" ></div>
+                            </div>
+                            <div id="chart2"></div>
+                        </div>
+                          <script>
+                            chart_colors = {{chart_colours | tojson}};
+                            var options = {
+                                  colors:['#0D1758'],
+                                  series: [
+                                  {
+                                    name: "Panel A",
+                                    data: []
+                                  },
+                                ],
+                                  chart: {
+                                  height: '100%',
+                                  width: '100%',
+                                  type: 'bar',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                plotOptions:{
+                                    bar:{
+                                        columnWidth: '120%',
+                                        distributed: true,
+                                        colors: {
+                                          backgroundBarColors: chart_colors,
+                                          backgroundBarOpacity: 1,
+                                          backgroundBarRadius: 0,
+                                      },
+                                    },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                    show: true,
+                                    borderColor: 'black',
+                                    position: 'back',
+                                    column:{
+                                        colors: chart_colors,
+                                    },
+                                    xaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },   
+                                    yaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },
+                                                                },
+                                xaxis: {
+                                  labels:{
+                                    show: false
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                yaxis:{
+                                  labels:{
+                                  style:{
+                                      colors: '#AFB8CC',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  maxHeight: undefined,
+                                   "formatter": function (val) {
+                                    return val.toFixed(2)
+                                },
+                                },
+                                },
+                                };
+
+                                var chart2 = new ApexCharts(document.querySelector("#chart2"), options);
+                                chart2.render();
+                        </script>
+                          <script>
+
+                            var options = {
+                                  colors:['#0D1758'],
+                                  series: [
+                                  {
+                                    name: "Panel A",
+                                    data: []
+                                  },
+                                ],
+                                  chart: {
+                                  height: '219px',
+                                  width: '660px',
+                                  type: 'bar',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                plotOptions:{
+                                    bar:{
+                                        columnWidth: '120%',
+                                        distributed: true,
+                                        colors: {
+                                          backgroundBarColors: chart_colors,
+                                          backgroundBarOpacity: 1,
+                                          backgroundBarRadius: 0,
+                                      },
+                                    },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                    show: true,
+                                    borderColor: 'black',
+                                    position: 'back',
+                                    column:{
+                                        colors: chart_colors,
+                                    },
+                                    xaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },   
+                                    yaxis: {
+                                        lines: {
+                                            show: false
+                                        }
+                                    },
+                                                                },
+                                xaxis: {
+                                  labels:{
+                                    show: false
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                yaxis:{
+                                  labels:{
+                                  style:{
+                                      colors: '#AFB8CC',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  maxHeight: undefined,
+                                   "formatter": function (val) {
+                                    return val.toFixed(2)
+                                },
+                                },
+                                },
+                                };
+
+                                var chart5 = new ApexCharts(document.querySelector("#chart5"), options);
+                                chart5.render();
+                        </script>
+        <img class="rectangle-3269-L7BXHD" id = 'todayrectangle' src="{{url_for('static',filename='img/rectangle-3269@2x.svg')}}" />
+        <form onsubmit="setTimeout(function(){window.location.reload();},10);" method = "POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="group-7286-L7BXHD">
+          <input onchange= "submit(); getTotal();" value = {{weekdate}} name = 'date' id = 'today2' type = 'week' class="march-18th-2021-tkyWp6">
+          <div id = 'total' style = 'color: transparent;'></div>
+          <div id = 'totalprice' style = 'color: transparent;'></div>
+          <div id = 'percentage' style = 'color: transparent;'></div>
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </body>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 200,
+                              height: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart10 = new ApexCharts(document.querySelector("#chart10"), options);
+                            chart10.render();
+                            
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart7 = new ApexCharts(document.querySelector("#chart7"), options);
+                            chart7.render();
+</script>
+  <script >var options = {
+                              labels: ["Lighting", "Equipment", "HVAC", "Plug Load", "Hot Water", "Other"],
+                              series: [{{lighttotal}},{{equipmenttotal}},{{hvactotal}},{{plugtotal}},{{watertotal}},{{othertotal}} ],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart14 = new ApexCharts(document.querySelector("#chart14"), options);
+                            chart14.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart3 = new ApexCharts(document.querySelector("#chart3"), options);
+                            chart3.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 200,
+                              height: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart6 = new ApexCharts(document.querySelector("#chart6"), options);
+                            chart6.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart11 = new ApexCharts(document.querySelector("#chart11"), options);
+                            chart11.render();
+</script>
+  <script >
+    var paneltotals = {{panelchart | tojson}};
+    var panelnames = {{panelnames | tojson}};
+    var options = {
+                              labels: panelnames,
+                              series: paneltotals,
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#90C449','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart15 = new ApexCharts(document.querySelector("#chart15"), options);
+                            chart15.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
+                            chart4.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 200,
+                              width: 200,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart13 = new ApexCharts(document.querySelector("#chart13"), options);
+                            chart13.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart8 = new ApexCharts(document.querySelector("#chart8"), options);
+                            chart8.render();
+</script>
+  <script >var options = {
+                              labels: ['On-Hours','Off-Hours','Always-On'],
+                              series: [{{onHours}},{{offHours}},{{alwaysOn}}],
+                              chart: {
+                              width: 100,
+                              height: 100,
+                              type: 'donut',
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#22B14C','#7F7F7F','#EE8F37'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                              }
+                            }]
+                            };
+                            var chart12 = new ApexCharts(document.querySelector("#chart12"), options);
+                            chart12.render();
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    if ( $('#today2')[0].type != 'date' ) $('#today2').datepicker();
+  </script>
+    <script>
+    function openNav(panel) {
+  document.getElementById("sidebar").style.width = "600px";
+  document.getElementById("panelletter").innerHTML = panel;
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {  document.getElementById("sidebar").style.width = "0";}
+
+      function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  function toggle(source) {
+      checkboxes = document.getElementsByName('panel1check');
+      for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+
+  </script>
+  <script>
+    var newtotal = 0;
+    var newtotalprice = 0;
+    var newpercent = 0;
+    var colors = ['{{colours[0]}}','{{colours[1]}}','{{colours[2]}}','{{colours[3]}}','{{colours[4]}}','{{colours[5]}}'];
+    var colors2 = ['{{colours[0]}}','{{colours[1]}}','{{colours[2]}}','{{colours[3]}}','{{colours[4]}}','{{colours[5]}}'];
+    function toggleLighting() {
+  var x = document.getElementsByClassName("lighting");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+}
+  if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{lighttotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{lightprice}});
+
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{lightpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removeLighting();
+    chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{lighttotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{lightprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{lightpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addLighting();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  }
+}
+function toggleEquipment() {
+  var x = document.getElementsByClassName("equipment");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+  }
+    if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{equipmenttotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{equipmentprice}});
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{equipmentpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removeEquipment();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{equipmenttotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{equipmentprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{equipmentpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addEquipment();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  }
+}
+function toggleHVAC() {
+  var x = document.getElementsByClassName("hvac");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+  }
+      if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{hvactotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{hvacprice}});
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{hvacpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removeHVAC();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{hvactotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{hvacprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{hvacpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addHVAC();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  }
+}
+function togglePlugLoad() {
+  var x = document.getElementsByClassName("plugload");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+  }
+      if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{plugtotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{plugprice}});
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{plugpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removePlug();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{plugtotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{plugprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{plugpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addPlug();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  }
+}
+function toggleHotWater() {
+  var x = document.getElementsByClassName("hotwater");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+  }
+      if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{watertotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{waterprice}});
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{waterpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removeWater();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{watertotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{waterprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{waterpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addWater();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  }
+}
+function toggleOther() {
+  var x = document.getElementsByClassName("other");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+  }
+      if (x[0].style.display === "none") {
+    newtotal = (newtotal - {{othertotal}});
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML = '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - {{otherprice}});
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML ='.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - {{otherpercent}});
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    removeOther();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+  } else {
+    newtotal = (newtotal - -Math.abs({{othertotal}}));
+    
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML =  '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - -Math.abs({{otherprice}}));
+    
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML = '.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - -Math.abs({{otherpercent}}));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2)
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    document.getElementById("percent4").innerHTML = Math.abs(newpercent).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0] + "<span style = 'font-size: 12px;'>%</span>";
+    addOther();
+        chart.updateOptions({
+  colors: [colors[0],colors[1],colors[2],colors[3],colors[4],colors[5]]
+})
+
+  }
+}
+
+function getTotal() {
+  newtotal = {{"%.2f"|format(total/1000)|float}};
+  totalSplit = String(newtotal).split('.')
+  document.getElementById("total-whole").innerHTML = totalSplit[0];
+  document.getElementById("total-decimal").innerHTML = '.' + totalSplit[1];
+  newtotalprice = {{"%.2f"|format(totalprice)|float}}
+  priceSplit = String(newtotalprice).split('.')
+  document.getElementById("totalprice-whole").innerHTML = priceSplit[0];
+  document.getElementById("totalprice-decimal").innerHTML = '.' + priceSplit[1];
+  newpercent = 100;
+  document.getElementById("percentage").innerHTML = newpercent;
+  document.getElementById("percent3").innerHTML = newpercent + "<span style = 'font-size: 12px;'>%</span>";
+  document.getElementById("percent4").innerHTML = newpercent + "<span style = 'font-size: 12px;'>%</span>";
+  document.getElementById("title").innerHTML = 'Load Filters'
+}
+function resetVariables(){
+  newtotal = 0;
+  newtotalprice = 0;
+  newpercent = 0;
+}
+  </script>
+  <script>
+    function removeLighting() {
+        colors[0] = '#FFFFFF'
+      }
+      function removeEquipment() {
+        colors[1] = '#FFFFFF'
+      }
+      function removeHVAC() {
+        colors[2] = '#FFFFFF'
+      }
+      function removePlug() {
+        colors[3] = '#FFFFFF'
+      }
+      function removeWater() {
+        colors[4] = '#FFFFFF'
+      }
+      function removeOther() {
+        colors[5] = '#FFFFFF'
+      }
+  </script>
+    <script>
+    function addLighting() {
+        colors[0] = '#3649A8'
+      }
+      function addEquipment() {
+        colors[1] = '#3BCDEE'
+      }
+      function addHVAC() {
+        colors[2] = '#EE5937'
+      }
+      function addPlug() {
+        colors[3] = '#EE8F37'
+      }
+      function addWater() {
+        colors[4] = '#90C449'
+      }
+      function addOther() {
+        colors[5] = '#DBE2F3'
+      }
+  </script>
+  <script>
+    function checkIf0(){
+        if(colors[0] == '#FFFFFF' && colors[1] == '#FFFFFF' && colors[2] == '#FFFFFF' && colors[3] == '#FFFFFF' && colors[4] == '#FFFFFF' && colors[5] == '#FFFFFF'){
+              document.getElementById("total").innerHTML = 0;
+              document.getElementById("totalprice").innerHTML =0;
+              document.getElementById("percentage").innerHTML = 0;
+              // document.getElementById("percent2").innerHTML = 0;
+              // document.getElementById("percent3").innerHTML = 0 + "<span style = 'font-size: 12px;'>%</span>";
+              // document.getElementById("percent4").innerHTML = 0 + "<span style = 'font-size: 12px;'>%</span>";
+                    }
+        if(colors2[0] == '#FFFFFF' && colors2[1] == '#FFFFFF'){
+      document.getElementById("total-whole").innerHTML = 0;
+      document.getElementById("totalprice-whole").innerHTML =0;
+      document.getElementById("total-decimal").innerHTML = 0;
+      document.getElementById("totalprice-decimal").innerHTML =0;
+      document.getElementById("percentage").innerHTML = 0;
+      // document.getElementById("percent2").innerHTML = 0;
+      // document.getElementById("percent3").innerHTML = 0 + "<span style = 'font-size: 12px;'>%</span>";
+      // document.getElementById("percent4").innerHTML = 0 + "<span style = 'font-size: 12px;'>%</span>";
+            }
+    }
+    function changetoEnergy(){
+      document.getElementById('Energy').style.display = 'block';
+      document.getElementById('Cost').style.display = 'none';
+    }
+    function changetoCost(){
+      document.getElementById('Cost').style.display = 'block';
+      document.getElementById('Energy').style.display = 'none';
+    }
+
+    function createChart(name, number){
+        var data = {{schedule | tojson}};
+        var string = data[number];
+        string = string.replace('[', '')
+        string = string.replace(']', '')
+        var datalist = string.split(",");
+        console.log(name)
+        console.log(datalist)
+        chart5.updateSeries([{ 
+            name: name,
+            data: datalist,
+        } 
+        ]); 
+        var sum = 0;
+        for(var i = 0; i < datalist.length; i++){
+            console.log(datalist[i]);
+            sum += (parseFloat(datalist[i]) / 1000);
+        }
+        sum = Math.round(sum * 100) / 100;
+        cost = sum * 0.09;
+        cost = Math.round(cost * 100) / 100;
+        sumSplit = String(sum).split('.')
+        costSplit = String(cost).split('.')
+        emission = sum * 0.82;
+        emissionSplit = String(emission).split('.')
+        document.getElementById("circuitemission-whole").innerHTML = Math.abs(emissionSplit[0]);
+        document.getElementById("circuitemission-decimal").innerHTML = '.' + Math.abs(emissionSplit[1]);
+        document.getElementById('circuit-block').style.width = '744px';
+        document.getElementById("circuit-title").innerHTML = name;
+        document.getElementById('circuit-block').style.border = 'border: 2px solid #E3E7ED';
+        document.getElementById('circuit-whole').textContent = sumSplit[0];
+        document.getElementById('circuit-decimal').textContent = '.' + sumSplit[1];
+        document.getElementById('cost-whole').textContent = costSplit[0];
+        document.getElementById('cost-decimal').textContent = '.' + costSplit[1];
+    }
+
+    function toggleMaster(category){
+    if(category == 'Lighting'){
+        toggleLighting();
+    }
+    if(category == 'Plug Load'){
+        togglePlugLoad();
+    }
+    if(category == 'HVAC'){
+        toggleHVAC();
+    }
+    if(category == 'Equipment'){
+        toggleEquipment();
+    }
+    if(category == 'Hot Water'){
+        toggleHotWater();
+    }
+    if(category == 'Other'){
+        toggleOther();
+    }
+}
+
+function toggleTimeLoads(){
+    
+}
+function closeCircuitBlock(){
+    document.getElementById('circuit-block').style.width = '0px';
+    document.getElementById('circuit-block').style.border = "2px solid transparent";
+}
+  </script>
+  <script>
+        function createTotalChart(){
+    var data = {{schedule | tojson}};
+    var totalset = [];
+    var string = data[0];
+    string = string.replaceAll('[', '');
+    string = string.replaceAll(']', '');
+    var datalist = string.split(",");
+    totalset.length = datalist.length;
+    totalset.fill(0);
+    for(let i = 0; i < datalist.length; i++){
+        var string = data[i];
+        if(typeof string !== 'undefined'){
+        string = string.replaceAll('[', '');
+        string = string.replaceAll(']', '');
+        var datalist = string.split(",");
+        console.log(datalist.length);
+        for(let k = 0; k < datalist.length; k++){
+        totalset[k] += parseFloat(datalist[k]);
+      }
+    }
+    }
+
+
+    chart2.updateSeries([{ 
+        name: 'Historical Usage',
+        data: totalset,
+    } 
+    ]); 
+    }
+
+    function exploreCircuit(circuitname){
+        var x = document.getElementsByClassName('rectangle-3165-L7BXHD');
+        var y = document.getElementsByClassName('explore-image-box');
+        var lighting = document.getElementsByClassName('lighting');
+        var equipment = document.getElementsByClassName('equipment');
+        var hvac = document.getElementsByClassName('hvac');
+        var plugload = document.getElementsByClassName('plugload');
+        var hotwater = document.getElementsByClassName('hotwater');
+        var other = document.getElementsByClassName('other');
+        for(var i = 0; i < x.length; i++){
+            x[i].style.backgroundColor = 'white';
+            y[i].style.display = 'none';
+
+        }
+
+        document.getElementById(circuitname).style.backgroundColor = '#0D1758';
+        document.getElementById(circuitname + 'image').style.display = 'block';
+        document.getElementById(circuitname + 'cost').style.backgroundColor = '#0D1758';
+        document.getElementById(circuitname + 'costimage').style.display = 'block';
+    }
+ function retractleft() {
+    if(document.getElementById("leftretract").style.width != "80px"){
+  document.getElementById("leftretract").style.width = "80px";
+  document.getElementById("dashboard").style.color = "white";
+  document.getElementById("liveusage").style.color = "white";
+  document.getElementById("historical").style.color = "white";
+  document.getElementById("inventory").style.color = "white";
+  document.getElementById("utilities").style.color = "white";
+  document.getElementById("logout").style.color = "white";
+  document.getElementById("leftbutton").style.left = "57px";
+  document.getElementById("leftarrow").style.left = "64px";
+  document.getElementById("leftarrow").style.transform = "rotate(0.5turn)";
+  document.getElementById("logoimage").src = "{{url_for('static',filename='img/logosmall.png')}}";
+  document.getElementById("logodiv").style.left = "15px";
+  document.getElementById("imageblock").style.display = "none";
+
+  if(document.getElementById("rightside").style.width != "40px"){ //Close left while right is open
+      document.getElementById("Live-Usage").style.width = "912px";
+      document.getElementById("header").style.width = "800px";
+      document.getElementById("scrollable").style.width = "800px";
+      document.getElementById("graph-background").style.width = "800px";
+      document.getElementById("Historical-Usage-Block").style.width = "800px";
+      document.getElementById("bar-chart").style.width = "867px";
+      document.getElementById("bar-chart").style.left = "-10px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '100px';
+      document.getElementById('total-box2').style.marginRight = '100px';
+      document.getElementById('total-box3').style.marginRight = '100px';
+      document.getElementById('today2').style.left = '230px';
+      document.getElementById('todayrectangle').style.left = '690px';
+      document.getElementById('calendar-block').style.left = '32px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+  }
+
+    else if(document.getElementById("rightside").style.width == "40px"){//Close left while right is closed
+      document.getElementById("Live-Usage").style.width = "1300px";
+      document.getElementById("header").style.width = "1200px";
+      document.getElementById("scrollable").style.width = "1200px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("graph-background").style.width = "1200px";
+      document.getElementById("Historical-Usage-Block").style.width = "1200px";
+      document.getElementById("bar-chart").style.width = "1270px";
+      document.getElementById("bar-chart").style.left = "-10px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '150px';
+      document.getElementById('total-box2').style.marginRight = '150px';
+      document.getElementById('total-box3').style.marginRight = '150px';
+      document.getElementById('today2').style.left = '640px';
+      document.getElementById('todayrectangle').style.left = '1100px';
+      document.getElementById('calendar-block').style.left = '442px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+
+  }
+}
+else{
+  document.getElementById("leftretract").style.width = "248px";
+  document.getElementById("dashboard").style.color = "#AFB8CC";
+  document.getElementById("liveusage").style.color = "#AFB8CC";
+  document.getElementById("historical").style.color = "#6285FB";
+  document.getElementById("inventory").style.color = "#AFB8CC";
+  document.getElementById("utilities").style.color = "#AFB8CC";
+  document.getElementById("logout").style.color = "#AFB8CC";
+  document.getElementById("leftbutton").style.left = "225px";
+  document.getElementById("leftarrow").style.left = "232px";
+  document.getElementById("leftarrow").style.transform = "rotate(1turn)";
+  document.getElementById("logoimage").src = "{{url_for('static',filename='img/logoimage.png')}}";
+  document.getElementById("logodiv").style.left = "33px";
+  document.getElementById("imageblock").style.display = "block";
+
+  if(document.getElementById("rightside").style.width != "40px"){//Open left while right is open
+      document.getElementById("Live-Usage").style.width = "744px";
+      document.getElementById("header").style.width = "600px";
+      document.getElementById("scrollable").style.width = "744px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("scrollable").style.width = "600px";
+      document.getElementById("graph-background").style.width = "582px";
+      document.getElementById("Historical-Usage-Block").style.width = "643px";
+      document.getElementById("bar-chart").style.width = "670px";
+      document.getElementById("bar-chart").style.left = "5px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("total-block").style.width = '438px'
+      document.getElementById('total-box1').style.marginRight = '10px';
+      document.getElementById('total-box2').style.marginRight = '10px';
+      document.getElementById('total-box3').style.marginRight = '10px';
+      document.getElementById('today2').style.left = '0px';
+      document.getElementById('todayrectangle').style.left = '458px';
+      document.getElementById('calendar-block').style.left = '-200px';
+      document.getElementById('graph-buttons-block').style.left = '550px';   
+    }
+    else if(document.getElementById("rightside").style.width == "40px"){//Open left while right is closed
+      document.getElementById("Live-Usage").style.width = "1150px";
+      document.getElementById("scrollable").style.width = "1150px";
+      document.getElementById("header").style.width = "1000px";
+      document.getElementById("scrollable").style.width = "1000px";
+      document.getElementById("graph-background").style.width = "1000px";
+      document.getElementById("Historical-Usage-Block").style.width = "1000px";
+      document.getElementById("bar-chart").style.width = "1070px";
+      document.getElementById("bar-chart").style.left = "15px";
+      document.getElementById("Live-Usage").style.left = "320px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '120px';
+      document.getElementById('total-box2').style.marginRight = '120px';
+      document.getElementById('total-box3').style.marginRight = '120px';
+      document.getElementById('today2').style.left = '500px';
+      document.getElementById('todayrectangle').style.left = '958px';
+      document.getElementById('calendar-block').style.left = '300px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+    }
+    }
+}
+
+    function retract() {
+    if(document.getElementById("rightside").style.width != "40px"){
+  document.getElementById("rightside").style.width = "40px";
+  document.getElementById("rightarrow").style.transform = "rotate(1turn)";
+
+  if(document.getElementById("leftretract").style.width != "80px"){//Close right while left is open
+      document.getElementById("Live-Usage").style.width = "1150px";
+      document.getElementById("scrollable").style.width = "1150px";
+      document.getElementById("header").style.width = "1000px";
+      document.getElementById("scrollable").style.width = "1000px";
+      document.getElementById("graph-background").style.width = "1000px";
+      document.getElementById("Historical-Usage-Block").style.width = "1000px";
+      document.getElementById("bar-chart").style.width = "1070px";
+      document.getElementById("bar-chart").style.left = "15px";
+      document.getElementById("total-block").style.width = '938px'
+      document.getElementById('total-box1').style.marginRight = '120px';
+      document.getElementById('total-box2').style.marginRight = '120px';
+      document.getElementById('total-box3').style.marginRight = '120px';
+      document.getElementById('today2').style.left = '500px';
+      document.getElementById('todayrectangle').style.left = '958px';
+      document.getElementById('calendar-block').style.left = '300px';
+      document.getElementById('graph-buttons-block').style.left = '750px';
+
+      console.log('closed')
+    }
+  else if(document.getElementById("leftretract").style.width == "80px"){//Close right while right is closed
+      document.getElementById("Live-Usage").style.width = "1300px";
+      document.getElementById("header").style.width = "1200px";
+      document.getElementById("scrollable").style.width = "1200px";
+      document.getElementById("Live-Usage").style.left = "152px";
+      document.getElementById("graph-background").style.width = "1200px";
+      document.getElementById("Historical-Usage-Block").style.width = "1200px";
+      document.getElementById("bar-chart").style.width = "1270px";
+      document.getElementById("bar-chart").style.left = "-10px";
+  }
+}
+else{
+      document.getElementById("rightside").style.width = "400px";
+      document.getElementById("rightarrow").style.transform = "rotate(0.5turn)";
+      if(document.getElementById("leftretract").style.width != "80px"){//Open right when left is open
+          document.getElementById("Live-Usage").style.width = "744px";
+          document.getElementById("header").style.width = "600px";
+          document.getElementById("Live-Usage").style.left = "320px";
+          document.getElementById("scrollable").style.width = "600px";
+          document.getElementById("graph-background").style.width = "582px";
+          document.getElementById("Historical-Usage-Block").style.width = "643px";
+          document.getElementById("bar-chart").style.width = "670px";
+          document.getElementById("bar-chart").style.left = "5px";
+          document.getElementById("Live-Usage").style.left = "320px";
+          document.getElementById("total-block").style.width = '438px'
+          document.getElementById('total-box1').style.marginRight = '10px';
+          document.getElementById('total-box2').style.marginRight = '10px';
+          document.getElementById('total-box3').style.marginRight = '10px';
+          document.getElementById('today2').style.left = '0px';
+          document.getElementById('todayrectangle').style.left = '458px';
+          document.getElementById('calendar-block').style.left = '-200px';
+          document.getElementById('graph-buttons-block').style.left = '550px';      
+      }
+  else if(document.getElementById("leftretract").style.width == "80px"){//Open right when left is closed
+          document.getElementById("Live-Usage").style.width = "912px";
+          document.getElementById("Live-Usage").style.width = "912px";
+          document.getElementById("header").style.width = "800px";
+          document.getElementById("scrollable").style.width = "800px";
+          document.getElementById("graph-background").style.width = "800px";
+          document.getElementById("Historical-Usage-Block").style.width = "800px";
+          document.getElementById("bar-chart").style.width = "867px";
+          document.getElementById("bar-chart").style.left = "-10px";
+          document.getElementById("Live-Usage").style.left = "152px";
+          document.getElementById("total-block").style.width = '938px'
+          document.getElementById('total-box1').style.marginRight = '100px';
+          document.getElementById('total-box2').style.marginRight = '100px';
+          document.getElementById('total-box3').style.marginRight = '100px';
+          document.getElementById('today2').style.left = '230px';
+          document.getElementById('todayrectangle').style.left = '690px';
+          document.getElementById('calendar-block').style.left = '32px';
+          document.getElementById('graph-buttons-block').style.left = '750px';
+  }
+}
+}
+function togglePanel(panelname, num) {
+  var x = document.getElementsByClassName(panelname);
+  var paneltotal = {{paneltotal | tojson}};
+  var panelpercent = {{panelpercent | tojson}};
+  var panelprice = {{panelprice | tojson}};
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display === "none") {
+    x[i].style.display = "block";
+  } else {
+    x[i].style.display = "none";
+  }
+}
+  if (x[0].style.display === "none") {
+    newtotal = (newtotal - Math.abs(paneltotal[num]/1000));
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML =  '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice - panelprice[num]);
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML = '.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent - Math.abs(panelpercent[num]));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2) + '%';
+    // document.getElementById("percent2").innerHTML = Math.abs(newpercent).toFixed(2) + '%';
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toFixed(2) + "<span style = 'font-size: 12px;'>%</span>";
+    // document.getElementById("percent4").innerHTML = Math.abs(newpercent).toFixed(2) + "<span style = 'font-size: 12px;'>%</span>";
+    colors2[num] = '#FFFFFF';
+    chart6.updateOptions({
+  colors: [colors2[0],colors2[1],colors2[2],colors2[3],colors2[4],colors2[5]]
+})
+  } else {
+    newtotal = (newtotal + Math.abs(paneltotal[num]/1000));
+    totalSplit = String(newtotal).split('.')
+    document.getElementById("total-whole").innerHTML = Math.abs(totalSplit[0])
+    document.getElementById("total-decimal").innerHTML =  '.' + Math.abs(totalSplit[1])
+    newtotalprice = (newtotalprice + Math.abs(panelprice[num]));
+    totalpriceSplit = String(newtotalprice).split('.')
+    document.getElementById("totalprice-whole").innerHTML =Math.abs(totalpriceSplit[0])
+    document.getElementById("totalprice-decimal").innerHTML = '.' + Math.abs(totalpriceSplit[1])
+    newpercent = (newpercent + Math.abs(panelpercent[num]));
+    document.getElementById("percentage").innerHTML = Math.abs(newpercent).toFixed(2) + '%';
+    // document.getElementById("percent2").innerHTML = Math.abs(newpercent).toFixed(2) + '%';
+    document.getElementById("percent3").innerHTML = Math.abs(newpercent).toFixed(2) + "<span style = 'font-size: 12px;'>%</span>";
+    // document.getElementById("percent4").innerHTML = Math.abs(newpercent).toFixed(2) + "<span style = 'font-size: 12px;'>%</span>";
+    colors2[num] = colors[num];
+        chart6.updateOptions({
+  colors: [colors2[0],colors2[1],colors2[2],colors2[3],colors2[4],colors2[5]]
+})
+  }
+}
+function openPanelSidebar(){
+    document.getElementById('rightpanel').style.width = '400px';
+    document.getElementById('rightcategory').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '0px';
+    document.getElementById('title').innerHTML = 'Electrical Panels';
+}
+function openCategorySidebar(){
+    document.getElementById('rightcategory').style.width = '400px';
+    document.getElementById('rightpanel').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '0px';
+    document.getElementById('title').innerHTML = 'Inventory';
+}
+function openTimeSidebar(){
+    document.getElementById('rightcategory').style.width = '0px';
+    document.getElementById('rightpanel').style.width = '0px';
+    document.getElementById('righttimeloads').style.width = '400px';
+    document.getElementById('title').innerHTML = 'Time Loads';
+
+}
+      function changeDotColourPanel(){
+       var colours = {{colours | tojson}};
+       var x = {{numpanels}};
+       var panelnames = {{panelnames | tojson}};
+       var i;
+       for(i = 0; i < x; i++){
+         var j = document.getElementsByClassName(panelnames[i] + 'colour');
+         for(var l = 0; l < j.length; l++){
+             j[l].style.backgroundColor = colours[i];
+         }
+       }
+       }
+       function changeDotColourCategory(){
+       var colours = {{colours | tojson}};
+       var x = 6;
+       var categorynames = ['lighting','equipment','hvac','plugload','hotwater','other'];
+       var i;
+       for(i = 0; i < x; i++){
+         var j = document.getElementsByClassName(categorynames[i] + 'colour');
+         for(var l = 0; l < j.length; l++){
+             j[l].style.backgroundColor = colours[i];
+         }
+       }
+       }
+</script></html>

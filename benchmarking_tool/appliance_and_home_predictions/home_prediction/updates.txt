@@ -1,0 +1,72 @@
+These are the updates that need to be done
+
+hot water usage. line: 205 calculations.py
+    we could make a survey about how people use their hot water there are many online could copy one of those 
+
+incoming water tempurature. line 210 calculations.py    
+    will need to change up the function so that the incoming water temp is known for each city 
+    could add a variable to home class
+
+More indepth lighting function line 236 calculations.py
+    could take into month. lights used more in the winter months 
+    christmas lights take up a lot more energy 
+
+oven calculations calculations.py line: 400
+    assuming that the oven is used 12 times a month at 1.5 hours 
+    we could make questions to determine how much cooking the user does 
+
+stove top useage calcualtions.py line: 420
+    we are assummming that it is electric 
+    not sure how we would check to see if it is gas or electric maybe we could do a question or image rec
+
+fridge stuff needs some work 
+    power of the fridge (hard to base on family size)
+    right now we use a average wattage of a fridge 
+
+values to change for accuatacy 
+
+electricity assumptions 
+    fridge_lifetime = 18  -> assumptions.py line: 480
+    fridge_energy usage = 6.44 -> calculations.py line: 333
+
+
+we need better weather datainput 
+    right now it is a list in output.py 
+    we need a date input 
+
+we might need to change how the date is implemented so that it is passed to calculate all. 
+    when energy is calculated it gets daily use and multiplies it by 30.5 as average days in a month 
+    could make somehting so that we can get the exact number of days in that month
+
+there is some imperial and metric mix ups should be better 
+
+
+we could make a whole function just to calculate cook times of different appliances line 149 in output.py
+    use stove less -> microwave gets used more
+    dosnt cookk a lot -> microwave probably gets used a lot 
+
+    for now we will be assuming these cooktime values 
+    
+update oven,stove,micrrowave energy calculations can be much more detailed 
+
+
+need to make a way for the user to say if they have upgraded their walls roof or windows:
+    we need to make it so we can change the value of a R depending on if they have upgraded the windows walls or roof
+
+update dishwasher predictions assumptions.py -> line 507 
+    we just predict a mid range dishwasher that uses 0.64 kwh of energy and 5 gallons of water per load 
+
+
+unit choices so the user sees a unit that they want to see. 
+
+
+get sunlight hours of the month am assuming these for all of alberta from this weather site 
+    https://weather-and-climate.com/average-monthly-hours-Sunshine,edmonton,Canada
+
+    the sun emits about 1 kw/h per meter squared. this is a very rough estimate so will need to be updated 
+
+    this is about 316.999 BTU/squarefoot but this is a perfect transmition
+
+    calculations.py line 55
+        the glazing value is set to 0.8 this could be changed to get a better amount of heating in the house 
+

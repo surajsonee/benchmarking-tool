@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>Upload File</title>
+<h1>Upload File</h1>
+    <input type = 'text' class = 'form-control' name ='input' id="input" placeholder="Heating Input">
+    <input type = 'text' class = 'form-control' name ='output' id="output" placeholder="Heating Output">
+    <input type = 'text' class = 'form-control' name ='heating_eff' id="heating_eff" placeholder="Heating Effciency">
+    <input type = 'text' class = 'form-control' name ='type' id="type" placeholder="Type">
+    <input type = 'text' class = 'form-control' name ='pressure' id="pressure" placeholder="Pressure">
+
+<a href="{{ url_for('upload_file') }}">Upload</a> /
+<a href="{{ url_for('manage_file') }}">Manage</a>
+<hr>
+
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.photo(multiple="multiple")}}
+    {% for error in form.photo.errors %}
+
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+    {{ form.submit }}
+</form>
+
+{% if success %}
+<br>
+<p>Upload Success!</p>
+{% endif %}

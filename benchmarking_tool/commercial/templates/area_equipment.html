@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/areaequipment.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="equipment-area" />
+    <div class="container-center-horizontal">
+      <div class="equipment-area screen">
+      <a href = "{{url_for('commercial.areas', id = building.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="rectangle-2769-C61RwL"></div>
+        <div class="equipment-area-1-C61RwL">Equipment - Area #1</div>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+        <div class="address-of-building-C61RwL">Address of Building:</div>
+        <div class="operating-hours-C61RwL">Operating Hours</div>
+        <div class="some-address-C61RwL">{{building.address}}</div>
+        <div class="x0800-1600-C61RwL">08:00 - 16:00</div>
+        <img class="pexels-pixabay-209251-1-C61RwL" src="{{ url_for('static', filename='appliance_photos/img/' + building.photo_id) }}" />
+        <div class="group-6911-C61RwL">
+          <div class="rectangle-2767-nFnupU"></div>
+        </div>
+        <div class="rectangle-2784-C61RwL"></div>
+        <div class="rectangle-2794-C61RwL"></div>
+        <div class="rectangle-2796-C61RwL"></div>
+        <div class="rectangle-2810-C61RwL"></div>
+        <div class="hvac-equipment-C61RwL coresansc-65-bold-chathams-blue-12px">HVAC Equipment</div>
+        <div class="dhw-equipment-C61RwL coresansc-65-bold-chathams-blue-12px">DHW Equipment</div>
+        <div class="lighting-C61RwL coresansc-65-bold-chathams-blue-12px">Lighting</div>
+        <div class="appliances-C61RwL coresansc-65-bold-chathams-blue-12px">Appliances</div>
+        <div class="rectangle-2793-C61RwL"></div>
+        <div class="rectangle-2795-C61RwL"></div>
+        <div class="rectangle-2797-C61RwL"></div>
+        <div class="rectangle-2811-C61RwL"></div>
+        <a href = "{{url_for('commercial.hvac' ,id=area.id)}}"><div class="view-C61RwL coresansc-65-bold-white-10px">View</div></a>
+        <a href = "{{url_for('commercial.dhwindex' ,id=area.id)}}"><div class="view-VMr6Om coresansc-65-bold-white-10px">View</div></a>
+        <a href = "{{url_for('commercial.lightindex' ,id=area.id)}}"><div class="view-mzXdH9 coresansc-65-bold-white-10px">View</div></a>
+        <a href = "{{url_for('commercial.equipmentindex', id=area.id)}}"><div class="view-QxM5SU coresansc-65-bold-white-10px">View</div></a>
+      </div>
+    </div>
+  </body>
+</html>

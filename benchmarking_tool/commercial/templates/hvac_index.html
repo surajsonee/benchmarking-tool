@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/equipment-area.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="equipment-area" />
+    <div class="container-center-horizontal">
+      <div class="equipment-area screen">
+        <a href = "{{url_for('commercial.areaequipment', id = area.id)}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+        <div class="view-hvac-equipment-C61RwL">View HVAC Equipment</div>
+         <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+         <div class="heating-equipment-C61RwL">Heating Equipment</div>
+          <div class="rectangle-17-bwW810"></div>
+            <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for furnace in furnaces %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Furnace</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{furnace.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{furnace.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletefurnace', id=furnace.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + furnace.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for hydronic_boiler in hydronic_boilers %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Hydronic Boiler</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{hydronic_boiler.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{hydronic_boiler.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletehydronicboiler', id=hydronic_boiler.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + hydronic_boiler.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for steam_boiler in steam_boilers %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Steam Boiler</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{steam_boiler.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{steam_boiler.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletesteamboiler', id=steam_boiler.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + steam_boiler.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for heat_pump in heat_pumps %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Heat Pump</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{heat_pump.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{heat_pump.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteheatpump', id=heat_pump.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + heat_pump.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for gas_fired_heating_coil in gas_fired_heating_coils %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Gas Fired Heating Coil</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{gas_fired_heating_coil.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{gas_fired_heating_coil.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletegasfiredheatingcoil', id=gas_fired_heating_coil.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + gas_fired_heating_coil.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for electric_rest_heating_coil in electric_rest_heating_coils %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Electric Rest Heating Coil</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{electric_rest_heating_coil.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{electric_rest_heating_coil.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteelectricrestheatingcoil', id=electric_rest_heating_coil.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + electric_rest_heating_coil.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for infrared_heater in infrared_heaters %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Infrared Heater</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{infrared_heater.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{infrared_heater.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteinfraredheater', id=infrared_heater.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + infrared_heater.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for unit_heater in unit_heaters %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Unit Heater</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{unit_heater.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{unit_heater.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteunitheater', id=unit_heater.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + unit_heater.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for unit_ventilator in unit_ventilators %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Unit Ventilator</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{unit_ventilator.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{unit_ventilator.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteunitventilator', id=unit_ventilator.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + unit_ventilators.photo_id) }}" />
+          </div>
+          {% endfor %}
+      </details>
+        <div class="group-6900-C61RwL">
+          <img class="vector-88-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-90-lrkHPC" src="img/vector-88@2x.svg" />
+          <img class="vector-89-lrkHPC" src="img/vector-89@2x.svg" />
+        </div>
+            <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+        <div class="group-7190-C61RwL">
+          <div class="cooling-equipment-bwW810">Cooling Equipment</div>
+          <div class="rectangle-17-bwW810"></div>
+          <div class="group-7185-bwW810">
+            <div class="rectangle-2316-pIkL3q"></div>
+            <div class="chevron-down-pIkL3q"><img class="vector-KBQETq" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+    </summary>
+    {% for chiller in chillers %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Chiller</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{chiller.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{chiller.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletechiller', id=chiller.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + chiller.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for pump in pumps %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Pump</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{pump.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{pump.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletepump', id=pump.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + pump.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for motor in motors %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Motor</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{motor.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{motor.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletemotor', id=motor.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + motor.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for ahu in ahus %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">AHU</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{ahu.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{ahu.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteahu', id=ahu.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + ahu.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for condensing_unit_system in condensing_unit_systems %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Condensing Unit System</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{condensing_unit_systems.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{condensing_unit_systems.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletecondensingunitsystem', id=condensing_unit_system.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + condensing_unit_system.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for window_air_conditioner in window_air_conditioners %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Window Air Conditioner</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{window_air_conditioner.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{window_air_conditioner.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletewindowairconditioner', id=window_air_conditioner.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + window_air_conditioner.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for make_up_air_unit in make_up_air_units %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Make Up Air Unit</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{make_up_air_unit.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{make_up_air_unit.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletemakeupairunit', id=make_up_air_unit.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + make_up_air_unit.photo_id) }}" />
+          </div>
+          {% endfor %}
+              {% for mini_split_system in mini_split_systems %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Mini Split System</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{mini_split_system.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{mini_split_system.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteminisplitsystem', id=mini_split_system.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + mini_split_system.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for packaged_rtu in packaged_rtus %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Packaged RTU</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{packaged_rtu.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{packaged_rtu.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletepackagedrtu', id=packaged_rtu.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+                </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + packaged_rtu.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for packaged_terminal_ac in packaged_terminal_acs %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Packaged Terminal AC</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{packaged_terminal_ac.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{packaged_terminal_ac.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deletepackagedterminalac', id=packaged_terminal_ac.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + packaged_terminal_ac.photo_id) }}" />
+          </div>
+          {% endfor %}
+            {% for self_contained_ahu in self_contained_ahus %}
+            <div class="group-7254-UwgS4P">
+              <div class="group-7253-Ssxxdq">
+                <div class="rectangle-2769-K2Koio"></div>
+                <div class="equipment-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Equipment:</div>
+                <div class="chiller-K2Koio coresansc-55-medium-cerulean-frost-12px">Self Contained AHU</div>
+                <div class="model-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Model Number</div>
+                <div class="x729100-K2Koio coresansc-55-medium-cerulean-frost-12px">{{self_contained_ahu.model_number}}</div>
+                <div class="serial-number-K2Koio coresansc-75extra-extra-bold-chathams-blue-13px">Serial Number</div>
+                <div class="x188934-K2Koio coresansc-55-medium-cerulean-frost-12px">{{self_contained_ahu.serial_number}}</div>
+                <div class="rectangle-2800-K2Koio"></div>
+                <div class="rectangle-2806-K2Koio"></div>
+                <div class="view-details-K2Koio coresansc-55-medium-white-11px">View Details</div>
+                <div class="rectangle-2798-K2Koio"></div>
+                <div class="rectangle-2799-K2Koio"></div>
+                <div class="add-K2Koio coresansc-55-medium-white-11px">Add</div>
+                <div class="update-K2Koio coresansc-55-medium-white-11px">Update</div>
+                <a href="{{ url_for('commercial.deleteselfcontainedahu', id=self_contained_ahu.id)  }}"><div class="delete-K2Koio coresansc-55-medium-white-11px">Delete</div></a>
+              </div>
+              <img class="chiller-1-Ssxxdq" src="{{ url_for('static', filename='appliance_photos/img/' + self_contained_ahu.photo_id) }}"/>
+          </div>
+          {% endfor %}
+      </details>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

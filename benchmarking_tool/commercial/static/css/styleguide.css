@@ -1,0 +1,77 @@
+:root {
+  --black: #000000;
+  --cerulean-frost: #6e9ac0;
+  --gulf-blue: #0d1758;
+  --violet-blue: #3649a8;
+  --white: #ffffff;
+  --zircon: #f7f9fe;
+
+  --font-size-l: 24px;
+  --font-size-m: 20px;
+  --font-size-s: 18px;
+  --font-size-xs: 15px;
+  --font-size-xxs: 14px;
+  --font-size-xxxs: 11px;
+  --font-size-xxxxs: 8px;
+
+  --font-family-averta_cy-bold: "Averta CY-Bold", Helvetica;
+  --font-family-averta_cy-semibold: "Averta CY-Semibold", Helvetica;
+  --font-family-core_sans_c-55medium: "Core Sans C-55Medium", Helvetica;
+  --font-family-core_sans_c-65bold: "Core Sans C-65Bold", Helvetica;
+  --font-family-core_sans_c-bold: "Core Sans C-Bold", Helvetica;
+}.coresansc-65-bold-cerulean-frost-8px {
+  color: var(--cerulean-frost);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-xxxxs);
+  font-style: normal;
+  font-weight: 700;
+}
+.coresansc-bold-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-core_sans_c-bold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+.avertacy-normal-gulf-blue-14px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.coresansc-55-medium-gulf-blue-15px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-core_sans_c-55medium);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500;
+}
+.coresansc-bold-black-24px {
+  color: var(--black);
+  font-family: var(--font-family-core_sans_c-bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+}
+.coresansc-65-bold-gulf-blue-14px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 700;
+}
+.coresansc-65-bold-cerulean-frost-11px {
+  color: var(--cerulean-frost);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 700;
+}
+.coresansc-65-bold-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-core_sans_c-65bold);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+}

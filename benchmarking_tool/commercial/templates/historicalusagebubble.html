@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1360, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/historical-usage-lines-display-category.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/globals.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff" onload="random(); getDate()">
+    <input type="hidden" id="anPageName" name="page" value="historical-usage-lines-display-category" />
+    <div class="container-center-horizontal">
+      <div class="historical-usage-lines-display-category screen">
+        <div class="rectangle-2893-L7BXHD"></div>
+        <div class="header-L7BXHD"><img class="pollen-2-eSrYGi" src="{{url_for('static',filename='img/pollen-2@2x.png')}}" /></div>
+        <div class="welcome-john-L7BXHD avertacy-bold-sapphire-20px">Welcome John,</div>
+        <a href = "{{url_for('commercial.facilityoverview')}}"><div class="overview-L7BXHD avertacy-bold-sapphire-20px">Overview</div></a>
+        <div class="kpis-L7BXHD avertacy-bold-sapphire-13px">KPI’S</div>
+        <div class="historical-L7BXHD avertacy-bold-sapphire-13px">Historical</div>
+        <div class="inventory-L7BXHD avertacy-bold-sapphire-13px">Inventory</div>
+        <div class="utilities-L7BXHD avertacy-bold-sapphire-13px">Utilities</div>
+        <a href = "{{url_for('accounts.logout')}}"><div class="logout-l6cqYc avertacy-bold-sapphire-13px">Logout</div></a>
+        <div class="group-7235-L7BXHD">
+          <img class="x3-c-path-x3-e-ObAtMx" src="{{url_for('static',filename='img/x3c-path-x3e@2x.svg')}}" />
+          <div class="ellipse-437-ObAtMx"></div>
+        </div>
+        <img class="rectangle-2938-L7BXHD" src="{{url_for('static',filename='img/rectangle-2938@2x.svg')}}" />
+        <img class="kaltire-256-2-L7BXHD" src="{{url_for('static',filename='img/kaltire--256-2@2x.png')}}" />
+        <div class="store-087-L7BXHD">Store #087</div>
+        <p class="x4720-yellowhead-on-ab-t5-l-3-cs-L7BXHD">4720 Yellowhead Trail NW,<br />Edmonton, AB T5L 3CS</p>
+        <div class="group-7195-L7BXHD">
+          <div class="rectangle-2316-EuxCkZ"></div>
+          <div class="chevron-down-EuxCkZ"><img class="vector-C9s5vk" src="{{url_for('static',filename='img/vector@2x.svg')}}" /></div>
+        </div>
+        <div class="your-viewing-L7BXHD">Your Viewing</div>
+        <img class="sidebar-L7BXHD" src="{{url_for('static',filename='img/sidebar@1x.svg')}}" />
+        <div class="electrical-load-by-panel-L7BXHD avertacy-bold-sapphire-20px">Sort by:</div>
+        <div class = 'tab'>
+        <button class="category-L7BXHD tablinks" onclick = "openCity(event, 'Category')"  id = "defaultOpen">Category</button>
+        <button class="panel-L7BXHD avertacy-bold-sapphire-15px tablinks"onclick = "openCity(event, 'Panel')">Panel</button>
+        <div id="Category" class="tabcontent">
+                    <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12" style ="left:1018px;top:218px; position: absolute;">
+                        <div id="chart"></div>
+                        </div>
+                          <script>
+                           
+                        </script>
+                    </div>
+        <div class="x100-L7BXHD">100%</div>
+          <div class="rectangle-2973-L7BXHD"></div>
+        <div class="rectangle-2340-L7BXHD"></div>
+        <div class="rectangle-2974-L7BXHD"></div>
+        <div class="rectangle-2975-L7BXHD"></div>
+        <div class="rectangle-2976-L7BXHD"></div>
+        <div class="rectangle-2977-L7BXHD"></div>
+        <div class="rectangle-15-L7BXHD"></div>
+        <div class="lighting-L7BXHD avertacy-bold-sapphire-12px">Lighting</div>
+        <div class="x43-L7BXHD avertacy-bold-sapphire-12px" id = 'lighting'></div>
+        <div class="x21-zsJCYe avertacy-bold-sapphire-12px" id = 'electrical'></div>
+        <div class="x19-L7BXHD avertacy-bold-sapphire-12px" id = 'plugload'></div>
+        <div class="x11-L7BXHD avertacy-bold-sapphire-12px" id = 'dhw'></div>
+        <div class="x6-L7BXHD avertacy-bold-sapphire-12px" id = 'mechanical'></div>
+        <div class="electrical-L7BXHD avertacy-bold-sapphire-12px">Electrical</div>
+        <div class="plug-load-L7BXHD avertacy-bold-sapphire-12px">Plug Load</div>
+        <div class="dhw-L7BXHD avertacy-bold-sapphire-12px">DHW</div>
+        <div class="mechanical-L7BXHD avertacy-bold-sapphire-12px">Mechanical</div>
+        <input type= 'checkbox'class="rectangle-3024-L7BXHD"d= 'panel1check' onclick= "chart.toggleSeries('Panel 1');" checked/><label for = 'panel1check'></label>
+        <input type= 'checkbox' class="rectangle-3032-L7BXHD"id= 'panel2check' onclick= "chart.toggleSeries('Panel 2');" checked/><label for = 'panel2check'></label>
+        <input type= 'checkbox' class="rectangle-3033-L7BXHD"id= 'panel2check' onclick= "chart.toggleSeries('Panel 3');" checked/><label for = 'panel2check'></label>
+        <input type= 'checkbox' class="rectangle-3034-L7BXHD"id= 'panel2check' onclick= "chart.toggleSeries('Panel 4');" checked/><label for = 'panel2check'></label>
+        <input type= 'checkbox' class="rectangle-3035-L7BXHD"id= 'panel1check' onclick= "chart.toggleSeries('Panel 5');" checked/><label for = 'panel1check'></label>
+        <div class="category-zsJCYe avertacy-bold-sapphire-15px">Category</div>
+      </div>
+              <div id="Panel" class="tabcontent">
+                    <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12" style ="left:1018px;top:218px; position: absolute;">
+                        <div id="chart3"></div>
+                        </div>
+                          <script>
+
+                        </script>
+                    </div>
+        <div class="x100-L7BXHD">100%</div>
+          <div class="rectangle-2973-L7BXHD"></div>
+        <div class="rectangle-2340-L7BXHD"></div>
+        <div class="rectangle-2974-L7BXHD"></div>
+        <div class="rectangle-2975-L7BXHD"></div>
+        <div class="rectangle-2976-L7BXHD"></div>
+        <div class="rectangle-2977-L7BXHD"></div>
+        <div class="rectangle-15-L7BXHD"></div>
+        <div class="lighting-L7BXHD avertacy-bold-sapphire-12px">Panel A</div>
+        <div class="x43-L7BXHD avertacy-bold-sapphire-12px" id = "panelA"></div>
+        <div class="x21-zsJCYe avertacy-bold-sapphire-12px" id = "panelB"></div>
+        <div class="x19-L7BXHD avertacy-bold-sapphire-12px" id = "panelC"></div>
+        <div class="x11-L7BXHD avertacy-bold-sapphire-12px" id = "panelD"></div>
+        <div class="x6-L7BXHD avertacy-bold-sapphire-12px" id = "panelE"></div>
+        <div class="electrical-L7BXHD avertacy-bold-sapphire-12px">Panel B</div>
+        <div class="plug-load-L7BXHD avertacy-bold-sapphire-12px">Panel C </div>
+        <div class="dhw-L7BXHD avertacy-bold-sapphire-12px">Panel D</div>
+        <div class="mechanical-L7BXHD avertacy-bold-sapphire-12px">Panel E</div>
+        <div class="rectangle-3024-L7BXHD"></div>
+        <div class="rectangle-3032-L7BXHD"></div>
+        <div class="rectangle-3033-L7BXHD"></div>
+        <div class="rectangle-3034-L7BXHD"></div>
+        <div class="rectangle-3035-L7BXHD"></div>
+        <div class="category-zsJCYe avertacy-bold-sapphire-15px">Category</div>
+      </div>
+        <div class="rectangle-2984-L7BXHD"></div>
+        <a href = "{{url_for('commercial.historicalusageweek')}}"><div class="week-L7BXHD avertacy-bold-sapphire-13px">Week</div></a>
+        <div class="month-L7BXHD avertacy-bold-sapphire-13px">Month</div>
+        <img class="rectangle-3207-L7BXHD" src="{{url_for('static',filename='img/rectangle-3207@2x.svg')}}" />
+        <a href = "{{url_for('commercial.historicalusage')}}"><div class="day-L7BXHD">Day</div></a>
+        <div class="rectangle-3165-L7BXHD"></div>
+        <div class="rectangle-3210-L7BXHD"></div>
+        <div class="rectangle-3212-L7BXHD"></div>
+        <div class="rectangle-3214-L7BXHD"></div>
+        <div class="rectangle-3216-L7BXHD"></div>
+        <div class="rectangle-3218-L7BXHD"></div>
+        <div class="rectangle-3220-L7BXHD"></div>
+        <div class="rectangle-3222-L7BXHD"></div>
+        <div class="rectangle-3224-L7BXHD"></div>
+        <div class="rectangle-3226-L7BXHD"></div>
+        <div class="lunchroom-lights-L7BXHD avertacy-bold-sapphire-11px">Lunchroom Lights</div>
+        <div class="office-plugs-2-L7BXHD avertacy-bold-jaffa-11px">Office Plugs 2</div>
+        <div class="hallway-lighting-L7BXHD avertacy-bold-orange-soda-11px">Hallway Lighting</div>
+        <div class="shop-lights-1-L7BXHD avertacy-bold-picton-blue-11px">Shop Lights 1</div>
+        <div class="office-plugs-1-L7BXHD avertacy-bold-jaffa-11px">Office Plugs 1</div>
+        <div class="wallpacks-L7BXHD avertacy-bold-sapphire-11px">Wallpacks</div>
+        <div class="exit-lights-L7BXHD avertacy-bold-stack-11px">Exit Lights</div>
+        <div class="exit-lights-zsJCYe avertacy-bold-stack-11px">Exit Lights</div>
+        <div class="smoke-detectors-L7BXHD avertacy-bold-sapphire-11px">Smoke Detectors</div>
+        <div class="emer-lights-L7BXHD avertacy-bold-stack-11px">Emer. Lights</div>
+        <div id = 'demo' class="x345-L7BXHD avertacy-bold-sapphire-11px"></div>
+        <div id = 'demo2' class="x045-L7BXHD avertacy-bold-jaffa-11px"></div>
+        <div id = 'demo3' class="x113-L7BXHD avertacy-bold-orange-soda-11px"></div>
+        <div id = 'demo4' class="x302-L7BXHD avertacy-bold-picton-blue-11px"></div>
+        <div id = 'demo5' class="x042-L7BXHD avertacy-bold-jaffa-11px"></div>
+        <div id = 'demo6' class="x102-L7BXHD avertacy-bold-sapphire-11px"></div>
+        <div id = 'demo7' class="x025-L7BXHD avertacy-bold-stack-11px"></div>
+        <div id = 'demo8' class="x019-L7BXHD avertacy-bold-stack-11px"></div>
+        <div id = 'demo9' class="x039-L7BXHD avertacy-bold-sapphire-11px"></div>
+        <div id = 'demo10' class="x044-L7BXHD avertacy-bold-stack-11px"></div>
+        <div class="rectangle-3184-L7BXHD" id = 'bar'><div id = 'percentage' class="x21-L7BXHD avertacy-bold-sapphire-11px"></div></div>
+        <div class="rectangle-3211-L7BXHD" id = 'bar2'><div id = 'percentage2' class="x31-L7BXHD avertacy-bold-jaffa-11px"></div></div>
+        <div class="rectangle-3213-L7BXHD" id = 'bar3'><div id = 'percentage3' class="x534-L7BXHD avertacy-bold-orange-soda-11px"></div></div>
+        <div class="rectangle-3215-L7BXHD" id = 'bar4'><div id = 'percentage4' class="x1897-L7BXHD avertacy-bold-picton-blue-11px"></div></div>
+        <div class="rectangle-3217-L7BXHD" id = 'bar5'><div id = 'percentage5' class="x298-L7BXHD avertacy-bold-jaffa-11px"></div></div>
+        <div class="rectangle-3219-L7BXHD" id = 'bar6'><div id = 'percentage6' class="x532-L7BXHD avertacy-bold-sapphire-11px"></div></div>
+        <div class="rectangle-3221-L7BXHD" id = 'bar7'><div id = 'percentage7' class="x06-L7BXHD avertacy-bold-stack-11px"></div></div>
+        <div class="rectangle-3223-L7BXHD" id = 'bar8'><div id = 'percentage8' class="x04-L7BXHD avertacy-bold-stack-11px"></div></div>
+        <div class="rectangle-3225-L7BXHD" id = 'bar9'><div id = 'percentage9' class="x092-L7BXHD avertacy-bold-sapphire-11px"></div></div>
+        <div class="rectangle-3227-L7BXHD" id = 'bar10'><div id = 'percentage10' class="x112-L7BXHD avertacy-bold-stack-11px"></div></div>
+        <div class="rectangle-3099-L7BXHD"></div>
+        <div class="x1245-L7BXHD avertacy-bold-sapphire-15px">
+          <span class="span0-rNQNIN avertacy-bold-sapphire-15px">$</span
+          ><span class="span1-rNQNIN avertacy-bold-sapphire-25px">12.45</span>
+        </div>
+        <div class="x13212-k-wh-L7BXHD avertacy-bold-sapphire-25px">
+          <span class="span0-84mBJe avertacy-bold-sapphire-25px">13,212</span
+          ><span class="span1-84mBJe avertacy-bold-sapphire-20px">&nbsp;</span
+          ><span class="span2-84mBJe avertacy-bold-sapphire-15px">kWh</span>
+        </div>
+        <div class="rectangle-3002-L7BXHD"></div>
+        <div class="rectangle-3003-L7BXHD"></div>
+        <div class="costs-L7BXHD avertacy-bold-sapphire-8px">Costs</div>
+        <div class="consumption-L7BXHD avertacy-bold-sapphire-8px">Consumption</div>
+        <a href= "{{url_for('commercial.historicalusage')}}"><div class="group-7245-L7BXHD">
+          <div class="rectangle-2902-nqAY6x"></div>
+          <div class="group-7237-nqAY6x">
+            <div class="group-Svduiw">
+              <img class="vector-Jzmg6z" src="{{url_for('static',filename='img/vector-11111@2x.svg')}}" />
+              <img class="vector-jG2uWN" src="{{url_for('static',filename='img/vector-22222@2x.svg')}}" />
+            </div>
+            <div class="rectangle-2895-Svduiw"></div>
+            <div class="rectangle-2896-Svduiw"></div>
+            <div class="rectangle-2897-Svduiw"></div>
+            <div class="rectangle-2898-Svduiw"></div>
+          </div>
+        </div></a>
+        <a href= "{{url_for('commercial.historicalusageline')}}"><div class="group-7246-L7BXHD">
+          <div class="rectangle-2903-WSB1YA"></div>
+          <div class="group-WSB1YA">
+            <div class="group-WOkfbn"><img class="group-s2WuyE" src="{{url_for('static',filename='img/group@22222x.svg')}}" /></div>
+          </div>
+        </div></a>
+                        <div class="col-lg-6 col-md-12 col-sm-12 " style ="left:330px; width: 400px; z-index: 50; top: 150px;" >
+                            <div id="chart2"></div>
+                        </div>
+                          <script>
+                            var options = {
+                                  series: [
+                                  {
+                                    name: "Panel 1",
+                                    data: [{{home_upgrades[0]}},{{home_upgrades[1]}},{{home_upgrades[2]}},{{home_upgrades[3]}},{{home_upgrades[4]}},{{home_upgrades[5]}},{{home_upgrades[6]}},{{home_upgrades[7]}},{{home_upgrades[8]}},{{home_upgrades[9]}},{{home_upgrades[10]}},{{home_upgrades[11]}},{{home_upgrades[12]}}]
+                                  },
+                                  {
+                                    name: "Panel 2",
+                                    data: [{{home_upgrades1[0]}},{{home_upgrades1[1]}},{{home_upgrades1[2]}},{{home_upgrades1[3]}},{{home_upgrades1[4]}},{{home_upgrades1[5]}},{{home_upgrades1[6]}},{{home_upgrades1[7]}},{{home_upgrades1[8]}},{{home_upgrades1[9]}},{{home_upgrades1[10]}},{{home_upgrades1[11]}},{{home_upgrades1[12]}}]
+                                  },
+                                  {
+                                    name: "Panel 3",
+                                    data: [{{home_upgrades3[0]}},{{home_upgrades3[1]}},{{home_upgrades3[2]}},{{home_upgrades3[3]}},{{home_upgrades3[4]}},{{home_upgrades3[5]}},{{home_upgrades3[6]}},{{home_upgrades3[7]}},{{home_upgrades3[8]}},{{home_upgrades3[9]}},{{home_upgrades3[10]}},{{home_upgrades3[11]}},{{home_upgrades3[12]}}]
+                                  },
+                                  {
+                                    name: "Panel 4",
+                                    data: [{{home_upgrades4[0]}},{{home_upgrades4[1]}},{{home_upgrades4[2]}},{{home_upgrades4[3]}},{{home_upgrades4[4]}},{{home_upgrades4[5]}},{{home_upgrades4[6]}},{{home_upgrades4[7]}},{{home_upgrades4[8]}},{{home_upgrades4[9]}},{{home_upgrades4[10]}},{{home_upgrades4[11]}},{{home_upgrades4[12]}}]
+                                  },
+                                  {
+                                    name: "Panel 5",
+                                    data: [{{home_upgrades5[0]}},{{home_upgrades5[1]}},{{home_upgrades5[2]}},{{home_upgrades5[3]}},{{home_upgrades5[4]}},{{home_upgrades5[5]}},{{home_upgrades5[6]}},{{home_upgrades5[7]}},{{home_upgrades5[8]}},{{home_upgrades5[9]}},{{home_upgrades5[10]}},{{home_upgrades5[11]}},{{home_upgrades5[12]}}]
+                                  },
+                                  {
+                                    name: "Panel 6",
+                                    data: [{{home_upgrades6[0]}},{{home_upgrades6[1]}},{{home_upgrades6[2]}},{{home_upgrades6[3]}},{{home_upgrades6[4]}},{{home_upgrades6[5]}},{{home_upgrades6[6]}},{{home_upgrades6[7]}},{{home_upgrades6[8]}},{{home_upgrades6[9]}},{{home_upgrades6[10]}},{{home_upgrades6[11]}},{{home_upgrades6[12]}}]
+                                  }
+                                ],
+                                  chart: {
+                                  height: '280px',
+                                  width: '300px',
+                                  type: 'bubble',
+                                  zoom: {
+                                    enabled: false
+                                  },
+                                  toolbar:{
+                                    show: false,
+                                  },
+                                },
+                                dataLabels: {
+                                  enabled: false
+                                },
+                                fill: {
+                                    opacity: 0.8
+                                },
+                                legend:{
+                                  show: false
+                                },
+                                stroke: {
+                                  curve: 'smooth'
+                                },
+                                grid: {
+                                  row: {
+                                    colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                                    opacity: 0.5
+                                  },
+                                },
+                                xaxis: {
+                                  labels:{
+                                    show: false
+                                  },
+                                  axisBorder:{
+                                    show: false
+                                  },
+                                  axisTicks:{
+                                    show: false
+                                  },
+                                },
+                                yaxis:{
+                                  labels:{
+                                  style:{
+                                      colors: 'DarkBlue',
+                                      fontFamily: " Helvetica, Averta CY-Bold",
+                                      fontSize: '10px',
+                                      fontWeight: 700,
+                                  },
+                                  maxHeight: undefined,
+                                   "formatter": function (val) {
+                                    return val.toFixed(2)
+                                },
+                                },
+                                },
+                                };
+
+                                var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                                chart.render();
+                        </script>
+                      </div>
+
+        <h1 class="title-L7BXHD">Historical Usage</h1>
+        <img class="rectangle-3269-L7BXHD" src="{{url_for('static',filename='img/rectangle-3269@2x.svg')}}" />
+        <div class="x66-L7BXHD avertacy-bold-sapphire-18px">
+          <span class="span0-nJpIKI avertacy-bold-sapphire-18px">66</span
+          ><span class="span1-nJpIKI avertacy-bold-sapphire-12px">%</span>
+        </div>
+        <div class="x43kgco2-L7BXHD avertacy-bold-sapphire-18px">
+          <span class="span0-EZZlMT avertacy-bold-sapphire-18px">4.3</span><span class="span1-EZZlMT">kg/CO2</span>
+        </div>
+        <div class="usage-L7BXHD avertacy-bold-sapphire-8px">Usage</div>
+        <div class="emissions-L7BXHD avertacy-bold-sapphire-8px">Emissions</div>
+        <div class="rectangle-3262-L7BXHD"></div>
+        <div class="group-7286-L7BXHD">
+          <input onchange= "random()" id = 'today2' type = 'date' class="march-18th-2021-tkyWp6">
+        </div>
+      </div>
+    </div>
+  </body>
+    <script>
+    function openNav(panel) {
+  document.getElementById("sidebar").style.width = "600px";
+  document.getElementById("panelletter").innerHTML = panel;
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {  document.getElementById("sidebar").style.width = "0";}
+
+      function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  function toggle(source) {
+      checkboxes = document.getElementsByName('panel1check');
+      for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  let today = new Date().toISOString().substr(0, 10);
+  document.querySelector("#today").value = today;
+
+  document.querySelector("#today2").valueAsDate = new Date();
+
+  function random() {
+  let demo = (Math.random() * (4 - 2) + 2).toFixed(2);
+  document.getElementById("demo").innerHTML = '$' + demo;
+  let demo2 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo2").innerHTML = '$' + demo2;
+  var demo3 = (Math.random() * (2 - 1) + 1).toFixed(2);
+  document.getElementById("demo3").innerHTML = '$' + demo3;
+  var demo4 = (Math.random() * (4 - 2) + 2).toFixed(2);
+  document.getElementById("demo4").innerHTML = '$' + demo4;
+  var demo5 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo5").innerHTML = '$' + demo5;
+  var demo6 = (Math.random() * (2 - 0) + 0).toFixed(2);
+  document.getElementById("demo6").innerHTML = '$' + demo6;
+  var demo7 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo7").innerHTML = '$' + demo7;
+  var demo8 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo8").innerHTML = '$' + demo8;
+  var demo9 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo9").innerHTML = '$' + demo9;
+  var demo10 = (Math.random() * (1 - 0) + 0).toFixed(2);
+  document.getElementById("demo10").innerHTML = '$' + demo10;
+
+  let total = parseFloat(demo) + parseFloat(demo2) + parseFloat(demo3) + parseFloat(demo4) + parseFloat(demo5) + parseFloat(demo6) + parseFloat(demo7) + parseFloat(demo8) + parseFloat(demo9) + parseFloat(demo10);
+  let percentage = document.getElementById("percentage").innerHTML = ((parseFloat(demo)/ total) * 100).toFixed(0) + "%";
+  let percentage2 = document.getElementById("percentage2").innerHTML = ((parseFloat(demo2)/ total) * 100).toFixed(0) + "%";
+  let percentage3 = document.getElementById("percentage3").innerHTML = ((parseFloat(demo3)/ total) * 100).toFixed(0) + "%";
+  let percentage4 = document.getElementById("percentage4").innerHTML = ((parseFloat(demo4)/ total) * 100).toFixed(0) + "%";
+  let percentage5 = document.getElementById("percentage5").innerHTML = ((parseFloat(demo5)/ total) * 100).toFixed(0) + "%";
+  let percentage6 = document.getElementById("percentage6").innerHTML = ((parseFloat(demo6)/ total) * 100).toFixed(0) + "%";
+  let percentage7 = document.getElementById("percentage7").innerHTML = ((parseFloat(demo7)/ total) * 100).toFixed(0) + "%";
+  let percentage8 = document.getElementById("percentage8").innerHTML = ((parseFloat(demo8)/ total) * 100).toFixed(0) + "%";
+  let percentage9 = document.getElementById("percentage9").innerHTML = ((parseFloat(demo9)/ total) * 100).toFixed(0) + "%";
+  let percentage10 = document.getElementById("percentage10").innerHTML = ((parseFloat(demo10)/ total) * 100).toFixed(0) + "%";
+  let width = 250 * ((parseFloat(demo)/ total));
+  let width2 = 250 * ((parseFloat(demo2)/ total));
+  let width3 = 250 * ((parseFloat(demo3)/ total));
+  let width4 = 250 * ((parseFloat(demo4)/ total));
+  let width5 = 250 * ((parseFloat(demo5)/ total));
+  let width6 = 250 * ((parseFloat(demo6)/ total));
+  let width7 = 250 * ((parseFloat(demo7)/ total));
+  let width8 = 250 * ((parseFloat(demo8)/ total));
+  let width9 = 250 * ((parseFloat(demo9)/ total));
+  let width10 = 250 * ((parseFloat(demo10)/ total));
+  document.getElementById("bar").style.width = width + "px";
+  document.getElementById("bar2").style.width = width2 + "px";
+  document.getElementById("bar3").style.width = width3 + "px";
+  document.getElementById("bar4").style.width = width4 + "px";
+  document.getElementById("bar5").style.width = width5 + "px";
+  document.getElementById("bar6").style.width = width6 + "px";
+  document.getElementById("bar7").style.width = width7 + "px";
+  document.getElementById("bar8").style.width = width8 + "px";
+  document.getElementById("bar9").style.width = width9 + "px";
+  document.getElementById("bar10").style.width = width10 + "px";
+  document.getElementById("percentage").style.left = width + 5 + "px";
+  document.getElementById("percentage2").style.left = width2 + 5 + "px";
+  document.getElementById("percentage3").style.left = width3 + 5 + "px";
+  document.getElementById("percentage4").style.left = width4 + 5 + "px";
+  document.getElementById("percentage5").style.left = width5 + 5 + "px";
+  document.getElementById("percentage6").style.left = width6 + 5 + "px";
+  document.getElementById("percentage7").style.left = width7 + 5 + "px";
+  document.getElementById("percentage8").style.left = width8 + 5 + "px";
+  document.getElementById("percentage9").style.left = width9 + 5 + "px";
+  document.getElementById("percentage10").style.left = width10 + 5 + "px";
+  let lighting = parseFloat(percentage) + parseFloat(percentage6) + parseFloat(percentage9);
+  let electrical = parseFloat(percentage4);
+  let plugload =  parseFloat(percentage3);
+  let dhw = parseFloat(percentage2) + parseFloat(percentage5);
+  let mechanical = parseFloat(percentage10) + parseFloat(percentage8) + parseFloat(percentage7);
+  document.getElementById("lighting").innerHTML = lighting + "%";
+  document.getElementById("electrical").innerHTML = electrical + "%";
+  document.getElementById("plugload").innerHTML = plugload + "%";
+  document.getElementById("dhw").innerHTML = dhw + "%";
+  document.getElementById("mechanical").innerHTML = mechanical + "%";
+  document.getElementById("panelA").innerHTML = lighting + "%";
+  document.getElementById("panelB").innerHTML = electrical + "%";
+  document.getElementById("panelC").innerHTML = plugload + "%";
+  document.getElementById("panelD").innerHTML = dhw + "%";
+  document.getElementById("panelE").innerHTML = mechanical + "%";
+  var options = {
+                              labels: ["Lighting", "Electrical", "Plug Load", "DHW", "Mechanical"],
+                              series: [lighting,electrical,plugload,dhw,mechanical ],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+                                                        var options = {
+                              labels: ["Lighting", "Electrical", "Plug Load", "DHW", "Mechanical"],
+                              series: [lighting,electrical,plugload,dhw,mechanical],
+                              chart: {
+                              width: 200,
+                              type: 'donut',
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                show:false
+                            },
+
+                            colors:['#3649A8','#3BCDEE','#EE5937', '#EE8F37','#DBE2F3'],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart3"), options);
+                            chart.render();
+}
+function getDate(){
+    var today = new Date();
+
+document.getElementById("today2").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+
+
+}
+  </script>
+</html>
