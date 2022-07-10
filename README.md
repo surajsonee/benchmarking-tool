@@ -4,9 +4,9 @@ Tech Stack: Flask, HTML, CSS, Javascript, Linux
 Logins:
 	Production Server: 
 	SSH into 139.177.195.236
-		Root User: henrygreen
-		Root Password: PollenOne
-		Sudo Password: Sustainergy
+		Root User: *******
+		Root Password: *******
+		Sudo Password: ********
 		*THESE PASSWORDS ARE JUST FOR EASE OF USE, I RECCOMEND CHANGING THEM TO SOMETHING MORE SECURE BEFORE SITE IS LIVE*
 
 	Database:
